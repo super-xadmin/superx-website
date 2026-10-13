@@ -1,0 +1,37 @@
+{
+  "company_name_th": "บริษัท ซุปเปอร์เอ็กซ์ เอไอ จำกัด",
+  "company_name_zh": "SUPERX AI COMPANY LIMITED",
+  "company_name_en": "SUPERX AI COMPANY LIMITED",
+  "site_name": "SUPERX AI",
+  "tagline": "AI in Motion. Intelligence in Action.",
+  "footer_about_th": "บริษัท ซุปเปอร์เอ็กซ์ เอไอ จำกัด ให้บริการรถขนส่งไร้คนขับระดับ L4 และ AI สำหรับองค์กรในประเทศไทย ภายใต้ระบบนิเวศธุรกิจของ บมจ. ไดเมท (สยาม)",
+  "footer_about_zh": "SuperX AI 是泰国本土的 L4 级无人驾驶物流车与企业级 AI 服务商，隶属 DIMET (Siam) 大众有限公司业务生态。",
+  "footer_about_en": "SUPERX AI COMPANY LIMITED delivers L4 autonomous RoboVans and enterprise AI in Thailand, as part of the DIMET (Siam) PCL business ecosystem.",
+  "phone": "02-323-2800",
+  "email": "info@super-x.tech",
+  "website": "www.super-x.tech",
+  "address_th": "602 หมู่ 2 ซอย 1 ถนนสุขุมวิท นิคมอุตสาหกรรมบางปู ต.บางปูใหม่ อ.เมืองสมุทรปราการ จ.สมุทรปราการ 10280",
+  "address_zh": "泰国北榄府直辖县邦普迈区素坤逸路 1 巷 2 村 602 号（邦普工业园），邮编 10280",
+  "address_en": "602 Moo 2, Soi 1, Sukhumvit Rd, Bang Pu Industrial Estate, Bang Pu Mai, Mueang Samut Prakan, Samut Prakan 10280, Thailand",
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=602+Moo+2+Bang+Pu+Industrial+Estate+Samut+Prakan+10280",
+  "socials": [
+    {
+      "network": "tiktok",
+      "handle": "@superxai_official",
+      "url": "https://www.tiktok.com/@superxai_official"
+    }
+  ],
+  "logo": "/assets/img/logo-superx.png",
+  "logo_white": "/assets/img/logo-superx-white.png",
+  "favicon": "/assets/img/favicon-64.png",
+  "apple_icon": "/assets/img/apple-touch-icon.png",
+  "share_image": "/assets/img/fleet-lineup.webp",
+  "copyright_year": "2026",
+  "copyright_name": "SUPERX AI COMPANY LIMITED",
+  "rights_th": "สงวนลิขสิทธิ์",
+  "rights_zh": "版权所有",
+  "rights_en": "All rights reserved",
+  "footer_note_th": "ภาพผลิตภัณฑ์และข้อมูลจำเพาะจากแคตตาล็อก SuperX AI ปี 2026",
+  "footer_note_zh": "产品图片与参数来自 SuperX AI 2026 产品手册",
+  "footer_note_en": "Product images and specifications from the SuperX AI 2026 catalogue"
+}

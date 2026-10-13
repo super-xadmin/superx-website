@@ -1,0 +1,57 @@
+{
+  "eyebrow_th": "ยานยนต์งานพิเศษ",
+  "eyebrow_zh": "特种机器人",
+  "eyebrow_en": "Special-purpose units",
+  "title_th": "ยานยนต์ไร้คนขับสำหรับงานเฉพาะทาง",
+  "title_zh": "面向专业任务的无人车辆",
+  "title_en": "Autonomous units for specialist jobs",
+  "lead_th": "ใช้แพลตฟอร์มขับขี่อัตโนมัติเดียวกัน ปรับตัวรถและอุปกรณ์ให้เหมาะกับแต่ละภารกิจ",
+  "lead_zh": "基于同一自动驾驶平台，按任务定制车身与设备。",
+  "lead_en": "One autonomous platform, with bodies and equipment adapted to each mission.",
+  "units": [
+    {
+      "image": "/assets/img/use-security-patrol.webp",
+      "alt": "Autonomous security patrol vehicle",
+      "title_th": "รถลาดตระเวนรักษาความปลอดภัย",
+      "title_zh": "安防巡逻车",
+      "title_en": "Security patrol vehicle",
+      "text_th": "ลาดตระเวนพื้นที่ช่วงกลางคืนพร้อมไฟเตือนและจอแสดงผล ช่วยเสริมกำลังทีมรักษาความปลอดภัย",
+      "text_zh": "夜间区域巡逻，配备警示灯与显示屏，补充安保力量。",
+      "text_en": "Night-time area patrols with warning lights and a display screen, extending your security team."
+    },
+    {
+      "image": "/assets/img/robot-fire-spray.webp",
+      "alt": "Autonomous firefighting robot spraying water",
+      "title_th": "หุ่นยนต์ดับเพลิง",
+      "title_zh": "消防机器人",
+      "title_en": "Firefighting robot",
+      "text_th": "ฉีดน้ำและตรวจการณ์ด้วยกล้องแบบหมุนได้ (PTZ) เข้าพื้นที่เสี่ยงแทนเจ้าหน้าที่",
+      "text_zh": "配备水炮与云台摄像头，代替人员进入高危区域。",
+      "text_en": "Water cannon and pan-tilt-zoom cameras that go into dangerous areas instead of people."
+    },
+    {
+      "image": "/assets/img/use-power-inspection.webp",
+      "alt": "Autonomous power patrol vehicle near transmission towers",
+      "title_th": "รถตรวจสายส่งไฟฟ้า",
+      "title_zh": "电力巡检车",
+      "title_en": "Power-line inspection vehicle",
+      "text_th": "ลาดตระเวนตรวจโครงข่ายไฟฟ้าและสถานีไฟฟ้าย่อยตามเส้นทางที่กำหนด",
+      "text_zh": "按设定路线自动巡检电网线路及变电站。",
+      "text_en": "Automated inspection rounds along power lines and substations."
+    },
+    {
+      "image": "/assets/img/use-sweeper.webp",
+      "alt": "Autonomous road sweeper on a wet street",
+      "title_th": "รถทำความสะอาดถนน",
+      "title_zh": "道路清扫车",
+      "title_en": "Street-cleaning vehicle",
+      "text_th": "กวาดและล้างถนนอัตโนมัติ สำหรับเทศบาล นิคมอุตสาหกรรม และพื้นที่ส่วนกลาง",
+      "text_zh": "自动清扫与冲洗，适用于市政、工业园区及公共区域。",
+      "text_en": "Automated sweeping and washing for municipalities, industrial estates and common areas."
+    }
+  ],
+  "unit_link_label_th": "สอบถามความพร้อมในประเทศไทย",
+  "unit_link_label_zh": "咨询在泰供应情况",
+  "unit_link_label_en": "Ask about availability in Thailand",
+  "unit_link": "contact.html?topic=security"
+}

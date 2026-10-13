@@ -1,0 +1,22 @@
+{
+  "eyebrow_th": "เรื่องราวของเรา",
+  "eyebrow_zh": "公司简介",
+  "eyebrow_en": "Our story",
+  "title_th": "เชื่อมโครงสร้างพื้นฐาน พลังงาน ยานพาหนะ และข้อมูล ให้ทำงานเป็นหนึ่งเดียว",
+  "title_zh": "让基础设施、能源、车辆与数据协同运作",
+  "title_en": "Infrastructure, energy, vehicles and data, working as one",
+  "paragraphs": [
+    {
+      "text_th": "Super X AI เป็นหนึ่งในเสาหลักของระบบนิเวศธุรกิจภายใต้ บริษัท ไดเมท (สยาม) จำกัด (มหาชน) ผู้บุกเบิกที่วางรากฐานอย่างแข็งแกร่งในภาคอุตสาหกรรมไทยมาอย่างยาวนาน ระบบนิเวศเดียวกันนี้ยังมี บริษัท เอเนอร์ยี่ ลิงค์ ดีไซน์ (ประเทศไทย) จำกัด ผู้เชี่ยวชาญด้านพลังงานทดแทน",
+      "text_zh": "SuperX AI 是 DIMET (Siam) 大众有限公司业务生态的核心支柱之一。DIMET 深耕泰国工业多年，同一生态内还包括可再生能源专家 Energy Link Design (Thailand) Co., Ltd.。",
+      "text_en": "Super X AI is one of the pillars of the business ecosystem of DIMET (Siam) Public Company Limited, a long-established pioneer in Thai industry. The same ecosystem includes Energy Link Design (Thailand) Co., Ltd., a renewable energy specialist."
+    },
+    {
+      "text_th": "เราก่อตั้งขึ้นเพื่อเสริมขีดความสามารถด้านปัญญาประดิษฐ์ (AI) ระบบโลจิสติกส์อัตโนมัติ และโซลูชันดิจิทัลระดับองค์กร ด้วยการผสานความเชี่ยวชาญจากทุกภาคส่วน เชื่อมโครงสร้างพื้นฐาน พลังงาน ยานพาหนะ ระบบปฏิบัติการ และข้อมูลให้ทำงานเป็นหนึ่งเดียวอย่างไร้รอยต่อ เพื่อสร้างมูลค่าและการเติบโตอย่างยั่งยืนให้ทุกภาคอุตสาหกรรม",
+      "text_zh": "公司致力于提升人工智能、自动化物流与企业级数字化能力，整合各方专业经验，让基础设施、能源、车辆、运营系统与数据无缝协同，为各行业创造价值、推动可持续增长。",
+      "text_en": "We were founded to build capability in artificial intelligence, autonomous logistics and enterprise digital solutions. By combining expertise across sectors, we connect infrastructure, energy, vehicles, operating systems and data into one seamless system that creates value and sustainable growth for every industry."
+    }
+  ],
+  "image": "/assets/img/scene-solar-campus.webp",
+  "alt": "RoboVan driving past a solar-roofed industrial building"
+}

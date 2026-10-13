@@ -1,0 +1,76 @@
+{
+  "eyebrow_th": "การใช้งาน",
+  "eyebrow_zh": "应用场景",
+  "eyebrow_en": "Applications",
+  "title_th": "เหมาะกับงานเหล่านี้",
+  "title_zh": "适用场景",
+  "title_en": "Where it works best",
+  "items": [
+    {
+      "icon": "cart",
+      "text_th": "เติมสินค้าร้านค้าปลีก",
+      "text_zh": "零售补货",
+      "text_en": "Retail replenishment"
+    },
+    {
+      "icon": "factory",
+      "text_th": "โลจิสติกส์ภายในโรงงาน",
+      "text_zh": "厂内物流",
+      "text_en": "Intralogistics"
+    },
+    {
+      "icon": "parcel",
+      "text_th": "ส่งของในโรงแรมและรีสอร์ต",
+      "text_zh": "酒店配送",
+      "text_en": "Hotel service delivery"
+    },
+    {
+      "icon": "warehouse",
+      "text_th": "ขนย้ายภายในคลังสินค้า",
+      "text_zh": "仓库转运",
+      "text_en": "Warehouse transfer"
+    },
+    {
+      "icon": "mail",
+      "text_th": "ขนส่งไปรษณีย์และพัสดุ",
+      "text_zh": "邮政快递",
+      "text_en": "Postal delivery"
+    },
+    {
+      "icon": "pill",
+      "text_th": "ขนส่งเวชภัณฑ์",
+      "text_zh": "医药配送",
+      "text_en": "Pharmaceutical delivery"
+    },
+    {
+      "icon": "box",
+      "text_th": "กระจายสินค้าเครื่องดื่ม",
+      "text_zh": "饮料配送",
+      "text_en": "Beverage distribution"
+    },
+    {
+      "icon": "gear",
+      "text_th": "ส่งชิ้นส่วนยานยนต์",
+      "text_zh": "汽车零部件配送",
+      "text_en": "Auto parts delivery"
+    },
+    {
+      "icon": "shield",
+      "text_th": "ขนย้ายสินค้าในเขตปลอดอากร",
+      "text_zh": "保税货物转运",
+      "text_en": "Bonded goods transfer"
+    },
+    {
+      "icon": "plane",
+      "text_th": "โลจิสติกส์ภาคพื้นสนามบิน",
+      "text_zh": "机场地面物流",
+      "text_en": "Airport ground logistics"
+    },
+    {
+      "icon": "route",
+      "text_th": "ขนส่งระหว่างคลังสินค้า",
+      "text_zh": "仓间物流",
+      "text_en": "Inter-warehouse logistics"
+    }
+  ]
+}

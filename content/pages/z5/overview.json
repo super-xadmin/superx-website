@@ -1,0 +1,28 @@
+{
+  "eyebrow_th": "ตำแหน่งผลิตภัณฑ์",
+  "eyebrow_zh": "产品定位",
+  "eyebrow_en": "Overview",
+  "title_th": "RoboVan รุ่นหลักสำหรับงานขนส่งความถี่สูง",
+  "title_zh": "面向高频运输的主力车型",
+  "title_en": "The workhorse for high-frequency routes",
+  "paragraphs": [
+    {
+      "text_th": "Z5 คือ RoboVan ไร้คนขับระดับ L4 รุ่นใหม่ที่ SuperX AI ส่งมอบสำหรับงานอุตสาหกรรมและโลจิสติกส์ในประเทศไทย ผสานเทคโนโลยีขับขี่อัตโนมัติที่พิสูจน์แล้วของ Zelostech เข้ากับทีมติดตั้งและบริการในประเทศของ SuperX AI เพื่อการขนส่งที่ปลอดภัย มีประสิทธิภาพ และขยายได้ ทั้งในโรงงาน คลังสินค้า ศูนย์กระจายสินค้า และพื้นที่อุตสาหกรรม",
+      "text_zh": "Z5 是 SuperX AI 为泰国工业与物流场景交付的新一代 L4 级无人驾驶 RoboVan。它将 Zelostech 成熟的自动驾驶技术与 SuperX AI 的本地部署和服务能力相结合，让工厂、仓库、配送中心及工业园区的运输更安全、更高效、可规模化扩展。",
+      "text_en": "The Z5 is a next-generation L4 autonomous RoboVan delivered by SuperX AI for industrial and logistics operations in Thailand. It pairs Zelostech’s proven autonomous driving with SuperX AI’s local deployment and support, for safe, efficient and scalable transport across factories, warehouses, distribution centres and industrial sites.",
+      "anchor": ""
+    },
+    {
+      "text_th": "**Z5 Plus** ใช้ตู้สินค้าพื้นเรียบสำหรับสินค้าบนพาเลท ขนขึ้นลงได้เร็วขึ้น เหมาะกับงานขนย้ายในคลัง ศูนย์กระจายสินค้า และการขนส่งระยะกลาง (Mid-mile)",
+      "text_zh": "**Z5 Plus** 采用平地板货箱，专为托盘货物设计，装卸更快，适用于仓库转运、配送中心及中途运输。",
+      "text_en": "The **Z5 Plus** has a flat-floor cargo body for palletised goods and faster loading, suited to warehouse transfers, distribution centres and mid-mile routes.",
+      "anchor": "plus"
+    },
+    {
+      "text_th": "ตั้งแต่วิเคราะห์หน้างาน เชื่อมต่อระบบ ติดตั้งใช้งาน บริหารฝูงรถ จนถึงบริการหลังการขาย SuperX AI ดูแลครบในที่เดียว",
+      "text_zh": "从现场分析、系统集成、部署上线、车队管理到售后服务，SuperX AI 一站式负责。",
+      "text_en": "From site analysis and integration to deployment, fleet management and after-sales, SuperX AI handles it end to end.",
+      "anchor": ""
+    }
+  ]
+}

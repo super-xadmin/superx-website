@@ -1,0 +1,175 @@
+{
+  "model_name": "Z5 Cold-Chain",
+  "full_name": "Z5 Cold-Chain RoboVan",
+  "type_th": "ห้องเย็นสองโซน",
+  "type_zh": "双温区冷藏",
+  "type_en": "Dual-zone refrigerated",
+  "image": "/assets/img/product-z5cold.webp",
+  "pdf": "/assets/docs/SuperX-Z5-Cold-Chain-RoboVan.pdf",
+  "page": "cold-chain.html#z5cold",
+  "card_button": "details",
+  "card_tag_th": "ห้องเย็น",
+  "card_tag_zh": "冷链",
+  "card_tag_en": "Cold-chain",
+  "card_tag_style": "cold",
+  "card_facts": [
+    {
+      "label_th": "อุณหภูมิ",
+      "label_zh": "温度",
+      "label_en": "Temperature",
+      "value": "−20~12 °C"
+    },
+    {
+      "label_th": "บรรทุก",
+      "label_zh": "载重",
+      "label_en": "Payload",
+      "value": "1,555 kg"
+    },
+    {
+      "label_th": "ปริมาตร",
+      "label_zh": "容积",
+      "label_en": "Volume",
+      "value": "4.6 m³"
+    }
+  ],
+  "length": 3727,
+  "width": 1493,
+  "height": 2195,
+  "specs": [
+    {
+      "key": "dims",
+      "value_th": "3,727 × 1,493 × 2,195",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "cargo_dims",
+      "value_th": "3,231 × 1,303 × 1,103",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "volume",
+      "value_th": "4.6",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "payload",
+      "value_th": "1,555",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "range",
+      "value_th": "180",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "speed",
+      "value_th": "40",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "climb",
+      "value_th": "20% (11.3°)",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "turning",
+      "value_th": "4.8",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "clearance",
+      "value_th": "150",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "wading",
+      "value_th": "255",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "optemp",
+      "value_th": "−30 ถึง 60",
+      "value_zh": "−30 至 60",
+      "value_en": "−30 to 60"
+    },
+    {
+      "key": "ip",
+      "value_th": "IP55",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "battery_type",
+      "value_th": "ลิเธียมไอรอนฟอสเฟต (LFP)",
+      "value_zh": "磷酸铁锂",
+      "value_en": "Lithium iron phosphate (LFP)"
+    },
+    {
+      "key": "battery",
+      "value_th": "40.8",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "fast",
+      "value_th": "30 นาที",
+      "value_zh": "30 分钟",
+      "value_en": "30 min"
+    },
+    {
+      "key": "slow",
+      "value_th": "3.3 ชม.*",
+      "value_zh": "3.3 小时*",
+      "value_en": "3.3 h*"
+    },
+    {
+      "key": "refrig_temp",
+      "value_th": "−20 ถึง 12",
+      "value_zh": "−20 至 12",
+      "value_en": "−20 to 12"
+    },
+    {
+      "key": "refrig_power",
+      "value_th": "สูงสุด 1,800 W",
+      "value_zh": "峰值 1,800 W",
+      "value_en": "1,800 W peak"
+    },
+    {
+      "key": "refrig_ctrl",
+      "value_th": "ควบคุมผ่านแอป",
+      "value_zh": "APP 控制",
+      "value_en": "App control"
+    },
+    {
+      "key": "lock",
+      "value_th": "ล็อกก้านกลไก",
+      "value_zh": "机械杆锁",
+      "value_en": "Mechanical rod lock"
+    },
+    {
+      "key": "color",
+      "value_th": "ขาว Starlight / ฟ้า Glacier",
+      "value_zh": "星光白 / 冰川蓝",
+      "value_en": "Starlight White / Glacier Blue"
+    }
+  ],
+  "cmp_volume_th": "4.6",
+  "cmp_volume_zh": "4.6",
+  "cmp_volume_en": "4.6",
+  "cmp_payload": "1,555",
+  "cmp_range": "180",
+  "cmp_battery": "40.8",
+  "cmp_cold": "−20~12 °C",
+  "cmp_speed": "40",
+  "cmp_dims": "3,727 × 1,493 × 2,195"
+}

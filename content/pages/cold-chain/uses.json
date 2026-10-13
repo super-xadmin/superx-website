@@ -1,0 +1,46 @@
+{
+  "eyebrow_th": "การใช้งาน",
+  "eyebrow_zh": "应用场景",
+  "eyebrow_en": "Applications",
+  "title_th": "เหมาะกับงานเหล่านี้",
+  "title_zh": "适用场景",
+  "title_en": "Where it works best",
+  "items": [
+    {
+      "icon": "leaf",
+      "text_th": "กระจายอาหารสด",
+      "text_zh": "生鲜配送",
+      "text_en": "Fresh food distribution"
+    },
+    {
+      "icon": "snow",
+      "text_th": "กระจายสินค้าแช่แข็ง",
+      "text_zh": "冷冻品配送",
+      "text_en": "Frozen goods distribution"
+    },
+    {
+      "icon": "cart",
+      "text_th": "ส่งของชำและอาหาร",
+      "text_zh": "食品杂货配送",
+      "text_en": "Grocery and food delivery"
+    },
+    {
+      "icon": "pill",
+      "text_th": "เวชภัณฑ์ควบคุมอุณหภูมิ",
+      "text_zh": "医药冷链",
+      "text_en": "Pharmaceutical cold chain"
+    },
+    {
+      "icon": "box",
+      "text_th": "ส่งผลิตภัณฑ์นม",
+      "text_zh": "乳制品配送",
+      "text_en": "Dairy delivery"
+    },
+    {
+      "icon": "thermo",
+      "text_th": "ค้าปลีกควบคุมอุณหภูมิ",
+      "text_zh": "温控零售",
+      "text_en": "Temperature-controlled retail"
+    }
+  ]
+}

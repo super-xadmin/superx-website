@@ -1,0 +1,85 @@
+{
+  "eyebrow_th": "SuperX AI Control",
+  "eyebrow_zh": "SuperX AI Control",
+  "eyebrow_en": "SuperX AI Control",
+  "title_th": "สั่งงาน ติดตาม และควบคุมฝูงรถได้จากที่เดียว",
+  "title_zh": "一个平台，调度、追踪、掌控整个车队",
+  "title_en": "Dispatch, track and control your fleet from one place",
+  "lead_th": "แอปพลิเคชันและระบบหลังบ้านสำหรับสั่งงาน RoboVan และดูสถานะแบบเรียลไทม์ พร้อมทีมวิศวกรเฝ้าระวังความปลอดภัยของรถให้ตลอด 24 ชั่วโมง",
+  "lead_zh": "通过移动 App 与后台系统下达任务、实时查看车辆状态，并由工程师团队 24 小时远程守护车辆安全。",
+  "lead_en": "A mobile app and back-office platform to dispatch RoboVans and watch them in real time, with engineers monitoring vehicle safety around the clock.",
+  "items": [
+    {
+      "icon": "map",
+      "text_th": "ติดตามตำแหน่งและสถานะรถแบบเรียลไทม์",
+      "text_zh": "实时查看车辆位置与状态",
+      "text_en": "Live vehicle location and status"
+    },
+    {
+      "icon": "app",
+      "text_th": "ควบคุมรถจากระยะไกลผ่านแอป (Remote takeover)",
+      "text_zh": "通过 App 远程接管车辆",
+      "text_en": "Remote takeover from the app"
+    },
+    {
+      "icon": "route",
+      "text_th": "ส่งแบบจุดต่อจุด และงานรับสินค้าคืน",
+      "text_zh": "点对点配送与逆向取件",
+      "text_en": "Point-to-point delivery and reverse collection"
+    },
+    {
+      "icon": "bell",
+      "text_th": "แจ้งเตือนผู้รับทาง SMS และโทรศัพท์",
+      "text_zh": "短信与语音通知收货人",
+      "text_en": "SMS and voice notifications to recipients"
+    },
+    {
+      "icon": "sign",
+      "text_th": "ยืนยันด้วยลายเซ็นอิเล็กทรอนิกส์ และเก็บเงินปลายทาง",
+      "text_zh": "电子签收与货到付款",
+      "text_en": "E-signature confirmation and cash on delivery"
+    },
+    {
+      "icon": "api",
+      "text_th": "เชื่อมต่อ API กับระบบคลังสินค้า (WMS) ของคุณ",
+      "text_zh": "通过 API 对接您的 WMS",
+      "text_en": "API integration with your WMS"
+    },
+    {
+      "icon": "monitor",
+      "text_th": "ศูนย์เฝ้าระวังความปลอดภัย 24 ชั่วโมง",
+      "text_zh": "24 小时远程安全监控",
+      "text_en": "24-hour remote safety monitoring"
+    }
+  ],
+  "phones": [
+    {
+      "image": "/assets/img/app-control.webp",
+      "alt": "App screen: vehicle control panel",
+      "label_th": "ควบคุมรถ",
+      "label_zh": "车辆控制",
+      "label_en": "Vehicle control"
+    },
+    {
+      "image": "/assets/img/app-route.webp",
+      "alt": "App screen: route reservations",
+      "label_th": "จองเส้นทาง",
+      "label_zh": "路线预约",
+      "label_en": "Route booking"
+    },
+    {
+      "image": "/assets/img/app-customize.webp",
+      "alt": "App screen: vehicle configuration",
+      "label_th": "ตั้งค่ารถตามงาน",
+      "label_zh": "车辆配置",
+      "label_en": "Configuration"
+    },
+    {
+      "image": "/assets/img/app-renewal.webp",
+      "alt": "App screen: service renewal",
+      "label_th": "ต่ออายุบริการ",
+      "label_zh": "服务续费",
+      "label_en": "Service renewal"
+    }
+  ]
+}

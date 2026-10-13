@@ -1,0 +1,166 @@
+{
+  "title_th": "ส่งข้อความถึงเรา",
+  "title_zh": "在线留言",
+  "title_en": "Send us a message",
+  "lead_th": "กรอกข้อมูลด้านล่าง ทีมงานจะติดต่อกลับโดยเร็ว",
+  "lead_zh": "请填写以下信息，我们会尽快与您联系。",
+  "lead_en": "Fill in the form and our team will get back to you soon.",
+  "label_name_th": "ชื่อ-นามสกุล",
+  "label_name_zh": "姓名",
+  "label_name_en": "Full name",
+  "label_company_th": "บริษัท / หน่วยงาน",
+  "label_company_zh": "公司 / 机构",
+  "label_company_en": "Company or organisation",
+  "label_position_th": "ตำแหน่ง",
+  "label_position_zh": "职位",
+  "label_position_en": "Job title",
+  "label_phone_th": "โทรศัพท์",
+  "label_phone_zh": "电话",
+  "label_phone_en": "Phone",
+  "label_email_th": "อีเมล",
+  "label_email_zh": "邮箱",
+  "label_email_en": "Email",
+  "label_line_th": "LINE ID",
+  "label_line_zh": "LINE ID",
+  "label_line_en": "LINE ID",
+  "label_interest_th": "เรื่องที่สนใจ",
+  "label_interest_zh": "咨询类型",
+  "label_interest_en": "I’m interested in",
+  "label_model_th": "รุ่นที่สนใจ",
+  "label_model_zh": "意向车型",
+  "label_model_en": "Model",
+  "label_quantity_th": "จำนวนรถโดยประมาณ",
+  "label_quantity_zh": "预计数量",
+  "label_quantity_en": "Estimated number of vehicles",
+  "label_message_th": "รายละเอียดหน้างานและเส้นทาง",
+  "label_message_zh": "现场与线路说明",
+  "label_message_en": "Tell us about your site and routes",
+  "message_placeholder_th": "เช่น ขนส่งระหว่างอาคาร A–B วันละ 20 เที่ยว ระยะทาง 3 กม.",
+  "message_placeholder_zh": "例如：A–B 楼之间每天 20 趟，距离 3 公里",
+  "message_placeholder_en": "e.g. 20 trips a day between buildings A and B, 3 km apart",
+  "consent_th": "ยินยอมให้ SuperX AI เก็บและใช้ข้อมูลนี้เพื่อติดต่อกลับ ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล (PDPA)",
+  "consent_zh": "同意 SuperX AI 依据泰国《个人数据保护法》（PDPA）收集并使用以上信息与我联系。",
+  "consent_en": "I agree that SuperX AI may store and use these details to contact me, under Thailand’s Personal Data Protection Act (PDPA).",
+  "submit_th": "ส่งข้อมูล",
+  "submit_zh": "提交",
+  "submit_en": "Send",
+  "interests": [
+    {
+      "value": "demo",
+      "label_th": "นัดหมายสาธิต",
+      "label_zh": "预约演示",
+      "label_en": "Book a demo",
+      "lark_icon": "📅",
+      "lark_color": "blue"
+    },
+    {
+      "value": "quote",
+      "label_th": "ขอใบเสนอราคา",
+      "label_zh": "索取报价",
+      "label_en": "Request a quote",
+      "lark_icon": "💰",
+      "lark_color": "orange"
+    },
+    {
+      "value": "buy",
+      "label_th": "ซื้อรถ RoboVan",
+      "label_zh": "购买 RoboVan",
+      "label_en": "Buy RoboVans",
+      "lark_icon": "🛒",
+      "lark_color": "orange"
+    },
+    {
+      "value": "lease",
+      "label_th": "เช่ารถ RoboVan",
+      "label_zh": "租赁 RoboVan",
+      "label_en": "Lease RoboVans",
+      "lark_icon": "🔑",
+      "lark_color": "orange"
+    },
+    {
+      "value": "brochure",
+      "label_th": "ขอเอกสาร / สเปกชีท",
+      "label_zh": "索取资料 / 参数表",
+      "label_en": "Documents or spec sheets",
+      "lark_icon": "📄",
+      "lark_color": "wathet"
+    },
+    {
+      "value": "education",
+      "label_th": "รถไร้คนขับเพื่อการศึกษา",
+      "label_zh": "教育无人车",
+      "label_en": "Education vehicles",
+      "lark_icon": "🎓",
+      "lark_color": "wathet"
+    },
+    {
+      "value": "security",
+      "label_th": "หุ่นยนต์ความปลอดภัยและงานพิเศษ",
+      "label_zh": "安防与特种机器人",
+      "label_en": "Security and special robots",
+      "lark_icon": "🛡️",
+      "lark_color": "wathet"
+    },
+    {
+      "value": "qubby",
+      "label_th": "Qubby AI · AI Agent",
+      "label_zh": "Qubby AI · AI Agent",
+      "label_en": "Qubby AI · AI Agent",
+      "lark_icon": "🤖",
+      "lark_color": "wathet"
+    },
+    {
+      "value": "partner",
+      "label_th": "ร่วมเป็นพันธมิตร / ตัวแทนจำหน่าย",
+      "label_zh": "成为合作伙伴 / 经销商",
+      "label_en": "Partnership or distribution",
+      "lark_icon": "🤝",
+      "lark_color": "turquoise"
+    },
+    {
+      "value": "other",
+      "label_th": "อื่น ๆ",
+      "label_zh": "其他",
+      "label_en": "Something else",
+      "lark_icon": "💬",
+      "lark_color": "wathet"
+    }
+  ],
+  "model_none_th": "ยังไม่ระบุ",
+  "model_none_zh": "暂不确定",
+  "model_none_en": "Not sure yet",
+  "models": [
+    {
+      "value": "Z5",
+      "label": ""
+    },
+    {
+      "value": "Z5-Plus",
+      "label": ""
+    },
+    {
+      "value": "Z5-Cold-Chain",
+      "label": ""
+    },
+    {
+      "value": "Z5-Multi-Locker",
+      "label": ""
+    },
+    {
+      "value": "Z10",
+      "label": ""
+    },
+    {
+      "value": "Z10-Cold-Chain",
+      "label": ""
+    },
+    {
+      "value": "Z20",
+      "label": ""
+    },
+    {
+      "value": "L4-Suite",
+      "label": ""
+    }
+  ]
+}

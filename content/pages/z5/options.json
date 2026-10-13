@@ -1,0 +1,88 @@
+{
+  "eyebrow_th": "ตัวเลือก",
+  "eyebrow_zh": "可选配置",
+  "eyebrow_en": "Options",
+  "title_th": "เลือกให้ตรงกับงานของคุณ",
+  "title_zh": "按需配置",
+  "title_en": "Configure it for your job",
+  "items": [
+    {
+      "title_th": "โครงตู้สินค้า 2 แบบ",
+      "title_zh": "两种货箱布局",
+      "title_en": "Two cargo layouts",
+      "text_th": "Z5 แบบซุ้มล้อ 6.2 ลบ.ม. หรือ Z5 Plus พื้นเรียบ 6.4 ลบ.ม. สำหรับพาเลท",
+      "text_zh": "Z5 轮拱布局 6.2 m³，或 Z5 Plus 平地板 6.4 m³ 适配托盘。",
+      "text_en": "Z5 wheel-arch at 6.2 m³, or Z5 Plus flat floor at 6.4 m³ for pallets.",
+      "link_label_th": "",
+      "link_label_zh": "",
+      "link_label_en": "",
+      "link": "",
+      "swatches": false
+    },
+    {
+      "title_th": "รุ่นห้องเย็น",
+      "title_zh": "冷链版",
+      "title_en": "Cold-chain version",
+      "text_th": "Z5 Cold-Chain ห้องเย็นสองโซน −20 ถึง 12 °C ควบคุมผ่านแอป",
+      "text_zh": "Z5 冷链车，双温区 −20 至 12 °C，APP 控制。",
+      "text_en": "Z5 Cold-Chain with dual-zone refrigeration from −20 to 12 °C, controlled from the app.",
+      "link_label_th": "ดูรุ่นห้องเย็น",
+      "link_label_zh": "查看冷链车型",
+      "link_label_en": "See cold-chain",
+      "link": "cold-chain.html",
+      "swatches": false
+    },
+    {
+      "title_th": "รุ่นล็อกเกอร์",
+      "title_zh": "多格口版",
+      "title_en": "Locker version",
+      "text_th": "Z5 Multi-Locker 274 ช่อง สำหรับส่งพัสดุหลายจุดและให้ผู้รับเปิดรับเอง",
+      "text_zh": "Z5 Multi-Locker，274 个格口，支持多点投递与自助取件。",
+      "text_en": "Z5 Multi-Locker with 274 compartments for multi-stop parcels and self-service pickup.",
+      "link_label_th": "ดูรุ่นล็อกเกอร์",
+      "link_label_zh": "查看多格口版",
+      "link_label_en": "See the locker van",
+      "link": "products.html#locker",
+      "swatches": false
+    },
+    {
+      "title_th": "สีตัวรถ",
+      "title_zh": "车身颜色",
+      "title_en": "Body colour",
+      "text_th": "ขาว Starlight หรือฟ้า Glacier",
+      "text_zh": "星光白或冰川蓝",
+      "text_en": "Starlight White or Glacier Blue",
+      "link_label_th": "",
+      "link_label_zh": "",
+      "link_label_en": "",
+      "link": "",
+      "swatches": true
+    },
+    {
+      "title_th": "สีและแบรนด์องค์กร",
+      "title_zh": "定制涂装",
+      "title_en": "Custom livery",
+      "text_th": "สอบถามการทำสีและติดแบรนด์ขององค์กรบนตัวรถ",
+      "text_zh": "可咨询企业品牌定制涂装。",
+      "text_en": "Ask about custom paint and your company branding on the body.",
+      "link_label_th": "",
+      "link_label_zh": "",
+      "link_label_en": "",
+      "link": "",
+      "swatches": false
+    },
+    {
+      "title_th": "เชื่อมต่อระบบของคุณ",
+      "title_zh": "系统对接",
+      "title_en": "Connect your systems",
+      "text_th": "เชื่อมต่อ API กับระบบคลังสินค้า (WMS) เพื่อสั่งงานรถอัตโนมัติ",
+      "text_zh": "通过 API 对接 WMS，自动下发运输任务。",
+      "text_en": "API integration with your WMS to dispatch vehicles automatically.",
+      "link_label_th": "",
+      "link_label_zh": "",
+      "link_label_en": "",
+      "link": "",
+      "swatches": false
+    }
+  ]
+}

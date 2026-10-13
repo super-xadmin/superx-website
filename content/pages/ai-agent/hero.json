@@ -1,0 +1,56 @@
+{
+  "chat": [
+    {
+      "side": "me",
+      "who_th": "LINE",
+      "who_zh": "LINE",
+      "who_en": "LINE",
+      "text_th": "สวัสดีค่ะ อยากทราบว่ารถ Z5 ห้องเย็นตั้งอุณหภูมิได้กี่องศาคะ",
+      "text_zh": "你好，Z5 冷链车温度可以设到多少度？",
+      "text_en": "Hi, what temperatures can the Z5 cold-chain van hold?"
+    },
+    {
+      "side": "ai",
+      "who_th": "Qubby AI",
+      "who_zh": "Qubby AI",
+      "who_en": "Qubby AI",
+      "text_th": "ตั้งได้ตั้งแต่ −20 ถึง 12 °C แบบสองโซน และปรับผ่านแอปได้ค่ะ ต้องการให้ทีมขายติดต่อกลับไหมคะ",
+      "text_zh": "支持 −20 至 12 °C 双温区，可通过 App 调节。需要销售顾问联系您吗？",
+      "text_en": "It runs two zones from −20 to 12 °C, set from the app. Would you like a sales consultant to call you?"
+    },
+    {
+      "side": "me",
+      "who_th": "LINE",
+      "who_zh": "LINE",
+      "who_en": "LINE",
+      "text_th": "ได้ค่ะ ขอเป็นพรุ่งนี้ช่วงบ่าย",
+      "text_zh": "好的，明天下午可以。",
+      "text_en": "Yes please, tomorrow afternoon."
+    },
+    {
+      "side": "ai",
+      "who_th": "Qubby AI",
+      "who_zh": "Qubby AI",
+      "who_en": "Qubby AI",
+      "text_th": "บันทึกนัดหมายในระบบ CRM แล้วค่ะ ทีมขายจะโทรหาพรุ่งนี้ 14:00 น.",
+      "text_zh": "已在 CRM 中登记，销售顾问将于明天 14:00 致电。",
+      "text_en": "Booked in the CRM. Our sales team will call tomorrow at 14:00."
+    }
+  ],
+  "crumb_th": "AI Agent",
+  "crumb_zh": "AI Agent",
+  "crumb_en": "AI Agent",
+  "eyebrow_th": "Smart Communications · Qubby AI",
+  "eyebrow_zh": "智慧沟通 · Qubby AI",
+  "eyebrow_en": "Smart Communications · Qubby AI",
+  "title_th": "AI Agent สำหรับด่านหน้าของธุรกิจ",
+  "title_zh": "企业前台的 AI Agent",
+  "title_en": "The AI agent for your business front door",
+  "lead_th": "Qubby AI คือแกน AI แบบ Omnichannel ที่ตอบลูกค้าได้ทั้งข้อความและเสียง ทุกช่องทาง ตลอด 24 ชั่วโมง และเชื่อมต่อกับระบบ CRM/ERP ขององค์กร",
+  "lead_zh": "Qubby AI 是全渠道 AI 核心，全天候以文字与语音服务客户，并与企业 CRM/ERP 系统打通。",
+  "lead_en": "Qubby AI is an omnichannel AI core that serves customers by text and voice, around the clock, and connects to your CRM and ERP.",
+  "button_label_th": "นัดสาธิต Qubby AI",
+  "button_label_zh": "预约 Qubby AI 演示",
+  "button_label_en": "Book a Qubby AI demo",
+  "button_link": "contact.html?topic=qubby"
+}

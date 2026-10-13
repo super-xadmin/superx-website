@@ -1,0 +1,132 @@
+{
+  "eyebrow_th": "SuperX คือใคร",
+  "eyebrow_zh": "公司定位",
+  "eyebrow_en": "Who we are",
+  "title_th": "เราไม่ได้ส่งมอบแค่รถไร้คนขับ แต่ส่งมอบระบบขนส่งอัตโนมัติที่พร้อมใช้งานจริง",
+  "title_zh": "我们交付的不只是无人车，而是可直接投入运营的自动化物流系统",
+  "title_en": "Not just a driverless vehicle. A complete autonomous logistics system, ready to run.",
+  "lead_th": "SuperX AI คือบริษัท Enterprise AI สัญชาติไทย ภายใต้ระบบนิเวศธุรกิจของ บมจ. ไดเมท (สยาม) และเป็นพันธมิตรกับ Zelostech ผู้พัฒนาเทคโนโลยีขับขี่อัตโนมัติระดับ L4 เรานำ RoboVan ไปใช้งานในเมือง โรงงาน ศูนย์กระจายสินค้า และนิคมอุตสาหกรรม ตั้งแต่ประเมินหน้างานและวิเคราะห์ ROI ไปจนถึงเชื่อมต่อระบบ อบรม เฝ้าติดตามฝูงรถ และบริการหลังการขายในประเทศ",
+  "lead_zh": "SuperX AI 是一家泰国本土企业级 AI 公司，隶属 DIMET (Siam) 大众有限公司业务生态，并与 L4 级自动驾驶技术企业 Zelostech（九识智能）合作。我们将 RoboVan 部署到城市、工厂、配送中心和工业园区，提供从现场评估、ROI 分析，到系统集成、培训、车队监控及本地售后的完整服务。",
+  "lead_en": "SuperX AI is a Thailand-based enterprise AI company, backed by DIMET (Siam) PCL and partnered with Zelostech. We deploy Level 4 autonomous RoboVans across cities, factories, distribution centres and industrial estates — from site assessment and ROI analysis to system integration, training, fleet monitoring and local after-sales support.",
+  "flow": [
+    {
+      "who_th": "เทคโนโลยี",
+      "who_zh": "技术",
+      "who_en": "Technology",
+      "name_th": "Zelostech",
+      "name_zh": "Zelostech",
+      "name_en": "Zelostech",
+      "text_th": "เทคโนโลยีขับขี่อัตโนมัติ L4 แบบ Full-stack",
+      "text_zh": "L4 全栈自动驾驶技术",
+      "text_en": "Full-stack L4 autonomous driving",
+      "highlight": false,
+      "bullets": [
+        {
+          "text_th": "ระบบรับรู้สภาพแวดล้อม (Perception)",
+          "text_zh": "环境感知",
+          "text_en": "Perception"
+        },
+        {
+          "text_th": "การวางแผนเส้นทาง (Path planning)",
+          "text_zh": "路径规划",
+          "text_en": "Path planning"
+        },
+        {
+          "text_th": "การควบคุมยานพาหนะอัตโนมัติ",
+          "text_zh": "自动驾驶控制",
+          "text_en": "Autonomous vehicle control"
+        }
+      ]
+    },
+    {
+      "who_th": "ผู้ดำเนินงานในประเทศไทย",
+      "who_zh": "泰国本地执行伙伴",
+      "who_en": "Local execution partner",
+      "name_th": "SUPERX AI",
+      "name_zh": "SUPERX AI",
+      "name_en": "SUPERX AI",
+      "text_th": "ทำให้ระบบใช้งานได้จริงที่หน้างานของคุณ",
+      "text_zh": "让系统在您的现场真正跑起来",
+      "text_en": "Makes it work on your site",
+      "highlight": true,
+      "bullets": [
+        {
+          "text_th": "สำรวจหน้างานและออกแบบ Use case",
+          "text_zh": "现场勘察与场景设计",
+          "text_en": "Site survey and use-case design"
+        },
+        {
+          "text_th": "เชื่อมต่อระบบ ติดตั้ง ทดสอบ และอบรม",
+          "text_zh": "系统集成、安装测试与培训",
+          "text_en": "Integration, installation, testing, training"
+        },
+        {
+          "text_th": "บริการหลังการขายและเฝ้าระวัง 24 ชม.",
+          "text_zh": "售后服务与 24 小时监控",
+          "text_en": "After-sales and 24-hour monitoring"
+        }
+      ]
+    },
+    {
+      "who_th": "คุณค่าที่ลูกค้าได้รับ",
+      "who_zh": "客户价值",
+      "who_en": "Customer value",
+      "name_th": "ระบบพร้อมใช้งานจริง",
+      "name_zh": "可投产的系统",
+      "name_en": "Production-ready",
+      "text_th": "ลดต้นทุนและเพิ่มรอบการขนส่ง",
+      "text_zh": "降低成本、增加运输班次",
+      "text_en": "Lower cost, more trips",
+      "highlight": false,
+      "bullets": [
+        {
+          "text_th": "ลดต้นทุนการดำเนินงาน",
+          "text_zh": "降低运营成本",
+          "text_en": "Lower operating cost"
+        },
+        {
+          "text_th": "ทำงานต่อเนื่องได้ตลอด 24/7",
+          "text_zh": "支持 24/7 连续运行",
+          "text_en": "Runs 24/7"
+        },
+        {
+          "text_th": "ขยายฝูงรถได้ตามการเติบโตของธุรกิจ",
+          "text_zh": "可随业务增长扩展车队",
+          "text_en": "Scales as your business grows"
+        }
+      ]
+    }
+  ],
+  "stats": [
+    {
+      "value": "30,000",
+      "unit_th": "+",
+      "unit_zh": "+",
+      "unit_en": "+",
+      "text_th": "RoboVan ระดับ L4 ที่ให้บริการจริงทั่วโลก",
+      "text_zh": "全球在运营的 L4 级 RoboVan",
+      "text_en": "L4 RoboVans in service worldwide"
+    },
+    {
+      "value": "150M",
+      "unit_th": "+ km",
+      "unit_zh": "+ km",
+      "unit_en": "+ km",
+      "text_th": "ระยะทางสะสมจากการขับขี่อัตโนมัติระดับ L4",
+      "text_zh": "L4 级自动驾驶累计里程",
+      "text_en": "Cumulative L4 autonomous driving"
+    },
+    {
+      "value": "27",
+      "unit_th": "ตัน",
+      "unit_zh": "吨",
+      "unit_en": "t",
+      "text_th": "CO₂ ที่ลดได้เฉลี่ยต่อคันต่อปี",
+      "text_zh": "平均每车每年减少 CO₂ 排放",
+      "text_en": "CO₂ reduced per vehicle per year, on average"
+    }
+  ],
+  "note_th": "ตัวเลขระดับโลกของแพลตฟอร์มเทคโนโลยีพันธมิตร (Zelostech) ตามข้อมูลใน Company Profile ของ SuperX AI",
+  "note_zh": "以上为合作技术平台（Zelostech）全球数据，来源：SuperX AI 公司简介。",
+  "note_en": "Global figures for our partner technology platform (Zelostech), as published in the SuperX AI company profile."
+}

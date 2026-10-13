@@ -1,0 +1,127 @@
+{
+  "model_name": "Z20",
+  "full_name": "Z20 RoboVan",
+  "type_th": "งานหนัก · โหลดด้วยโฟล์คลิฟท์",
+  "type_zh": "重载 · 叉车装卸",
+  "type_en": "Heavy duty · forklift loading",
+  "image": "/assets/img/product-z20.webp",
+  "pdf": "/assets/docs/SuperX-Z20-RoboVan.pdf",
+  "page": "products.html#z20",
+  "card_button": "pdf",
+  "card_tag_th": "งานหนัก",
+  "card_tag_zh": "重载",
+  "card_tag_en": "Heavy duty",
+  "card_tag_style": "normal",
+  "card_facts": [
+    {
+      "label_th": "ปริมาตร",
+      "label_zh": "容积",
+      "label_en": "Volume",
+      "value": "20 m³"
+    },
+    {
+      "label_th": "บรรทุก",
+      "label_zh": "载重",
+      "label_en": "Payload",
+      "value": "4,000 kg"
+    },
+    {
+      "label_th": "ระยะวิ่ง (เต็ม)",
+      "label_zh": "续航（满载）",
+      "label_en": "Range, full load",
+      "value": "180 km"
+    }
+  ],
+  "length": 4750,
+  "width": 2450,
+  "height": 2950,
+  "specs": [
+    {
+      "key": "dims",
+      "value_th": "4,750 × 2,450 × 2,950",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "cargo_dims",
+      "value_th": "4,200 × 2,300 × 2,000",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "volume",
+      "value_th": "20",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "payload",
+      "value_th": "4,000",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "gvw",
+      "value_th": "6,950",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "doors",
+      "value_th": "ข้าง 2,030 × 1,880 · หลัง 2,210 × 1,920",
+      "value_zh": "侧门 2,030 × 1,880 · 后门 2,210 × 1,920",
+      "value_en": "Side 2,030 × 1,880 · rear 2,210 × 1,920"
+    },
+    {
+      "key": "floor_h",
+      "value_th": "955 (รถเปล่า)",
+      "value_zh": "955（空载）",
+      "value_en": "955 (unladen)"
+    },
+    {
+      "key": "range",
+      "value_th": "180 (บรรทุกเต็ม)",
+      "value_zh": "180（满载）",
+      "value_en": "180 (full load)"
+    },
+    {
+      "key": "climb",
+      "value_th": "15% (8.5°)",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "wading",
+      "value_th": "300",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "battery",
+      "value_th": "77.28",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "voltage",
+      "value_th": "400 V",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "fast",
+      "value_th": "ประมาณ 70 นาที (0–100%)",
+      "value_zh": "约 70 分钟（0–100%）",
+      "value_en": "approx. 70 min (0–100%)"
+    }
+  ],
+  "cmp_volume_th": "20",
+  "cmp_volume_zh": "20",
+  "cmp_volume_en": "20",
+  "cmp_payload": "4,000",
+  "cmp_range": "180*",
+  "cmp_battery": "77.28",
+  "cmp_cold": "—",
+  "cmp_speed": "—",
+  "cmp_dims": "4,750 × 2,450 × 2,950"
+}

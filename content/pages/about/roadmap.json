@@ -1,0 +1,46 @@
+{
+  "eyebrow_th": "แผนงานในประเทศไทย",
+  "eyebrow_zh": "泰国发展路线图",
+  "eyebrow_en": "Our roadmap in Thailand",
+  "title_th": "จากพื้นที่ควบคุม สู่ถนนสาธารณะ",
+  "title_zh": "从封闭区域走向公共道路",
+  "title_en": "From controlled areas to public roads",
+  "steps": [
+    {
+      "title_th": "พื้นที่ปิด / ควบคุม",
+      "title_zh": "封闭 / 受控区域",
+      "title_en": "Closed, controlled areas",
+      "text_th": "เริ่มดำเนินการในพื้นที่ควบคุมร่วมกับบุคคลและยานพาหนะ เพื่อทดสอบระบบความปลอดภัยและมาตรฐานการปฏิบัติงาน (SOP)",
+      "text_zh": "在有人员与车辆的受控区域启动运营，验证安全体系与作业标准（SOP）。",
+      "text_en": "Start operations in controlled areas shared with people and vehicles, to test safety systems and standard operating procedures (SOP)."
+    },
+    {
+      "title_th": "กึ่งปิด / กึ่งสาธารณะ",
+      "title_zh": "半封闭 / 半公共道路",
+      "title_en": "Semi-closed, semi-public",
+      "text_th": "เชื่อมต่อการให้บริการสู่ถนนสาธารณะ รองรับธุรกิจ E-commerce และ Urban Logistics",
+      "text_zh": "逐步延伸至公共道路，服务电商与城市物流。",
+      "text_en": "Extend service toward public roads, supporting e-commerce and urban logistics."
+    },
+    {
+      "title_th": "ศูนย์โลจิสติกส์",
+      "title_zh": "物流中心",
+      "title_en": "Logistics centres",
+      "text_th": "เชื่อมต่อกับระบบคลังสินค้า (WMS) เพื่อยกระดับประสิทธิภาพ ลดต้นทุนแรงงาน และรองรับการใช้งานเชิงพาณิชย์ในวงกว้าง",
+      "text_zh": "对接仓储管理系统（WMS），提升效率、降低人力成本，支持更大规模商业化。",
+      "text_en": "Connect to warehouse systems (WMS) to raise efficiency, cut labour cost and support wider commercial use."
+    },
+    {
+      "title_th": "ขนส่งบนถนนสาธารณะ",
+      "title_zh": "公共道路运输",
+      "title_en": "Public roads",
+      "text_th": "ใช้งานเชิงพาณิชย์เต็มรูปแบบ ตามกรอบกฎหมาย มาตรฐานความปลอดภัย และ SOP ที่ตรวจสอบได้",
+      "text_zh": "在法律框架、安全标准与可审计 SOP 下全面商业化运营。",
+      "text_en": "Full commercial operation within the legal framework, safety standards and auditable SOPs."
+    }
+  ],
+  "target_number": "10,000",
+  "target_text_th": "เป้าหมายยอดรถขนส่งไร้คนขับในประเทศไทยภายในปี 2030 (พ.ศ. 2573) ตามแผนงานใน Company Profile ของ SuperX AI",
+  "target_text_zh": "目标：到 2030 年在泰国实现 10,000 辆无人物流车（依据 SuperX AI 公司简介中的规划）。",
+  "target_text_en": "Target: 10,000 autonomous logistics vehicles in Thailand by 2030, as set out in the SuperX AI company profile."
+}

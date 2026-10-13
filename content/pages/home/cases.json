@@ -1,0 +1,93 @@
+{
+  "eyebrow_th": "ผลงานและพันธมิตร",
+  "eyebrow_zh": "合作伙伴与案例",
+  "eyebrow_en": "Projects and partners",
+  "title_th": "โครงการนำร่องในประเทศไทย",
+  "title_zh": "泰国试点项目",
+  "title_en": "Pilot projects in Thailand",
+  "link_label_th": "ดูผลงานทั้งหมด",
+  "link_label_zh": "查看全部案例",
+  "link_label_en": "See all projects",
+  "link": "cases.html",
+  "cards": [
+    {
+      "link": "cases.html#tcav",
+      "image": "/assets/img/tcav-photo-sign.webp",
+      "alt": "RoboVan at the T-CAV testing centre sign",
+      "status_th": "โครงการนำร่อง",
+      "status_zh": "试点项目",
+      "status_en": "Pilot",
+      "location_th": "ระยอง (EECi)",
+      "location_zh": "罗勇府（EECi）",
+      "location_en": "Rayong (EECi)",
+      "title_th": "ศูนย์ทดสอบยานยนต์เชื่อมต่อและอัตโนมัติ (T-CAV)",
+      "title_zh": "网联与自动驾驶汽车测试中心（T-CAV）",
+      "title_en": "T-CAV testing centre",
+      "text_th": "ทดสอบและวางแผนการนำเส้นทางวิ่งรถไร้คนขับใน EECi",
+      "text_zh": "在 EECi 测试并规划无人车运行路线",
+      "text_en": "Testing and planning driverless routes in the EECi"
+    },
+    {
+      "link": "cases.html#wha",
+      "image": "/assets/img/case-wha-fire.webp",
+      "alt": "RoboVan at the WHA ESIE 1 fire station",
+      "status_th": "โครงการนำร่อง",
+      "status_zh": "试点项目",
+      "status_en": "Pilot",
+      "location_th": "นิคม WHA ESIE 1",
+      "location_zh": "WHA ESIE 1 工业园",
+      "location_en": "WHA ESIE 1 estate",
+      "title_th": "WHA ESIE 1",
+      "title_zh": "WHA ESIE 1",
+      "title_en": "WHA ESIE 1",
+      "text_th": "ทดสอบและวางแผนเส้นทางวิ่งรถไร้คนขับในนิคมอุตสาหกรรม",
+      "text_zh": "在工业园区测试并规划无人车路线",
+      "text_en": "Testing and planning driverless routes inside the industrial estate"
+    },
+    {
+      "link": "cases.html#thaipost",
+      "image": "/assets/img/case-thaipost-1.webp",
+      "alt": "RoboVan at Thailand Post headquarters",
+      "status_th": "โครงการนำร่อง",
+      "status_zh": "试点项目",
+      "status_en": "Pilot",
+      "location_th": "กรุงเทพฯ",
+      "location_zh": "曼谷",
+      "location_en": "Bangkok",
+      "title_th": "ไปรษณีย์ไทย สำนักงานใหญ่",
+      "title_zh": "泰国邮政总部",
+      "title_en": "Thailand Post headquarters",
+      "text_th": "ทดสอบและวางแผนเส้นทางวิ่งรถไร้คนขับที่สำนักงานใหญ่",
+      "text_zh": "在总部园区测试并规划无人车路线",
+      "text_en": "Testing and planning driverless routes at the head office"
+    }
+  ],
+  "strip": [
+    {
+      "label_th": "พันธมิตรเทคโนโลยี",
+      "label_zh": "技术合作伙伴",
+      "label_en": "Technology partner",
+      "name_th": "Zelostech",
+      "name_zh": "Zelostech",
+      "name_en": "Zelostech",
+      "small_th": "เทคโนโลยีขับขี่อัตโนมัติ L4",
+      "small_zh": "L4 自动驾驶技术",
+      "small_en": "L4 autonomous driving"
+    },
+    {
+      "label_th": "ในเครือ",
+      "label_zh": "隶属",
+      "label_en": "Part of",
+      "name_th": "DIMET (Siam) PCL",
+      "name_zh": "DIMET (Siam) PCL",
+      "name_en": "DIMET (Siam) PCL",
+      "small_th": "บริษัทจดทะเบียนในตลาดหลักทรัพย์ฯ",
+      "small_zh": "泰国上市公司",
+      "small_en": "SET-listed group"
+    }
+  ],
+  "strip_link_label_th": "พันธมิตรทั้งหมด",
+  "strip_link_label_zh": "全部合作伙伴",
+  "strip_link_label_en": "All partners",
+  "strip_link": "about.html#partners"
+}

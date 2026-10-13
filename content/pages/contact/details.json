@@ -1,0 +1,49 @@
+{
+  "eyebrow_th": "ช่องทางติดต่อ",
+  "eyebrow_zh": "联系方式",
+  "eyebrow_en": "Get in touch",
+  "label_phone_th": "โทรศัพท์",
+  "label_phone_zh": "电话",
+  "label_phone_en": "Phone",
+  "label_email_th": "อีเมล",
+  "label_email_zh": "邮箱",
+  "label_email_en": "Email",
+  "label_address_th": "ที่อยู่",
+  "label_address_zh": "地址",
+  "label_address_en": "Address",
+  "label_website_th": "เว็บไซต์",
+  "label_website_zh": "网站",
+  "label_website_en": "Website",
+  "maps_button_th": "เปิดแผนที่ใน Google Maps",
+  "maps_button_zh": "在 Google 地图中打开",
+  "maps_button_en": "Open in Google Maps",
+  "next_title_th": "หลังจากส่งข้อมูล",
+  "next_title_zh": "提交之后",
+  "next_title_en": "What happens next",
+  "next_steps": [
+    {
+      "title_th": "ทีมงานติดต่อกลับ",
+      "title_zh": "团队联系您",
+      "title_en": "We call you back",
+      "text_th": "สอบถามความต้องการ พื้นที่ และเส้นทางเบื้องต้น",
+      "text_zh": "初步了解需求、场地与线路。",
+      "text_en": "A first conversation about your needs, site and routes."
+    },
+    {
+      "title_th": "สำรวจหน้างานหรือสาธิต",
+      "title_zh": "现场勘察或演示",
+      "title_en": "Site survey or demo",
+      "text_th": "นัดดูพื้นที่จริงหรือดูรถทำงานจริง",
+      "text_zh": "预约实地勘察或观看实车演示。",
+      "text_en": "We visit your site or show you a vehicle in action."
+    },
+    {
+      "title_th": "เสนอโซลูชันและ ROI",
+      "title_zh": "方案与 ROI",
+      "title_en": "Proposal and ROI",
+      "text_th": "เสนอรุ่น รูปแบบซื้อหรือเช่า และความคุ้มค่า",
+      "text_zh": "推荐车型、购买或租赁方式及投资回报。",
+      "text_en": "Recommended models, buy or lease options and the payback."
+    }
+  ]
+}

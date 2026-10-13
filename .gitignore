@@ -1,0 +1,11 @@
+# Made automatically by build/build.py on every deploy
+public/
+worker-data.json
+
+# Tools and system files
+.wrangler/
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

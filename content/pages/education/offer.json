@@ -1,0 +1,43 @@
+{
+  "eyebrow_th": "สิ่งที่ SuperX AI ส่งมอบ",
+  "eyebrow_zh": "SuperX AI 提供",
+  "eyebrow_en": "What SuperX AI provides",
+  "title_th": "ตั้งแต่ตัวรถ หลักสูตร จนถึงการอบรมผู้สอน",
+  "title_zh": "从车辆、课程到师资培训",
+  "title_en": "Vehicles, curriculum and instructor training",
+  "checks": [
+    {
+      "text_th": "แพลตฟอร์มรถสำหรับการเรียนการสอน (สอบถามรุ่นและสเปกที่เหมาะกับสถาบัน)",
+      "text_zh": "教学用车辆平台（可咨询适合贵校的型号与配置）",
+      "text_en": "Teaching vehicle platforms (ask which model suits your institution)"
+    },
+    {
+      "text_th": "ออกแบบหลักสูตรและห้องปฏิบัติการร่วมกับสถาบัน",
+      "text_zh": "与院校共同设计课程与实验室",
+      "text_en": "Curriculum and lab design with your faculty"
+    },
+    {
+      "text_th": "อบรมผู้สอนและนักศึกษาโดยทีมวิศวกรของ SuperX AI",
+      "text_zh": "由 SuperX AI 工程师培训教师与学生",
+      "text_en": "Instructor and student training by SuperX AI engineers"
+    },
+    {
+      "text_th": "ประสบการณ์ภาคสนามจากโครงการนำร่องในประเทศไทย",
+      "text_zh": "源自泰国试点项目的现场经验",
+      "text_en": "Field experience from pilot projects in Thailand"
+    }
+  ],
+  "button_label_th": "นัดคุยกับทีมการศึกษา",
+  "button_label_zh": "联系教育团队",
+  "button_label_en": "Talk to our education team",
+  "button_link": "contact.html?topic=education",
+  "image": "/assets/img/tcav-photo-sign.webp",
+  "alt": "RoboVan at the Testing Center for Connected and Automated Vehicles",
+  "caption_th": "กันยายน 2569: กรมวิทยาศาสตร์บริการทดสอบยานยนต์ไร้คนขับระดับ 4 ครั้งแรกของไทยที่ศูนย์ T-CAV ด้วยสถานการณ์จำลองกว่า 20 รูปแบบ",
+  "caption_zh": "2026 年 9 月：泰国科学服务厅在 T-CAV 中心完成泰国首次 L4 级无人车测试，涵盖 20 余种模拟场景。",
+  "caption_en": "September 2026: Thailand’s Department of Science Service ran the country’s first Level 4 vehicle tests at T-CAV, with more than 20 simulated scenarios.",
+  "caption_link_label_th": "อ่านข่าว",
+  "caption_link_label_zh": "阅读新闻",
+  "caption_link_label_en": "Read the news",
+  "caption_link": "news.html"
+}

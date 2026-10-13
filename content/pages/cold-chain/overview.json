@@ -1,0 +1,28 @@
+{
+  "eyebrow_th": "ตำแหน่งผลิตภัณฑ์",
+  "eyebrow_zh": "产品定位",
+  "eyebrow_en": "Overview",
+  "title_th": "รักษาคุณภาพสินค้าที่ต้องควบคุมอุณหภูมิ ตลอดเส้นทาง",
+  "title_zh": "全程守护温敏货品品质",
+  "title_en": "Keeps temperature-sensitive goods right, all the way",
+  "paragraphs": [
+    {
+      "text_th": "RoboVan ห้องเย็นไร้คนขับสำหรับโลจิสติกส์ควบคุมอุณหภูมิ ระบบทำความเย็นอัจฉริยะสองโซน ตั้งได้ตั้งแต่ −20 ถึง 12 °C ควบคุมผ่านแอป รองรับอาหารสด สินค้าแช่แข็ง ของชำ ผลิตภัณฑ์นม และเวชภัณฑ์",
+      "text_zh": "面向温控物流的无人驾驶冷藏 RoboVan，智能双温区制冷 −20 至 12 °C，可通过 APP 控制，适用于生鲜、冷冻品、食品杂货、乳制品及医药。",
+      "text_en": "Autonomous refrigerated RoboVans for temperature-controlled logistics, with intelligent dual-zone refrigeration from −20 to 12 °C controlled from the app — for fresh food, frozen goods, groceries, dairy and pharmaceuticals.",
+      "anchor": ""
+    },
+    {
+      "text_th": "**Z5 Cold-Chain** ตู้ 4.6 ลบ.ม. บรรทุก 1,555 กก. เหมาะกับเส้นทางในเมือง ชนบท และพื้นที่กึ่งปิด",
+      "text_zh": "**Z5 冷链车**：货箱 4.6 m³，载重 1,555 kg，适合城市、乡村及半封闭场景。",
+      "text_en": "The **Z5 Cold-Chain** carries 1,555 kg in 4.6 m³, for urban, rural and semi-closed routes.",
+      "anchor": "z5cold"
+    },
+    {
+      "text_th": "**Z10 Cold-Chain** ตู้ 10.2 ลบ.ม. บรรทุก 2,200 กก. สำหรับงานห้องเย็นปริมาณมาก และชาร์จ DC ได้",
+      "text_zh": "**Z10 冷链车**：货箱 10.2 m³，载重 2,200 kg，适合大批量冷链运输，支持直流快充。",
+      "text_en": "The **Z10 Cold-Chain** carries 2,200 kg in 10.2 m³ for large-scale cold chains, with DC fast charging.",
+      "anchor": "z10cold"
+    }
+  ]
+}

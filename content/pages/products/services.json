@@ -1,0 +1,66 @@
+{
+  "eyebrow_th": "รูปแบบธุรกิจและบริการ",
+  "eyebrow_zh": "商业模式与服务",
+  "eyebrow_en": "Ways to buy and services",
+  "title_th": "ซื้อหรือเช่า พร้อมบริการตลอดอายุการใช้งาน",
+  "title_zh": "购买或租赁，全生命周期服务",
+  "title_en": "Buy or lease, with lifecycle services",
+  "plans": [
+    {
+      "icon": "van",
+      "title_th": "ซื้อรถ",
+      "title_zh": "整车销售",
+      "title_en": "Vehicle sales",
+      "text_th": "ซื้อรถทั้งคันผ่านตัวแทนจำหน่ายหรือซื้อตรง พร้อมสมัครบริการระบบขับขี่ AI (FSD) รายปี",
+      "text_zh": "通过经销商或直销购买整车，并按年订阅 AI 驾驶服务（FSD）。",
+      "text_en": "Buy complete vehicles through distributors or direct, with an annual subscription to the AI driver (FSD)."
+    },
+    {
+      "icon": "leasing",
+      "title_th": "เช่ารถ",
+      "title_zh": "车辆租赁",
+      "title_en": "Vehicle leasing",
+      "text_th": "ใช้งานรถไร้คนขับแบบเช่ารายเดือนหรือรายปี โดยไม่ต้องลงทุนซื้อรถ",
+      "text_zh": "按月或按年租赁无人车，无需购置车辆。",
+      "text_en": "Use autonomous vehicles on monthly or yearly leases, without owning them."
+    }
+  ],
+  "services": [
+    {
+      "icon": "route",
+      "label_th": "สำรวจและวางเส้นทาง",
+      "label_zh": "路线部署",
+      "label_en": "Route deployment"
+    },
+    {
+      "icon": "wrench",
+      "label_th": "บำรุงรักษา",
+      "label_zh": "维护保养",
+      "label_en": "Maintenance"
+    },
+    {
+      "icon": "shield",
+      "label_th": "ประกันภัย",
+      "label_zh": "保险服务",
+      "label_en": "Insurance"
+    },
+    {
+      "icon": "signal",
+      "label_th": "เชื่อมต่อข้อมูล",
+      "label_zh": "数据通信",
+      "label_en": "Data connectivity"
+    },
+    {
+      "icon": "monitor",
+      "label_th": "เฝ้าติดตามรถระยะไกล",
+      "label_zh": "远程车辆监控",
+      "label_en": "Remote vehicle monitoring"
+    },
+    {
+      "icon": "headset",
+      "label_th": "ทีมสนับสนุน",
+      "label_zh": "技术支持",
+      "label_en": "Support"
+    }
+  ]
+}

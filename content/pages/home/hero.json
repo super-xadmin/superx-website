@@ -1,0 +1,42 @@
+{
+  "video": "/assets/video/hero.mp4",
+  "poster": "/assets/img/hero-poster.webp",
+  "eyebrow": "AI in Motion. Intelligence in Action.",
+  "title_th": "เทคโนโลยีขับขี่อัตโนมัติระดับโลก\nใช้งานจริงในประเทศไทย",
+  "title_zh": "全球领先的自动驾驶技术\n在泰国落地运营",
+  "title_en": "Global autonomous technology.\nLocal execution for Thailand.",
+  "lead_th": "รถขนส่งไร้คนขับ RoboVan ระดับ L4 และ AI Agent สำหรับโรงงาน คลังสินค้า ศูนย์กระจายสินค้า และนิคมอุตสาหกรรม ทีมงานในประเทศไทยดูแลตั้งแต่สำรวจหน้างานจนถึงบริการหลังการขาย",
+  "lead_zh": "面向工厂、仓库、配送中心和工业园区的 L4 级无人配送车 RoboVan 与企业级 AI Agent，泰国本地团队提供从现场勘察到售后服务的全程支持。",
+  "lead_en": "L4 autonomous RoboVans and enterprise AI agents for factories, warehouses, distribution centres and industrial estates, supported by our Thailand team from site survey to after-sales service.",
+  "btn1_label_th": "นัดหมายสาธิต",
+  "btn1_label_zh": "预约演示",
+  "btn1_label_en": "Book a demo",
+  "btn1_link": "contact.html?topic=demo",
+  "btn2_label_th": "ดูรถ RoboVan ทุกรุ่น",
+  "btn2_label_zh": "查看全部车型",
+  "btn2_label_en": "See every RoboVan",
+  "btn2_link": "products.html",
+  "facts": [
+    {
+      "value": "L4",
+      "label_th": "ขับขี่อัตโนมัติเต็มรูปแบบ",
+      "label_zh": "高级别自动驾驶",
+      "label_en": "Full-stack autonomy"
+    },
+    {
+      "value": "24/7",
+      "label_th": "ทีมเฝ้าระวังความปลอดภัย",
+      "label_zh": "远程安全监控",
+      "label_en": "Remote safety monitoring"
+    },
+    {
+      "value": "4.6–20 m³",
+      "label_th": "ขนาดตู้สินค้าให้เลือก",
+      "label_zh": "多种货箱规格",
+      "label_en": "Cargo sizes available"
+    }
+  ],
+  "caption_th": "ภาพจริงจากโครงการนำร่อง WHA ESIE 1",
+  "caption_zh": "WHA ESIE 1 试点项目实拍",
+  "caption_en": "Footage from our WHA ESIE 1 pilot"
+}

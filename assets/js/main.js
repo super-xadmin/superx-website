@@ -5,11 +5,18 @@
   var root = document.documentElement;
 
   /* Where the contact form can send by itself:
-     - Cloudflare Pages (pages.dev, super-x.tech): POST /api/lead, which posts a card to the sales team's Lark group (_worker.js)
+     - Cloudflare (workers.dev, pages.dev, super-x.tech): POST /api/lead, which posts a card to the sales team's Lark group (worker.js)
      - Netlify: Netlify Forms
      Anywhere else (opened from a folder, a preview link) it shows the message to send by email. */
-  var LEAD_API_HOSTS = [/\.pages\.dev$/i, /(^|\.)super-x\.tech$/i, /^(localhost|127\.0\.0\.1)$/];
+  var LEAD_API_HOSTS = [/\.pages\.dev$/i, /\.workers\.dev$/i, /(^|\.)super-x\.tech$/i, /^(localhost|127\.0\.0\.1)$/];
   var NETLIFY_HOSTS = [/\.netlify\.app$/i];
+
+  /* Form and copy-button texts edited in the back office (contact page → messages), written into the page as JSON */
+  var PAGE_MSGS = {};
+  try {
+    var msgEl = document.getElementById('form-msgs');
+    if (msgEl) PAGE_MSGS = JSON.parse(msgEl.textContent) || {};
+  } catch (e) { PAGE_MSGS = {}; }
 
   function store(key, val) {
     try { if (val === undefined) return localStorage.getItem(key); localStorage.setItem(key, val); } catch (e) { return null; }
@@ -123,7 +130,8 @@
       var label = btn.querySelector('.copy-label');
       if (!label) return;
       var old = label.innerHTML;
-      label.innerHTML = { th: 'คัดลอกแล้ว', zh: '已复制', en: 'Copied' }[currentLang()];
+      var copied = PAGE_MSGS.copied || { th: 'คัดลอกแล้ว', zh: '已复制', en: 'Copied' };
+      label.textContent = copied[currentLang()] || copied.th || '';
       setTimeout(function () { label.innerHTML = old; }, 1600);
     };
     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -172,6 +180,11 @@
       copy: { th: 'คัดลอกข้อความ', zh: '复制内容', en: 'Copy message' },
       mail: { th: 'เปิดอีเมล', zh: '打开邮件', en: 'Open email' }
     };
+    Object.keys(msgs).forEach(function (k) {
+      var v = PAGE_MSGS[k];
+      if (v && typeof v === 'object') msgs[k] = { th: v.th || msgs[k].th, zh: v.zh || v.en || msgs[k].zh, en: v.en || v.th || msgs[k].en };
+    });
+    var mailTo = typeof PAGE_MSGS.email === 'string' && PAGE_MSGS.email ? PAGE_MSGS.email : 'info@super-x.tech';
     var tr = function (k) { return msgs[k][currentLang()]; };
     var labelOf = function (el) {
       var lab = form.querySelector('label[for="' + el.id + '"] [data-l="' + currentLang() + '"]');
@@ -199,7 +212,7 @@
       result.querySelector('.copy-label').textContent = tr('copy');
       var mail = result.querySelector('#form-mail');
       mail.textContent = tr('mail');
-      mail.href = 'mailto:info@super-x.tech?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(text);
+      mail.href = 'mailto:' + mailTo + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(text);
       result.hidden = false;
       statusLine.textContent = '';
     };

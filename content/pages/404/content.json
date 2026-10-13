@@ -1,0 +1,29 @@
+{
+  "eyebrow": "404",
+  "title_th": "ไม่พบหน้านี้",
+  "title_zh": "页面不存在",
+  "title_en": "Page not found",
+  "lead_th": "ลิงก์อาจเปลี่ยนไป หรือหน้านี้ถูกย้ายแล้ว เลือกไปต่อจากด้านล่างได้เลย",
+  "lead_zh": "链接可能已更改或页面已移动，请从下方继续浏览。",
+  "lead_en": "The link may have changed or the page has moved. Carry on from here.",
+  "buttons": [
+    {
+      "label_th": "กลับหน้าแรก",
+      "label_zh": "返回首页",
+      "label_en": "Back to home",
+      "link": "index.html"
+    },
+    {
+      "label_th": "ดูผลิตภัณฑ์",
+      "label_zh": "产品中心",
+      "label_en": "Products",
+      "link": "products.html"
+    },
+    {
+      "label_th": "ติดต่อเรา",
+      "label_zh": "联系我们",
+      "label_en": "Contact us",
+      "link": "contact.html"
+    }
+  ]
+}

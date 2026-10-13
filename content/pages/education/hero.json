@@ -1,0 +1,20 @@
+{
+  "image": "/assets/img/case-tcav-team.webp",
+  "alt": "Visitors around a RoboVan at the T-CAV testing centre",
+  "crumb_th": "รถไร้คนขับเพื่อการศึกษา",
+  "crumb_zh": "教育无人车",
+  "crumb_en": "Education",
+  "eyebrow_th": "การศึกษาด้านยานยนต์ไร้คนขับ",
+  "eyebrow_zh": "无人驾驶教育",
+  "eyebrow_en": "Autonomous driving education",
+  "title_th": "รถไร้คนขับเพื่อการศึกษา",
+  "title_zh": "教育无人车",
+  "title_en": "Autonomous vehicles for education",
+  "lead_th": "แพลตฟอร์มยานยนต์ไร้คนขับและการอบรม สำหรับมหาวิทยาลัย สถาบันอาชีวะ และศูนย์วิจัย เพื่อสร้างบุคลากรด้านยานยนต์อัตโนมัติของประเทศไทย",
+  "lead_zh": "面向高校、职业院校与科研机构的无人驾驶教学平台与培训，助力泰国培养自动驾驶人才。",
+  "lead_en": "Autonomous vehicle platforms and training for universities, vocational colleges and research centres, building Thailand’s autonomous-mobility workforce.",
+  "button_label_th": "ขอข้อมูลสำหรับสถาบัน",
+  "button_label_zh": "院校咨询",
+  "button_label_en": "Enquire for your institution",
+  "button_link": "contact.html?topic=education"
+}

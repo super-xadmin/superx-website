@@ -1,0 +1,25 @@
+{
+  "eyebrow_th": "ดาวน์โหลด",
+  "eyebrow_zh": "下载资料",
+  "eyebrow_en": "Downloads",
+  "title_th": "เอกสารผลิตภัณฑ์",
+  "title_zh": "产品资料下载",
+  "title_en": "Product documents",
+  "lead_th": "สเปกชีทฉบับ PDF สำหรับแนบเสนอผู้บริหารหรือฝ่ายจัดซื้อ",
+  "lead_zh": "PDF 版产品参数，方便提交管理层或采购部门。",
+  "lead_en": "PDF spec sheets to share with management or procurement.",
+  "items": [
+    {
+      "file": "/assets/docs/SuperX-Z10-Freight-RoboVan.pdf",
+      "title": "Z10 Freight RoboVan"
+    },
+    {
+      "file": "/assets/docs/SuperX-Z20-RoboVan.pdf",
+      "title": "Z20 RoboVan"
+    },
+    {
+      "file": "/assets/docs/SuperX-Product-Catalog-2026.pdf",
+      "title": "SuperX AI Product Catalogue 2026"
+    }
+  ]
+}

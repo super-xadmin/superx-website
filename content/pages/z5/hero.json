@@ -1,0 +1,46 @@
+{
+  "model": "content/models/z5.json",
+  "image": "",
+  "crumb_th": "RoboVan Z5",
+  "crumb_zh": "RoboVan Z5",
+  "crumb_en": "RoboVan Z5",
+  "eyebrow_th": "RoboVan · Z5 Series",
+  "eyebrow_zh": "RoboVan · Z5 系列",
+  "eyebrow_en": "RoboVan · Z5 Series",
+  "title_th": "Z5 RoboVan",
+  "title_zh": "Z5 RoboVan",
+  "title_en": "Z5 RoboVan",
+  "lead_th": "รถขนส่งไร้คนขับระดับ L4 สำหรับโรงงาน คลังสินค้า และศูนย์กระจายสินค้า มีทั้งรุ่นมาตรฐานและ Z5 Plus พื้นเรียบสำหรับพาเลท",
+  "lead_zh": "面向工厂、仓库与配送中心的 L4 级无人配送车，提供标准版与平地板 Z5 Plus。",
+  "lead_en": "An L4 driverless van for factories, warehouses and distribution centres, in standard and flat-floor Z5 Plus versions.",
+  "figures": [
+    {
+      "value": "6.2",
+      "unit": "m³",
+      "label_th": "ปริมาตรตู้",
+      "label_zh": "货箱容积",
+      "label_en": "Cargo volume"
+    },
+    {
+      "value": "1,800",
+      "unit": "kg",
+      "label_th": "น้ำหนักบรรทุก",
+      "label_zh": "额定载重",
+      "label_en": "Payload"
+    },
+    {
+      "value": "230",
+      "unit": "km",
+      "label_th": "ระยะวิ่งสูงสุด",
+      "label_zh": "最大续航",
+      "label_en": "Maximum range"
+    },
+    {
+      "value": "40.8",
+      "unit": "kWh",
+      "label_th": "แบตเตอรี่ LFP",
+      "label_zh": "磷酸铁锂电池",
+      "label_en": "LFP battery"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "eyebrow_th": "ทำไมต้องหุ่นยนต์",
+  "eyebrow_zh": "为什么选择机器人",
+  "eyebrow_en": "Why robots",
+  "title_th": "ความปลอดภัยที่สม่ำเสมอ ตลอด 24 ชั่วโมง",
+  "title_zh": "全天候、稳定一致的安全保障",
+  "title_en": "Consistent protection, around the clock",
+  "items": [
+    {
+      "icon": "clock",
+      "title_th": "ทำงานได้ 24/7",
+      "title_zh": "24/7 运行",
+      "title_en": "Works 24/7",
+      "text_th": "ลาดตระเวนตามรอบเวลาเดิมทุกคืน ไม่มีเหนื่อยหรือขาดงาน",
+      "text_zh": "每晚按同一节奏巡逻，不疲劳、不缺勤。",
+      "text_en": "Patrols the same rounds every night, without fatigue or absences."
+    },
+    {
+      "icon": "shield",
+      "title_th": "ลดความเสี่ยงของพนักงาน",
+      "title_zh": "降低人员风险",
+      "title_en": "Less risk to staff",
+      "text_th": "ส่งหุ่นยนต์เข้าพื้นที่อันตรายก่อน คนเข้าไปเมื่อจำเป็นเท่านั้น",
+      "text_zh": "先派机器人进入危险区域，必要时人员再介入。",
+      "text_en": "Robots go into hazardous areas first; people follow only when needed."
+    },
+    {
+      "icon": "camera",
+      "title_th": "มีหลักฐานทุกเหตุการณ์",
+      "title_zh": "全程留痕",
+      "title_en": "A record of every round",
+      "text_th": "บันทึกภาพ ตำแหน่ง และเวลา ตรวจย้อนหลังได้",
+      "text_zh": "记录影像、位置与时间，可随时回溯。",
+      "text_en": "Video, location and time logged for later review."
+    },
+    {
+      "icon": "monitor",
+      "title_th": "รวมศูนย์ควบคุม",
+      "title_zh": "统一控制中心",
+      "title_en": "One control room",
+      "text_th": "ดูหุ่นยนต์และรถทุกคันจากศูนย์เดียวผ่าน SuperX AI Control",
+      "text_zh": "通过 SuperX AI Control 统一查看所有机器人与车辆。",
+      "text_en": "See every robot and vehicle from one place with SuperX AI Control."
+    }
+  ]
+}

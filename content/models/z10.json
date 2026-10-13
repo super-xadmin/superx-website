@@ -1,0 +1,157 @@
+{
+  "model_name": "Z10",
+  "full_name": "Z10 Freight RoboVan",
+  "type_th": "รถขนส่งความจุสูง",
+  "type_zh": "大容量货运",
+  "type_en": "High-capacity freight",
+  "image": "/assets/img/product-z10.webp",
+  "pdf": "/assets/docs/SuperX-Z10-Freight-RoboVan.pdf",
+  "page": "z10.html",
+  "card_button": "details",
+  "card_tag_th": "",
+  "card_tag_zh": "",
+  "card_tag_en": "",
+  "card_tag_style": "normal",
+  "card_facts": [
+    {
+      "label_th": "ปริมาตร",
+      "label_zh": "容积",
+      "label_en": "Volume",
+      "value": "12.5 m³"
+    },
+    {
+      "label_th": "บรรทุก",
+      "label_zh": "载重",
+      "label_en": "Payload",
+      "value": "2,500 kg"
+    },
+    {
+      "label_th": "ระยะวิ่ง",
+      "label_zh": "续航",
+      "label_en": "Range",
+      "value": "250 km"
+    }
+  ],
+  "length": 4319,
+  "width": 1905,
+  "height": 2808,
+  "specs": [
+    {
+      "key": "dims",
+      "value_th": "4,319 × 1,905 × 2,808",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "cargo_dims",
+      "value_th": "3,831 × 1,745 × 1,870",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "volume",
+      "value_th": "12.5",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "payload",
+      "value_th": "2,500",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "range",
+      "value_th": "250",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "speed",
+      "value_th": "40",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "climb",
+      "value_th": "20% (11.3°)",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "turning",
+      "value_th": "5.6",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "clearance",
+      "value_th": "171",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "wading",
+      "value_th": "380",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "optemp",
+      "value_th": "−30 ถึง 60",
+      "value_zh": "−30 至 60",
+      "value_en": "−30 to 60"
+    },
+    {
+      "key": "ip",
+      "value_th": "IP55",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "battery_type",
+      "value_th": "ลิเธียมไอรอนฟอสเฟต (LFP)",
+      "value_zh": "磷酸铁锂",
+      "value_en": "Lithium iron phosphate (LFP)"
+    },
+    {
+      "key": "battery",
+      "value_th": "55.9",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "fast",
+      "value_th": "0.6 ชม. (DC)",
+      "value_zh": "0.6 小时（直流）",
+      "value_en": "0.6 h (DC)"
+    },
+    {
+      "key": "slow",
+      "value_th": "5.5 ชม. (AC)*",
+      "value_zh": "5.5 小时（交流）*",
+      "value_en": "5.5 h (AC)*"
+    },
+    {
+      "key": "lock",
+      "value_th": "ล็อกก้านกลไก",
+      "value_zh": "机械杆锁",
+      "value_en": "Mechanical rod lock"
+    },
+    {
+      "key": "color",
+      "value_th": "ขาว Starlight / ฟ้า Glacier",
+      "value_zh": "星光白 / 冰川蓝",
+      "value_en": "Starlight White / Glacier Blue"
+    }
+  ],
+  "cmp_volume_th": "12.5",
+  "cmp_volume_zh": "12.5",
+  "cmp_volume_en": "12.5",
+  "cmp_payload": "2,500",
+  "cmp_range": "250",
+  "cmp_battery": "55.9",
+  "cmp_cold": "—",
+  "cmp_speed": "40",
+  "cmp_dims": "4,319 × 1,905 × 2,808"
+}

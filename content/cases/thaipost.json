@@ -1,0 +1,47 @@
+{
+  "video": "",
+  "poster": "",
+  "video_caption_th": "",
+  "video_caption_zh": "",
+  "video_caption_en": "",
+  "video_position": "text",
+  "anchor": "thaipost",
+  "group": "thailand",
+  "order": 3,
+  "hide": false,
+  "eyebrow_th": "โครงการนำร่อง · กรุงเทพฯ",
+  "eyebrow_zh": "试点项目 · 曼谷",
+  "eyebrow_en": "Pilot · Bangkok",
+  "title_th": "ไปรษณีย์ไทย สำนักงานใหญ่",
+  "title_zh": "泰国邮政总部",
+  "title_en": "Thailand Post headquarters",
+  "paragraphs": [
+    {
+      "text_th": "ทดสอบและวางแผนการนำเส้นทางวิ่งรถไร้คนขับ ที่สำนักงานใหญ่ ไปรษณีย์ไทย",
+      "text_zh": "在泰国邮政总部测试并规划无人车运行路线。",
+      "text_en": "Testing and planning autonomous routes at Thailand Post’s head office."
+    }
+  ],
+  "place_th": "สำนักงานใหญ่ ไปรษณีย์ไทย กรุงเทพฯ",
+  "place_zh": "泰国邮政总部，曼谷",
+  "place_en": "Thailand Post head office, Bangkok",
+  "scope_th": "ทดสอบและวางแผนเส้นทางวิ่งรถไร้คนขับ",
+  "scope_zh": "无人车路线测试与规划",
+  "scope_en": "Route testing and planning",
+  "vehicles_th": "RoboVan Z5 Cold-Chain",
+  "vehicles_zh": "RoboVan Z5 冷链车",
+  "vehicles_en": "RoboVan Z5 Cold-Chain",
+  "status_th": "โครงการนำร่อง",
+  "status_zh": "试点项目",
+  "status_en": "Pilot project",
+  "gallery": [
+    {
+      "image": "/assets/img/case-thaipost-1.webp",
+      "alt": "RoboVan at Thailand Post headquarters"
+    },
+    {
+      "image": "/assets/img/case-thaipost-2.webp",
+      "alt": "RoboVan beside Thailand Post trucks"
+    }
+  ]
+}

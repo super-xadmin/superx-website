@@ -1,0 +1,245 @@
+{
+  "item_header_th": "รายการ",
+  "item_header_zh": "项目",
+  "item_header_en": "Specification",
+  "rows": [
+    {
+      "key": "dims",
+      "label_th": "ขนาดตัวรถ ยาว × กว้าง × สูง (มม.)",
+      "label_zh": "整车尺寸 长 × 宽 × 高 (mm)",
+      "label_en": "Dimensions L × W × H (mm)"
+    },
+    {
+      "key": "cargo_dims",
+      "label_th": "ขนาดภายในตู้สินค้า (มม.)",
+      "label_zh": "货箱内部尺寸 (mm)",
+      "label_en": "Cargo interior L × W × H (mm)"
+    },
+    {
+      "key": "volume",
+      "label_th": "ปริมาตรตู้สินค้า (ลบ.ม.)",
+      "label_zh": "货箱容积 (m³)",
+      "label_en": "Cargo volume (m³)"
+    },
+    {
+      "key": "compartments",
+      "label_th": "จำนวนช่องล็อกเกอร์",
+      "label_zh": "格口数量",
+      "label_en": "Locker compartments"
+    },
+    {
+      "key": "payload",
+      "label_th": "น้ำหนักบรรทุก (กก.)",
+      "label_zh": "额定载重 (kg)",
+      "label_en": "Payload (kg)"
+    },
+    {
+      "key": "gvw",
+      "label_th": "น้ำหนักรวมสูงสุดตามการออกแบบ (กก.)",
+      "label_zh": "最大设计总质量 (kg)",
+      "label_en": "Maximum design gross mass (kg)"
+    },
+    {
+      "key": "doors",
+      "label_th": "ขนาดช่องประตู (มม.)",
+      "label_zh": "门洞尺寸 (mm)",
+      "label_en": "Door openings (mm)"
+    },
+    {
+      "key": "floor_h",
+      "label_th": "ความสูงพื้นตู้จากพื้นถนน (มม.)",
+      "label_zh": "货箱地板离地高度 (mm)",
+      "label_en": "Cargo floor height (mm)"
+    },
+    {
+      "key": "range",
+      "label_th": "ระยะทางวิ่งสูงสุด (กม.)",
+      "label_zh": "最大续航 (km)",
+      "label_en": "Maximum range (km)"
+    },
+    {
+      "key": "speed",
+      "label_th": "ความเร็วสูงสุด (กม./ชม.)",
+      "label_zh": "最高车速 (km/h)",
+      "label_en": "Maximum speed (km/h)"
+    },
+    {
+      "key": "climb",
+      "label_th": "ความชันไต่สูงสุด",
+      "label_zh": "最大爬坡度",
+      "label_en": "Maximum climbing gradient"
+    },
+    {
+      "key": "turning",
+      "label_th": "รัศมีวงเลี้ยวต่ำสุด (ม.)",
+      "label_zh": "最小转弯半径 (m)",
+      "label_en": "Minimum turning radius (m)"
+    },
+    {
+      "key": "clearance",
+      "label_th": "ระยะห่างใต้ท้องรถต่ำสุด (มม.)",
+      "label_zh": "最小离地间隙 (mm)",
+      "label_en": "Minimum ground clearance (mm)"
+    },
+    {
+      "key": "wading",
+      "label_th": "ความลึกลุยน้ำสูงสุด (มม.)",
+      "label_zh": "最大涉水深度 (mm)",
+      "label_en": "Maximum wading depth (mm)"
+    },
+    {
+      "key": "optemp",
+      "label_th": "อุณหภูมิการใช้งาน (°C)",
+      "label_zh": "工作温度 (°C)",
+      "label_en": "Operating temperature (°C)"
+    },
+    {
+      "key": "ip",
+      "label_th": "มาตรฐานกันน้ำกันฝุ่น",
+      "label_zh": "防护等级",
+      "label_en": "IP rating"
+    },
+    {
+      "key": "battery_type",
+      "label_th": "ชนิดแบตเตอรี่",
+      "label_zh": "动力电池类型",
+      "label_en": "Battery type"
+    },
+    {
+      "key": "battery",
+      "label_th": "ความจุแบตเตอรี่ (kWh)",
+      "label_zh": "电池容量 (kWh)",
+      "label_en": "Battery capacity (kWh)"
+    },
+    {
+      "key": "voltage",
+      "label_th": "แพลตฟอร์มแรงดันไฟฟ้า",
+      "label_zh": "电压平台",
+      "label_en": "Voltage platform"
+    },
+    {
+      "key": "fast",
+      "label_th": "ชาร์จเร็ว (30–80%)",
+      "label_zh": "快充 (30%–80%)",
+      "label_en": "Fast charging (30–80%)"
+    },
+    {
+      "key": "slow",
+      "label_th": "ชาร์จปกติ (30–80%)",
+      "label_zh": "慢充 (30%–80%)",
+      "label_en": "AC charging (30–80%)"
+    },
+    {
+      "key": "refrig_temp",
+      "label_th": "ช่วงอุณหภูมิห้องเย็น (°C)",
+      "label_zh": "制冷温度范围 (°C)",
+      "label_en": "Refrigeration range (°C)"
+    },
+    {
+      "key": "refrig_power",
+      "label_th": "กำลังระบบทำความเย็น",
+      "label_zh": "制冷功率",
+      "label_en": "Refrigeration power"
+    },
+    {
+      "key": "refrig_ctrl",
+      "label_th": "การควบคุมอุณหภูมิ",
+      "label_zh": "制冷控制方式",
+      "label_en": "Refrigeration control"
+    },
+    {
+      "key": "lock",
+      "label_th": "ระบบล็อกตู้สินค้า",
+      "label_zh": "锁具",
+      "label_en": "Locking system"
+    },
+    {
+      "key": "color",
+      "label_th": "สีตัวรถ",
+      "label_zh": "车身颜色",
+      "label_en": "Body colour"
+    }
+  ],
+  "groups": [
+    {
+      "title_th": "ขนาดและการบรรทุก",
+      "title_zh": "尺寸与装载",
+      "title_en": "Size and capacity",
+      "keys": [
+        "dims",
+        "cargo_dims",
+        "volume",
+        "compartments",
+        "payload",
+        "gvw",
+        "doors",
+        "floor_h"
+      ]
+    },
+    {
+      "title_th": "สมรรถนะ",
+      "title_zh": "性能",
+      "title_en": "Performance",
+      "keys": [
+        "range",
+        "speed",
+        "climb",
+        "turning",
+        "clearance",
+        "wading",
+        "optemp",
+        "ip"
+      ]
+    },
+    {
+      "title_th": "แบตเตอรี่และการชาร์จ",
+      "title_zh": "电池与充电",
+      "title_en": "Battery and charging",
+      "keys": [
+        "battery_type",
+        "battery",
+        "voltage",
+        "fast",
+        "slow"
+      ]
+    },
+    {
+      "title_th": "ระบบห้องเย็น",
+      "title_zh": "冷藏系统",
+      "title_en": "Refrigeration",
+      "keys": [
+        "refrig_temp",
+        "refrig_power",
+        "refrig_ctrl"
+      ]
+    },
+    {
+      "title_th": "ตัวรถ",
+      "title_zh": "车身",
+      "title_en": "Body",
+      "keys": [
+        "lock",
+        "color"
+      ]
+    }
+  ],
+  "charge_note_th": "* วัดด้วยเครื่องชาร์จพกพา 32 A ที่ให้มากับรถ",
+  "charge_note_zh": "* 使用随车配备的 32 A 便携式充电枪测得",
+  "charge_note_en": "* Measured with the supplied 32 A portable EV charger.",
+  "rights_note_th": "SuperX AI ขอสงวนสิทธิ์ในการตีความขั้นสุดท้ายเกี่ยวกับรุ่น ข้อมูลจำเพาะ และเนื้อหาของเอกสาร",
+  "rights_note_zh": "SuperX AI 对产品型号、规格参数及资料内容保留最终解释权。",
+  "rights_note_en": "SuperX AI reserves the final right of interpretation for product models, specifications and content.",
+  "drawing_caption_th": "ขนาดตัวรถ {model} (ภาพลายเส้นแสดงสัดส่วน)",
+  "drawing_caption_zh": "{model} 整车尺寸（示意图）",
+  "drawing_caption_en": "{model} dimensions (outline drawing)",
+  "swatches": [
+    {
+      "name": "Starlight White",
+      "color": "#F4F6F8"
+    },
+    {
+      "name": "Glacier Blue",
+      "color": "#BFDDF0"
+    }
+  ]
+}

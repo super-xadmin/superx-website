@@ -1,0 +1,49 @@
+{
+  "eyebrow_th": "เหมาะกับธุรกิจ",
+  "eyebrow_zh": "适用行业",
+  "eyebrow_en": "Built for",
+  "title_th": "ธุรกิจที่มีลูกค้าติดต่อเข้ามาทุกวัน",
+  "title_zh": "每天都有大量客户咨询的企业",
+  "title_en": "Businesses that hear from customers every day",
+  "lead_th": "ค้าปลีก โลจิสติกส์ การผลิตแบบ B2B และธุรกิจบริการ ที่ต้องการตอบลูกค้าเร็วขึ้นโดยไม่ต้องเพิ่มพนักงาน",
+  "lead_zh": "零售、物流、B2B 制造与服务业——希望更快回应客户，而无需增加人手。",
+  "lead_en": "Retail, logistics, B2B manufacturing and services that want faster responses without adding headcount.",
+  "chips": [
+    {
+      "icon": "cart",
+      "label_th": "ค้าปลีกและอีคอมเมิร์ซ",
+      "label_zh": "零售与电商",
+      "label_en": "Retail and e-commerce"
+    },
+    {
+      "icon": "van",
+      "label_th": "โลจิสติกส์และขนส่ง",
+      "label_zh": "物流运输",
+      "label_en": "Logistics"
+    },
+    {
+      "icon": "factory",
+      "label_th": "การผลิตแบบ B2B",
+      "label_zh": "B2B 制造",
+      "label_en": "B2B manufacturing"
+    },
+    {
+      "icon": "users",
+      "label_th": "ธุรกิจบริการ",
+      "label_zh": "服务业",
+      "label_en": "Services"
+    },
+    {
+      "icon": "pill",
+      "label_th": "สุขภาพและเวชภัณฑ์",
+      "label_zh": "医疗健康",
+      "label_en": "Healthcare"
+    },
+    {
+      "icon": "warehouse",
+      "label_th": "นิคมและอสังหาฯ",
+      "label_zh": "园区与地产",
+      "label_en": "Estates and property"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "label_th": "ช่องทางที่เชื่อมต่อ",
+  "label_zh": "接入渠道",
+  "label_en": "Channels",
+  "chips": [
+    {
+      "icon": "chat",
+      "label_th": "LINE",
+      "label_zh": "LINE",
+      "label_en": "LINE"
+    },
+    {
+      "icon": "chat",
+      "label_th": "Facebook Messenger",
+      "label_zh": "Facebook Messenger",
+      "label_en": "Facebook Messenger"
+    },
+    {
+      "icon": "globe",
+      "label_th": "แชตบนเว็บไซต์",
+      "label_zh": "网站在线客服",
+      "label_en": "Website chat"
+    },
+    {
+      "icon": "phone",
+      "label_th": "โทรศัพท์ (เสียง)",
+      "label_zh": "电话（语音）",
+      "label_en": "Phone (voice)"
+    }
+  ]
+}

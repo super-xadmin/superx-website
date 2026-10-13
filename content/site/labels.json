@@ -1,0 +1,92 @@
+{
+  "crumb_home_th": "หน้าแรก",
+  "crumb_home_zh": "首页",
+  "crumb_home_en": "Home",
+  "crumb_products_th": "ผลิตภัณฑ์",
+  "crumb_products_zh": "产品中心",
+  "crumb_products_en": "Products",
+  "crumb_about_th": "เกี่ยวกับ SuperX",
+  "crumb_about_zh": "关于 SuperX",
+  "crumb_about_en": "About SuperX",
+  "crumb_aria_th": "เส้นทางหน้า",
+  "crumb_aria_zh": "页面路径",
+  "crumb_aria_en": "Breadcrumb",
+  "cta_title_th": "พร้อมนำรถไร้คนขับมาใช้ในธุรกิจของคุณหรือยัง?",
+  "cta_title_zh": "准备好在您的业务中引入无人车了吗？",
+  "cta_title_en": "Ready to put autonomous vehicles to work?",
+  "cta_lead_th": "นัดหมายสาธิต ขอใบเสนอราคา หรือปรึกษาทีมงานเรื่องการสำรวจหน้างานและการวิเคราะห์ความคุ้มค่า (ROI)",
+  "cta_lead_zh": "预约演示、索取报价，或咨询现场勘察与投资回报（ROI）分析。",
+  "cta_lead_en": "Book a demo, request a quote, or talk to our team about a site survey and ROI analysis.",
+  "cta_demo_th": "นัดหมายสาธิต",
+  "cta_demo_zh": "预约演示",
+  "cta_demo_en": "Book a demo",
+  "cta_quote_th": "ขอใบเสนอราคา",
+  "cta_quote_zh": "商务咨询",
+  "cta_quote_en": "Request a quote",
+  "cta_quote_link": "contact.html?topic=quote",
+  "card_details_th": "ดูรายละเอียด",
+  "card_details_zh": "查看详情",
+  "card_details_en": "View details",
+  "card_pdf_th": "สเปก PDF",
+  "card_pdf_zh": "参数 PDF",
+  "card_pdf_en": "Spec PDF",
+  "card_quote_th": "ขอใบเสนอราคา",
+  "card_quote_zh": "询价",
+  "card_quote_en": "Get a quote",
+  "model_quote_th": "ขอใบเสนอราคา",
+  "model_quote_zh": "索取报价",
+  "model_quote_en": "Request a quote",
+  "model_demo_th": "นัดหมายสาธิต",
+  "model_demo_zh": "预约演示",
+  "model_demo_en": "Book a demo",
+  "model_nav": [
+    {
+      "section": "media",
+      "label_th": "ภาพและวิดีโอ",
+      "label_zh": "图片与视频",
+      "label_en": "Photos and video"
+    },
+    {
+      "section": "overview",
+      "label_th": "ตำแหน่งผลิตภัณฑ์",
+      "label_zh": "产品定位",
+      "label_en": "Overview"
+    },
+    {
+      "section": "uses",
+      "label_th": "การใช้งาน",
+      "label_zh": "应用场景",
+      "label_en": "Applications"
+    },
+    {
+      "section": "features",
+      "label_th": "จุดเด่น",
+      "label_zh": "核心特点",
+      "label_en": "Key features"
+    },
+    {
+      "section": "specs",
+      "label_th": "ข้อมูลจำเพาะ",
+      "label_zh": "完整参数表",
+      "label_en": "Specifications"
+    },
+    {
+      "section": "options",
+      "label_th": "ตัวเลือก",
+      "label_zh": "可选配置",
+      "label_en": "Options"
+    },
+    {
+      "section": "downloads",
+      "label_th": "ดาวน์โหลด",
+      "label_zh": "下载资料",
+      "label_en": "Downloads"
+    }
+  ],
+  "video_toggle_th": "หยุดหรือเล่นวิดีโอ",
+  "video_toggle_zh": "暂停或播放视频",
+  "video_toggle_en": "Pause or play the video",
+  "copy_th": "คัดลอก",
+  "copy_zh": "复制",
+  "copy_en": "Copy"
+}

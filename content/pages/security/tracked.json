@@ -1,0 +1,42 @@
+{
+  "image": "",
+  "alt": "",
+  "eyebrow_th": "รถตีนตะขาบไร้คนขับ · หุ่นยนต์รักษาความปลอดภัย",
+  "eyebrow_zh": "履带式无人车 · 机器人安防",
+  "eyebrow_en": "Tracked UGV · robot security",
+  "title_th": "ลาดตระเวนได้ในพื้นที่ที่รถทั่วไปเข้าไม่ถึง",
+  "title_zh": "去到普通车辆到不了的地方巡逻",
+  "title_en": "Patrols where ordinary vehicles cannot go",
+  "lead_th": "ช่วงล่างแบบตีนตะขาบเคลื่อนที่ได้บนพื้นขรุขระ ทางลาด และพื้นที่นอกถนน เหมาะกับการลาดตระเวนรอบรั้วโรงงาน นิคมอุตสาหกรรม โซลาร์ฟาร์ม และคลังสินค้า",
+  "lead_zh": "履带底盘可通行崎岖路面、坡道及非铺装区域，适用于工厂围界、工业园区、光伏电站及仓库的巡逻。",
+  "lead_en": "A tracked chassis handles rough ground, slopes and off-road areas — ideal for perimeter patrols at plants, industrial estates, solar farms and warehouses.",
+  "checks": [
+    {
+      "text_th": "ลาดตระเวนตามเส้นทางและตารางเวลาที่กำหนด",
+      "text_zh": "按设定路线与时间表自动巡逻",
+      "text_en": "Patrols set routes on a schedule"
+    },
+    {
+      "text_th": "ติดตั้งกล้องและเซนเซอร์ตามภารกิจ",
+      "text_zh": "按任务搭载摄像头与传感器",
+      "text_en": "Cameras and sensors fitted to the mission"
+    },
+    {
+      "text_th": "ส่งภาพสดและการแจ้งเตือนเข้าศูนย์ควบคุม",
+      "text_zh": "实时回传视频与告警至控制中心",
+      "text_en": "Live video and alerts to the control room"
+    },
+    {
+      "text_th": "ควบคุมจากระยะไกลได้เมื่อต้องการ",
+      "text_zh": "必要时可远程接管",
+      "text_en": "Remote control whenever needed"
+    }
+  ],
+  "note_th": "รุ่นและสเปกขึ้นอยู่กับภารกิจ ติดต่อทีมขายเพื่อรับข้อเสนอที่เหมาะกับพื้นที่ของคุณ",
+  "note_zh": "具体型号与配置视任务而定，欢迎联系销售团队获取方案。",
+  "note_en": "Models and specifications depend on the mission. Contact our sales team for a proposal for your site.",
+  "button_label_th": "ขอข้อเสนอสำหรับพื้นที่ของคุณ",
+  "button_label_zh": "获取方案",
+  "button_label_en": "Get a proposal",
+  "button_link": "contact.html?topic=security"
+}

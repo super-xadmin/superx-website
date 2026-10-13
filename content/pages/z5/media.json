@@ -1,0 +1,65 @@
+{
+  "eyebrow_th": "ภาพและวิดีโอ",
+  "eyebrow_zh": "图片与视频",
+  "eyebrow_en": "Photos and video",
+  "title_th": "ดูรถจากทุกมุม",
+  "title_zh": "全方位了解车辆",
+  "title_en": "See it from every side",
+  "gallery": [
+    {
+      "size": "g-wide",
+      "image": "/assets/img/product-z5.webp",
+      "alt": "Z5 Logistics RoboVan studio view",
+      "caption_th": "Z5 · รุ่นมาตรฐาน (ซุ้มล้อ)",
+      "caption_zh": "Z5 · 标准版（轮拱布局）",
+      "caption_en": "Z5 · standard, wheel-arch layout",
+      "studio": true
+    },
+    {
+      "size": "g-tall",
+      "image": "/assets/img/product-z5plus.webp",
+      "alt": "Z5 Plus with cargo doors open",
+      "caption_th": "Z5 Plus · พื้นเรียบ ประตูเปิดกว้าง",
+      "caption_zh": "Z5 Plus · 平地板，大开门",
+      "caption_en": "Z5 Plus · flat floor, wide doors",
+      "studio": true
+    },
+    {
+      "size": "g-third",
+      "image": "/assets/img/use-warehouse-b.webp",
+      "alt": "Z5 Plus loaded with cartons at a dock",
+      "caption_th": "ขนถ่ายสินค้าที่ท่าโหลด",
+      "caption_zh": "月台装卸",
+      "caption_en": "Loading at the dock",
+      "studio": false
+    },
+    {
+      "size": "g-third",
+      "image": "/assets/img/use-warehouse-a.webp",
+      "alt": "Z5 in an urban logistics park",
+      "caption_th": "งานโลจิสติกส์ในเมือง",
+      "caption_zh": "城市物流园区",
+      "caption_en": "Urban logistics park",
+      "studio": false
+    },
+    {
+      "size": "g-third",
+      "image": "/assets/img/tcav-photo-campus.webp",
+      "alt": "RoboVan during testing in Thailand",
+      "caption_th": "ระหว่างการทดสอบในประเทศไทย",
+      "caption_zh": "在泰国测试中",
+      "caption_en": "During testing in Thailand",
+      "studio": false
+    }
+  ],
+  "videos": [
+    {
+      "video": "/assets/video/tcav-l4-test.mp4",
+      "poster": "/assets/img/tcav-poster.webp",
+      "caption_th": "วิดีโอ: การทดสอบระดับ L4 ที่ศูนย์ T-CAV ประเทศไทย (ภาพจาก Zelostech)",
+      "caption_zh": "视频：泰国 T-CAV 中心 L4 测试（Zelostech 提供）",
+      "caption_en": "Video: L4 testing at Thailand’s T-CAV centre (footage: Zelostech)"
+    }
+  ],
+  "videos_first": false
+}

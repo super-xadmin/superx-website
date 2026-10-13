@@ -1,0 +1,64 @@
+{
+  "eyebrow_th": "จุดเด่น",
+  "eyebrow_zh": "核心特点",
+  "eyebrow_en": "Key features",
+  "title_th": "สิ่งที่ทำให้ใช้งานได้จริงในงานอุตสาหกรรม",
+  "title_zh": "为工业现场而生",
+  "title_en": "Built for industrial operations",
+  "items": [
+    {
+      "icon": "route",
+      "title_th": "ขับขี่อัตโนมัติระดับ L4",
+      "title_zh": "L4 级自动驾驶",
+      "title_en": "Level 4 autonomy",
+      "text_th": "ระบบขับขี่อัตโนมัติแบบ Full-stack ของ Zelostech วิ่งได้เองโดยไม่ต้องมีคนขับภายในพื้นที่ปฏิบัติงานที่กำหนด",
+      "text_zh": "采用 Zelostech 全栈自研自动驾驶系统，在设定的运行区域内无需驾驶员即可自主行驶。",
+      "text_en": "Zelostech’s full-stack autonomous driving runs without a driver inside the defined operating area."
+    },
+    {
+      "icon": "radar",
+      "title_th": "รับรู้รอบคัน 360°",
+      "title_zh": "360° 环境感知",
+      "title_en": "360° perception",
+      "text_th": "LiDAR กึ่งโซลิดสเตต 2 ตัว กล้อง HD 12 ตัว เรดาร์คลื่นมิลลิเมตร 2 ตัว และเรดาร์อัลตราโซนิก 12 ตัว ตรวจจับได้ไกลกว่า 100 เมตร",
+      "text_zh": "2 颗半固态激光雷达、12 个高清摄像头、2 个毫米波雷达及 12 个超声波雷达，探测距离超过 100 米。",
+      "text_en": "Two semi-solid-state LiDARs, 12 HD cameras, two millimetre-wave radars and 12 ultrasonic radars, with detection beyond 100 m."
+    },
+    {
+      "icon": "rain",
+      "title_th": "ทำงานได้ทุกสภาพอากาศ",
+      "title_zh": "全天候运行",
+      "title_en": "Rain, fog and night",
+      "text_th": "ออกแบบให้ตรวจจับได้แม่นยำทั้งฝน หมอก และกลางคืน ตัวรถกันน้ำกันฝุ่นระดับ IP55 ใช้งานได้ที่ −30 ถึง 60 °C",
+      "text_zh": "雨、雾及夜间均可稳定感知，整车防护等级 IP55，工作温度 −30 至 60 °C。",
+      "text_en": "Built to keep detecting reliably in rain, fog and at night, with an IP55 body rated for −30 to 60 °C."
+    },
+    {
+      "icon": "bolt",
+      "title_th": "ชาร์จเร็ว ใช้งานต่อเนื่อง",
+      "title_zh": "快速补能",
+      "title_en": "Fast charging",
+      "text_th": "ชาร์จเร็ว 30–80% ใน 30 นาที หรือชาร์จปกติด้วยเครื่องชาร์จพกพา 32 A ที่ให้มากับรถ",
+      "text_zh": "快充 30 分钟即可从 30% 充至 80%，亦可使用随车 32 A 便携充电枪慢充。",
+      "text_en": "Fast-charge from 30 to 80% in 30 minutes, or use the supplied 32 A portable charger."
+    },
+    {
+      "icon": "app",
+      "title_th": "สั่งงานและติดตามผ่านแอป",
+      "title_zh": "APP 调度与追踪",
+      "title_en": "Dispatch from an app",
+      "text_th": "ติดตามตำแหน่งแบบเรียลไทม์ ควบคุมรถจากระยะไกล แจ้งเตือนทาง SMS และเสียง และเชื่อม API กับระบบคลังสินค้า (WMS)",
+      "text_zh": "实时定位、远程接管、短信及语音通知，并可通过 API 对接仓储管理系统（WMS）。",
+      "text_en": "Real-time tracking, remote takeover, SMS and voice notifications, and API integration with your warehouse system (WMS)."
+    },
+    {
+      "icon": "headset",
+      "title_th": "ทีมดูแลในประเทศไทย",
+      "title_zh": "泰国本地团队",
+      "title_en": "Supported in Thailand",
+      "text_th": "สำรวจหน้างาน ทำแผนที่เส้นทาง ส่งมอบรถ อบรมทีมงาน และบริการหลังการขายโดยทีม SuperX AI ในประเทศ",
+      "text_zh": "现场勘察、路线建图、交付、培训及售后服务均由 SuperX AI 泰国团队负责。",
+      "text_en": "Site survey, route mapping, delivery, team training and after-sales service by the SuperX AI team in Thailand."
+    }
+  ]
+}

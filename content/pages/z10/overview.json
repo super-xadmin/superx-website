@@ -1,0 +1,22 @@
+{
+  "eyebrow_th": "ตำแหน่งผลิตภัณฑ์",
+  "eyebrow_zh": "产品定位",
+  "eyebrow_en": "Overview",
+  "title_th": "ขนได้มากขึ้นต่อเที่ยว สำหรับงานหนักและปริมาณสูง",
+  "title_zh": "每趟运得更多，专为重载大运量设计",
+  "title_en": "More cargo per trip for heavy, high-volume work",
+  "paragraphs": [
+    {
+      "text_th": "Z10 คือ RoboVan ไร้คนขับความจุสูง สำหรับงานโลจิสติกส์หนักและการขนส่งปริมาณมาก ขับเคลื่อนด้วยเทคโนโลยีขับขี่อัตโนมัติ L4 ของ Zelostech และการติดตั้งเชื่อมต่อระบบโดยทีม SuperX AI ในประเทศ",
+      "text_zh": "Z10 是面向重载物流与大批量运输的大容量无人驾驶 RoboVan，搭载 Zelostech L4 级自动驾驶技术，并由 SuperX AI 本地团队负责部署与系统集成。",
+      "text_en": "The Z10 is a high-capacity autonomous RoboVan for heavy-duty logistics and large-volume transport, powered by Zelostech’s L4 autonomous driving and deployed and integrated by SuperX AI’s team in Thailand.",
+      "anchor": ""
+    },
+    {
+      "text_th": "เหมาะกับการขนย้ายระหว่างคลัง การกระจายสินค้าในภูมิภาค การขนวัสดุปริมาณมาก และซัพพลายเชนที่มีปริมาณสูง ช่วยลดงานที่ต้องใช้แรงคนและทำให้การขนส่งสม่ำเสมอขึ้น",
+      "text_zh": "适用于仓间转运、区域配送、大宗物料搬运及高流量供应链，减少人工作业，让运输更稳定一致。",
+      "text_en": "It suits warehouse transfers, regional distribution, bulk material movement and high-volume supply chains, reducing manual work and making operations more consistent.",
+      "anchor": ""
+    }
+  ]
+}

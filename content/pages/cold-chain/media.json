@@ -1,0 +1,54 @@
+{
+  "eyebrow_th": "ภาพและวิดีโอ",
+  "eyebrow_zh": "图片与视频",
+  "eyebrow_en": "Photos and video",
+  "title_th": "ดูรถจากทุกมุม",
+  "title_zh": "全方位了解车辆",
+  "title_en": "See it from every side",
+  "gallery": [
+    {
+      "size": "g-third",
+      "image": "/assets/img/tcav-photo-sign.webp",
+      "alt": "Z5 Cold-Chain at the T-CAV centre",
+      "caption_th": "Z5 Cold-Chain ที่ศูนย์ T-CAV",
+      "caption_zh": "T-CAV 中心的 Z5 冷链车",
+      "caption_en": "Z5 Cold-Chain at T-CAV",
+      "studio": false
+    },
+    {
+      "size": "g-third",
+      "image": "/assets/img/case-wha-fire.webp",
+      "alt": "Z5 Cold-Chain at the WHA ESIE 1 fire station",
+      "caption_th": "Z5 Cold-Chain ที่นิคม WHA ESIE 1",
+      "caption_zh": "WHA ESIE 1 的 Z5 冷链车",
+      "caption_en": "Z5 Cold-Chain at WHA ESIE 1",
+      "studio": false
+    },
+    {
+      "size": "g-third",
+      "image": "/assets/img/use-coldchain.webp",
+      "alt": "Cold-chain RoboVan with insulated totes",
+      "caption_th": "ขนส่งกล่องควบคุมอุณหภูมิ",
+      "caption_zh": "温控周转箱运输",
+      "caption_en": "Moving temperature-controlled totes",
+      "studio": false
+    }
+  ],
+  "videos": [
+    {
+      "video": "/assets/video/wha-esie1.mp4",
+      "poster": "/assets/img/wha-poster.webp",
+      "caption_th": "วิดีโอโครงการนำร่อง WHA ESIE 1 โดย SuperX AI · รถ Z5 Cold-Chain บนถนนในนิคมอุตสาหกรรม ทั้งกลางวันและกลางคืน",
+      "caption_zh": "SuperX AI WHA ESIE 1 试点视频 · Z5 冷链车日夜行驶于工业园区道路",
+      "caption_en": "SuperX AI’s WHA ESIE 1 pilot video · the Z5 Cold-Chain on estate roads by day and night"
+    },
+    {
+      "video": "/assets/video/tcav-l4-test.mp4",
+      "poster": "/assets/img/tcav-poster.webp",
+      "caption_th": "การทดสอบระดับ L4 ที่ศูนย์ T-CAV (ภาพจาก Zelostech)",
+      "caption_zh": "T-CAV 中心 L4 测试（Zelostech 提供）",
+      "caption_en": "L4 testing at the T-CAV centre (footage: Zelostech)"
+    }
+  ],
+  "videos_first": true
+}

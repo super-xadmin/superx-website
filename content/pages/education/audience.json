@@ -1,0 +1,46 @@
+{
+  "eyebrow_th": "เหมาะกับใคร",
+  "eyebrow_zh": "适用对象",
+  "eyebrow_en": "Who it is for",
+  "title_th": "สำหรับสถาบันที่ต้องการสอนจากระบบจริง",
+  "title_zh": "面向希望用真实系统教学的机构",
+  "title_en": "For institutions that want to teach on real systems",
+  "items": [
+    {
+      "icon": "grad",
+      "title_th": "มหาวิทยาลัยและคณะวิศวกรรม",
+      "title_zh": "高校与工程学院",
+      "title_en": "Universities and engineering faculties",
+      "text_th": "ห้องปฏิบัติการด้านยานยนต์อัตโนมัติ หุ่นยนต์ และ AI สำหรับปริญญาตรีถึงบัณฑิตศึกษา",
+      "text_zh": "用于本科及研究生阶段的自动驾驶、机器人与 AI 实验室。",
+      "text_en": "Labs in autonomous vehicles, robotics and AI from undergraduate to graduate level."
+    },
+    {
+      "icon": "wrench",
+      "title_th": "วิทยาลัยอาชีวะและสถาบันฝึกอบรม",
+      "title_zh": "职业院校与培训机构",
+      "title_en": "Vocational colleges and training centres",
+      "text_th": "ฝึกทักษะช่างเทคนิครถไฟฟ้าและระบบขับขี่อัตโนมัติ สำหรับงานบำรุงรักษาและปฏิบัติการ",
+      "text_zh": "培养电动车与自动驾驶系统的运维技术人员。",
+      "text_en": "Hands-on skills for EV and autonomous-system technicians in maintenance and operations."
+    },
+    {
+      "icon": "target",
+      "title_th": "ศูนย์วิจัยและศูนย์ทดสอบ",
+      "title_zh": "科研与测试中心",
+      "title_en": "Research and test centres",
+      "text_th": "ทดสอบสถานการณ์ เก็บข้อมูล และพัฒนามาตรฐานการใช้งานในประเทศไทย",
+      "text_zh": "场景测试、数据采集及泰国本地标准研究。",
+      "text_en": "Scenario testing, data collection and standards work for Thai roads."
+    },
+    {
+      "icon": "users",
+      "title_th": "องค์กรที่พัฒนาทีมงาน",
+      "title_zh": "企业人才培养",
+      "title_en": "Companies upskilling teams",
+      "text_th": "อบรมทีมปฏิบัติการและวิศวกรก่อนนำรถไร้คนขับมาใช้ในธุรกิจ",
+      "text_zh": "在引入无人车前培训运营与工程团队。",
+      "text_en": "Train operations and engineering teams before rolling out autonomous vehicles."
+    }
+  ]
+}

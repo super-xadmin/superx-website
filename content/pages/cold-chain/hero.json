@@ -1,0 +1,46 @@
+{
+  "model": "content/models/z10cold.json",
+  "image": "",
+  "crumb_th": "รถห้องเย็น",
+  "crumb_zh": "冷链车型",
+  "crumb_en": "Cold-chain",
+  "eyebrow_th": "RoboVan · Cold-Chain",
+  "eyebrow_zh": "RoboVan · 冷链",
+  "eyebrow_en": "RoboVan · Cold-Chain",
+  "title_th": "Cold-Chain RoboVan",
+  "title_zh": "Cold-Chain RoboVan",
+  "title_en": "Cold-Chain RoboVan",
+  "lead_th": "RoboVan ห้องเย็นไร้คนขับสองขนาด ระบบทำความเย็นสองโซน ควบคุมอุณหภูมิได้ตั้งแต่ −20 ถึง 12 °C",
+  "lead_zh": "两种规格的无人驾驶冷藏 RoboVan，双温区制冷，−20 至 12 °C 可调。",
+  "lead_en": "Driverless refrigerated RoboVans in two sizes, with dual-zone cooling from −20 to 12 °C.",
+  "figures": [
+    {
+      "value": "−20~12",
+      "unit": "°C",
+      "label_th": "ช่วงอุณหภูมิ",
+      "label_zh": "制冷温度",
+      "label_en": "Refrigeration"
+    },
+    {
+      "value": "4.6–10.2",
+      "unit": "m³",
+      "label_th": "ปริมาตรตู้",
+      "label_zh": "货箱容积",
+      "label_en": "Cargo volume"
+    },
+    {
+      "value": "1,555–2,200",
+      "unit": "kg",
+      "label_th": "น้ำหนักบรรทุก",
+      "label_zh": "额定载重",
+      "label_en": "Payload"
+    },
+    {
+      "value": "180",
+      "unit": "km",
+      "label_th": "ระยะวิ่งสูงสุด",
+      "label_zh": "最大续航",
+      "label_en": "Maximum range"
+    }
+  ]
+}

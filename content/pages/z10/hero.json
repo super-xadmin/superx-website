@@ -1,0 +1,46 @@
+{
+  "model": "content/models/z10.json",
+  "image": "",
+  "crumb_th": "RoboVan Z10",
+  "crumb_zh": "RoboVan Z10",
+  "crumb_en": "RoboVan Z10",
+  "eyebrow_th": "RoboVan · Z10 Series",
+  "eyebrow_zh": "RoboVan · Z10 系列",
+  "eyebrow_en": "RoboVan · Z10 Series",
+  "title_th": "Z10 Freight RoboVan",
+  "title_zh": "Z10 Freight RoboVan",
+  "title_en": "Z10 Freight RoboVan",
+  "lead_th": "RoboVan ความจุสูงสำหรับงานขนส่งหนัก ขนย้ายระหว่างคลัง และซัพพลายเชนปริมาณสูง",
+  "lead_zh": "面向重载运输、仓间转运与高流量供应链的大容量 RoboVan。",
+  "lead_en": "A high-capacity RoboVan for heavy loads, warehouse transfers and high-volume supply chains.",
+  "figures": [
+    {
+      "value": "12.5",
+      "unit": "m³",
+      "label_th": "ปริมาตรตู้",
+      "label_zh": "货箱容积",
+      "label_en": "Cargo volume"
+    },
+    {
+      "value": "2,500",
+      "unit": "kg",
+      "label_th": "น้ำหนักบรรทุก",
+      "label_zh": "额定载重",
+      "label_en": "Payload"
+    },
+    {
+      "value": "250",
+      "unit": "km",
+      "label_th": "ระยะวิ่งสูงสุด",
+      "label_zh": "最大续航",
+      "label_en": "Maximum range"
+    },
+    {
+      "value": "55.9",
+      "unit": "kWh",
+      "label_th": "แบตเตอรี่ LFP",
+      "label_zh": "磷酸铁锂电池",
+      "label_en": "LFP battery"
+    }
+  ]
+}

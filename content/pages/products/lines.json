@@ -1,0 +1,134 @@
+{
+  "items": [
+    {
+      "anchor": "education",
+      "media_type": "image",
+      "image": "/assets/img/tcav-photo-campus.webp",
+      "alt": "RoboVan on a government science campus",
+      "chat": [],
+      "eyebrow_th": "รถไร้คนขับเพื่อการศึกษา",
+      "eyebrow_zh": "教育无人车",
+      "eyebrow_en": "Education",
+      "title_th": "รถไร้คนขับเพื่อการศึกษา",
+      "title_zh": "教育无人车",
+      "title_en": "Autonomous driving education",
+      "lead_th": "แพลตฟอร์มยานยนต์ไร้คนขับและการอบรมสำหรับสถาบันการศึกษาและศูนย์วิจัย ให้ผู้เรียนเข้าใจระบบที่ใช้งานในอุตสาหกรรมจริง",
+      "lead_zh": "面向院校与科研机构的无人驾驶平台与培训，让学生理解产业级系统如何运行。",
+      "lead_en": "Autonomous vehicle platforms and training for schools and research centres, so learners understand systems used in real industry.",
+      "bullets": [
+        {
+          "text_th": "มหาวิทยาลัย คณะวิศวกรรม และวิทยาลัยอาชีวะ",
+          "text_zh": "高校、工程学院与职业院校",
+          "text_en": "Universities, engineering faculties, vocational colleges"
+        },
+        {
+          "text_th": "หลักสูตรเซนเซอร์ การวางแผนเส้นทาง และการควบคุม",
+          "text_zh": "传感器、路径规划与控制课程",
+          "text_en": "Sensors, path planning and control"
+        },
+        {
+          "text_th": "อบรมผู้สอนโดยทีมวิศวกร SuperX AI",
+          "text_zh": "SuperX AI 工程师培训师资",
+          "text_en": "Instructor training by SuperX AI engineers"
+        }
+      ],
+      "button_label_th": "ดูโซลูชันการศึกษา",
+      "button_label_zh": "查看教育方案",
+      "button_label_en": "See education solutions",
+      "button_link": "education.html"
+    },
+    {
+      "anchor": "security",
+      "media_type": "image",
+      "image": "/assets/img/robot-fire-spray.webp",
+      "alt": "Autonomous firefighting robot spraying water",
+      "chat": [],
+      "eyebrow_th": "หุ่นยนต์ความปลอดภัยและงานพิเศษ",
+      "eyebrow_zh": "安防与特种机器人",
+      "eyebrow_en": "Security and special robots",
+      "title_th": "หุ่นยนต์ความปลอดภัยและยานยนต์งานพิเศษ",
+      "title_zh": "安防与特种机器人",
+      "title_en": "Security and special-purpose robots",
+      "lead_th": "รถตีนตะขาบไร้คนขับสำหรับงานลาดตระเวน และยานยนต์งานพิเศษสำหรับดับเพลิง ตรวจสายไฟฟ้า และทำความสะอาดถนน",
+      "lead_zh": "用于安防巡逻的履带式无人车，以及消防、电力巡检、道路清扫等特种车辆。",
+      "lead_en": "Tracked unmanned vehicles for patrols, plus special-purpose units for firefighting, power-line inspection and street cleaning.",
+      "bullets": [
+        {
+          "text_th": "ลาดตระเวนรอบโรงงาน นิคม และโซลาร์ฟาร์ม",
+          "text_zh": "工厂、园区及光伏电站巡逻",
+          "text_en": "Patrols for plants, estates and solar farms"
+        },
+        {
+          "text_th": "ลดความเสี่ยงของพนักงานในพื้นที่อันตราย",
+          "text_zh": "减少人员进入危险区域",
+          "text_en": "Keeps staff out of hazardous areas"
+        },
+        {
+          "text_th": "ส่งภาพและแจ้งเตือนเข้าศูนย์ควบคุม",
+          "text_zh": "视频与告警实时回传",
+          "text_en": "Live video and alerts to the control room"
+        }
+      ],
+      "button_label_th": "ดูหุ่นยนต์ทั้งหมด",
+      "button_label_zh": "查看全部机器人",
+      "button_label_en": "See all robots",
+      "button_link": "security.html"
+    },
+    {
+      "anchor": "ai",
+      "media_type": "chat",
+      "image": "",
+      "alt": "",
+      "chat": [
+        {
+          "side": "me",
+          "who_th": "LINE",
+          "who_zh": "LINE",
+          "who_en": "LINE",
+          "text_th": "สินค้าล็อตนี้ส่งถึงเมื่อไหร่คะ",
+          "text_zh": "这批货什么时候到？",
+          "text_en": "When will this order arrive?"
+        },
+        {
+          "side": "ai",
+          "who_th": "Qubby AI",
+          "who_zh": "Qubby AI",
+          "who_en": "Qubby AI",
+          "text_th": "ออกจากคลังแล้วค่ะ คาดว่าถึง 14:30 น.",
+          "text_zh": "已从仓库发出，预计 14:30 送达。",
+          "text_en": "It has left the warehouse and should arrive at 14:30."
+        }
+      ],
+      "eyebrow_th": "AI Agent",
+      "eyebrow_zh": "AI Agent",
+      "eyebrow_en": "AI Agent",
+      "title_th": "Qubby AI ผู้ช่วย AI ด่านหน้าของธุรกิจ",
+      "title_zh": "Qubby AI：企业前台 AI 助手",
+      "title_en": "Qubby AI for your business front door",
+      "lead_th": "แกน AI แบบ Omnichannel ที่ตอบลูกค้าได้ทั้งข้อความและเสียง ทุกช่องทาง ตลอด 24 ชั่วโมง และเชื่อมต่อกับระบบ CRM/ERP ขององค์กร",
+      "lead_zh": "全渠道 AI 核心，全天候以文字与语音服务客户，并与企业 CRM/ERP 打通。",
+      "lead_en": "An omnichannel AI core that answers customers by text and voice, around the clock, connected to your CRM and ERP.",
+      "bullets": [
+        {
+          "text_th": "LINE, Facebook, เว็บไซต์ และโทรศัพท์",
+          "text_zh": "LINE、Facebook、网站与电话",
+          "text_en": "LINE, Facebook, web chat and phone"
+        },
+        {
+          "text_th": "ตอบคำถาม รับออร์เดอร์ และนัดหมาย",
+          "text_zh": "答疑、接单与预约",
+          "text_en": "Answers questions, takes orders and bookings"
+        },
+        {
+          "text_th": "ส่งต่อพนักงานพร้อมประวัติการสนทนา",
+          "text_zh": "带上下文转接人工",
+          "text_en": "Hands over to staff with full context"
+        }
+      ],
+      "button_label_th": "ดู Qubby AI",
+      "button_label_zh": "了解 Qubby AI",
+      "button_label_en": "See Qubby AI",
+      "button_link": "ai-agent.html"
+    }
+  ]
+}

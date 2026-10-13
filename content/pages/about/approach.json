@@ -1,0 +1,34 @@
+{
+  "eyebrow_th": "รูปแบบความร่วมมือ",
+  "eyebrow_zh": "合作模式",
+  "eyebrow_en": "How we work with you",
+  "title_th": "เราคือสะพานระหว่างเทคโนโลยี AI ระดับโลกกับงานจริงในองค์กรของคุณ",
+  "title_zh": "我们是连接全球 AI 技术与您企业实际应用的桥梁",
+  "title_en": "The bridge between world-class AI and your real operations",
+  "steps": [
+    {
+      "title_th": "Discovery · ค้นหา Use case",
+      "title_zh": "Discovery · 场景挖掘",
+      "title_en": "Discovery",
+      "text_th": "วิเคราะห์และค้นหา Use case ที่เหมาะสมและคุ้มค่าที่สุด เพื่อให้มั่นใจในผลตอบแทนการลงทุน (ROI)",
+      "text_zh": "分析并找到最合适、最具性价比的应用场景，确保投资回报（ROI）。",
+      "text_en": "Analyse and find the use case that fits best and pays back, so you can be confident in the ROI."
+    },
+    {
+      "title_th": "Pilot · โครงการนำร่อง",
+      "title_zh": "Pilot · 试点验证",
+      "title_en": "Pilot",
+      "text_th": "ทดลองในสภาพแวดล้อมจริง วัดผลตาม KPI และประเมินความปลอดภัยและความแม่นยำอย่างเข้มงวด",
+      "text_zh": "在真实环境中试点，按 KPI 衡量效果，并严格评估安全性与准确性。",
+      "text_en": "Run a pilot in your real environment, measure against KPIs and rigorously assess safety and accuracy."
+    },
+    {
+      "title_th": "Scale · ขยายผล",
+      "title_zh": "Scale · 规模推广",
+      "title_en": "Scale",
+      "text_th": "สนับสนุนการติดตั้งใช้งานเต็มรูปแบบ และวางแผนขยายผลเพื่อเพิ่มขีดความสามารถในการแข่งขันระยะยาว",
+      "text_zh": "支持全面部署，并规划扩展，提升长期竞争力。",
+      "text_en": "Support the full roll-out and plan expansion for long-term competitiveness."
+    }
+  ]
+}

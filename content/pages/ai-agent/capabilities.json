@@ -1,0 +1,64 @@
+{
+  "eyebrow_th": "ทำอะไรได้บ้าง",
+  "eyebrow_zh": "能做什么",
+  "eyebrow_en": "What it does",
+  "title_th": "ตอบลูกค้าทันที ทุกช่องทาง ด้วยข้อมูลจริงขององค์กร",
+  "title_zh": "用企业真实数据，在每个渠道即时回应客户",
+  "title_en": "Instant answers on every channel, from your own data",
+  "items": [
+    {
+      "icon": "chat",
+      "title_th": "ตอบคำถามได้ตลอด 24 ชั่วโมง",
+      "title_zh": "24 小时答疑",
+      "title_en": "Answers around the clock",
+      "text_th": "ตอบเรื่องสินค้า ราคา บริการ และนโยบาย จากข้อมูลที่องค์กรกำหนด",
+      "text_zh": "基于企业提供的资料回答产品、价格、服务与政策问题。",
+      "text_en": "Product, pricing, service and policy questions answered from the knowledge you approve."
+    },
+    {
+      "icon": "headset",
+      "title_th": "ข้อความและเสียง",
+      "title_zh": "文字与语音",
+      "title_en": "Text and voice",
+      "text_th": "ใช้แกน AI เดียวกันทั้งแชตและสายโทรศัพท์ ลูกค้าได้คำตอบที่ตรงกัน",
+      "text_zh": "聊天与电话共用同一 AI 核心，答案一致。",
+      "text_en": "One AI core for chat and phone calls, so customers get consistent answers."
+    },
+    {
+      "icon": "calendar",
+      "title_th": "รับออร์เดอร์และนัดหมาย",
+      "title_zh": "接单与预约",
+      "title_en": "Orders and bookings",
+      "text_th": "รับคำสั่งซื้อ นัดสาธิต และคัดกรองลูกค้าที่มีแนวโน้มซื้อ",
+      "text_zh": "受理订单、预约演示并筛选潜在客户。",
+      "text_en": "Takes orders, books demos and qualifies leads."
+    },
+    {
+      "icon": "api",
+      "title_th": "เชื่อม CRM / ERP",
+      "title_zh": "对接 CRM / ERP",
+      "title_en": "CRM and ERP connected",
+      "text_th": "ดึงสถานะคำสั่งซื้อและบันทึกข้อมูลลูกค้าเข้าระบบขององค์กรโดยอัตโนมัติ",
+      "text_zh": "自动查询订单状态，并将客户信息写入企业系统。",
+      "text_en": "Looks up order status and logs customer details in your systems automatically."
+    },
+    {
+      "icon": "users",
+      "title_th": "ส่งต่อพนักงานพร้อมบริบท",
+      "title_zh": "带上下文转人工",
+      "title_en": "Hand-over with context",
+      "text_th": "เมื่อต้องใช้คน ระบบส่งต่อพร้อมประวัติการสนทนา ลูกค้าไม่ต้องเล่าซ้ำ",
+      "text_zh": "需要人工时连同对话记录一并转接，客户无需重复说明。",
+      "text_en": "When a person is needed, the conversation history goes with it, so customers never repeat themselves."
+    },
+    {
+      "icon": "layers",
+      "title_th": "สรุปและรายงาน",
+      "title_zh": "总结与报表",
+      "title_en": "Summaries and reports",
+      "text_th": "สรุปบทสนทนา หัวข้อที่ลูกค้าถามบ่อย และโอกาสการขาย",
+      "text_zh": "汇总对话、高频问题与销售机会。",
+      "text_en": "Conversation summaries, common questions and sales opportunities."
+    }
+  ]
+}

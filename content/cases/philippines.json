@@ -1,0 +1,43 @@
+{
+  "video": "",
+  "poster": "",
+  "video_caption_th": "",
+  "video_caption_zh": "",
+  "video_caption_en": "",
+  "video_position": "text",
+  "anchor": "philippines",
+  "group": "asia",
+  "order": 3,
+  "hide": false,
+  "eyebrow_th": "",
+  "eyebrow_zh": "",
+  "eyebrow_en": "",
+  "title_th": "ฟิลิปปินส์",
+  "title_zh": "菲律宾",
+  "title_en": "Philippines",
+  "paragraphs": [
+    {
+      "text_th": "เริ่มดำเนินการเชิงพาณิชย์ในพื้นที่ปิด (Closed-environment commercial operations)",
+      "text_zh": "在封闭区域开展商业化运营。",
+      "text_en": "Commercial operations in closed environments."
+    }
+  ],
+  "place_th": "ฟิลิปปินส์",
+  "place_zh": "菲律宾",
+  "place_en": "Philippines",
+  "scope_th": "",
+  "scope_zh": "",
+  "scope_en": "",
+  "vehicles_th": "",
+  "vehicles_zh": "",
+  "vehicles_en": "",
+  "status_th": "พันธมิตรเทคโนโลยี",
+  "status_zh": "技术伙伴",
+  "status_en": "Technology partner",
+  "gallery": [
+    {
+      "image": "/assets/img/case-philippines.webp",
+      "alt": "Autonomous van in the Philippines"
+    }
+  ]
+}

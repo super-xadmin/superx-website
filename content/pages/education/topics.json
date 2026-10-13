@@ -1,0 +1,67 @@
+{
+  "eyebrow_th": "หัวข้อการเรียนรู้",
+  "eyebrow_zh": "教学内容",
+  "eyebrow_en": "What learners cover",
+  "title_th": "ครอบคลุมทุกชั้นของระบบขับขี่อัตโนมัติ",
+  "title_zh": "覆盖自动驾驶系统各个层级",
+  "title_en": "Every layer of an autonomous system",
+  "lead_th": "หัวข้อตัวอย่างที่ออกแบบร่วมกับสถาบันได้ ปรับตามระดับผู้เรียนและเวลาเรียน",
+  "lead_zh": "以下为可与院校共同设计的示例内容，可按学员层级与课时调整。",
+  "lead_en": "Example topics to design with your institution, adapted to level and course length.",
+  "items": [
+    {
+      "icon": "radar",
+      "title_th": "เซนเซอร์และการรับรู้",
+      "title_zh": "传感器与感知",
+      "title_en": "Sensors and perception",
+      "text_th": "LiDAR กล้อง เรดาร์ และการรวมข้อมูลเซนเซอร์ (Sensor fusion)",
+      "text_zh": "激光雷达、摄像头、毫米波雷达与多传感器融合。",
+      "text_en": "LiDAR, cameras, radar and sensor fusion."
+    },
+    {
+      "icon": "map",
+      "title_th": "การระบุตำแหน่งและแผนที่",
+      "title_zh": "定位与地图",
+      "title_en": "Localisation and mapping",
+      "text_th": "GNSS/RTK ระบบนำทางเฉื่อย และการทำแผนที่เส้นทาง",
+      "text_zh": "GNSS/RTK、惯性导航与路线建图。",
+      "text_en": "GNSS/RTK, inertial navigation and route mapping."
+    },
+    {
+      "icon": "route",
+      "title_th": "การวางแผนและการควบคุม",
+      "title_zh": "规划与控制",
+      "title_en": "Planning and control",
+      "text_th": "การวางแผนเส้นทาง การหลบหลีกสิ่งกีดขวาง และการควบคุมรถ",
+      "text_zh": "路径规划、避障与车辆控制。",
+      "text_en": "Path planning, obstacle avoidance and vehicle control."
+    },
+    {
+      "icon": "battery",
+      "title_th": "ระบบรถไฟฟ้าและ Drive-by-wire",
+      "title_zh": "电动与线控底盘",
+      "title_en": "EV and drive-by-wire systems",
+      "text_th": "แบตเตอรี่ LFP การชาร์จ และการควบคุมแชสซีแบบ Drive-by-wire",
+      "text_zh": "磷酸铁锂电池、充电及线控底盘控制。",
+      "text_en": "LFP batteries, charging and drive-by-wire chassis control."
+    },
+    {
+      "icon": "shield",
+      "title_th": "ความปลอดภัยและการทดสอบ",
+      "title_zh": "安全与测试",
+      "title_en": "Safety and testing",
+      "text_th": "ขอบเขตการทำงาน (ODD) สถานการณ์ทดสอบ และกรณีขอบ (Edge cases)",
+      "text_zh": "运行设计域（ODD）、测试场景与边缘案例。",
+      "text_en": "Operating design domain (ODD), test scenarios and edge cases."
+    },
+    {
+      "icon": "monitor",
+      "title_th": "การบริหารฝูงรถและข้อมูล",
+      "title_zh": "车队运营与数据",
+      "title_en": "Fleet operations and data",
+      "text_th": "สั่งงานผ่านแอป เฝ้าติดตามระยะไกล และวิเคราะห์ข้อมูลการวิ่ง",
+      "text_zh": "App 调度、远程监控与运行数据分析。",
+      "text_en": "App dispatch, remote monitoring and driving-data analysis."
+    }
+  ]
+}

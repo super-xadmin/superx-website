@@ -1,0 +1,57 @@
+{
+  "image": "/assets/img/tech-cutaway.webp",
+  "alt": "Cutaway of the RoboVan sensor and computing hardware",
+  "eyebrow_th": "เทคโนโลยี",
+  "eyebrow_zh": "技术",
+  "eyebrow_en": "Technology",
+  "title_th": "ชุดระบบขับขี่อัตโนมัติระดับ L4",
+  "title_zh": "L4 自动驾驶套件",
+  "title_en": "L4 Autonomous Driving Suite",
+  "text_th": "ฮาร์ดแวร์และซอฟต์แวร์ครบชุด ทั้งแพลตฟอร์มประมวลผล เซนเซอร์ ซอฟต์แวร์ขับขี่ L4 ระบบบริหารยานพาหนะ และแอปมือถือ ติดตั้งบนแชสซีแบบ Drive-by-wire ได้รวดเร็ว ใช้ได้ทั้งในเมือง ขนส่งระยะไกล และพื้นที่ปิด",
+  "text_zh": "集计算平台、传感器、L4 自动驾驶软件、车辆管理平台与移动 App 于一体，可快速部署于线控底盘，适用于城市配送、长途运输及封闭园区。",
+  "text_en": "An integrated hardware and software suite — computing platform, sensors, L4 driving software, vehicle management platform and mobile app — that deploys quickly on drive-by-wire chassis for urban, long-distance and closed-campus operations.",
+  "specs": [
+    {
+      "label_th": "LiDAR กึ่งโซลิดสเตต",
+      "label_zh": "半固态激光雷达",
+      "label_en": "Semi-solid-state LiDAR",
+      "value": "× 2"
+    },
+    {
+      "label_th": "กล้องความละเอียดสูง",
+      "label_zh": "高清摄像头",
+      "label_en": "High-definition cameras",
+      "value": "× 12"
+    },
+    {
+      "label_th": "เรดาร์คลื่นมิลลิเมตร",
+      "label_zh": "毫米波雷达",
+      "label_en": "Millimetre-wave radar",
+      "value": "× 2"
+    },
+    {
+      "label_th": "เรดาร์อัลตราโซนิก",
+      "label_zh": "超声波雷达",
+      "label_en": "Ultrasonic radar",
+      "value": "× 12"
+    },
+    {
+      "label_th": "หน่วยประมวลผล Dual Orin",
+      "label_zh": "双 Orin 计算单元",
+      "label_en": "Dual Orin computing",
+      "value": "500+ TOPS"
+    },
+    {
+      "label_th": "ระบบนำทาง",
+      "label_zh": "定位导航",
+      "label_en": "Navigation",
+      "value": "RTK + INS"
+    }
+  ],
+  "downloads": [
+    {
+      "file": "/assets/docs/SuperX-L4-Autonomous-Driving-Suite.pdf",
+      "title": "L4 Autonomous Driving Suite"
+    }
+  ]
+}

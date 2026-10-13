@@ -1,0 +1,88 @@
+{
+  "eyebrow_th": "ตัวเลือก",
+  "eyebrow_zh": "可选配置",
+  "eyebrow_en": "Options",
+  "title_th": "เลือกให้ตรงกับงานของคุณ",
+  "title_zh": "按需配置",
+  "title_en": "Configure it for your job",
+  "items": [
+    {
+      "title_th": "สองขนาด",
+      "title_zh": "两种规格",
+      "title_en": "Two sizes",
+      "text_th": "Z5 Cold-Chain 4.6 ลบ.ม. หรือ Z10 Cold-Chain 10.2 ลบ.ม.",
+      "text_zh": "Z5 冷链车 4.6 m³ 或 Z10 冷链车 10.2 m³。",
+      "text_en": "Z5 Cold-Chain at 4.6 m³ or Z10 Cold-Chain at 10.2 m³.",
+      "link_label_th": "",
+      "link_label_zh": "",
+      "link_label_en": "",
+      "link": "",
+      "swatches": false
+    },
+    {
+      "title_th": "ห้องเย็นสองโซน",
+      "title_zh": "双温区",
+      "title_en": "Dual-zone refrigeration",
+      "text_th": "แยกโซนอุณหภูมิห้องและโซนแช่เย็นในคันเดียว ตั้งได้ −20 ถึง 12 °C",
+      "text_zh": "同车分设常温区与冷藏区，−20 至 12 °C 可调。",
+      "text_en": "Ambient and refrigerated zones in one van, adjustable from −20 to 12 °C.",
+      "link_label_th": "",
+      "link_label_zh": "",
+      "link_label_en": "",
+      "link": "",
+      "swatches": false
+    },
+    {
+      "title_th": "ตั้งอุณหภูมิผ่านแอป",
+      "title_zh": "APP 温控",
+      "title_en": "App temperature control",
+      "text_th": "ปรับและดูอุณหภูมิของตู้ได้จากแอปพลิเคชัน",
+      "text_zh": "通过 App 设置并查看箱内温度。",
+      "text_en": "Set and watch box temperature from the app.",
+      "link_label_th": "",
+      "link_label_zh": "",
+      "link_label_en": "",
+      "link": "",
+      "swatches": false
+    },
+    {
+      "title_th": "สีตัวรถ",
+      "title_zh": "车身颜色",
+      "title_en": "Body colour",
+      "text_th": "ขาว Starlight หรือฟ้า Glacier",
+      "text_zh": "星光白或冰川蓝",
+      "text_en": "Starlight White or Glacier Blue",
+      "link_label_th": "",
+      "link_label_zh": "",
+      "link_label_en": "",
+      "link": "",
+      "swatches": true
+    },
+    {
+      "title_th": "สีและแบรนด์องค์กร",
+      "title_zh": "定制涂装",
+      "title_en": "Custom livery",
+      "text_th": "สอบถามการทำสีและติดแบรนด์ขององค์กรบนตัวรถ",
+      "text_zh": "可咨询企业品牌定制涂装。",
+      "text_en": "Ask about custom paint and your company branding on the body.",
+      "link_label_th": "",
+      "link_label_zh": "",
+      "link_label_en": "",
+      "link": "",
+      "swatches": false
+    },
+    {
+      "title_th": "เชื่อมต่อระบบของคุณ",
+      "title_zh": "系统对接",
+      "title_en": "Connect your systems",
+      "text_th": "เชื่อมต่อ API กับระบบคลังสินค้า (WMS) เพื่อสั่งงานรถอัตโนมัติ",
+      "text_zh": "通过 API 对接 WMS，自动下发运输任务。",
+      "text_en": "API integration with your WMS to dispatch vehicles automatically.",
+      "link_label_th": "",
+      "link_label_zh": "",
+      "link_label_en": "",
+      "link": "",
+      "swatches": false
+    }
+  ]
+}

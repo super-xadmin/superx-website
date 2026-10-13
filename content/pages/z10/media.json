@@ -1,0 +1,56 @@
+{
+  "eyebrow_th": "ภาพและวิดีโอ",
+  "eyebrow_zh": "图片与视频",
+  "eyebrow_en": "Photos and video",
+  "title_th": "ดูรถจากทุกมุม",
+  "title_zh": "全方位了解车辆",
+  "title_en": "See it from every side",
+  "gallery": [
+    {
+      "size": "g-wide",
+      "image": "/assets/img/product-z10.webp",
+      "alt": "Z10 Freight RoboVan studio view",
+      "caption_th": "Z10 Freight RoboVan · ตู้ 12.5 ลบ.ม.",
+      "caption_zh": "Z10 货运 RoboVan · 货箱 12.5 m³",
+      "caption_en": "Z10 Freight RoboVan · 12.5 m³ box",
+      "studio": true
+    },
+    {
+      "size": "g-tall",
+      "image": "/assets/img/use-industrial-park.webp",
+      "alt": "Z10 at an industrial park with forklifts",
+      "caption_th": "งานโลจิสติกส์ในนิคมอุตสาหกรรม",
+      "caption_zh": "工业园区物流",
+      "caption_en": "Industrial park logistics",
+      "studio": false
+    },
+    {
+      "size": "g-half",
+      "image": "/assets/img/case-posmalaysia.webp",
+      "alt": "Autonomous vans at POS Malaysia",
+      "caption_th": "Z10 ในโครงการของ POS Malaysia (ภาพจากพันธมิตรเทคโนโลยี)",
+      "caption_zh": "POS Malaysia 项目中的 Z10（技术伙伴提供）",
+      "caption_en": "Z10 at POS Malaysia (technology partner photo)",
+      "studio": false
+    },
+    {
+      "size": "g-half",
+      "image": "/assets/img/case-singpost.webp",
+      "alt": "Autonomous vans at Singapore Post",
+      "caption_th": "การใช้งานในสิงคโปร์ (ภาพจากพันธมิตรเทคโนโลยี)",
+      "caption_zh": "新加坡应用（技术伙伴提供）",
+      "caption_en": "Deployment in Singapore (technology partner photo)",
+      "studio": false
+    }
+  ],
+  "videos": [
+    {
+      "video": "/assets/video/tcav-l4-test.mp4",
+      "poster": "/assets/img/tcav-poster.webp",
+      "caption_th": "วิดีโอ: การทดสอบระดับ L4 ที่ศูนย์ T-CAV ประเทศไทย ด้วยรถ Z5 และ Z10 (ภาพจาก Zelostech)",
+      "caption_zh": "视频：泰国 T-CAV 中心使用 Z5 与 Z10 进行 L4 测试（Zelostech 提供）",
+      "caption_en": "Video: L4 testing with Z5 and Z10 at Thailand’s T-CAV centre (footage: Zelostech)"
+    }
+  ],
+  "videos_first": false
+}

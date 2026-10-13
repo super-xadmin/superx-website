@@ -1,0 +1,32 @@
+{
+  "image": "/assets/img/use-security-patrol.webp",
+  "alt": "Autonomous security patrol vehicle on a city street at dusk",
+  "crumb_th": "หุ่นยนต์ความปลอดภัย",
+  "crumb_zh": "安防与特种机器人",
+  "crumb_en": "Security robots",
+  "eyebrow_th": "ความปลอดภัยและงานพิเศษ",
+  "eyebrow_zh": "安防与特种",
+  "eyebrow_en": "Security and special-purpose",
+  "title_th": "หุ่นยนต์รักษาความปลอดภัยและยานยนต์งานพิเศษ",
+  "title_zh": "安防与特种机器人",
+  "title_en": "Security and special-purpose robots",
+  "lead_th": "ให้หุ่นยนต์ทำงานลาดตระเวน ตรวจสอบ และงานในพื้นที่เสี่ยงแทนคน ทำงานได้ทั้งกลางวันและกลางคืน พร้อมส่งภาพและการแจ้งเตือนเข้าศูนย์ควบคุม",
+  "lead_zh": "让机器人代替人员完成巡逻、巡检及高风险区域作业，日夜运行，视频与告警实时回传控制中心。",
+  "lead_en": "Let robots take on patrols, inspections and hazardous jobs day and night, sending live video and alerts to your control room.",
+  "chips": [
+    {
+      "anchor": "tracked",
+      "icon": "tracks",
+      "label_th": "รถตีนตะขาบไร้คนขับ",
+      "label_zh": "履带式无人车",
+      "label_en": "Tracked UGV"
+    },
+    {
+      "anchor": "special",
+      "icon": "robot",
+      "label_th": "ยานยนต์งานพิเศษ",
+      "label_zh": "特种机器人",
+      "label_en": "Special-purpose units"
+    }
+  ]
+}

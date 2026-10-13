@@ -1,0 +1,61 @@
+{
+  "col_model_th": "รุ่น",
+  "col_model_zh": "车型",
+  "col_model_en": "Model",
+  "col_volume_th": "ปริมาตร (ลบ.ม.)",
+  "col_volume_zh": "容积 (m³)",
+  "col_volume_en": "Volume (m³)",
+  "col_payload_th": "บรรทุก (กก.)",
+  "col_payload_zh": "载重 (kg)",
+  "col_payload_en": "Payload (kg)",
+  "col_range_th": "ระยะวิ่ง (กม.)",
+  "col_range_zh": "续航 (km)",
+  "col_range_en": "Range (km)",
+  "col_battery_th": "แบตเตอรี่ (kWh)",
+  "col_battery_zh": "电池 (kWh)",
+  "col_battery_en": "Battery (kWh)",
+  "col_cold_th": "ห้องเย็น",
+  "col_cold_zh": "冷藏",
+  "col_cold_en": "Refrigeration",
+  "col_speed_th": "ความเร็ว (กม./ชม.)",
+  "col_speed_zh": "车速 (km/h)",
+  "col_speed_en": "Speed (km/h)",
+  "col_dims_th": "ขนาด ย×ก×ส (มม.)",
+  "col_dims_zh": "尺寸 长×宽×高 (mm)",
+  "col_dims_en": "Size L×W×H (mm)",
+  "models": [
+    {
+      "model": "content/models/z5.json"
+    },
+    {
+      "model": "content/models/z5plus.json"
+    },
+    {
+      "model": "content/models/z5cold.json"
+    },
+    {
+      "model": "content/models/z5locker.json"
+    },
+    {
+      "model": "content/models/z10.json"
+    },
+    {
+      "model": "content/models/z10cold.json"
+    },
+    {
+      "model": "content/models/z20.json"
+    }
+  ],
+  "notes": [
+    {
+      "text_th": "* Z20: ระยะวิ่งขณะบรรทุกเต็ม · Z5 Multi-Locker: แบตเตอรี่มาตรฐาน / ความจุสูง",
+      "text_zh": "* Z20 为满载续航 · Z5 Multi-Locker 为标准 / 高容量电池",
+      "text_en": "* Z20 range at full load · Z5 Multi-Locker with standard / high-capacity battery"
+    },
+    {
+      "text_th": "ข้อมูลจาก Product Catalogue ของ SuperX AI ปี 2026",
+      "text_zh": "数据来源：SuperX AI 2026 产品手册",
+      "text_en": "Source: SuperX AI Product Catalogue 2026"
+    }
+  ]
+}

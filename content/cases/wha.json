@@ -1,0 +1,47 @@
+{
+  "anchor": "wha",
+  "group": "thailand",
+  "order": 2,
+  "hide": false,
+  "eyebrow_th": "โครงการนำร่อง · นิคมอุตสาหกรรม",
+  "eyebrow_zh": "试点项目 · 工业园区",
+  "eyebrow_en": "Pilot · industrial estate",
+  "title_th": "WHA ESIE 1",
+  "title_zh": "WHA ESIE 1",
+  "title_en": "WHA ESIE 1",
+  "paragraphs": [
+    {
+      "text_th": "ทดสอบและวางแผนการนำเส้นทางวิ่งรถไร้คนขับในนิคมอุตสาหกรรม WHA Eastern Seaboard 1 เพื่อเป็นโครงการนำร่อง รถ RoboVan ห้องเย็นวิ่งบนถนนจริงภายในนิคม ทั้งกลางวันและกลางคืน",
+      "text_zh": "在 WHA 东部海岸 1 号工业园测试并规划无人车运行路线，作为试点项目。冷链 RoboVan 在园区真实道路上日夜运行。",
+      "text_en": "Testing and planning autonomous routes inside WHA Eastern Seaboard Industrial Estate 1 as a pilot. A cold-chain RoboVan drives the estate’s real roads by day and night."
+    }
+  ],
+  "place_th": "นิคมอุตสาหกรรม WHA ESIE 1",
+  "place_zh": "WHA ESIE 1 工业园",
+  "place_en": "WHA ESIE 1 industrial estate",
+  "scope_th": "ทดสอบและวางแผนเส้นทางวิ่งรถไร้คนขับในนิคม",
+  "scope_zh": "园区内无人车路线测试与规划",
+  "scope_en": "In-estate route testing and planning",
+  "vehicles_th": "RoboVan Z5 Cold-Chain",
+  "vehicles_zh": "RoboVan Z5 冷链车",
+  "vehicles_en": "RoboVan Z5 Cold-Chain",
+  "status_th": "โครงการนำร่อง",
+  "status_zh": "试点项目",
+  "status_en": "Pilot project",
+  "gallery": [
+    {
+      "image": "/assets/img/case-wha-aerial.webp",
+      "alt": "WHA ESIE 1 from the air"
+    },
+    {
+      "image": "/assets/img/case-wha-fire.webp",
+      "alt": "RoboVan at the WHA fire station"
+    }
+  ],
+  "video": "/assets/video/wha-esie1.mp4",
+  "poster": "/assets/img/wha-poster.webp",
+  "video_caption_th": "วิดีโอโครงการ WHA ESIE 1 โดย SuperX AI",
+  "video_caption_zh": "SuperX AI 制作的 WHA ESIE 1 项目视频",
+  "video_caption_en": "WHA ESIE 1 project film by SuperX AI",
+  "video_position": "media"
+}

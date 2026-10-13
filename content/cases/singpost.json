@@ -1,0 +1,43 @@
+{
+  "video": "",
+  "poster": "",
+  "video_caption_th": "",
+  "video_caption_zh": "",
+  "video_caption_en": "",
+  "video_position": "text",
+  "anchor": "singpost",
+  "group": "asia",
+  "order": 1,
+  "hide": false,
+  "eyebrow_th": "",
+  "eyebrow_zh": "",
+  "eyebrow_en": "",
+  "title_th": "Singapore Post",
+  "title_zh": "新加坡邮政",
+  "title_en": "Singapore Post",
+  "paragraphs": [
+    {
+      "text_th": "เปิดตัวโครงการนำร่องการจัดส่งสินค้าแบบไร้คนขับในหลากหลายรูปแบบที่ประเทศสิงคโปร์",
+      "text_zh": "在新加坡启动多种形式的无人配送试点。",
+      "text_en": "Launched autonomous delivery pilots in several formats in Singapore."
+    }
+  ],
+  "place_th": "สิงคโปร์",
+  "place_zh": "新加坡",
+  "place_en": "Singapore",
+  "scope_th": "",
+  "scope_zh": "",
+  "scope_en": "",
+  "vehicles_th": "",
+  "vehicles_zh": "",
+  "vehicles_en": "",
+  "status_th": "พันธมิตรเทคโนโลยี",
+  "status_zh": "技术伙伴",
+  "status_en": "Technology partner",
+  "gallery": [
+    {
+      "image": "/assets/img/case-singpost.webp",
+      "alt": "Autonomous vans with Singapore Post"
+    }
+  ]
+}

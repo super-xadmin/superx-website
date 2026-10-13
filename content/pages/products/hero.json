@@ -1,0 +1,46 @@
+{
+  "image": "/assets/img/fleet-lineup.webp",
+  "alt": "SuperX RoboVan fleet line-up at sunrise",
+  "crumb_th": "ผลิตภัณฑ์",
+  "crumb_zh": "产品中心",
+  "crumb_en": "Products",
+  "eyebrow_th": "ศูนย์ผลิตภัณฑ์",
+  "eyebrow_zh": "产品中心",
+  "eyebrow_en": "Product centre",
+  "title_th": "ผลิตภัณฑ์และโซลูชัน",
+  "title_zh": "产品与解决方案",
+  "title_en": "Products and solutions",
+  "lead_th": "รถขนส่งไร้คนขับ RoboVan ครบทุกขนาด รถเพื่อการศึกษา หุ่นยนต์งานความปลอดภัย และ AI Agent สำหรับองค์กร",
+  "lead_zh": "全系列 RoboVan 无人配送车、教育无人车、安防与特种机器人，以及企业级 AI Agent。",
+  "lead_en": "The full RoboVan range, education vehicles, security robots and enterprise AI agents.",
+  "chips": [
+    {
+      "anchor": "robovan",
+      "icon": "van",
+      "label_th": "RoboVan",
+      "label_zh": "RoboVan",
+      "label_en": "RoboVan"
+    },
+    {
+      "anchor": "education",
+      "icon": "grad",
+      "label_th": "การศึกษา",
+      "label_zh": "教育",
+      "label_en": "Education"
+    },
+    {
+      "anchor": "security",
+      "icon": "shield",
+      "label_th": "ความปลอดภัย",
+      "label_zh": "安防",
+      "label_en": "Security"
+    },
+    {
+      "anchor": "ai",
+      "icon": "chat",
+      "label_th": "AI Agent",
+      "label_zh": "AI Agent",
+      "label_en": "AI Agent"
+    }
+  ]
+}

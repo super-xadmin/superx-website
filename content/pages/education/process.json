@@ -1,0 +1,34 @@
+{
+  "eyebrow_th": "ขั้นตอน",
+  "eyebrow_zh": "合作流程",
+  "eyebrow_en": "How it works",
+  "title_th": "เริ่มต้นได้ในสามขั้นตอน",
+  "title_zh": "三步开始合作",
+  "title_en": "Three steps to get started",
+  "steps": [
+    {
+      "title_th": "พูดคุยความต้องการ",
+      "title_zh": "沟通需求",
+      "title_en": "Discuss your goals",
+      "text_th": "ทำความเข้าใจผู้เรียน หลักสูตร พื้นที่ และงบประมาณของสถาบัน",
+      "text_zh": "了解学员、课程、场地与预算。",
+      "text_en": "We learn about your learners, programme, space and budget."
+    },
+    {
+      "title_th": "ออกแบบโซลูชัน",
+      "title_zh": "方案设计",
+      "title_en": "Design the solution",
+      "text_th": "เลือกแพลตฟอร์มรถ วางโครงสร้างหลักสูตร และแผนห้องปฏิบัติการ",
+      "text_zh": "选择车辆平台，规划课程体系与实验室。",
+      "text_en": "Choose the vehicle platform and plan the curriculum and lab."
+    },
+    {
+      "title_th": "ส่งมอบและอบรม",
+      "title_zh": "交付与培训",
+      "title_en": "Deliver and train",
+      "text_th": "ส่งมอบรถ ติดตั้ง และอบรมผู้สอน พร้อมทีมดูแลหลังการขาย",
+      "text_zh": "交付车辆、安装调试并培训师资，提供售后支持。",
+      "text_en": "Delivery, set-up and instructor training, with after-sales support."
+    }
+  ]
+}

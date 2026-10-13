@@ -1,0 +1,139 @@
+{
+  "model_name": "Z5 Multi-Locker",
+  "full_name": "Z5 Multi-Locker RoboVan",
+  "type_th": "ล็อกเกอร์ 274 ช่อง",
+  "type_zh": "274 格口",
+  "type_en": "274 compartments",
+  "image": "/assets/img/product-z5locker.webp",
+  "pdf": "/assets/docs/SuperX-Z5-Multi-Locker-RoboVan.pdf",
+  "page": "products.html#locker",
+  "card_button": "pdf",
+  "card_tag_th": "ล็อกเกอร์",
+  "card_tag_zh": "多格口",
+  "card_tag_en": "Locker",
+  "card_tag_style": "normal",
+  "card_facts": [
+    {
+      "label_th": "ช่องล็อกเกอร์",
+      "label_zh": "格口",
+      "label_en": "Compartments",
+      "value": "274"
+    },
+    {
+      "label_th": "บรรทุก",
+      "label_zh": "载重",
+      "label_en": "Payload",
+      "value": "1,000 kg"
+    },
+    {
+      "label_th": "ระยะวิ่ง",
+      "label_zh": "续航",
+      "label_en": "Range",
+      "value": "200–280 km"
+    }
+  ],
+  "length": 3700,
+  "width": 1400,
+  "height": 2290,
+  "specs": [
+    {
+      "key": "dims",
+      "value_th": "3,700 × 1,400 × 2,290",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "compartments",
+      "value_th": "274",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "payload",
+      "value_th": "1,000",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "range",
+      "value_th": "200 / 280 (แบตมาตรฐาน / ความจุสูง)",
+      "value_zh": "200 / 280（标准 / 高容量电池）",
+      "value_en": "200 / 280 (standard / high-capacity battery)"
+    },
+    {
+      "key": "speed",
+      "value_th": "40",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "climb",
+      "value_th": "20% (11.3°)",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "turning",
+      "value_th": "4.6",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "clearance",
+      "value_th": "150",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "wading",
+      "value_th": "255",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "optemp",
+      "value_th": "−30 ถึง 60",
+      "value_zh": "−30 至 60",
+      "value_en": "−30 to 60"
+    },
+    {
+      "key": "ip",
+      "value_th": "IP55",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "battery_type",
+      "value_th": "ลิเธียมไอรอนฟอสเฟต (LFP)",
+      "value_zh": "磷酸铁锂",
+      "value_en": "Lithium iron phosphate (LFP)"
+    },
+    {
+      "key": "battery",
+      "value_th": "18.4 / 28.3",
+      "value_zh": "",
+      "value_en": ""
+    },
+    {
+      "key": "slow",
+      "value_th": "2.2 / 3.4 ชม.*",
+      "value_zh": "2.2 / 3.4 小时*",
+      "value_en": "2.2 / 3.4 h*"
+    },
+    {
+      "key": "color",
+      "value_th": "ขาว Starlight / ฟ้า Glacier",
+      "value_zh": "星光白 / 冰川蓝",
+      "value_en": "Starlight White / Glacier Blue"
+    }
+  ],
+  "cmp_volume_th": "274 ช่อง",
+  "cmp_volume_zh": "274 格",
+  "cmp_volume_en": "274 lockers",
+  "cmp_payload": "1,000",
+  "cmp_range": "200 / 280",
+  "cmp_battery": "18.4 / 28.3",
+  "cmp_cold": "—",
+  "cmp_speed": "40",
+  "cmp_dims": "3,700 × 1,400 × 2,290"
+}

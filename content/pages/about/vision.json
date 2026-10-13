@@ -1,0 +1,26 @@
+{
+  "eyebrow_th": "วิสัยทัศน์และพันธกิจ",
+  "eyebrow_zh": "愿景与使命",
+  "eyebrow_en": "Vision and mission",
+  "title_th": "สิ่งที่เราเชื่อและสิ่งที่เราทำ",
+  "title_zh": "我们的信念与行动",
+  "title_en": "What we believe and what we do",
+  "items": [
+    {
+      "title_th": "วิสัยทัศน์",
+      "title_zh": "愿景",
+      "title_en": "Vision",
+      "text_th": "ก้าวสู่การเป็นผู้นำด้านนวัตกรรม AI ของไทย ที่องค์กรต่างๆ ไว้วางใจให้ขับเคลื่อนทั้งระบบโลจิสติกส์แห่งอนาคต และการสื่อสารดิจิทัลแบบไร้รอยต่อ",
+      "text_zh": "成为泰国值得信赖的 AI 创新领导者，驱动未来物流体系与无缝数字化沟通。",
+      "text_en": "To become Thailand’s leading AI innovator, trusted by organisations to drive the logistics of the future and seamless digital communication."
+    },
+    {
+      "title_th": "พันธกิจ",
+      "title_zh": "使命",
+      "title_en": "Mission",
+      "text_th": "ส่งมอบเทคโนโลยี AI ที่นำไปใช้งานได้จริง เพื่อลดต้นทุน เพิ่มประสิทธิภาพการขนส่ง และพลิกโฉมประสบการณ์การให้บริการลูกค้าของทุกองค์กร",
+      "text_zh": "交付真正可落地的 AI 技术，帮助每家企业降低成本、提升运输效率，并重塑客户服务体验。",
+      "text_en": "To deliver AI that works in practice: lowering costs, raising transport efficiency and transforming customer service for every organisation."
+    }
+  ]
+}

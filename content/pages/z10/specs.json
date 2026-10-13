@@ -1,0 +1,14 @@
+{
+  "eyebrow_th": "ข้อมูลจำเพาะ",
+  "eyebrow_zh": "完整参数表",
+  "eyebrow_en": "Specifications",
+  "title_th": "ข้อมูลจำเพาะครบทุกรายการ",
+  "title_zh": "完整技术参数",
+  "title_en": "Full specifications",
+  "models": [
+    {
+      "model": "content/models/z10.json"
+    }
+  ],
+  "drawing": "content/models/z10.json"
+}

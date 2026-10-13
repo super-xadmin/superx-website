@@ -1,0 +1,69 @@
+{
+  "eyebrow_th": "พันธมิตร",
+  "eyebrow_zh": "合作伙伴",
+  "eyebrow_en": "Partners",
+  "title_th": "ทำงานร่วมกับผู้นำด้านเทคโนโลยีและอุตสาหกรรม",
+  "title_zh": "与技术和产业领导者携手",
+  "title_en": "Working with leaders in technology and industry",
+  "items": [
+    {
+      "icon": "chip",
+      "role_th": "พันธมิตรเทคโนโลยี",
+      "role_zh": "技术合作伙伴",
+      "role_en": "Technology partner",
+      "name": "Zelostech",
+      "text_th": "ผู้พัฒนาเทคโนโลยีขับขี่อัตโนมัติระดับ L4 แบบ Full-stack และผู้ผลิต RoboVan ซีรีส์ Z มีสิทธิบัตรหลักกว่า 200 รายการและรางวัลกว่า 40 รางวัล (ข้อมูลจาก Zelostech)",
+      "text_zh": "全栈 L4 自动驾驶技术开发商及 Z 系列 RoboVan 制造商，拥有 200 余项核心专利与 40 余项奖项（数据来源：Zelostech）。",
+      "text_en": "Developer of full-stack L4 autonomous driving and maker of the Z-Series RoboVan, with 200+ core patents and 40+ awards (source: Zelostech)."
+    },
+    {
+      "icon": "layers",
+      "role_th": "บริษัทในเครือ",
+      "role_zh": "所属集团",
+      "role_en": "Group",
+      "name": "DIMET (Siam) PCL",
+      "text_th": "บริษัทมหาชนผู้บุกเบิกในภาคอุตสาหกรรมไทย และเจ้าของระบบนิเวศธุรกิจที่ SuperX AI เป็นเสาหลัก",
+      "text_zh": "深耕泰国工业的大众公司，SuperX AI 为其业务生态的核心支柱。",
+      "text_en": "A public company and long-standing pioneer in Thai industry, whose ecosystem SuperX AI is a pillar of."
+    },
+    {
+      "icon": "leaf",
+      "role_th": "ระบบนิเวศเดียวกัน",
+      "role_zh": "同一生态",
+      "role_en": "Same ecosystem",
+      "name": "Energy Link Design (Thailand)",
+      "text_th": "ผู้เชี่ยวชาญด้านพลังงานทดแทน ร่วมขับเคลื่อนอนาคตพลังงานสะอาดของประเทศ",
+      "text_zh": "可再生能源专家，共同推动泰国清洁能源发展。",
+      "text_en": "Renewable energy specialist helping drive Thailand’s clean-energy future."
+    }
+  ],
+  "strip": [
+    {
+      "label_th": "สถานที่ดำเนินโครงการนำร่อง",
+      "label_zh": "试点项目地点",
+      "label_en": "Pilot project sites"
+    },
+    {
+      "name_th": "T-CAV",
+      "name_zh": "T-CAV",
+      "name_en": "T-CAV",
+      "small_th": "กรมวิทยาศาสตร์บริการ",
+      "small_zh": "泰国科学服务厅",
+      "small_en": "Department of Science Service"
+    },
+    {
+      "name_th": "WHA ESIE 1",
+      "name_zh": "WHA ESIE 1",
+      "name_en": "WHA ESIE 1"
+    },
+    {
+      "name_th": "ไปรษณีย์ไทย",
+      "name_zh": "泰国邮政",
+      "name_en": "Thailand Post"
+    }
+  ],
+  "strip_link_label_th": "ดูผลงาน",
+  "strip_link_label_zh": "查看案例",
+  "strip_link_label_en": "See the projects",
+  "strip_link": "cases.html"
+}

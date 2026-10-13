@@ -1,0 +1,49 @@
+{
+  "eyebrow_th": "รุ่นหลัก",
+  "eyebrow_zh": "核心车型",
+  "eyebrow_en": "Core models",
+  "title_th": "RoboVan สำหรับทุกขนาดงาน",
+  "title_zh": "适配不同运量的 RoboVan",
+  "title_en": "A RoboVan for every load",
+  "link_label_th": "เปรียบเทียบทุกรุ่น",
+  "link_label_zh": "对比全部车型",
+  "link_label_en": "Compare every model",
+  "link": "products.html",
+  "cards": [
+    {
+      "model": "content/models/z5.json"
+    },
+    {
+      "model": "content/models/z10.json"
+    },
+    {
+      "model": "content/models/z5cold.json"
+    },
+    {
+      "model": "content/models/z10cold.json"
+    }
+  ],
+  "others_label_th": "รุ่นอื่น",
+  "others_label_zh": "其他车型",
+  "others_label_en": "Also available",
+  "others": [
+    {
+      "label_th": "Z5 Plus",
+      "label_zh": "Z5 Plus",
+      "label_en": "Z5 Plus",
+      "link": "z5.html#plus"
+    },
+    {
+      "label_th": "Z5 Multi-Locker",
+      "label_zh": "Z5 Multi-Locker",
+      "label_en": "Z5 Multi-Locker",
+      "link": "products.html#locker"
+    },
+    {
+      "label_th": "Z20 · 4 t",
+      "label_zh": "Z20 · 4 t",
+      "label_en": "Z20 · 4 t",
+      "link": "products.html#z20"
+    }
+  ]
+}

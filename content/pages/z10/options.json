@@ -1,0 +1,88 @@
+{
+  "eyebrow_th": "ตัวเลือก",
+  "eyebrow_zh": "可选配置",
+  "eyebrow_en": "Options",
+  "title_th": "เลือกให้ตรงกับงานของคุณ",
+  "title_zh": "按需配置",
+  "title_en": "Configure it for your job",
+  "items": [
+    {
+      "title_th": "รุ่นห้องเย็น",
+      "title_zh": "冷链版",
+      "title_en": "Cold-chain version",
+      "text_th": "Z10 Cold-Chain ตู้ 10.2 ลบ.ม. ห้องเย็นสองโซน −20 ถึง 12 °C",
+      "text_zh": "Z10 冷链车，货箱 10.2 m³，双温区 −20 至 12 °C。",
+      "text_en": "Z10 Cold-Chain: 10.2 m³ with dual-zone refrigeration from −20 to 12 °C.",
+      "link_label_th": "ดูรุ่นห้องเย็น",
+      "link_label_zh": "查看冷链车型",
+      "link_label_en": "See cold-chain",
+      "link": "cold-chain.html#z10cold",
+      "swatches": false
+    },
+    {
+      "title_th": "ต้องการบรรทุกมากกว่านี้",
+      "title_zh": "需要更大运量",
+      "title_en": "Need more capacity",
+      "text_th": "Z20 ตู้ 20 ลบ.ม. บรรทุก 4 ตัน โหลดด้วยโฟล์คลิฟท์ได้",
+      "text_zh": "Z20 货箱 20 m³、载重 4 吨，支持叉车装卸。",
+      "text_en": "Z20: 20 m³ and 4 t, with forklift loading.",
+      "link_label_th": "ดู Z20",
+      "link_label_zh": "查看 Z20",
+      "link_label_en": "See the Z20",
+      "link": "products.html#z20",
+      "swatches": false
+    },
+    {
+      "title_th": "สีตัวรถ",
+      "title_zh": "车身颜色",
+      "title_en": "Body colour",
+      "text_th": "ขาว Starlight หรือฟ้า Glacier",
+      "text_zh": "星光白或冰川蓝",
+      "text_en": "Starlight White or Glacier Blue",
+      "link_label_th": "",
+      "link_label_zh": "",
+      "link_label_en": "",
+      "link": "",
+      "swatches": true
+    },
+    {
+      "title_th": "ชาร์จ DC ความเร็วสูง",
+      "title_zh": "直流快充",
+      "title_en": "DC fast charging",
+      "text_th": "ชาร์จ 30–80% ด้วย DC ในประมาณ 0.6 ชั่วโมง",
+      "text_zh": "直流快充 30%–80% 约 0.6 小时。",
+      "text_en": "DC charging from 30 to 80% in about 0.6 h.",
+      "link_label_th": "",
+      "link_label_zh": "",
+      "link_label_en": "",
+      "link": "",
+      "swatches": false
+    },
+    {
+      "title_th": "สีและแบรนด์องค์กร",
+      "title_zh": "定制涂装",
+      "title_en": "Custom livery",
+      "text_th": "สอบถามการทำสีและติดแบรนด์ขององค์กรบนตัวรถ",
+      "text_zh": "可咨询企业品牌定制涂装。",
+      "text_en": "Ask about custom paint and your company branding on the body.",
+      "link_label_th": "",
+      "link_label_zh": "",
+      "link_label_en": "",
+      "link": "",
+      "swatches": false
+    },
+    {
+      "title_th": "เชื่อมต่อระบบของคุณ",
+      "title_zh": "系统对接",
+      "title_en": "Connect your systems",
+      "text_th": "เชื่อมต่อ API กับระบบคลังสินค้า (WMS) เพื่อสั่งงานรถอัตโนมัติ",
+      "text_zh": "通过 API 对接 WMS，自动下发运输任务。",
+      "text_en": "API integration with your WMS to dispatch vehicles automatically.",
+      "link_label_th": "",
+      "link_label_zh": "",
+      "link_label_en": "",
+      "link": "",
+      "swatches": false
+    }
+  ]
+}

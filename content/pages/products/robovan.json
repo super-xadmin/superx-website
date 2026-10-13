@@ -1,0 +1,36 @@
+{
+  "eyebrow_th": "RoboVan · Smart Mobility",
+  "eyebrow_zh": "RoboVan · Smart Mobility",
+  "eyebrow_en": "RoboVan · Smart Mobility",
+  "title_th": "RoboVan รถขนส่งไร้คนขับระดับ L4",
+  "title_zh": "RoboVan L4 级无人配送车",
+  "title_en": "RoboVan L4 autonomous logistics vehicles",
+  "lead_th": "ขับเคลื่อนด้วยเทคโนโลยีขับขี่อัตโนมัติ L4 ของ Zelostech และทีมติดตั้งในประเทศของ SuperX AI มีตั้งแต่ตู้ 4.6 ถึง 20 ลูกบาศก์เมตร รุ่นห้องเย็น และรุ่นล็อกเกอร์",
+  "lead_zh": "搭载 Zelostech L4 级自动驾驶技术，由 SuperX AI 本地团队部署交付，货箱从 4.6 到 20 m³，另有冷链版与多格口版。",
+  "lead_en": "Powered by Zelostech’s L4 autonomous driving and deployed by SuperX AI’s local team, from 4.6 to 20 m³, with cold-chain and locker versions.",
+  "row1": [
+    {
+      "model": "content/models/z5.json"
+    },
+    {
+      "model": "content/models/z5plus.json"
+    },
+    {
+      "model": "content/models/z10.json"
+    }
+  ],
+  "row2": [
+    {
+      "model": "content/models/z5cold.json"
+    },
+    {
+      "model": "content/models/z10cold.json"
+    },
+    {
+      "model": "content/models/z20.json"
+    }
+  ],
+  "compare_title_th": "เปรียบเทียบทุกรุ่น",
+  "compare_title_zh": "车型对比",
+  "compare_title_en": "Compare models"
+}

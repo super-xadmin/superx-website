@@ -1,0 +1,20 @@
+{
+  "eyebrow_th": "ประเทศไทย",
+  "eyebrow_zh": "泰国",
+  "eyebrow_en": "Thailand",
+  "title_th": "โครงการนำร่องโดย SuperX AI",
+  "title_zh": "SuperX AI 泰国试点项目",
+  "title_en": "Pilot projects by SuperX AI",
+  "label_place_th": "สถานที่",
+  "label_place_zh": "地点",
+  "label_place_en": "Location",
+  "label_scope_th": "ขอบเขตงาน",
+  "label_scope_zh": "项目内容",
+  "label_scope_en": "Scope",
+  "label_vehicles_th": "รถที่ใช้",
+  "label_vehicles_zh": "使用车型",
+  "label_vehicles_en": "Vehicles",
+  "label_status_th": "สถานะ",
+  "label_status_zh": "状态",
+  "label_status_en": "Status"
+}

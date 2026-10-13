@@ -1,0 +1,36 @@
+{
+  "eyebrow_th": "รุ่นอื่นที่ให้บริการ",
+  "eyebrow_zh": "其他当地运营车型",
+  "eyebrow_en": "Also available",
+  "used_label_th": "การใช้งาน",
+  "used_label_zh": "应用场景",
+  "used_label_en": "Used for",
+  "ask_label_th": "สอบถามรุ่นนี้",
+  "ask_label_zh": "咨询此车型",
+  "ask_label_en": "Ask about this model",
+  "download_label_th": "ดาวน์โหลดสเปก",
+  "download_label_zh": "下载参数",
+  "download_label_en": "Download specs",
+  "items": [
+    {
+      "model": "content/models/z5locker.json",
+      "anchor": "locker",
+      "lead_th": "รถส่งพัสดุไร้คนขับพร้อมล็อกเกอร์ 274 ช่องหลายขนาด ส่งได้หลายจุดในเที่ยวเดียวและให้ผู้รับเปิดรับของเองได้ ช่วยลดภาระงานส่งของช่วงไมล์สุดท้ายและช่วงที่มีปริมาณสูง",
+      "lead_zh": "配备 274 个多尺寸格口的无人快递车，一趟多点投递并支持客户自助取件，缓解末端配送与高峰期人力压力。",
+      "lead_en": "A driverless parcel van with 274 lockers in several sizes for multi-stop rounds and self-service pickup, easing last-mile workload at peak times.",
+      "uses_th": "พัสดุ ชุมชน แคมปัส ร้านค้าเคลื่อนที่ เวชภัณฑ์",
+      "uses_zh": "快递、社区、校园、移动零售、医药",
+      "uses_en": "Parcels, communities, campuses, mobile retail, pharmaceuticals"
+    },
+    {
+      "model": "content/models/z20.json",
+      "anchor": "z20",
+      "lead_th": "RoboVan ความจุสูงสุดในกลุ่ม ตู้ 20 ลบ.ม. บรรทุก 4 ตัน โหลดด้วยโฟล์คลิฟท์ได้ทั้งประตูข้างและหลัง สำหรับท่าเรือ ศูนย์โลจิสติกส์ เขตปลอดอากร และโรงงานขนาดใหญ่",
+      "lead_zh": "系列中容量最大的 RoboVan，货箱 20 m³、载重 4 吨，侧门与后门均可叉车装卸，适用于港口、物流枢纽、保税区及大型工厂。",
+      "lead_en": "The largest RoboVan in the range: 20 m³ and 4 t payload, with forklift loading through side and rear doors, for ports, logistics hubs, bonded zones and large plants.",
+      "uses_th": "ท่าเรือ สนามบิน ขนย้ายระหว่างคลัง Cross-dock นิคมอุตสาหกรรม",
+      "uses_zh": "港口、机场、仓间转运、越库、工业园区",
+      "uses_en": "Ports, airports, inter-warehouse, cross-dock, industrial parks"
+    }
+  ]
+}

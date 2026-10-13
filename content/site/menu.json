@@ -1,0 +1,242 @@
+{
+  "nav_home_th": "หน้าแรก",
+  "nav_home_zh": "首页",
+  "nav_home_en": "Home",
+  "nav_products_th": "ผลิตภัณฑ์",
+  "nav_products_zh": "产品中心",
+  "nav_products_en": "Products",
+  "nav_about_th": "เกี่ยวกับ SuperX",
+  "nav_about_zh": "关于 SuperX",
+  "nav_about_en": "About SuperX",
+  "nav_contact_th": "ติดต่อเรา",
+  "nav_contact_zh": "联系我们",
+  "nav_contact_en": "Contact",
+  "nav_demo_th": "นัดหมายสาธิต",
+  "nav_demo_zh": "预约演示",
+  "nav_demo_en": "Book a demo",
+  "nav_demo_link": "contact.html?topic=demo",
+  "products_menu": [
+    {
+      "link": "z5.html",
+      "title_th": "RoboVan Z5",
+      "title_zh": "RoboVan Z5",
+      "title_en": "RoboVan Z5",
+      "hint_th": "6.2–6.4 ลบ.ม. · บรรทุก 1.8 ตัน",
+      "hint_zh": "货箱 6.2–6.4 m³ · 载重 1.8 吨",
+      "hint_en": "6.2–6.4 m³ · 1.8 t payload",
+      "divider_before": false
+    },
+    {
+      "link": "z10.html",
+      "title_th": "RoboVan Z10",
+      "title_zh": "RoboVan Z10",
+      "title_en": "RoboVan Z10",
+      "hint_th": "12.5 ลบ.ม. · บรรทุก 2.5 ตัน",
+      "hint_zh": "货箱 12.5 m³ · 载重 2.5 吨",
+      "hint_en": "12.5 m³ · 2.5 t payload",
+      "divider_before": false
+    },
+    {
+      "link": "cold-chain.html",
+      "title_th": "รถห้องเย็น Cold-Chain",
+      "title_zh": "冷链车型",
+      "title_en": "Cold-chain RoboVans",
+      "hint_th": "ควบคุมอุณหภูมิ −20 ถึง 12 °C",
+      "hint_zh": "温控 −20 至 12 °C",
+      "hint_en": "Temperature control −20 to 12 °C",
+      "divider_before": false
+    },
+    {
+      "link": "education.html",
+      "title_th": "รถไร้คนขับเพื่อการศึกษา",
+      "title_zh": "教育无人车",
+      "title_en": "Autonomous driving education",
+      "hint_th": "สำหรับสถาบันการศึกษาและงานวิจัย",
+      "hint_zh": "面向院校与科研机构",
+      "hint_en": "For schools and research",
+      "divider_before": true
+    },
+    {
+      "link": "security.html",
+      "title_th": "หุ่นยนต์ความปลอดภัยและงานพิเศษ",
+      "title_zh": "安防与特种机器人",
+      "title_en": "Security and special robots",
+      "hint_th": "ตีนตะขาบ · ลาดตระเวน · ตรวจสอบ",
+      "hint_zh": "履带车 · 巡逻 · 巡检",
+      "hint_en": "Tracked · patrol · inspection",
+      "divider_before": false
+    },
+    {
+      "link": "ai-agent.html",
+      "title_th": "AI Agent · Qubby AI",
+      "title_zh": "AI Agent · Qubby AI",
+      "title_en": "AI Agent · Qubby AI",
+      "hint_th": "AI ตอบลูกค้าทุกช่องทาง",
+      "hint_zh": "全渠道客户沟通 AI",
+      "hint_en": "Omnichannel customer AI",
+      "divider_before": false
+    },
+    {
+      "link": "products.html",
+      "title_th": "ผลิตภัณฑ์ทั้งหมด",
+      "title_zh": "全部产品",
+      "title_en": "All products",
+      "hint_th": "เปรียบเทียบทุกรุ่น",
+      "hint_zh": "全部车型对比",
+      "hint_en": "Compare every model",
+      "divider_before": true
+    }
+  ],
+  "about_menu": [
+    {
+      "link": "about.html",
+      "title_th": "เกี่ยวกับบริษัท",
+      "title_zh": "公司介绍",
+      "title_en": "Company",
+      "hint_th": "วิสัยทัศน์ เครือบริษัท แผนงาน",
+      "hint_zh": "愿景 · 集团 · 路线图",
+      "hint_en": "Vision, group and roadmap",
+      "divider_before": false
+    },
+    {
+      "link": "cases.html",
+      "title_th": "ผลงานและโครงการ",
+      "title_zh": "项目案例",
+      "title_en": "Projects",
+      "hint_th": "โครงการนำร่องในประเทศไทย",
+      "hint_zh": "泰国试点项目",
+      "hint_en": "Pilot projects in Thailand",
+      "divider_before": false
+    },
+    {
+      "link": "news.html",
+      "title_th": "ข่าวสาร",
+      "title_zh": "新闻与动态",
+      "title_en": "News",
+      "hint_th": "ความเคลื่อนไหวล่าสุด",
+      "hint_zh": "最新动态",
+      "hint_en": "Latest updates",
+      "divider_before": false
+    },
+    {
+      "link": "about.html#partners",
+      "title_th": "พันธมิตร",
+      "title_zh": "合作伙伴",
+      "title_en": "Partners",
+      "hint_th": "Zelostech · DIMET (Siam)",
+      "hint_zh": "Zelostech · DIMET (Siam)",
+      "hint_en": "Zelostech · DIMET (Siam)",
+      "divider_before": false
+    },
+    {
+      "link": "contact.html",
+      "title_th": "ติดต่อเรา",
+      "title_zh": "联系我们",
+      "title_en": "Contact",
+      "hint_th": "บางปู สมุทรปราการ",
+      "hint_zh": "北榄府邦普",
+      "hint_en": "Bang Pu, Samut Prakan",
+      "divider_before": false
+    }
+  ],
+  "footer_products_title_th": "ผลิตภัณฑ์",
+  "footer_products_title_zh": "产品",
+  "footer_products_title_en": "Products",
+  "footer_products": [
+    {
+      "link": "z5.html",
+      "label_th": "RoboVan Z5",
+      "label_zh": "RoboVan Z5",
+      "label_en": "RoboVan Z5"
+    },
+    {
+      "link": "z10.html",
+      "label_th": "RoboVan Z10",
+      "label_zh": "RoboVan Z10",
+      "label_en": "RoboVan Z10"
+    },
+    {
+      "link": "cold-chain.html",
+      "label_th": "รถห้องเย็น",
+      "label_zh": "冷链车型",
+      "label_en": "Cold-chain models"
+    },
+    {
+      "link": "education.html",
+      "label_th": "รถเพื่อการศึกษา",
+      "label_zh": "教育无人车",
+      "label_en": "Education"
+    },
+    {
+      "link": "security.html",
+      "label_th": "หุ่นยนต์ความปลอดภัย",
+      "label_zh": "安防与特种机器人",
+      "label_en": "Security robots"
+    },
+    {
+      "link": "ai-agent.html",
+      "label_th": "AI Agent",
+      "label_zh": "AI Agent",
+      "label_en": "AI Agent"
+    },
+    {
+      "link": "products.html",
+      "label_th": "ผลิตภัณฑ์ทั้งหมด",
+      "label_zh": "全部产品",
+      "label_en": "All products"
+    }
+  ],
+  "footer_company_title_th": "บริษัท",
+  "footer_company_title_zh": "公司",
+  "footer_company_title_en": "Company",
+  "footer_company": [
+    {
+      "link": "about.html",
+      "label_th": "เกี่ยวกับเรา",
+      "label_zh": "关于我们",
+      "label_en": "About us"
+    },
+    {
+      "link": "cases.html",
+      "label_th": "ผลงานและโครงการ",
+      "label_zh": "项目案例",
+      "label_en": "Projects"
+    },
+    {
+      "link": "news.html",
+      "label_th": "ข่าวสาร",
+      "label_zh": "新闻与动态",
+      "label_en": "News"
+    },
+    {
+      "link": "about.html#partners",
+      "label_th": "พันธมิตร",
+      "label_zh": "合作伙伴",
+      "label_en": "Partners"
+    },
+    {
+      "link": "contact.html",
+      "label_th": "ติดต่อเรา",
+      "label_zh": "联系我们",
+      "label_en": "Contact"
+    }
+  ],
+  "footer_contact_title_th": "ติดต่อ",
+  "footer_contact_title_zh": "联系方式",
+  "footer_contact_title_en": "Contact",
+  "home_aria_th": "SUPERX AI หน้าแรก",
+  "home_aria_zh": "SUPERX AI 首页",
+  "home_aria_en": "SUPERX AI home",
+  "menu_aria_th": "เมนูหลัก",
+  "menu_aria_zh": "主菜单",
+  "menu_aria_en": "Main menu",
+  "open_menu_aria_th": "เปิดเมนู",
+  "open_menu_aria_zh": "打开菜单",
+  "open_menu_aria_en": "Open menu",
+  "lang_aria_th": "เลือกภาษา",
+  "lang_aria_zh": "选择语言",
+  "lang_aria_en": "Choose language",
+  "skip_th": "ข้ามไปยังเนื้อหา",
+  "skip_zh": "跳到正文",
+  "skip_en": "Skip to content"
+}

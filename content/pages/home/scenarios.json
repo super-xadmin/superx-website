@@ -1,0 +1,103 @@
+{
+  "eyebrow_th": "การใช้งาน",
+  "eyebrow_zh": "应用场景",
+  "eyebrow_en": "Applications",
+  "title_th": "ใช้งานได้ในหลายสถานการณ์จริง",
+  "title_zh": "覆盖多种真实应用场景",
+  "title_en": "Built for many real-world jobs",
+  "lead_th": "แพลตฟอร์มเดียวกันปรับใช้ได้ตั้งแต่ขนส่งในคลัง ห้องเย็น ไปจนถึงงานเทศบาลและความปลอดภัย",
+  "lead_zh": "同一平台可适配仓储、冷链，乃至市政与安防等多种场景。",
+  "lead_en": "One platform adapts from warehouse and cold-chain logistics to municipal and security work.",
+  "tiles": [
+    {
+      "image": "/assets/img/use-warehouse-b.webp",
+      "alt": "Warehouses and DCs",
+      "title_th": "คลังและศูนย์กระจายสินค้า",
+      "title_zh": "仓储与配送中心",
+      "title_en": "Warehouses and DCs",
+      "text_th": "ขนพาเลทและกล่องระหว่างอาคาร",
+      "text_zh": "楼宇间托盘与箱货转运",
+      "text_en": "Pallets and cartons between buildings"
+    },
+    {
+      "image": "/assets/img/use-industrial-park.webp",
+      "alt": "Industrial estates",
+      "title_th": "นิคมอุตสาหกรรม",
+      "title_zh": "工业园区物流",
+      "title_en": "Industrial estates",
+      "text_th": "ส่งวัตถุดิบและชิ้นส่วนเข้าสายการผลิต",
+      "text_zh": "原料与零部件上线配送",
+      "text_en": "Materials and parts to the line"
+    },
+    {
+      "image": "/assets/img/use-coldchain.webp",
+      "alt": "Cold chain",
+      "title_th": "โลจิสติกส์ห้องเย็น",
+      "title_zh": "冷链配送",
+      "title_en": "Cold chain",
+      "text_th": "อาหารสด แช่แข็ง และเวชภัณฑ์",
+      "text_zh": "生鲜、冷冻品与医药",
+      "text_en": "Fresh, frozen and pharmaceutical"
+    },
+    {
+      "image": "/assets/img/use-warehouse-a.webp",
+      "alt": "Retail replenishment",
+      "title_th": "เติมสินค้าค้าปลีก",
+      "title_zh": "零售补货",
+      "title_en": "Retail replenishment",
+      "text_th": "ส่งสินค้าจากคลังถึงสาขาในเมือง",
+      "text_zh": "从仓库到城市门店",
+      "text_en": "From warehouse to city stores"
+    },
+    {
+      "image": "/assets/img/use-airport.webp",
+      "alt": "Airports",
+      "title_th": "สนามบิน",
+      "title_zh": "机场物流",
+      "title_en": "Airports",
+      "text_th": "ขนส่งภาคพื้นระหว่างอาคาร",
+      "text_zh": "航站楼间地面物流",
+      "text_en": "Ground logistics between terminals"
+    },
+    {
+      "image": "/assets/img/use-last-mile.webp",
+      "alt": "Last mile and farms",
+      "title_th": "ไมล์สุดท้ายและการเกษตร",
+      "title_zh": "末端与农产品配送",
+      "title_en": "Last mile and farms",
+      "text_th": "รับผลผลิตจากแหล่งปลูกถึงศูนย์รวบรวม",
+      "text_zh": "从产地到集散中心",
+      "text_en": "Produce from farm to collection point"
+    },
+    {
+      "image": "/assets/img/use-sweeper.webp",
+      "alt": "Street cleaning",
+      "title_th": "ทำความสะอาดถนน",
+      "title_zh": "道路清扫",
+      "title_en": "Street cleaning",
+      "text_th": "รถกวาดถนนไร้คนขับสำหรับเทศบาล",
+      "text_zh": "面向市政的无人清扫车",
+      "text_en": "Driverless sweepers for municipalities"
+    },
+    {
+      "image": "/assets/img/use-power-inspection.webp",
+      "alt": "Power-line inspection",
+      "title_th": "ตรวจสายส่งไฟฟ้า",
+      "title_zh": "电力巡检",
+      "title_en": "Power-line inspection",
+      "text_th": "ลาดตระเวนตรวจโครงข่ายไฟฟ้า",
+      "text_zh": "电网线路自动巡检",
+      "text_en": "Automated grid patrols"
+    },
+    {
+      "image": "/assets/img/use-security-patrol.webp",
+      "alt": "Security patrol",
+      "title_th": "ลาดตระเวนรักษาความปลอดภัย",
+      "title_zh": "安防巡逻",
+      "title_en": "Security patrol",
+      "text_th": "เฝ้าระวังพื้นที่ตลอดคืน",
+      "text_zh": "全天候区域巡逻",
+      "text_en": "Area patrols through the night"
+    }
+  ]
+}

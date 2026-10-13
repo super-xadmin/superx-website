@@ -1,0 +1,42 @@
+{
+  "eyebrow_th": "ขั้นตอนเริ่มใช้งาน",
+  "eyebrow_zh": "上线流程",
+  "eyebrow_en": "Getting started",
+  "title_th": "จากช่องทางเดิมของคุณ สู่ AI ที่ทำงานได้จริง",
+  "title_zh": "从现有渠道到真正可用的 AI",
+  "title_en": "From your existing channels to a working AI agent",
+  "steps": [
+    {
+      "title_th": "เชื่อมช่องทาง",
+      "title_zh": "接入渠道",
+      "title_en": "Connect channels",
+      "text_th": "เชื่อม LINE, Facebook, เว็บไซต์ และเบอร์โทรศัพท์ที่ใช้อยู่",
+      "text_zh": "接入现有的 LINE、Facebook、网站与电话号码。",
+      "text_en": "Connect the LINE, Facebook, website and phone lines you already use."
+    },
+    {
+      "title_th": "สอนด้วยข้อมูลองค์กร",
+      "title_zh": "导入企业知识",
+      "title_en": "Teach it your business",
+      "text_th": "นำเอกสาร สินค้า และคำถามที่พบบ่อยเข้าระบบ พร้อมกำหนดขอบเขตคำตอบ",
+      "text_zh": "导入资料、产品与常见问题，并设定回答边界。",
+      "text_en": "Load documents, products and FAQs, and set what it may answer."
+    },
+    {
+      "title_th": "เชื่อมระบบหลังบ้าน",
+      "title_zh": "对接后台系统",
+      "title_en": "Connect back-office systems",
+      "text_th": "เชื่อม CRM / ERP เพื่อดึงข้อมูลและบันทึกงานอัตโนมัติ",
+      "text_zh": "对接 CRM / ERP，自动查询与记录。",
+      "text_en": "Link CRM and ERP for live data and automatic records."
+    },
+    {
+      "title_th": "เปิดใช้และปรับปรุง",
+      "title_zh": "上线与优化",
+      "title_en": "Go live and improve",
+      "text_th": "ติดตามผลและปรับคำตอบอย่างต่อเนื่องร่วมกับทีม SuperX AI",
+      "text_zh": "与 SuperX AI 团队持续跟踪效果并优化。",
+      "text_en": "Track results and keep refining with the SuperX AI team."
+    }
+  ]
+}

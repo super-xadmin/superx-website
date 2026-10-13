@@ -1,0 +1,33 @@
+{
+  "eyebrow_th": "เครือบริษัท",
+  "eyebrow_zh": "集团生态",
+  "eyebrow_en": "Our group",
+  "title_th": "ระบบนิเวศธุรกิจ บมจ. ไดเมท (สยาม)",
+  "title_zh": "DIMET (Siam) 业务生态",
+  "title_en": "The DIMET (Siam) business ecosystem",
+  "lead_th": "ความแข็งแกร่งด้านอุตสาหกรรมและพลังงานของเครือ ทำให้ SuperX AI ส่งมอบระบบขนส่งอัตโนมัติที่เชื่อมกับพลังงานสะอาดได้ครบวงจร",
+  "lead_zh": "依托集团在工业与能源领域的积累，SuperX AI 能够交付与清洁能源相结合的一体化自动化物流系统。",
+  "lead_en": "The group’s industrial and energy strength lets SuperX AI deliver autonomous logistics connected to clean energy, end to end.",
+  "parent_name": "DIMET (SIAM) PCL",
+  "parent_text_th": "บริษัท ไดเมท (สยาม) จำกัด (มหาชน)",
+  "parent_text_zh": "DIMET (Siam) 大众有限公司",
+  "parent_text_en": "DIMET (Siam) Public Company Limited",
+  "members": [
+    {
+      "name": "SUPERX AI",
+      "text_th": "AI และระบบโลจิสติกส์อัตโนมัติ",
+      "text_zh": "AI 与自动化物流",
+      "text_en": "AI and autonomous logistics",
+      "is_us": true
+    },
+    {
+      "name": "Energy Link Design (Thailand)",
+      "text_th": "พลังงานทดแทน",
+      "text_zh": "可再生能源",
+      "text_en": "Renewable energy",
+      "is_us": false
+    }
+  ],
+  "image": "/assets/img/about-ecosystem.webp",
+  "alt": "Solar arrays, a wind turbine and an industrial estate from the air"
+}

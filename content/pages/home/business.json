@@ -1,0 +1,99 @@
+{
+  "eyebrow_th": "กลุ่มธุรกิจ",
+  "eyebrow_zh": "四大业务模块",
+  "eyebrow_en": "Business lines",
+  "title_th": "สี่กลุ่มธุรกิจหลักของ SuperX AI",
+  "title_zh": "SuperX AI 四大业务模块",
+  "title_en": "Four business lines",
+  "lead_th": "จากรถขนส่งไร้คนขับ ไปจนถึงหุ่นยนต์งานพิเศษและ AI ที่คุยกับลูกค้าแทนคุณ ทุกโซลูชันมีทีมในประเทศไทยดูแล",
+  "lead_zh": "从无人配送车到特种机器人，再到替您与客户沟通的 AI，每项方案都由泰国本地团队支持。",
+  "lead_en": "From driverless logistics to special-purpose robots and AI that talks to your customers, every line is supported by our team in Thailand.",
+  "more_th": "ดูรายละเอียด",
+  "more_zh": "了解更多",
+  "more_en": "Learn more",
+  "modules": [
+    {
+      "link": "products.html#robovan",
+      "media_type": "image",
+      "image": "/assets/img/use-warehouse-b.webp",
+      "alt": "RoboVan unloading cartons at a warehouse dock",
+      "chat": [],
+      "label_th": "01 · Smart Mobility",
+      "label_zh": "01 · 智慧出行",
+      "label_en": "01 · Smart Mobility",
+      "title_th": "RoboVan รถขนส่งไร้คนขับ",
+      "title_zh": "RoboVan 无人配送车",
+      "title_en": "RoboVan autonomous logistics",
+      "text_th": "รถขนส่งไร้คนขับระดับ L4 ตู้ 4.6–20 ลบ.ม. บรรทุก 1–4 ตัน สำหรับงานในโรงงาน ระหว่างคลัง และในเมือง",
+      "text_zh": "货箱 4.6–20 m³、载重 1–4 吨的 L4 级无人配送车，适用于厂内、仓间及城市配送。",
+      "text_en": "L4 driverless vans with 4.6–20 m³ cargo and 1–4 t payload, for in-plant, inter-warehouse and urban routes."
+    },
+    {
+      "link": "education.html",
+      "media_type": "image",
+      "image": "/assets/img/tcav-photo-campus.webp",
+      "alt": "RoboVan at a Thai government science campus",
+      "chat": [],
+      "label_th": "02 · Education",
+      "label_zh": "02 · 教育",
+      "label_en": "02 · Education",
+      "title_th": "รถไร้คนขับเพื่อการศึกษา",
+      "title_zh": "教育无人车",
+      "title_en": "Autonomous driving education",
+      "text_th": "แพลตฟอร์มและการอบรมด้านยานยนต์ไร้คนขับ สำหรับมหาวิทยาลัย สถาบันอาชีวะ และศูนย์วิจัย",
+      "text_zh": "面向高校、职业院校及科研机构的无人驾驶教学平台与培训。",
+      "text_en": "Autonomous vehicle platforms and training for universities, vocational colleges and research centres."
+    },
+    {
+      "link": "security.html",
+      "media_type": "image",
+      "image": "/assets/img/use-security-patrol.webp",
+      "alt": "Autonomous security patrol vehicle at dusk",
+      "chat": [],
+      "label_th": "03 · Security",
+      "label_zh": "03 · 安防",
+      "label_en": "03 · Security",
+      "title_th": "หุ่นยนต์ความปลอดภัยและงานพิเศษ",
+      "title_zh": "安防与特种机器人",
+      "title_en": "Security and special robots",
+      "text_th": "รถตีนตะขาบไร้คนขับ รถลาดตระเวน และยานยนต์งานพิเศษ เช่น ตรวจสายไฟฟ้า ดับเพลิง และทำความสะอาดถนน",
+      "text_zh": "履带式无人车、安防巡逻车，以及电力巡检、消防、道路清扫等特种车辆。",
+      "text_en": "Tracked unmanned vehicles, patrol vehicles and special-purpose units for power-line inspection, firefighting and street cleaning."
+    },
+    {
+      "link": "ai-agent.html",
+      "media_type": "chat",
+      "image": "",
+      "alt": "",
+      "chat": [
+        {
+          "side": "me",
+          "who_th": "ลูกค้า",
+          "who_zh": "客户",
+          "who_en": "Customer",
+          "text_th": "รถ Z10 บรรทุกได้กี่ตันครับ",
+          "text_zh": "Z10 能装多少吨？",
+          "text_en": "How much can the Z10 carry?"
+        },
+        {
+          "side": "ai",
+          "who_th": "Qubby AI",
+          "who_zh": "Qubby AI",
+          "who_en": "Qubby AI",
+          "text_th": "สูงสุด 2,500 กก. ตู้ 12.5 ลบ.ม. ครับ สนใจนัดสาธิตไหมครับ",
+          "text_zh": "最大载重 2,500 kg，货箱 12.5 m³。需要为您预约演示吗？",
+          "text_en": "Up to 2,500 kg in a 12.5 m³ box. Shall I book you a demo?"
+        }
+      ],
+      "label_th": "04 · Smart Communications",
+      "label_zh": "04 · 智慧沟通",
+      "label_en": "04 · Smart Communications",
+      "title_th": "AI Agent · Qubby AI",
+      "title_zh": "AI Agent · Qubby AI",
+      "title_en": "AI Agent · Qubby AI",
+      "text_th": "AI สื่อสารแบบ Omnichannel ตอบลูกค้าทั้งข้อความและเสียง และเชื่อมกับระบบ CRM/ERP ขององค์กร",
+      "text_zh": "全渠道 AI 沟通核心，以文字和语音服务客户，并对接企业 CRM/ERP。",
+      "text_en": "An omnichannel AI core that answers customers by text and voice and connects to your CRM and ERP."
+    }
+  ]
+}

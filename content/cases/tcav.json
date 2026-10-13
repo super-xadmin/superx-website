@@ -1,0 +1,56 @@
+{
+  "anchor": "tcav",
+  "group": "thailand",
+  "order": 1,
+  "hide": false,
+  "eyebrow_th": "โครงการนำร่อง · ระยอง",
+  "eyebrow_zh": "试点项目 · 罗勇府",
+  "eyebrow_en": "Pilot · Rayong",
+  "title_th": "ศูนย์ทดสอบยานยนต์เชื่อมต่อและอัตโนมัติ (T-CAV)",
+  "title_zh": "网联与自动驾驶汽车测试中心（T-CAV）",
+  "title_en": "Testing Center for Connected and Automated Vehicles (T-CAV)",
+  "paragraphs": [
+    {
+      "text_th": "ทดสอบและวางแผนการนำเส้นทางวิ่งรถไร้คนขับในเขตนวัตกรรมระเบียงเศรษฐกิจพิเศษภาคตะวันออก (EECi) เพื่อเป็นโครงการนำร่อง",
+      "text_zh": "在东部经济走廊创新区（EECi）测试并规划无人车运行路线，作为试点项目。",
+      "text_en": "Testing and planning autonomous routes in the Eastern Economic Corridor of Innovation (EECi) as a pilot project."
+    },
+    {
+      "text_th": "ในเดือนกันยายน 2569 กรมวิทยาศาสตร์บริการ (วศ.) ทดสอบยานยนต์ไร้คนขับระดับ 4 ครั้งแรกของไทยที่ศูนย์ T-CAV ด้วยรถ Z5 และ Z10 ผ่านสถานการณ์จำลองกว่า 20 รูปแบบที่สะท้อนสภาพถนนไทย",
+      "text_zh": "2026 年 9 月，泰国科学服务厅在 T-CAV 中心使用 Z5 与 Z10 完成泰国首次 L4 级无人车测试，涵盖 20 余种贴近泰国路况的模拟场景。",
+      "text_en": "In September 2026, Thailand’s Department of Science Service ran the country’s first Level 4 vehicle tests at T-CAV with Z5 and Z10 vans, across more than 20 simulated scenarios reflecting Thai road conditions."
+    }
+  ],
+  "place_th": "ศูนย์ T-CAV กรมวิทยาศาสตร์บริการ จ.ระยอง",
+  "place_zh": "T-CAV 中心（泰国科学服务厅），罗勇府",
+  "place_en": "T-CAV, Department of Science Service, Rayong",
+  "scope_th": "ทดสอบและวางแผนเส้นทางวิ่งรถไร้คนขับ",
+  "scope_zh": "无人车路线测试与规划",
+  "scope_en": "Route testing and planning",
+  "vehicles_th": "RoboVan Z5 และ Z10",
+  "vehicles_zh": "RoboVan Z5 与 Z10",
+  "vehicles_en": "RoboVan Z5 and Z10",
+  "status_th": "โครงการนำร่อง",
+  "status_zh": "试点项目",
+  "status_en": "Pilot project",
+  "gallery": [
+    {
+      "image": "/assets/img/tcav-photo-sign.webp",
+      "alt": "RoboVan beside the T-CAV centre sign"
+    },
+    {
+      "image": "/assets/img/case-tcav-team.webp",
+      "alt": "Visitors with the SuperX RoboVan at T-CAV"
+    },
+    {
+      "image": "/assets/img/case-tcav-sign.webp",
+      "alt": "Testing Center for Connected and Automated Vehicles entrance"
+    }
+  ],
+  "video": "/assets/video/tcav-l4-test.mp4",
+  "poster": "/assets/img/tcav-poster.webp",
+  "video_caption_th": "วิดีโอการทดสอบระดับ L4 ที่ T-CAV (ภาพจาก Zelostech)",
+  "video_caption_zh": "T-CAV L4 测试视频（Zelostech 提供）",
+  "video_caption_en": "L4 testing at T-CAV (footage: Zelostech)",
+  "video_position": "text"
+}
