@@ -228,6 +228,20 @@
     drift();
   }
 
+  /* ---------- Cards tilt toward the mouse (computers with a mouse only) ---------- */
+  if (motionOK && window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    document.querySelectorAll('.pcard, .module, .rail-card, .case, .model-card').forEach(function (card) {
+      card.classList.add('tilt');
+      card.addEventListener('pointermove', function (e) {
+        var r = card.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+        card.classList.add('is-tilting');
+        card.style.transform = 'perspective(900px) rotateX(' + (-y * 6).toFixed(2) + 'deg) rotateY(' + (x * 8).toFixed(2) + 'deg) translateY(-4px)';
+      });
+      card.addEventListener('pointerleave', function () { card.classList.remove('is-tilting'); card.style.transform = ''; });
+    });
+  }
+
   /* ---------- Section nav highlight (model pages) ---------- */
   var subLinks = Array.prototype.slice.call(document.querySelectorAll('.subnav a[href^="#"]'));
   if (subLinks.length && 'IntersectionObserver' in window) {

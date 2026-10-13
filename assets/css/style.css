@@ -886,3 +886,7 @@ a.case:hover h3 { color: var(--midnight); }
 @media (prefers-reduced-motion: reduce) {
   .flow.reveal .flow-step, .flow.reveal .flow-step::after { opacity: 1 !important; transform: none !important; }
 }
+
+/* ---------- Cards tilt a little toward the mouse (computers only, added by main.js) ---------- */
+.tilt { transition: transform .25s ease-out, border-color .2s, box-shadow .2s; transform-style: preserve-3d; will-change: transform; }
+.tilt.is-tilting { transition: transform .08s linear, border-color .2s, box-shadow .2s; }
