@@ -277,11 +277,11 @@ html[data-lang="zh"] .hero .h1 { font-size: clamp(2.2rem, 4.9vw, 4.1rem); line-h
 :is(.phero--photo, .phero--chat) .chip .ic { color: var(--glacier); }
 :is(.phero--photo, .phero--chat) a.chip:hover { border-color: #fff; color: #fff; }
 
-.figures { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); margin-top: 6px; }
+.figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); border-top: 1px solid var(--line); margin-top: 6px; }
 .figures.f3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .fig { padding: 14px 12px 4px 0; display: grid; gap: 2px; }
 .fig + .fig { padding-left: 14px; border-left: 1px solid var(--line); }
-.fig b { font-size: clamp(1.4rem, 2.2vw, 1.9rem); color: var(--ink); font-weight: 600; line-height: 1.15; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.fig b { font-size: clamp(1.25rem, 1.7vw, 1.6rem); color: var(--ink); font-weight: 600; line-height: 1.2; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
 .fig b small { font-size: 0.55em; font-weight: 500; color: var(--mute); margin-left: 3px; }
 .fig span { font-size: 0.82rem; color: var(--mute); line-height: 1.4; }
 
