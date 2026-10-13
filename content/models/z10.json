@@ -127,14 +127,5 @@
   "cmp_cold": "—",
   "cmp_speed": "40",
   "cmp_dims": "4,319 × 1,905 × 2,808",
-  "spin": [
-    "/assets/img/Z10-26款/欧标Z10 前视图-beauty.png",
-    "/assets/img/Z10-26款/欧标Z10 右前45视图-beauty.png",
-    "/assets/img/Z10-26款/欧标Z10 右视图-beauty.png",
-    "/assets/img/Z10-26款/欧标Z10 右后45视图-beauty.png",
-    "/assets/img/Z10-26款/欧标Z10 后视图-beauty.png",
-    "/assets/img/Z10-26款/欧标Z10 左前45视图-beauty.png",
-    "/assets/img/Z10-26款/欧标Z10 左后45视图-beauty.png",
-    "/assets/img/Z10-26款/欧标Z10 左视图-beauty.png"
-  ]
+  "model3d": "/assets/3d/z10-robovan.glb"
 }
