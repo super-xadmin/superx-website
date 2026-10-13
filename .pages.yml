@@ -8537,7 +8537,7 @@ content:
       options:
         media: images
     - name: logo_white
-      label: โลโก้ (พื้นเข้ม ด้านล่างเว็บ)
+      label: โลโก้สีขาว (ใช้บนภาพหรือวิดีโอ เช่น เมนูด้านบนของหน้าแรก)
       type: image
       options:
         media: images
@@ -8986,6 +8986,24 @@ content:
       type: string
     - name: video_toggle_en
       label: คำอ่านปุ่มหยุด/เล่นวิดีโอ · English
+      type: string
+    - name: prev_th
+      label: คำอ่านปุ่มเลื่อนการ์ดไปทางซ้าย (ก่อนหน้า) · ไทย
+      type: string
+    - name: prev_zh
+      label: คำอ่านปุ่มเลื่อนการ์ดไปทางซ้าย (ก่อนหน้า) · 中文
+      type: string
+    - name: prev_en
+      label: คำอ่านปุ่มเลื่อนการ์ดไปทางซ้าย (ก่อนหน้า) · English
+      type: string
+    - name: next_th
+      label: คำอ่านปุ่มเลื่อนการ์ดไปทางขวา (ถัดไป) · ไทย
+      type: string
+    - name: next_zh
+      label: คำอ่านปุ่มเลื่อนการ์ดไปทางขวา (ถัดไป) · 中文
+      type: string
+    - name: next_en
+      label: คำอ่านปุ่มเลื่อนการ์ดไปทางขวา (ถัดไป) · English
       type: string
     - name: copy_th
       label: ปุ่มคัดลอก · ไทย

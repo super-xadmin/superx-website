@@ -152,7 +152,7 @@ class AiAgent:
         D = self.DIR
         h = C(f'{D}/hero')
         art = chat_art(items(h, 'chat'), style='padding:clamp(20px,4vw,48px);gap:14px', bubble_style='font-size:.95rem')
-        hero = phero(art, 'photo', trail('products', h), h, btn(h))
+        hero = phero(art, 'chat', trail('products', h), h, btn(h))
         ch, ca, gs, ind = (C(f'{D}/{k}') for k in ('channels', 'capabilities', 'getting_started', 'industries'))
         channels = f'''<section class="section-tight">
   <div class="wrap">

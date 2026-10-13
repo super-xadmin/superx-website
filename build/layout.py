@@ -25,7 +25,7 @@ SITE_FILES = [
             SEL('network', 'ช่องทาง', NETWORKS), S('handle', 'ชื่อบัญชี (เช่น @superxai_official)'), S('url', 'ลิงก์'),
         ], summary='{network} {handle}'),
         IMG('logo', 'โลโก้ (พื้นขาว)'),
-        IMG('logo_white', 'โลโก้ (พื้นเข้ม ด้านล่างเว็บ)'),
+        IMG('logo_white', 'โลโก้สีขาว (ใช้บนภาพหรือวิดีโอ เช่น เมนูด้านบนของหน้าแรก)'),
         IMG('favicon', 'ไอคอนแท็บเบราว์เซอร์'),
         IMG('apple_icon', 'ไอคอนเมื่อบันทึกลงหน้าจอมือถือ'),
         IMG('share_image', 'รูปตอนแชร์ลิงก์ (LINE / Facebook)'),
@@ -79,6 +79,8 @@ SITE_FILES = [
             TX('label', 'ข้อความ'),
         ]),
         TX('video_toggle', 'คำอ่านปุ่มหยุด/เล่นวิดีโอ'),
+        TX('prev', 'คำอ่านปุ่มเลื่อนการ์ดไปทางซ้าย (ก่อนหน้า)'),
+        TX('next', 'คำอ่านปุ่มเลื่อนการ์ดไปทางขวา (ถัดไป)'),
         TX('copy', 'ปุ่มคัดลอก'),
     ]),
     ('site/specs', 'ตารางสเปกรถ (หัวข้อแถวและหมายเหตุ)', [
@@ -193,9 +195,10 @@ def header(current):
         cur = ' aria-current="page"' if target == current else ''
         return f'<a class="nav-link" href="{target}"{cur}>{Tk(m, key)}</a>'
     logo = media(s(co, 'logo'), 'img')
+    logo_light = media(s(co, 'logo_white'), 'img') or logo
     return f'''<header class="site-header">
   <div class="wrap header-row">
-    <a class="brand" href="index.html"{aria(tri(m, 'home_aria'))}><img src="{esc(logo)}" alt="{esc(s(co, 'site_name'))}" width="103" height="30"></a>
+    <a class="brand" href="index.html"{aria(tri(m, 'home_aria'))}><img class="logo-dark" src="{esc(logo)}" alt="{esc(s(co, 'site_name'))}" width="103" height="30"><img class="logo-light" src="{esc(logo_light)}" alt="" width="103" height="30" aria-hidden="true"></a>
     <nav class="nav" id="site-nav"{aria(tri(m, 'menu_aria'))}>
       {link('index.html', 'nav_home')}
       <div class="nav-item{prod_cur}">
@@ -240,7 +243,7 @@ def footer():
     email = f'\n          <li>{ic("mail")}<span>{fmt(s(co, "email"))}</span></li>' if s(co, 'email') else ''
     addr = f'\n          <li>{ic("pin")}<span>{Tk(co, "address")}</span></li>' if has(co, 'address') else ''
     soc = f'\n          {socials}' if socials else ''
-    logo = media(s(co, 'logo_white'), 'img')
+    logo = media(s(co, 'logo'), 'img')
     return f'''<footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
@@ -284,6 +287,8 @@ def page(fname, page_data, body, extra_head='', current=None, share=None):
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;family=Prompt:wght@300;400;500;600&amp;display=swap">
 <link rel="stylesheet" href="assets/css/style.css">{extra_head}'''
+    dark = re.match(r'\s*<section class="(hero|phero phero--(photo|chat))\b', body)
+    body_cls = ' class="hero-dark"' if dark else ''
     content = f'''{sprite()}
 <a class="skip" href="#main">{Tk(m, 'skip')}</a>
 {header(current or fname)}
@@ -299,7 +304,7 @@ def page(fname, page_data, body, extra_head='', current=None, share=None):
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 {head}
 </head>
-<body>
+<body{body_cls}>
 {content}
 </body>
 </html>
@@ -330,7 +335,7 @@ def trail(section, hero):
 
 
 def phero(media_html, media_kind, trail_, hero, extra=''):
-    return f'''<section class="phero">
+    return f'''<section class="phero phero--{media_kind}">
   <div class="phero-grid">
     <div class="phero-media is-{media_kind}">{media_html}</div>
     <div class="phero-copy">

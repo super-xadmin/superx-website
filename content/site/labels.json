@@ -88,5 +88,11 @@
   "video_toggle_en": "Pause or play the video",
   "copy_th": "คัดลอก",
   "copy_zh": "复制",
-  "copy_en": "Copy"
+  "copy_en": "Copy",
+  "prev_th": "ก่อนหน้า",
+  "prev_zh": "上一个",
+  "prev_en": "Previous",
+  "next_th": "ถัดไป",
+  "next_zh": "下一个",
+  "next_en": "Next"
 }

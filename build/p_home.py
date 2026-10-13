@@ -2,7 +2,7 @@
 """Home page (index.html)."""
 from core import C, s, items, tri, has, esc, fmt, T, TC, B, Tk, Bk, aria, media, img, href, ic
 from schema import TX, S, LINK, BOOL, IMG, ALT, VID, ICON, MODEL, LIST, CHAT, SEL
-from layout import PAGE_FIELDS_CTA, page, cta_band, product_card, chat_art
+from layout import PAGE_FIELDS_CTA, page, cta_band, chat_art, model, mkey, form_model, kv
 
 FILE = 'index.html'
 DIR = 'pages/home'
@@ -164,20 +164,50 @@ def render():
 </section>'''
 
     m = C(f'{DIR}/models')
-    cards = ''.join(product_card(s(c, 'model')) for c in items(m, 'cards'))
+    refs = [s(x, 'model') for x in items(m, 'cards') if model(s(x, 'model'))]
+    tabs, panels = [], []
+    for i, ref in enumerate(refs):
+        k, mo = esc(mkey(ref)), model(ref)
+        on = i == 0
+        tabs.append(f'<button class="lineup-tab" type="button" role="tab" id="tab-{k}" aria-controls="panel-{k}" '
+                    f'aria-selected="{"true" if on else "false"}" tabindex="{0 if on else -1}">{fmt(s(mo, "model_name"))}</button>')
+        tag = ''
+        if has(mo, 'card_tag'):
+            cold = ' cold' if s(mo, 'card_tag_style') == 'cold' else ''
+            tag = f'<span class="pcard-tag{cold}">{Tk(mo, "card_tag")}</span>'
+        facts = ''.join(f'<div><dt>{Tk(r, "label")}</dt><dd>{fmt(s(r, "value"))}</dd></div>' for r in items(mo, 'card_facts'))
+        pdf = media(s(mo, 'pdf'), 'docs')
+        if s(mo, 'card_button') == 'pdf' and pdf:
+            a1 = f'<a class="btn btn-primary" href="{esc(pdf)}" target="_blank" rel="noopener">{ic("download")}{Tk(lb, "card_pdf")}</a>'
+        else:
+            a1 = f'<a class="btn btn-primary" href="{href(s(mo, "page"))}">{Tk(lb, "card_details")}</a>'
+        a2 = f'<a class="btn btn-outline" href="contact.html?topic=quote&amp;model={esc(form_model(mo))}">{Tk(lb, "card_quote")}</a>'
+        hidden = '' if on else ' hidden'
+        panels.append(f'''<div class="lineup-panel" role="tabpanel" id="panel-{k}" aria-labelledby="tab-{k}"{hidden}>
+      <div class="lineup-stage">{tag}{img(mo, alt=s(mo, 'full_name'), lazy=not on)}</div>
+      <div class="lineup-name"><h3>{fmt(s(mo, 'model_name'))}</h3><span>{Tk(mo, 'type')}</span></div>
+      <dl class="lineup-facts">{facts}</dl>
+      <div class="btn-row">{a1}{a2}</div>
+    </div>''')
     others = ''.join(f'<a class="chip" href="{href(s(o, "link"))}">{TC(tri(o, "label"))}</a>' for o in items(m, 'others'))
-    models = f'''<section class="section" id="models">
-  <div class="wrap">
-    <div class="section-head split">
-      <div><span class="eyebrow">{Tk(m, 'eyebrow')}</span>
-        <h2 class="h2">{Tk(m, 'title')}</h2></div>
-      <a class="link-arrow" href="{href(s(m, 'link'))}">{Tk(m, 'link_label')}{ic('arrow')}</a>
-    </div>
-    <div class="pcards">
-      {cards}
-    </div>
+    more = ''
+    if others or (s(m, 'link') and has(m, 'link_label')):
+        link = f'<a class="link-arrow" href="{href(s(m, "link"))}">{Tk(m, "link_label")}{ic("arrow")}</a>' if s(m, 'link') and has(m, 'link_label') else ''
+        more = f'''
     <div class="more-models"><span>{Tk(m, 'others_label')}</span>
-      <div class="chips">{others}</div></div>
+      <div class="chips">{others}</div>{link}</div>'''
+    tab_list = '\n        '.join(tabs)
+    panel_list = '\n    '.join(panels)
+    models = f'''<section class="section lineup" id="models">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow">{Tk(m, 'eyebrow')}</span>
+      <h2 class="h2">{Tk(m, 'title')}</h2></div>
+    <div class="lineup-nav">
+      <div class="lineup-tabs" role="tablist"{aria(tri(m, 'title'))}>
+        {tab_list}
+      </div>
+    </div>
+    {panel_list}{more}
   </div>
 </section>'''
 
@@ -202,14 +232,23 @@ def render():
 </section>'''
 
     sc = C(f'{DIR}/scenarios')
-    tiles = ''.join(f'<figure class="tile">{img(t)}<figcaption><b>{Tk(t, "title")}</b>{Bk("p", t, "text")}</figcaption></figure>' for t in items(sc, 'tiles'))
-    scenarios = f'''<section class="section" id="scenarios">
+    cards = '\n      '.join(f'<figure class="rail-card">{img(t)}<figcaption><b>{Tk(t, "title")}</b>{Bk("p", t, "text")}</figcaption></figure>'
+                            for t in items(sc, 'tiles'))
+    scenarios = f'''<section class="section section--deep" id="scenarios">
   <div class="wrap">
-    <div class="section-head"><span class="eyebrow">{Tk(sc, 'eyebrow')}</span>
+    <div class="section-head is-left"><span class="eyebrow">{Tk(sc, 'eyebrow')}</span>
       <h2 class="h2">{Tk(sc, 'title')}</h2>
       {Bk('p', sc, 'lead', cls='lead')}
     </div>
-    <div class="tiles">{tiles}</div>
+  </div>
+  <div class="rail-box" data-rail>
+    <div class="rail" tabindex="0"{aria(tri(sc, 'title'))}>
+      {cards}
+    </div>
+    <div class="wrap rail-nav">
+      <button class="rail-btn prev" type="button"{aria(tri(lb, 'prev') if has(lb, 'prev') else ('ก่อนหน้า', '上一个', 'Previous'))}>{ic('arrow')}</button>
+      <button class="rail-btn next" type="button"{aria(tri(lb, 'next') if has(lb, 'next') else ('ถัดไป', '下一个', 'Next'))}>{ic('arrow')}</button>
+    </div>
   </div>
 </section>'''
 
