@@ -25,6 +25,8 @@ for _n in ('p_products', 'p_models', 'p_solutions', 'p_about', 'p_cases', 'p_new
         PAGE_MODULES += getattr(_m, 'MODULES', [_m])
         COLLECTIONS += getattr(_m, 'COLLECTIONS', [])
 
+import p_business  # noqa: E402
+COLLECTIONS += p_business.COLLECTIONS
 COLLECTIONS.insert(0, ('models', '🚐 ข้อมูลรถแต่ละรุ่น (สเปก / การ์ด / ตาราง)', 'models', layout.MODEL_FIELDS,
                        {'fields': ['model_name', 'full_name'], 'primary': 'model_name'}))
 
@@ -34,6 +36,8 @@ def render_all():
         yield m.FILE, m.render()
         for extra in getattr(m, 'extra_pages', lambda: [])():
             yield extra
+    for extra in p_business.extra_pages():
+        yield extra
 
 
 def worker_data():
@@ -77,6 +81,9 @@ def cms_config():
             e['view'] = view
         if name == 'news':
             e['filename'] = '{year}-{month}-{day}-{hour}{minute}{second}.json'
+        elif name == 'business':
+            e['filename'] = '{page}.json'
+            e['exclude'] = ['.gitkeep']
         elif name == 'cases':
             e['filename'] = '{anchor}.json'
         elif name == 'models':
@@ -96,8 +103,8 @@ def cms_config():
             {'name': 'docs', 'label': 'ไฟล์ PDF / โบรชัวร์', 'input': 'assets/docs', 'output': '/assets/docs', 'extensions': ['pdf']},
         ],
         # most used first: news, then pages, projects, vehicle data, site settings
-        'content': [c for c in cols if c['name'] == 'news'] + [pages_group] + [c for c in cols if c['name'] == 'cases']
-                   + [c for c in cols if c['name'] not in ('news', 'cases')] + [site],
+        'content': [c for c in cols if c['name'] == 'news'] + [pages_group] + [c for c in cols if c['name'] == 'business'] + [c for c in cols if c['name'] == 'cases']
+                   + [c for c in cols if c['name'] not in ('news', 'cases', 'business')] + [site],
     }
 
 

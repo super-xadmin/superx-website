@@ -8132,6 +8132,496 @@ content:
           label: ลิงก์
           type: string
           description: เช่น contact.html?topic=demo หรือ https://...
+- name: business
+  label: 📦 ธุรกิจ / โซลูชัน (เพิ่มหน้าใหม่ได้เอง)
+  type: collection
+  path: content/business
+  format: json
+  fields:
+  - name: page
+    label: ชื่อหน้า (ภาษาอังกฤษตัวเล็ก ไม่เว้นวรรค เช่น ai-agent-pro)
+    type: string
+    required: true
+    description: ใช้เป็นที่อยู่หน้าเว็บ เช่น ai-agent-pro.html ตั้งครั้งเดียว ไม่ควรเปลี่ยนภายหลัง
+  - name: hide
+    label: ซ่อนหน้านี้ (ยังไม่แสดงบนเว็บ)
+    type: boolean
+  - name: order
+    label: ลำดับในเมนู (เลขน้อยแสดงก่อน)
+    type: number
+  - name: menu
+    label: แสดงในเมนูด้านบนใต้หัวข้อ
+    type: select
+    options:
+      values:
+      - name: products
+        label: ผลิตภัณฑ์
+      - name: about
+        label: เกี่ยวกับ SuperX
+      - name: none
+        label: ไม่ต้องแสดง
+  - name: menu_title_th
+    label: ชื่อในเมนู · ไทย
+    type: string
+  - name: menu_title_zh
+    label: ชื่อในเมนู · 中文
+    type: string
+  - name: menu_title_en
+    label: ชื่อในเมนู · English
+    type: string
+  - name: menu_hint_th
+    label: คำอธิบายสั้นใต้ชื่อในเมนู · ไทย
+    type: string
+  - name: menu_hint_zh
+    label: คำอธิบายสั้นใต้ชื่อในเมนู · 中文
+    type: string
+  - name: menu_hint_en
+    label: คำอธิบายสั้นใต้ชื่อในเมนู · English
+    type: string
+  - name: seo_title_th
+    label: ชื่อหน้า (แท็บเบราว์เซอร์และ Google) · ไทย
+    type: string
+    required: true
+  - name: seo_title_zh
+    label: ชื่อหน้า (แท็บเบราว์เซอร์และ Google) · 中文
+    type: string
+  - name: seo_title_en
+    label: ชื่อหน้า (แท็บเบราว์เซอร์และ Google) · English
+    type: string
+  - name: seo_desc_th
+    label: คำอธิบายหน้าสำหรับ Google · ไทย
+    type: text
+  - name: seo_desc_zh
+    label: คำอธิบายหน้าสำหรับ Google · 中文
+    type: text
+  - name: seo_desc_en
+    label: คำอธิบายหน้าสำหรับ Google · English
+    type: text
+  - name: image
+    label: 1. ภาพหลักด้านบน
+    type: image
+    options:
+      media: images
+  - name: alt
+    label: คำอธิบายรูป (alt)
+    type: string
+    description: ภาษาอังกฤษสั้นๆ บอกว่าในรูปมีอะไร ช่วยเรื่อง Google และผู้พิการทางสายตา
+  - name: eyebrow_th
+    label: 1. ข้อความเล็กเหนือหัวข้อ · ไทย
+    type: string
+  - name: eyebrow_zh
+    label: 1. ข้อความเล็กเหนือหัวข้อ · 中文
+    type: string
+  - name: eyebrow_en
+    label: 1. ข้อความเล็กเหนือหัวข้อ · English
+    type: string
+  - name: title_th
+    label: 1. หัวข้อใหญ่ · ไทย
+    type: text
+    description: ใช้ **คำ** เพื่อทำเป็นสีฟ้า
+  - name: title_zh
+    label: 1. หัวข้อใหญ่ · 中文
+    type: text
+  - name: title_en
+    label: 1. หัวข้อใหญ่ · English
+    type: text
+  - name: lead_th
+    label: 1. คำอธิบาย · ไทย
+    type: text
+  - name: lead_zh
+    label: 1. คำอธิบาย · 中文
+    type: text
+  - name: lead_en
+    label: 1. คำอธิบาย · English
+    type: text
+  - name: button_label_th
+    label: 1. ข้อความปุ่ม · ไทย
+    type: string
+  - name: button_label_zh
+    label: 1. ข้อความปุ่ม · 中文
+    type: string
+  - name: button_label_en
+    label: 1. ข้อความปุ่ม · English
+    type: string
+  - name: button_link
+    label: 1. ลิงก์ปุ่ม
+    type: string
+    description: เช่น contact.html?topic=demo หรือ https://...
+  - name: intro_title_th
+    label: 2. หัวข้อแนะนำ · ไทย
+    type: text
+  - name: intro_title_zh
+    label: 2. หัวข้อแนะนำ · 中文
+    type: text
+  - name: intro_title_en
+    label: 2. หัวข้อแนะนำ · English
+    type: text
+  - name: intro
+    label: 2. ย่อหน้าแนะนำ
+    type: object
+    list:
+      collapsible:
+        collapsed: true
+        summary: '{text_th}'
+    fields:
+    - name: text_th
+      label: ข้อความ · ไทย
+      type: text
+    - name: text_zh
+      label: ข้อความ · 中文
+      type: text
+    - name: text_en
+      label: ข้อความ · English
+      type: text
+  - name: intro_image
+    label: 2. รูปข้างย่อหน้า
+    type: image
+    options:
+      media: images
+  - name: intro_alt
+    label: คำอธิบายรูป (alt)
+    type: string
+    description: ภาษาอังกฤษสั้นๆ บอกว่าในรูปมีอะไร ช่วยเรื่อง Google และผู้พิการทางสายตา
+  - name: features_title_th
+    label: 3. หัวข้อจุดเด่น · ไทย
+    type: text
+  - name: features_title_zh
+    label: 3. หัวข้อจุดเด่น · 中文
+    type: text
+  - name: features_title_en
+    label: 3. หัวข้อจุดเด่น · English
+    type: text
+  - name: features
+    label: 3. จุดเด่น
+    type: object
+    list:
+      collapsible:
+        collapsed: true
+        summary: '{title_th}'
+    fields:
+    - name: icon
+      label: ไอคอน
+      type: select
+      options:
+        values:
+        - name: van
+          label: รถตู้ (van)
+        - name: box
+          label: กล่องสินค้า (box)
+        - name: parcel
+          label: พัสดุ (parcel)
+        - name: weight
+          label: น้ำหนัก (weight)
+        - name: route
+          label: เส้นทาง (route)
+        - name: map
+          label: แผนที่ (map)
+        - name: pin
+          label: หมุดตำแหน่ง (pin)
+        - name: battery
+          label: แบตเตอรี่ (battery)
+        - name: bolt
+          label: ชาร์จไฟ / สายฟ้า (bolt)
+        - name: gauge
+          label: มาตรวัด (gauge)
+        - name: thermo
+          label: อุณหภูมิ (thermo)
+        - name: snow
+          label: ห้องเย็น / หิมะ (snow)
+        - name: shield
+          label: ความปลอดภัย (shield)
+        - name: radar
+          label: เซนเซอร์ / เรดาร์ (radar)
+        - name: camera
+          label: กล้อง (camera)
+        - name: chip
+          label: ชิป / AI (chip)
+        - name: signal
+          label: สัญญาณ (signal)
+        - name: monitor
+          label: จอเฝ้าระวัง (monitor)
+        - name: headset
+          label: ทีมดูแล / หูฟัง (headset)
+        - name: gear
+          label: เฟือง (gear)
+        - name: wrench
+          label: ประแจ / ซ่อมบำรุง (wrench)
+        - name: calendar
+          label: ปฏิทิน / นัดหมาย (calendar)
+        - name: clock
+          label: นาฬิกา (clock)
+        - name: grad
+          label: การศึกษา (grad)
+        - name: robot
+          label: หุ่นยนต์ (robot)
+        - name: tracks
+          label: รถตีนตะขาบ (tracks)
+        - name: chat
+          label: แชต (chat)
+        - name: users
+          label: คน / ทีม (users)
+        - name: factory
+          label: โรงงาน (factory)
+        - name: warehouse
+          label: คลังสินค้า (warehouse)
+        - name: cart
+          label: รถเข็น / ค้าปลีก (cart)
+        - name: pill
+          label: ยา / เวชภัณฑ์ (pill)
+        - name: plane
+          label: เครื่องบิน (plane)
+        - name: leaf
+          label: ใบไม้ / พลังงานสะอาด (leaf)
+        - name: eye
+          label: ดวงตา (eye)
+        - name: rain
+          label: ฝน / สภาพอากาศ (rain)
+        - name: moon
+          label: กลางคืน (moon)
+        - name: lock
+          label: กุญแจล็อก (lock)
+        - name: app
+          label: แอปมือถือ (app)
+        - name: bell
+          label: กระดิ่งแจ้งเตือน (bell)
+        - name: sign
+          label: ลายเซ็น (sign)
+        - name: api
+          label: โค้ด / API (api)
+        - name: fire
+          label: ไฟ / ดับเพลิง (fire)
+        - name: broom
+          label: ไม้กวาด / ทำความสะอาด (broom)
+        - name: ruler
+          label: ไม้บรรทัด (ruler)
+        - name: doc
+          label: เอกสาร (doc)
+        - name: spark
+          label: ประกาย (spark)
+        - name: link
+          label: ลิงก์ (link)
+        - name: handshake
+          label: จับมือ / พันธมิตร (handshake)
+        - name: layers
+          label: ชั้น / ระบบ (layers)
+        - name: target
+          label: เป้าหมาย (target)
+        - name: leasing
+          label: สัญญาเช่า (leasing)
+        - name: globe
+          label: ลูกโลก / เว็บไซต์ (globe)
+        - name: phone
+          label: โทรศัพท์ (phone)
+        - name: mail
+          label: อีเมล (mail)
+        - name: tiktok
+          label: TikTok (tiktok)
+        - name: check
+          label: เครื่องหมายถูก (check)
+        - name: arrow
+          label: ลูกศร (arrow)
+        - name: download
+          label: ดาวน์โหลด (download)
+        - name: ext
+          label: ลิงก์ภายนอก (ext)
+    - name: title_th
+      label: หัวข้อ · ไทย
+      type: string
+    - name: title_zh
+      label: หัวข้อ · 中文
+      type: string
+    - name: title_en
+      label: หัวข้อ · English
+      type: string
+    - name: text_th
+      label: รายละเอียด · ไทย
+      type: text
+    - name: text_zh
+      label: รายละเอียด · 中文
+      type: text
+    - name: text_en
+      label: รายละเอียด · English
+      type: text
+  - name: steps_title_th
+    label: 4. หัวข้อขั้นตอน · ไทย
+    type: text
+  - name: steps_title_zh
+    label: 4. หัวข้อขั้นตอน · 中文
+    type: text
+  - name: steps_title_en
+    label: 4. หัวข้อขั้นตอน · English
+    type: text
+  - name: steps
+    label: 4. ขั้นตอน
+    type: object
+    list:
+      collapsible:
+        collapsed: true
+        summary: '{title_th}'
+    fields:
+    - name: title_th
+      label: หัวข้อขั้นตอน · ไทย
+      type: string
+    - name: title_zh
+      label: หัวข้อขั้นตอน · 中文
+      type: string
+    - name: title_en
+      label: หัวข้อขั้นตอน · English
+      type: string
+    - name: text_th
+      label: รายละเอียด · ไทย
+      type: text
+    - name: text_zh
+      label: รายละเอียด · 中文
+      type: text
+    - name: text_en
+      label: รายละเอียด · English
+      type: text
+  - name: media_title_th
+    label: 5. หัวข้อภาพและวิดีโอ · ไทย
+    type: text
+  - name: media_title_zh
+    label: 5. หัวข้อภาพและวิดีโอ · 中文
+    type: text
+  - name: media_title_en
+    label: 5. หัวข้อภาพและวิดีโอ · English
+    type: text
+  - name: gallery
+    label: 5. รูปภาพ
+    type: object
+    list:
+      collapsible:
+        collapsed: true
+        summary: '{alt}'
+    fields:
+    - name: image
+      label: รูปภาพ
+      type: image
+      options:
+        media: images
+    - name: alt
+      label: คำอธิบายรูป (alt)
+      type: string
+      description: ภาษาอังกฤษสั้นๆ บอกว่าในรูปมีอะไร ช่วยเรื่อง Google และผู้พิการทางสายตา
+    - name: caption_th
+      label: คำบรรยาย · ไทย
+      type: string
+    - name: caption_zh
+      label: คำบรรยาย · 中文
+      type: string
+    - name: caption_en
+      label: คำบรรยาย · English
+      type: string
+  - name: video
+    label: 5. วิดีโอ (MP4 ไม่เกิน 25 MB)
+    type: file
+    options:
+      media: videos
+      extensions:
+      - mp4
+      - webm
+  - name: poster
+    label: 5. ภาพก่อนกดเล่นวิดีโอ
+    type: image
+    options:
+      media: images
+  - name: video_caption_th
+    label: 5. คำบรรยายวิดีโอ · ไทย
+    type: string
+  - name: video_caption_zh
+    label: 5. คำบรรยายวิดีโอ · 中文
+    type: string
+  - name: video_caption_en
+    label: 5. คำบรรยายวิดีโอ · English
+    type: string
+  - name: faq_title_th
+    label: 6. หัวข้อคำถามที่พบบ่อย · ไทย
+    type: text
+  - name: faq_title_zh
+    label: 6. หัวข้อคำถามที่พบบ่อย · 中文
+    type: text
+  - name: faq_title_en
+    label: 6. หัวข้อคำถามที่พบบ่อย · English
+    type: text
+  - name: faq
+    label: 6. คำถามที่พบบ่อย
+    type: object
+    list:
+      collapsible:
+        collapsed: true
+        summary: '{q_th}'
+    fields:
+    - name: q_th
+      label: คำถาม · ไทย
+      type: string
+    - name: q_zh
+      label: คำถาม · 中文
+      type: string
+    - name: q_en
+      label: คำถาม · English
+      type: string
+    - name: a_th
+      label: คำตอบ · ไทย
+      type: text
+    - name: a_zh
+      label: คำตอบ · 中文
+      type: text
+    - name: a_en
+      label: คำตอบ · English
+      type: text
+  - name: cta_title_th
+    label: '7. แถบปิดท้าย: หัวข้อ (เว้นว่าง = ข้อความมาตรฐาน) · ไทย'
+    type: text
+  - name: cta_title_zh
+    label: '7. แถบปิดท้าย: หัวข้อ (เว้นว่าง = ข้อความมาตรฐาน) · 中文'
+    type: text
+  - name: cta_title_en
+    label: '7. แถบปิดท้าย: หัวข้อ (เว้นว่าง = ข้อความมาตรฐาน) · English'
+    type: text
+  - name: cta_lead_th
+    label: '7. แถบปิดท้าย: คำอธิบาย · ไทย'
+    type: text
+  - name: cta_lead_zh
+    label: '7. แถบปิดท้าย: คำอธิบาย · 中文'
+    type: text
+  - name: cta_lead_en
+    label: '7. แถบปิดท้าย: คำอธิบาย · English'
+    type: text
+  - name: cta_topic
+    label: 7. ปุ่มนัดสาธิตเลือกเรื่องในแบบฟอร์มเป็น
+    type: select
+    options:
+      values:
+      - name: demo
+        label: นัดหมายสาธิต
+      - name: quote
+        label: ขอใบเสนอราคา
+      - name: education
+        label: การศึกษา
+      - name: security
+        label: หุ่นยนต์ความปลอดภัย
+      - name: qubby
+        label: Qubby AI
+      - name: partner
+        label: พันธมิตร
+      - name: other
+        label: อื่นๆ
+  view:
+    fields:
+    - title_th
+    - page
+    - menu
+    - hide
+    primary: title_th
+    sort:
+    - order
+    - title_th
+    default:
+      sort: order
+      order: asc
+  filename: '{page}.json'
+  exclude:
+  - .gitkeep
 - name: cases
   label: 📁 ผลงาน / โครงการ (หน้า ผลงาน)
   type: collection

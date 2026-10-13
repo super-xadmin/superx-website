@@ -186,7 +186,8 @@ def _pages_in(menu_items):
 
 def header(current):
     m, co = C('site/menu'), C('site/company')
-    pm, am = items(m, 'products_menu'), items(m, 'about_menu')
+    import p_business
+    pm, am = items(m, 'products_menu') + p_business.menu_items('products'), items(m, 'about_menu') + p_business.menu_items('about')
     own = {'index.html', 'contact.html'}
     prod_cur = ' is-current' if current in _pages_in(pm) - own else ''
     about_cur = ' is-current' if current in _pages_in(am) - own - _pages_in(pm) else ''

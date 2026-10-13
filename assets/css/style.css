@@ -890,3 +890,14 @@ a.case:hover h3 { color: var(--midnight); }
 /* ---------- Cards tilt a little toward the mouse (computers only, added by main.js) ---------- */
 .tilt { transition: transform .25s ease-out, border-color .2s, box-shadow .2s; transform-style: preserve-3d; will-change: transform; }
 .tilt.is-tilting { transition: transform .08s linear, border-color .2s, box-shadow .2s; }
+
+/* ---------- Business pages: questions and answers ---------- */
+.phero--chat .phero-media:empty { display: none; }
+.phero--chat .phero-grid:has(.phero-media:empty) { grid-template-columns: minmax(0, 1fr); }
+.faq { max-width: 860px; margin-inline: auto; display: grid; border-top: 1px solid var(--line); }
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-item summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 16px; padding: 20px 0; font-weight: 600; color: var(--ink); font-size: 1.05rem; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; font-size: 1.4rem; line-height: 1; color: var(--frost); transition: transform .2s; }
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p { padding: 0 0 20px; max-width: 46em; }
