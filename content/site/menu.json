@@ -85,6 +85,26 @@
       "hint_zh": "全部车型对比",
       "hint_en": "Compare every model",
       "divider_before": true
+    },
+    {
+      "link": "choose.html",
+      "title_th": "ช่วยเลือกรุ่น",
+      "title_zh": "车型推荐",
+      "title_en": "Find your model",
+      "hint_th": "ตอบ 3 คำถาม ได้รุ่นที่เหมาะ",
+      "hint_zh": "回答 3 个问题找到合适车型",
+      "hint_en": "Three questions to your match",
+      "divider_before": true
+    },
+    {
+      "link": "roi.html",
+      "title_th": "คำนวณความคุ้มค่า",
+      "title_zh": "投资回报计算",
+      "title_en": "ROI calculator",
+      "hint_th": "ดูว่าประหยัดได้เท่าไรต่อปี",
+      "hint_zh": "看看每年能省多少",
+      "hint_en": "See your yearly savings",
+      "divider_before": false
     }
   ],
   "about_menu": [

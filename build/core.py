@@ -54,6 +54,14 @@ def items(d, key):
     return [x for x in v if x is not None] if isinstance(v, list) else []
 
 
+def strs(d, key):
+    """A list of text values (several images or models in one field). A single value counts as a list of one."""
+    v = (d or {}).get(key)
+    if isinstance(v, str):
+        v = [v]
+    return [str(x).strip() for x in v if x and str(x).strip()] if isinstance(v, list) else []
+
+
 def tri(d, key):
     """(th, zh, en) for a three-language field. Empty languages fall back: zh→en→th, en→th, th→en→zh."""
     d = d or {}

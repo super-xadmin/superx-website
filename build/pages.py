@@ -19,7 +19,7 @@ def _try(name):
         return None
 
 
-for _n in ('p_products', 'p_models', 'p_solutions', 'p_about', 'p_cases', 'p_news', 'p_contact', 'p_404'):
+for _n in ('p_products', 'p_models', 'p_solutions', 'p_tools', 'p_about', 'p_cases', 'p_news', 'p_contact', 'p_404'):
     _m = _try(_n)
     if _m is not None:
         PAGE_MODULES += getattr(_m, 'MODULES', [_m])
@@ -33,7 +33,9 @@ COLLECTIONS.insert(0, ('models', '🚐 ข้อมูลรถแต่ละ�
 
 def render_all():
     for m in PAGE_MODULES:
-        yield m.FILE, m.render()
+        html = m.render()
+        if html is not None:   # pages switched off in the back office are not made
+            yield m.FILE, html
         for extra in getattr(m, 'extra_pages', lambda: [])():
             yield extra
     for extra in p_business.extra_pages():
@@ -101,6 +103,7 @@ def cms_config():
              'extensions': ['jpg', 'jpeg', 'png', 'webp', 'gif', 'svg', 'avif']},
             {'name': 'videos', 'label': 'วิดีโอ', 'input': 'assets/video', 'output': '/assets/video', 'extensions': ['mp4', 'webm']},
             {'name': 'docs', 'label': 'ไฟล์ PDF / โบรชัวร์', 'input': 'assets/docs', 'output': '/assets/docs', 'extensions': ['pdf']},
+            {'name': 'models3d', 'label': 'ไฟล์ 3D (.glb)', 'input': 'assets/3d', 'output': '/assets/3d', 'extensions': ['glb', 'gltf']},
         ],
         # most used first: news, then pages, projects, vehicle data, site settings
         'content': [c for c in cols if c['name'] == 'news'] + [pages_group] + [c for c in cols if c['name'] == 'business'] + [c for c in cols if c['name'] == 'cases']

@@ -1,0 +1,118 @@
+{
+  "eyebrow_th": "3 คำถาม",
+  "eyebrow_zh": "3 个问题",
+  "eyebrow_en": "Three questions",
+  "title_th": "บอกเราเกี่ยวกับงานขนส่งของคุณ",
+  "title_zh": "告诉我们您的运输需求",
+  "title_en": "Tell us about what you move",
+  "lead_th": "",
+  "lead_zh": "",
+  "lead_en": "",
+  "questions": [
+    {
+      "q_th": "ขนส่งอะไรเป็นหลัก",
+      "q_zh": "主要运输什么？",
+      "q_en": "What do you mostly carry?",
+      "options": [
+        {
+          "label_th": "สินค้าทั่วไป พัสดุ อะไหล่",
+          "label_zh": "普通货物、包裹、零部件",
+          "label_en": "General goods, parcels or parts",
+          "models": [
+            "content/models/z5.json",
+            "content/models/z5plus.json",
+            "content/models/z10.json",
+            "content/models/z20.json"
+          ]
+        },
+        {
+          "label_th": "สินค้าแช่เย็น / แช่แข็ง",
+          "label_zh": "冷藏 / 冷冻货物",
+          "label_en": "Chilled or frozen goods",
+          "models": [
+            "content/models/z5cold.json",
+            "content/models/z10cold.json"
+          ]
+        },
+        {
+          "label_th": "พัสดุที่ผู้รับเปิดตู้รับเอง",
+          "label_zh": "收件人自取的包裹（智能柜）",
+          "label_en": "Parcels people collect from lockers",
+          "models": [
+            "content/models/z5locker.json"
+          ]
+        }
+      ]
+    },
+    {
+      "q_th": "น้ำหนักต่อเที่ยวประมาณเท่าไร",
+      "q_zh": "每趟大约多重？",
+      "q_en": "About how heavy is each trip?",
+      "options": [
+        {
+          "label_th": "ไม่เกิน 1.5 ตัน",
+          "label_zh": "1.5 吨以内",
+          "label_en": "Up to 1.5 tonnes",
+          "models": [
+            "content/models/z5.json",
+            "content/models/z5plus.json",
+            "content/models/z5cold.json",
+            "content/models/z5locker.json"
+          ]
+        },
+        {
+          "label_th": "1.5–2.5 ตัน",
+          "label_zh": "1.5–2.5 吨",
+          "label_en": "1.5 to 2.5 tonnes",
+          "models": [
+            "content/models/z10.json",
+            "content/models/z10cold.json"
+          ]
+        },
+        {
+          "label_th": "มากกว่า 2.5 ตัน (สูงสุด 4 ตัน)",
+          "label_zh": "2.5 吨以上（最多 4 吨）",
+          "label_en": "Over 2.5 tonnes (up to 4)",
+          "models": [
+            "content/models/z20.json"
+          ]
+        }
+      ]
+    },
+    {
+      "q_th": "สินค้าต่อเที่ยวใช้พื้นที่ประมาณเท่าไร",
+      "q_zh": "每趟货物体积大约多少？",
+      "q_en": "How much space does each trip need?",
+      "options": [
+        {
+          "label_th": "ไม่เกิน 6 ลบ.ม.",
+          "label_zh": "6 立方米以内",
+          "label_en": "Up to 6 m³",
+          "models": [
+            "content/models/z5.json",
+            "content/models/z5plus.json",
+            "content/models/z5cold.json",
+            "content/models/z5locker.json"
+          ]
+        },
+        {
+          "label_th": "6–12 ลบ.ม.",
+          "label_zh": "6–12 立方米",
+          "label_en": "6 to 12 m³",
+          "models": [
+            "content/models/z10.json",
+            "content/models/z10cold.json"
+          ]
+        },
+        {
+          "label_th": "มากกว่า 12 ลบ.ม. (สูงสุด 20)",
+          "label_zh": "12 立方米以上（最多 20）",
+          "label_en": "Over 12 m³ (up to 20)",
+          "models": [
+            "content/models/z20.json"
+          ]
+        }
+      ]
+    }
+  ]
+}

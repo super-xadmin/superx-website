@@ -4,7 +4,8 @@ import re
 
 from core import (C, collection, s, items, tri, has, esc, fmt, T, TC, B, Tk, Bk, aria, media, img, href, is_external,
                   file_size, ic, sprite)
-from schema import (TX, S, LINK, NUM, BOOL, IMG, ALT, DOC, SEL, ICON, LIST, SLIST, OBJ)
+from schema import (TX, S, LINK, NUM, BOOL, IMG, ALT, DOC, SEL, ICON, LIST, SLIST, OBJ, IMGS, FILE3D)
+from core import strs
 
 # ================================================================ back-office definitions (site-wide files)
 NETWORKS = [('tiktok', 'TikTok'), ('facebook', 'Facebook'), ('instagram', 'Instagram'), ('line', 'LINE'),
@@ -83,6 +84,16 @@ SITE_FILES = [
         TX('next', 'คำอ่านปุ่มเลื่อนการ์ดไปทางขวา (ถัดไป)'),
         TX('copy', 'ปุ่มคัดลอก'),
     ]),
+    ('site/settings', 'ลูกเล่นและการแสดงผล (โหมดมืด / ปุ่มลอยบนมือถือ / ภาพ 360°)', [
+        BOOL('dark_mode', 'เปลี่ยนเว็บเป็นพื้นเข้มอัตโนมัติ เมื่อเครื่องลูกค้าตั้งโหมดมืดไว้'),
+        BOOL('quick_bar', 'แสดงปุ่มติดต่อด่วนลอยด้านล่างจอมือถือ'),
+        TX('quick_line', 'ปุ่มลอย: ข้อความปุ่ม LINE', desc='ลิงก์ LINE ใช้จาก ข้อมูลบริษัท → โซเชียลมีเดีย (ช่องทาง LINE) ถ้าไม่มี ปุ่มนี้จะไม่แสดง'),
+        TX('quick_call', 'ปุ่มลอย: ข้อความปุ่มโทร'),
+        TX('quick_demo', 'ปุ่มลอย: ข้อความปุ่มนัดสาธิต'),
+        LINK('quick_demo_link', 'ปุ่มลอย: ลิงก์ปุ่มนัดสาธิต'),
+        TX('quick_aria', 'คำอ่านแถบปุ่มลอย (สำหรับโปรแกรมอ่านหน้าจอ)'),
+        TX('spin_hint', 'ข้อความบนภาพ 360° (เช่น ลากเพื่อหมุนดูรอบคัน)'),
+    ]),
     ('site/specs', 'ตารางสเปกรถ (หัวข้อแถวและหมายเหตุ)', [
         TX('item_header', 'หัวคอลัมน์แรกของตาราง'),
         LIST('rows', 'แถวในตารางสเปก', [S('key', 'รหัสแถว (ห้ามแก้)', readonly=True), TX('label', 'ชื่อแถว')]),
@@ -118,6 +129,9 @@ MODEL_FIELDS = [
     S('cmp_cold', 'ตารางเปรียบเทียบ: ห้องเย็น', desc='ใส่ — ถ้าไม่มี'),
     S('cmp_speed', 'ตารางเปรียบเทียบ: ความเร็ว'),
     S('cmp_dims', 'ตารางเปรียบเทียบ: ขนาด'),
+    IMGS('spin', 'ภาพหมุนรอบคัน 360° (เลือก 24–36 รูป เรียงตามมุมรอบคัน)',
+         desc='ถ่ายรถทุกๆ 10–15 องศาให้ครบรอบ ภาพขนาดเท่ากันทุกรูป ถ้ามีตั้งแต่ 8 รูปขึ้นไป หน้ารุ่นรถจะลากหมุนดูได้'),
+    FILE3D('model3d', 'ไฟล์ 3D ของรถ (.glb) เว้นว่างได้', desc='ถ้ามีไฟล์นี้ จะใช้แทนภาพหมุน ลูกค้าลากหมุน/ซูมได้อิสระ (ไฟล์ไม่เกิน 25 MB)'),
 ]
 
 PAGE_FIELDS = [
@@ -169,9 +183,24 @@ HEAD_SCRIPT = ("<script>(function(){var l='th';try{var s=localStorage.getItem('s
                "var d=document.documentElement;d.setAttribute('data-lang',l);d.setAttribute('lang',l==='zh'?'zh-CN':l);})();</script>")
 
 
+def hidden_pages():
+    """Pages switched off in the back office (their menu links are left out)."""
+    try:
+        import p_tools
+        return p_tools.disabled_pages()
+    except ImportError:
+        return set()
+
+
+def _shown(it, key='link'):
+    return s(it, key).split('#')[0].split('?')[0] not in hidden_pages()
+
+
 def _sub(items_, current):
     out = []
     for it in items_:
+        if not _shown(it):
+            continue
         if it.get('divider_before'):
             out.append('<hr>')
         link = s(it, 'link')
@@ -235,7 +264,7 @@ def footer():
     m, co = C('site/menu'), C('site/company')
 
     def col(title_key, list_key):
-        lis = ''.join(f'<a href="{href(s(i, "link"))}">{Tk(i, "label")}</a>' for i in items(m, list_key))
+        lis = ''.join(f'<a href="{href(s(i, "link"))}">{Tk(i, "label")}</a>' for i in items(m, list_key) if _shown(i))
         return f'<div class="footer-col"><h4>{Tk(m, title_key)}</h4>{lis}</div>'
     socials = ''.join(
         f'<li>{ic(SOCIAL_ICON.get(s(i, "network"), "link"))}<a href="{href(s(i, "url"))}" target="_blank" rel="noopener">{fmt(social_name(i))} {fmt(s(i, "handle"))}</a></li>'
@@ -249,7 +278,7 @@ def footer():
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="{esc(logo)}" alt="{esc(s(co, 'site_name'))}" width="110" height="32" loading="lazy">
+        <img class="logo-dark" src="{esc(logo)}" alt="{esc(s(co, 'site_name'))}" width="110" height="32" loading="lazy"><img class="logo-light" src="{esc(media(s(co, 'logo_white'), 'img') or logo)}" alt="" width="110" height="32" loading="lazy" aria-hidden="true">
         <p class="footer-tag">{fmt(s(co, 'tagline'))}</p>
         {Bk('p', co, 'footer_about')}
       </div>
@@ -288,18 +317,22 @@ def page(fname, page_data, body, extra_head='', current=None, share=None):
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;family=Prompt:wght@300;400;500;600&amp;display=swap">
 <link rel="stylesheet" href="assets/css/style.css">{extra_head}'''
+    st = C('site/settings')
+    html_cls = ' class="auto-dark"' if st.get('dark_mode') else ''
+    qbar = quick_bar(st, co)
     dark = re.match(r'\s*<section class="(hero|phero phero--(photo|chat))\b', body)
-    body_cls = ' class="hero-dark"' if dark else ''
+    classes = (['hero-dark'] if dark else []) + (['has-quickbar'] if qbar else [])
+    body_cls = f' class="{" ".join(classes)}"' if classes else ''
     content = f'''{sprite()}
 <a class="skip" href="#main">{Tk(m, 'skip')}</a>
 {header(current or fname)}
 <main id="main">
 {body}
 </main>
-{footer()}
+{footer()}{qbar}
 <script src="assets/js/main.js" defer></script>'''
     return f'''<!doctype html>
-<html lang="th" data-lang="th">
+<html lang="th" data-lang="th"{html_cls}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -310,6 +343,24 @@ def page(fname, page_data, body, extra_head='', current=None, share=None):
 </body>
 </html>
 '''
+
+
+def quick_bar(st, co):
+    """LINE / call / demo buttons fixed to the bottom of phone screens."""
+    if not st.get('quick_bar'):
+        return ''
+    btns = []
+    line = next((s(x, 'url') for x in items(co, 'socials') if s(x, 'network') == 'line' and s(x, 'url')), '')
+    if line:
+        btns.append(f'<a class="qb qb-line" href="{href(line)}" target="_blank" rel="noopener">{ic("chat")}{Tk(st, "quick_line")}</a>')
+    tel = re.sub(r'[^\d+]', '', s(co, 'phone'))
+    if tel:
+        btns.append(f'<a class="qb qb-call" href="tel:{esc(tel)}">{ic("phone")}{Tk(st, "quick_call")}</a>')
+    if s(st, 'quick_demo_link') and has(st, 'quick_demo'):
+        btns.append(f'<a class="qb qb-demo" href="{href(s(st, "quick_demo_link"))}">{ic("calendar")}{Tk(st, "quick_demo")}</a>')
+    if not btns:
+        return ''
+    return f'\n<nav class="quickbar qb-{len(btns)}"{aria(tri(st, "quick_aria"))}>{"".join(btns)}</nav>'
 
 
 # ================================================================ shared sections

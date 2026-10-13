@@ -1,0 +1,68 @@
+{
+  "title_th": "การขนส่งของคุณตอนนี้",
+  "title_zh": "您目前的运输情况",
+  "title_en": "How you move goods today",
+  "lead_th": "ปรับตัวเลขได้ ผลลัพธ์จะเปลี่ยนตามทันที",
+  "lead_zh": "修改数字，结果会立即更新。",
+  "lead_en": "Change any number and the result updates instantly.",
+  "trips": {
+    "label_th": "จำนวนเที่ยวต่อวัน",
+    "label_zh": "每天趟数",
+    "label_en": "Trips per day",
+    "unit_th": "เที่ยว",
+    "unit_zh": "趟",
+    "unit_en": "trips",
+    "value": 20,
+    "max": 500
+  },
+  "km": {
+    "label_th": "ระยะทางต่อเที่ยว",
+    "label_zh": "每趟距离",
+    "label_en": "Distance per trip",
+    "unit_th": "กม.",
+    "unit_zh": "公里",
+    "unit_en": "km",
+    "value": 3,
+    "max": 200
+  },
+  "drivers": {
+    "label_th": "จำนวนคนขับที่ใช้ตอนนี้",
+    "label_zh": "目前司机人数",
+    "label_en": "Drivers today",
+    "unit_th": "คน",
+    "unit_zh": "人",
+    "unit_en": "people",
+    "value": 2,
+    "max": 200
+  },
+  "wage": {
+    "label_th": "ค่าแรงคนขับต่อคนต่อเดือน",
+    "label_zh": "每位司机月薪",
+    "label_en": "Monthly cost per driver",
+    "unit_th": "บาท",
+    "unit_zh": "泰铢",
+    "unit_en": "THB",
+    "value": 18000,
+    "max": 200000
+  },
+  "days": {
+    "label_th": "วันทำงานต่อเดือน",
+    "label_zh": "每月工作天数",
+    "label_en": "Working days per month",
+    "unit_th": "วัน",
+    "unit_zh": "天",
+    "unit_en": "days",
+    "value": 26,
+    "max": 31
+  },
+  "fuel": {
+    "label_th": "ค่าน้ำมันรถเดิมต่อกิโลเมตร",
+    "label_zh": "现有车辆每公里油费",
+    "label_en": "Fuel cost per km today",
+    "unit_th": "บาท",
+    "unit_zh": "泰铢",
+    "unit_en": "THB",
+    "value": 4,
+    "max": 50
+  }
+}

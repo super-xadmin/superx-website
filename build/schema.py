@@ -72,6 +72,19 @@ def MODEL(name='model', label='รุ่นรถ', desc=None):
     return _f('ref', name, label, collection='models', desc=desc)
 
 
+def MODELS(name='models', label='รุ่นรถ (เลือกได้หลายรุ่น)', desc=None):
+    return _f('refs', name, label, collection='models', desc=desc)
+
+
+def IMGS(name, label, desc=None):
+    """Several images in one field (stored as a list)."""
+    return _f('imgs', name, label, desc=desc)
+
+
+def FILE3D(name='model3d', label='ไฟล์ 3D (.glb)', desc=None):
+    return _f('3d', name, label, desc=desc)
+
+
 def LIST(name, label, fields, summary=None, desc=None):
     return _f('list', name, label, fields=fields, summary=summary, desc=desc)
 
@@ -151,6 +164,14 @@ def cms_fields(fields):
         elif k == 'sel':
             vals = [{'name': v, 'label': l} for v, l in f['values']]
             out.append(_desc({'name': n, 'label': lab, 'type': 'select', 'options': {'values': vals}}, f))
+        elif k == 'imgs':
+            out.append(_desc({'name': n, 'label': lab, 'type': 'image', 'options': {'media': 'images', 'multiple': True}}, f))
+        elif k == '3d':
+            out.append(_desc({'name': n, 'label': lab, 'type': 'file', 'options': {'media': 'models3d', 'extensions': ['glb', 'gltf']}}, f))
+        elif k == 'refs':
+            out.append(_desc({'name': n, 'label': lab, 'type': 'reference',
+                              'options': {'collection': f['collection'], 'value': '{path}', 'label': '{fields.model_name}',
+                                          'search': 'model_name', 'multiple': True}}, f))
         elif k == 'ref':
             out.append(_desc({'name': n, 'label': lab, 'type': 'reference',
                               'options': {'collection': f['collection'], 'value': '{path}', 'label': '{fields.model_name}', 'search': 'model_name'}}, f))
@@ -211,7 +232,14 @@ def validate(fields, data, where):
                 probs += validate(f['fields'], item, f'{where}.{k}[{i}]')
         elif kind == 'obj':
             probs += validate(f['fields'], v, f'{where}.{k}')
-        elif kind == 'slist':
+        elif kind in ('slist', 'imgs', 'refs'):
+            if v in (None, ''):
+                continue
+            if isinstance(v, str):
+                continue
+            if not isinstance(v, list) or not all(isinstance(x, str) for x in v):
+                probs.append(f'{where}.{k}: should be a list of text')
+        elif kind == '__never__':
             if not isinstance(v, list) or not all(isinstance(x, str) for x in v):
                 probs.append(f'{where}.{k}: should be a list of text')
         elif kind == 'num':

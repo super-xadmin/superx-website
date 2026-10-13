@@ -1,0 +1,16 @@
+{
+  "image": "/assets/img/fleet-lineup.webp",
+  "alt": "The RoboVan line-up",
+  "crumb_th": "ช่วยเลือกรุ่น",
+  "crumb_zh": "车型推荐",
+  "crumb_en": "Find your model",
+  "eyebrow_th": "ช่วยเลือกรุ่น",
+  "eyebrow_zh": "车型推荐",
+  "eyebrow_en": "Find your model",
+  "title_th": "รุ่นไหน**เหมาะกับงานของคุณ**",
+  "title_zh": "哪款车型**最适合您**",
+  "title_en": "Which RoboVan **fits your work?**",
+  "lead_th": "ตอบ 3 คำถามสั้นๆ แล้วเราจะแนะนำรุ่นที่เหมาะที่สุด",
+  "lead_zh": "回答 3 个简单问题，我们为您推荐最合适的车型。",
+  "lead_en": "Answer three short questions and we will suggest the best match."
+}

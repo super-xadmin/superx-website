@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Vehicle model pages: z5.html, z10.html, cold-chain.html (same layout, separate content)."""
-from core import C, s, items, tri, has, esc, fmt, T, Tk, Bk, media, img, href, ic
+import json
+
+from core import C, s, items, tri, has, esc, fmt, T, Tk, Bk, media, img, href, ic, strs
 from schema import TX, S, LINK, BOOL, IMG, ALT, VID, DOC, ICON, MODEL, LIST, SEL, FEATURE
 from layout import (PAGE_FIELDS_CTA, page, phero, trail, cta_band, figures, uses, features, gallery, video_card, options, downloads,
                     spec_table, dims_card, model, form_model)
@@ -52,6 +54,28 @@ def sec_head(d):
       <h2 class="h2">{Tk(d, 'title')}</h2></div>'''
 
 
+MODEL_VIEWER = '\n<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>'
+
+
+def viewer(m, pic):
+    """3D file → turn and zoom freely; 8+ photos round the van → drag to spin; otherwise the plain picture."""
+    st = C('site/settings')
+    name = s(m, 'full_name') or s(m, 'model_name')
+    hint = f'<span class="spin-hint">{ic("route")}{Tk(st, "spin_hint")}</span>' if has(st, 'spin_hint') else ''
+    glb = media(s(m, 'model3d'), '3d')
+    if glb:
+        poster = media(s(m, 'image'), 'img')
+        return (f'<div class="viewer3d"><model-viewer src="{esc(glb)}" poster="{esc(poster)}" alt="{esc(name)}" camera-controls '
+                f'auto-rotate rotation-per-second="18deg" interaction-prompt="none" shadow-intensity="0.6" exposure="1.05" '
+                f'touch-action="pan-y"></model-viewer>{hint}</div>'), MODEL_VIEWER
+    frames = [media(x, 'img') for x in strs(m, 'spin')]
+    if len(frames) >= 8:
+        data = esc(json.dumps(frames))
+        return (f'<div class="spin" tabindex="0" role="img" aria-label="{esc(name)} 360°" data-frames="{data}">'
+                f'<img src="{esc(frames[0])}" alt="{esc(name)}" decoding="async">{hint}</div>'), ''
+    return pic, ''
+
+
 class ModelPage:
     SECTIONS = SECTIONS
 
@@ -68,6 +92,7 @@ class ModelPage:
       <a class="btn btn-primary" href="contact.html?topic=quote&amp;model={mv}">{Tk(lb, 'model_quote')}</a>
       <a class="btn btn-outline" href="contact.html?topic=demo&amp;model={mv}">{ic('calendar')}{Tk(lb, 'model_demo')}</a></div>'''
         pic = img(h, lazy=False, alt=s(m, 'full_name')) if s(h, 'image') else img(m, lazy=False, alt=s(m, 'full_name'))
+        pic, head_extra = viewer(m, pic)
         hero = phero(pic, 'vehicle', trail('products', h), h, extra)
 
         nav = ''.join(f'<a href="#{esc(s(x, "section"))}">{Tk(x, "label")}</a>' for x in items(lb, 'model_nav'))
@@ -149,7 +174,7 @@ class ModelPage:
   </div>
 </section>'''
         pg = C(f'{D}/page')
-        return page(self.FILE, pg, hero + sections + cta_band(pg))
+        return page(self.FILE, pg, hero + sections + cta_band(pg), extra_head=head_extra)
 
 
 MODULES = [ModelPage('z5.html', 'z5', 'RoboVan Z5'), ModelPage('z10.html', 'z10', 'RoboVan Z10'),

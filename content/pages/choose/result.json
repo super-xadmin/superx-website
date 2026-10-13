@@ -1,0 +1,14 @@
+{
+  "title_th": "รุ่นที่เหมาะกับคุณ",
+  "title_zh": "为您推荐",
+  "title_en": "Our suggestion for you",
+  "pending_th": "ตอบให้ครบทุกข้อ แล้วรุ่นที่แนะนำจะแสดงตรงนี้",
+  "pending_zh": "回答全部问题后，推荐车型会显示在这里。",
+  "pending_en": "Answer every question and your match appears here.",
+  "also_th": "รุ่นใกล้เคียง:",
+  "also_zh": "相近车型：",
+  "also_en": "Also worth a look:",
+  "restart_th": "เริ่มใหม่",
+  "restart_zh": "重新选择",
+  "restart_en": "Start again"
+}

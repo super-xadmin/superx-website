@@ -1,0 +1,20 @@
+{
+  "dark_mode": true,
+  "quick_bar": true,
+  "quick_line_th": "แชต LINE",
+  "quick_line_zh": "LINE 咨询",
+  "quick_line_en": "Chat on LINE",
+  "quick_call_th": "โทร",
+  "quick_call_zh": "致电",
+  "quick_call_en": "Call",
+  "quick_demo_th": "นัดสาธิต",
+  "quick_demo_zh": "预约演示",
+  "quick_demo_en": "Book a demo",
+  "quick_demo_link": "contact.html?topic=demo",
+  "quick_aria_th": "ติดต่อด่วน",
+  "quick_aria_zh": "快速联系",
+  "quick_aria_en": "Quick contact",
+  "spin_hint_th": "ลากเพื่อหมุนดูรอบคัน",
+  "spin_hint_zh": "拖动可旋转查看",
+  "spin_hint_en": "Drag to turn the van"
+}

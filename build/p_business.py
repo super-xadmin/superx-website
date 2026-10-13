@@ -54,7 +54,7 @@ COLLECTIONS = [('business', '📦 ธุรกิจ / โซลูชัน (�
                  'default': {'sort': 'order', 'order': 'asc'}})]
 
 RESERVED = {'index', 'products', 'z5', 'z10', 'cold-chain', 'education', 'security', 'ai-agent', 'about', 'cases',
-            'news', 'contact', '404'}
+            'news', 'contact', '404', 'roi', 'choose'}
 
 
 def page_name(d, slug):

@@ -242,6 +242,116 @@
     });
   }
 
+  /* ---------- ROI calculator (roi.html) ---------- */
+  var roi = document.querySelector('[data-roi]');
+  var roiData = document.getElementById('roi-data');
+  if (roi && roiData) {
+    var R = {};
+    try { R = JSON.parse(roiData.textContent) || {}; } catch (e) { R = {}; }
+    var A = R.a || {};
+    var val = function (k) { var el = document.getElementById('roi-' + k); var v = el ? parseFloat(el.value) : 0; return isFinite(v) && v > 0 ? v : 0; };
+    var money = function (v) { return Math.round(v).toLocaleString('en-US'); };
+    var put = function (id, text) { var el = document.getElementById(id); if (el) el.textContent = text; };
+    var calc = function () {
+      var trips = val('trips'), km = val('km'), drivers = val('drivers'), wage = val('wage'), days = val('days'), fuel = val('fuel');
+      var dailyKm = trips * km, yearKm = dailyKm * days * 12;
+      var vans = dailyKm > 0 ? Math.max(1, Math.ceil(dailyKm / Math.max(1, A.van_km_day || 150))) : 0;
+      var current = drivers * wage * 12 + yearKm * fuel;
+      var robovan = vans * (A.van_cost_month || 0) * 12 + yearKm * (A.energy_km || 0) + (vans ? (A.staff_month || 0) * 12 : 0);
+      var saving = current - robovan;
+      var pct = current > 0 ? Math.round(saving / current * 100) : 0;
+      put('roi-r-saving', money(Math.max(0, saving)));
+      put('roi-r-pct', Math.max(0, pct) + '%');
+      put('roi-r-current', money(current)); put('roi-r-robovan', money(robovan));
+      put('roi-r-vans', String(vans)); put('roi-r-km', money(yearKm));
+      roi.classList.toggle('is-loss', saving <= 0 && current > 0);
+      var tpl = (R.msg && (R.msg[currentLang()] || R.msg.th)) || '';
+      var fill = { trips: trips, km: km, drivers: drivers, wage: money(wage), days: days, fuel: fuel, vans: vans,
+                   current: money(current), robovan: money(robovan), saving: money(Math.max(0, saving)) };
+      var text = tpl.replace(/\{(\w+)\}/g, function (m0, k) { return fill.hasOwnProperty(k) ? String(fill[k]) : m0; });
+      var quote = document.getElementById('roi-quote');
+      if (quote) quote.href = 'contact.html?topic=quote&qty=' + vans + '&msg=' + encodeURIComponent(text);
+    };
+    roi.addEventListener('input', calc);
+    document.querySelectorAll('.lang button').forEach(function (b) { b.addEventListener('click', function () { setTimeout(calc, 0); }); });
+    calc();
+  }
+
+  /* ---------- Model finder (choose.html) ---------- */
+  var quiz = document.querySelector('[data-quiz]');
+  if (quiz) {
+    var groups = Array.prototype.slice.call(quiz.querySelectorAll('.quiz-q'));
+    var out = quiz.querySelector('.quiz-out'), pending = quiz.querySelectorAll('.quiz-pending');
+    var cards = Array.prototype.slice.call(quiz.querySelectorAll('.quiz-card'));
+    var order = cards.map(function (c) { return c.getAttribute('data-model'); });
+    var decide = function (scroll) {
+      var picked = groups.map(function (g) { return g.querySelector('input:checked'); });
+      var done = picked.every(Boolean);
+      if (!done) { if (out) out.hidden = true; pending.forEach(function (p) { p.style.display = ''; }); return; }
+      var score = {};
+      picked.forEach(function (inp) {
+        (inp.getAttribute('data-models') || '').split(' ').forEach(function (k) { if (k) score[k] = (score[k] || 0) + 1; });
+      });
+      var ranked = order.filter(function (k) { return score[k]; }).sort(function (a, b) { return (score[b] - score[a]) || (order.indexOf(a) - order.indexOf(b)); });
+      var best = ranked[0];
+      cards.forEach(function (c) { c.hidden = c.getAttribute('data-model') !== best; if (!c.hidden && motionOK) { c.classList.remove('is-entering'); void c.offsetWidth; c.classList.add('is-entering'); } });
+      var also = quiz.querySelector('.quiz-also'), list = quiz.querySelector('.quiz-also-list');
+      var others = ranked.slice(1).filter(function (k) { return score[k] === score[best]; }).slice(0, 3);
+      if (list) {
+        list.innerHTML = '';
+        others.forEach(function (k) {
+          var c = quiz.querySelector('.quiz-card[data-model="' + k + '"]'); if (!c) return;
+          var a = document.createElement('a'); a.className = 'chip'; a.href = c.getAttribute('data-link'); a.textContent = c.getAttribute('data-name');
+          list.appendChild(a);
+        });
+      }
+      if (also) also.hidden = !others.length;
+      if (out) out.hidden = !best;
+      pending.forEach(function (p) { p.style.display = best ? 'none' : ''; });
+      if (scroll && best && out) out.scrollIntoView({ behavior: motionOK ? 'smooth' : 'auto', block: 'start' });
+    };
+    quiz.addEventListener('change', function () { decide(true); });
+    var reset = quiz.querySelector('[data-quiz-reset]');
+    if (reset) reset.addEventListener('click', function () {
+      quiz.querySelectorAll('input:checked').forEach(function (i) { i.checked = false; });
+      decide(false);
+      quiz.scrollIntoView({ behavior: motionOK ? 'smooth' : 'auto', block: 'start' });
+    });
+    decide(false);
+  }
+
+  /* ---------- 360° view: drag (or arrow keys) to turn the van ---------- */
+  document.querySelectorAll('.spin[data-frames]').forEach(function (box) {
+    var frames = [];
+    try { frames = JSON.parse(box.getAttribute('data-frames')) || []; } catch (e) { frames = []; }
+    var pic = box.querySelector('img');
+    if (frames.length < 2 || !pic) return;
+    var cache = [], idx = 0, loaded = false;
+    var load = function () { if (loaded) return; loaded = true; frames.forEach(function (src, i) { var im = new Image(); im.decoding = 'async'; im.src = src; cache[i] = im; }); };
+    var show = function (i) { idx = (i % frames.length + frames.length) % frames.length; pic.src = frames[idx]; };
+    var startX = 0, startIdx = 0, dragging = false;
+    box.addEventListener('pointerdown', function (e) { load(); dragging = true; startX = e.clientX; startIdx = idx; box.classList.add('is-dragging'); box.setPointerCapture(e.pointerId); });
+    box.addEventListener('pointermove', function (e) {
+      if (!dragging) return;
+      var step = Math.max(4, box.clientWidth / frames.length / 1.2);
+      show(startIdx - Math.round((e.clientX - startX) / step));
+    });
+    var stop = function () { dragging = false; box.classList.remove('is-dragging'); };
+    box.addEventListener('pointerup', stop); box.addEventListener('pointercancel', stop);
+    box.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') { e.preventDefault(); load(); show(idx + (e.key === 'ArrowRight' ? 1 : -1)); }
+    });
+    if ('IntersectionObserver' in window) {
+      var seenSpin = new IntersectionObserver(function (en) {
+        if (!en[0].isIntersecting) return;
+        seenSpin.disconnect(); load();
+        if (!motionOK) return;
+        var n = 0, timer = setInterval(function () { if (dragging || ++n > frames.length) { clearInterval(timer); return; } show(idx + 1); }, 90);
+      });
+      seenSpin.observe(box);
+    }
+  });
+
   /* ---------- Section nav highlight (model pages) ---------- */
   var subLinks = Array.prototype.slice.call(document.querySelectorAll('.subnav a[href^="#"]'));
   if (subLinks.length && 'IntersectionObserver' in window) {
@@ -300,6 +410,11 @@
       };
       setSel('f-interest', params.get('topic'));
       setSel('f-model', params.get('model'));
+      /* Filled in from the ROI calculator */
+      var qty = params.get('qty'), msg = params.get('msg');
+      var qtyEl = document.getElementById('f-qty'), msgEl = document.getElementById('f-message');
+      if (qtyEl && qty && /^\d{1,4}$/.test(qty)) qtyEl.value = qty;
+      if (msgEl && msg && !msgEl.value) msgEl.value = msg.slice(0, 1500);
     }
     var result = document.getElementById('form-result');
     var statusLine = document.getElementById('form-status');

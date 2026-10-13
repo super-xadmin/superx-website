@@ -26,6 +26,13 @@ media:
   output: /assets/docs
   extensions:
   - pdf
+- name: models3d
+  label: ไฟล์ 3D (.glb)
+  input: assets/3d
+  output: /assets/3d
+  extensions:
+  - glb
+  - gltf
 content:
 - name: news
   label: 📰 ข่าวสาร (เพิ่มข่าวใหม่ที่นี่)
@@ -6482,6 +6489,707 @@ content:
         - name: label_en
           label: ข้อความ · English
           type: string
+  - name: page-roi
+    label: คำนวณความคุ้มค่า (ROI)
+    type: group
+    items:
+    - name: roi-page
+      label: ตั้งค่าหน้า (เปิด/ปิด ชื่อหน้า แถบปิดท้าย)
+      type: file
+      path: content/pages/roi/page.json
+      format: json
+      fields:
+      - name: enabled
+        label: เปิดใช้งานหน้านี้ (ใส่ตัวเลขจริงในหัวข้อ 3 ให้ครบก่อนเปิด)
+        type: boolean
+      - name: seo_title_th
+        label: ชื่อหน้า (แท็บเบราว์เซอร์และ Google) · ไทย
+        type: string
+        required: true
+      - name: seo_title_zh
+        label: ชื่อหน้า (แท็บเบราว์เซอร์และ Google) · 中文
+        type: string
+      - name: seo_title_en
+        label: ชื่อหน้า (แท็บเบราว์เซอร์และ Google) · English
+        type: string
+      - name: seo_desc_th
+        label: คำอธิบายหน้าสำหรับ Google · ไทย
+        type: text
+      - name: seo_desc_zh
+        label: คำอธิบายหน้าสำหรับ Google · 中文
+        type: text
+      - name: seo_desc_en
+        label: คำอธิบายหน้าสำหรับ Google · English
+        type: text
+      - name: cta_title_th
+        label: 'แถบปิดท้ายหน้า: หัวข้อ (เว้นว่าง = ใช้ข้อความมาตรฐาน) · ไทย'
+        type: text
+      - name: cta_title_zh
+        label: 'แถบปิดท้ายหน้า: หัวข้อ (เว้นว่าง = ใช้ข้อความมาตรฐาน) · 中文'
+        type: text
+      - name: cta_title_en
+        label: 'แถบปิดท้ายหน้า: หัวข้อ (เว้นว่าง = ใช้ข้อความมาตรฐาน) · English'
+        type: text
+      - name: cta_lead_th
+        label: 'แถบปิดท้ายหน้า: คำอธิบาย (เว้นว่าง = ใช้ข้อความมาตรฐาน) · ไทย'
+        type: text
+      - name: cta_lead_zh
+        label: 'แถบปิดท้ายหน้า: คำอธิบาย (เว้นว่าง = ใช้ข้อความมาตรฐาน) · 中文'
+        type: text
+      - name: cta_lead_en
+        label: 'แถบปิดท้ายหน้า: คำอธิบาย (เว้นว่าง = ใช้ข้อความมาตรฐาน) · English'
+        type: text
+      - name: cta_topic
+        label: 'แถบปิดท้ายหน้า: ปุ่มนัดสาธิตเลือกเรื่องในแบบฟอร์มเป็น'
+        type: select
+        options:
+          values:
+          - name: demo
+            label: นัดหมายสาธิต
+          - name: quote
+            label: ขอใบเสนอราคา
+          - name: education
+            label: การศึกษา
+          - name: security
+            label: หุ่นยนต์ความปลอดภัย
+          - name: qubby
+            label: Qubby AI
+          - name: partner
+            label: พันธมิตร
+          - name: other
+            label: อื่นๆ
+    - name: roi-hero
+      label: 1. ภาพหลักและหัวข้อ
+      type: file
+      path: content/pages/roi/hero.json
+      format: json
+      fields:
+      - name: image
+        label: รูปภาพ
+        type: image
+        options:
+          media: images
+      - name: alt
+        label: คำอธิบายรูป (alt)
+        type: string
+        description: ภาษาอังกฤษสั้นๆ บอกว่าในรูปมีอะไร ช่วยเรื่อง Google และผู้พิการทางสายตา
+      - name: crumb_th
+        label: ชื่อหน้าในแถบเส้นทาง · ไทย
+        type: string
+      - name: crumb_zh
+        label: ชื่อหน้าในแถบเส้นทาง · 中文
+        type: string
+      - name: crumb_en
+        label: ชื่อหน้าในแถบเส้นทาง · English
+        type: string
+      - name: eyebrow_th
+        label: หัวข้อเล็ก · ไทย
+        type: string
+      - name: eyebrow_zh
+        label: หัวข้อเล็ก · 中文
+        type: string
+      - name: eyebrow_en
+        label: หัวข้อเล็ก · English
+        type: string
+      - name: title_th
+        label: หัวข้อใหญ่ · ไทย
+        type: text
+      - name: title_zh
+        label: หัวข้อใหญ่ · 中文
+        type: text
+      - name: title_en
+        label: หัวข้อใหญ่ · English
+        type: text
+      - name: lead_th
+        label: คำอธิบาย · ไทย
+        type: text
+      - name: lead_zh
+        label: คำอธิบาย · 中文
+        type: text
+      - name: lead_en
+        label: คำอธิบาย · English
+        type: text
+    - name: roi-inputs
+      label: 2. ช่องที่ลูกค้ากรอก
+      type: file
+      path: content/pages/roi/inputs.json
+      format: json
+      fields:
+      - name: title_th
+        label: หัวข้อกล่องกรอกข้อมูล · ไทย
+        type: string
+      - name: title_zh
+        label: หัวข้อกล่องกรอกข้อมูล · 中文
+        type: string
+      - name: title_en
+        label: หัวข้อกล่องกรอกข้อมูล · English
+        type: string
+      - name: lead_th
+        label: คำอธิบาย · ไทย
+        type: text
+      - name: lead_zh
+        label: คำอธิบาย · 中文
+        type: text
+      - name: lead_en
+        label: คำอธิบาย · English
+        type: text
+      - name: trips
+        label: 'ช่อง: จำนวนเที่ยวต่อวัน'
+        type: object
+        fields:
+        - name: label_th
+          label: ชื่อช่อง · ไทย
+          type: string
+        - name: label_zh
+          label: ชื่อช่อง · 中文
+          type: string
+        - name: label_en
+          label: ชื่อช่อง · English
+          type: string
+        - name: unit_th
+          label: หน่วย (เช่น เที่ยว, กม., บาท) · ไทย
+          type: string
+        - name: unit_zh
+          label: หน่วย (เช่น เที่ยว, กม., บาท) · 中文
+          type: string
+        - name: unit_en
+          label: หน่วย (เช่น เที่ยว, กม., บาท) · English
+          type: string
+        - name: value
+          label: ค่าเริ่มต้น
+          type: number
+        - name: max
+          label: ค่าสูงสุดที่กรอกได้
+          type: number
+      - name: km
+        label: 'ช่อง: ระยะทางต่อเที่ยว'
+        type: object
+        fields:
+        - name: label_th
+          label: ชื่อช่อง · ไทย
+          type: string
+        - name: label_zh
+          label: ชื่อช่อง · 中文
+          type: string
+        - name: label_en
+          label: ชื่อช่อง · English
+          type: string
+        - name: unit_th
+          label: หน่วย (เช่น เที่ยว, กม., บาท) · ไทย
+          type: string
+        - name: unit_zh
+          label: หน่วย (เช่น เที่ยว, กม., บาท) · 中文
+          type: string
+        - name: unit_en
+          label: หน่วย (เช่น เที่ยว, กม., บาท) · English
+          type: string
+        - name: value
+          label: ค่าเริ่มต้น
+          type: number
+        - name: max
+          label: ค่าสูงสุดที่กรอกได้
+          type: number
+      - name: drivers
+        label: 'ช่อง: จำนวนคนขับตอนนี้'
+        type: object
+        fields:
+        - name: label_th
+          label: ชื่อช่อง · ไทย
+          type: string
+        - name: label_zh
+          label: ชื่อช่อง · 中文
+          type: string
+        - name: label_en
+          label: ชื่อช่อง · English
+          type: string
+        - name: unit_th
+          label: หน่วย (เช่น เที่ยว, กม., บาท) · ไทย
+          type: string
+        - name: unit_zh
+          label: หน่วย (เช่น เที่ยว, กม., บาท) · 中文
+          type: string
+        - name: unit_en
+          label: หน่วย (เช่น เที่ยว, กม., บาท) · English
+          type: string
+        - name: value
+          label: ค่าเริ่มต้น
+          type: number
+        - name: max
+          label: ค่าสูงสุดที่กรอกได้
+          type: number
+      - name: wage
+        label: 'ช่อง: ค่าแรงคนขับต่อคนต่อเดือน'
+        type: object
+        fields:
+        - name: label_th
+          label: ชื่อช่อง · ไทย
+          type: string
+        - name: label_zh
+          label: ชื่อช่อง · 中文
+          type: string
+        - name: label_en
+          label: ชื่อช่อง · English
+          type: string
+        - name: unit_th
+          label: หน่วย (เช่น เที่ยว, กม., บาท) · ไทย
+          type: string
+        - name: unit_zh
+          label: หน่วย (เช่น เที่ยว, กม., บาท) · 中文
+          type: string
+        - name: unit_en
+          label: หน่วย (เช่น เที่ยว, กม., บาท) · English
+          type: string
+        - name: value
+          label: ค่าเริ่มต้น
+          type: number
+        - name: max
+          label: ค่าสูงสุดที่กรอกได้
+          type: number
+      - name: days
+        label: 'ช่อง: วันทำงานต่อเดือน'
+        type: object
+        fields:
+        - name: label_th
+          label: ชื่อช่อง · ไทย
+          type: string
+        - name: label_zh
+          label: ชื่อช่อง · 中文
+          type: string
+        - name: label_en
+          label: ชื่อช่อง · English
+          type: string
+        - name: unit_th
+          label: หน่วย (เช่น เที่ยว, กม., บาท) · ไทย
+          type: string
+        - name: unit_zh
+          label: หน่วย (เช่น เที่ยว, กม., บาท) · 中文
+          type: string
+        - name: unit_en
+          label: หน่วย (เช่น เที่ยว, กม., บาท) · English
+          type: string
+        - name: value
+          label: ค่าเริ่มต้น
+          type: number
+        - name: max
+          label: ค่าสูงสุดที่กรอกได้
+          type: number
+      - name: fuel
+        label: 'ช่อง: ค่าน้ำมันรถเดิมต่อกิโลเมตร'
+        type: object
+        fields:
+        - name: label_th
+          label: ชื่อช่อง · ไทย
+          type: string
+        - name: label_zh
+          label: ชื่อช่อง · 中文
+          type: string
+        - name: label_en
+          label: ชื่อช่อง · English
+          type: string
+        - name: unit_th
+          label: หน่วย (เช่น เที่ยว, กม., บาท) · ไทย
+          type: string
+        - name: unit_zh
+          label: หน่วย (เช่น เที่ยว, กม., บาท) · 中文
+          type: string
+        - name: unit_en
+          label: หน่วย (เช่น เที่ยว, กม., บาท) · English
+          type: string
+        - name: value
+          label: ค่าเริ่มต้น
+          type: number
+        - name: max
+          label: ค่าสูงสุดที่กรอกได้
+          type: number
+    - name: roi-assumptions
+      label: 3. ตัวเลขฝั่ง RoboVan ที่ใช้คำนวณ (ลูกค้าไม่เห็น)
+      type: file
+      path: content/pages/roi/assumptions.json
+      format: json
+      fields:
+      - name: van_km_day
+        label: ระยะทางที่ RoboVan 1 คันวิ่งได้ต่อวัน (กม.)
+        type: number
+      - name: van_cost_month
+        label: ค่าใช้จ่าย RoboVan ต่อคันต่อเดือน (บาท) เช่น ค่าเช่า + บริการ
+        type: number
+      - name: energy_km
+        label: ค่าไฟของ RoboVan ต่อกิโลเมตร (บาท)
+        type: number
+      - name: staff_month
+        label: ค่าเจ้าหน้าที่ดูแล / ควบคุมระยะไกลต่อเดือน (บาท) รวมทุกคัน
+        type: number
+    - name: roi-results
+      label: 4. ข้อความผลลัพธ์และปุ่ม
+      type: file
+      path: content/pages/roi/results.json
+      format: json
+      fields:
+      - name: saving_title_th
+        label: หัวข้อผลลัพธ์ (เช่น ประหยัดได้ประมาณ) · ไทย
+        type: string
+      - name: saving_title_zh
+        label: หัวข้อผลลัพธ์ (เช่น ประหยัดได้ประมาณ) · 中文
+        type: string
+      - name: saving_title_en
+        label: หัวข้อผลลัพธ์ (เช่น ประหยัดได้ประมาณ) · English
+        type: string
+      - name: baht_th
+        label: คำว่า บาท · ไทย
+        type: string
+      - name: baht_zh
+        label: คำว่า บาท · 中文
+        type: string
+      - name: baht_en
+        label: คำว่า บาท · English
+        type: string
+      - name: per_year_th
+        label: คำว่า ต่อปี · ไทย
+        type: string
+      - name: per_year_zh
+        label: คำว่า ต่อปี · 中文
+        type: string
+      - name: per_year_en
+        label: คำว่า ต่อปี · English
+        type: string
+      - name: percent_label_th
+        label: ข้อความหลังเปอร์เซ็นต์ (เช่น ของค่าใช้จ่ายเดิม) · ไทย
+        type: string
+      - name: percent_label_zh
+        label: ข้อความหลังเปอร์เซ็นต์ (เช่น ของค่าใช้จ่ายเดิม) · 中文
+        type: string
+      - name: percent_label_en
+        label: ข้อความหลังเปอร์เซ็นต์ (เช่น ของค่าใช้จ่ายเดิม) · English
+        type: string
+      - name: current_label_th
+        label: 'แถว: ค่าใช้จ่ายแบบเดิมต่อปี · ไทย'
+        type: string
+      - name: current_label_zh
+        label: 'แถว: ค่าใช้จ่ายแบบเดิมต่อปี · 中文'
+        type: string
+      - name: current_label_en
+        label: 'แถว: ค่าใช้จ่ายแบบเดิมต่อปี · English'
+        type: string
+      - name: robovan_label_th
+        label: 'แถว: ค่าใช้จ่ายเมื่อใช้ RoboVan ต่อปี · ไทย'
+        type: string
+      - name: robovan_label_zh
+        label: 'แถว: ค่าใช้จ่ายเมื่อใช้ RoboVan ต่อปี · 中文'
+        type: string
+      - name: robovan_label_en
+        label: 'แถว: ค่าใช้จ่ายเมื่อใช้ RoboVan ต่อปี · English'
+        type: string
+      - name: vans_label_th
+        label: 'แถว: จำนวน RoboVan ที่ต้องใช้ · ไทย'
+        type: string
+      - name: vans_label_zh
+        label: 'แถว: จำนวน RoboVan ที่ต้องใช้ · 中文'
+        type: string
+      - name: vans_label_en
+        label: 'แถว: จำนวน RoboVan ที่ต้องใช้ · English'
+        type: string
+      - name: vans_unit_th
+        label: หน่วยรถ (เช่น คัน) · ไทย
+        type: string
+      - name: vans_unit_zh
+        label: หน่วยรถ (เช่น คัน) · 中文
+        type: string
+      - name: vans_unit_en
+        label: หน่วยรถ (เช่น คัน) · English
+        type: string
+      - name: km_label_th
+        label: 'แถว: ระยะทางรวมต่อปี · ไทย'
+        type: string
+      - name: km_label_zh
+        label: 'แถว: ระยะทางรวมต่อปี · 中文'
+        type: string
+      - name: km_label_en
+        label: 'แถว: ระยะทางรวมต่อปี · English'
+        type: string
+      - name: km_unit_th
+        label: หน่วยระยะทาง (เช่น กม.) · ไทย
+        type: string
+      - name: km_unit_zh
+        label: หน่วยระยะทาง (เช่น กม.) · 中文
+        type: string
+      - name: km_unit_en
+        label: หน่วยระยะทาง (เช่น กม.) · English
+        type: string
+      - name: no_saving_th
+        label: ข้อความเมื่อยังไม่คุ้ม · ไทย
+        type: text
+      - name: no_saving_zh
+        label: ข้อความเมื่อยังไม่คุ้ม · 中文
+        type: text
+      - name: no_saving_en
+        label: ข้อความเมื่อยังไม่คุ้ม · English
+        type: text
+      - name: button_th
+        label: ปุ่มส่งผลไปขอใบเสนอราคา · ไทย
+        type: string
+      - name: button_zh
+        label: ปุ่มส่งผลไปขอใบเสนอราคา · 中文
+        type: string
+      - name: button_en
+        label: ปุ่มส่งผลไปขอใบเสนอราคา · English
+        type: string
+      - name: message_th
+        label: ข้อความที่ใส่ในแบบฟอร์มให้อัตโนมัติ · ไทย
+        type: text
+        description: ใช้ {trips} {km} {drivers} {wage} {days} {fuel} {vans} {current} {robovan} {saving} แทนตัวเลข
+      - name: message_zh
+        label: ข้อความที่ใส่ในแบบฟอร์มให้อัตโนมัติ · 中文
+        type: text
+      - name: message_en
+        label: ข้อความที่ใส่ในแบบฟอร์มให้อัตโนมัติ · English
+        type: text
+      - name: note_th
+        label: หมายเหตุใต้ผลลัพธ์ · ไทย
+        type: text
+      - name: note_zh
+        label: หมายเหตุใต้ผลลัพธ์ · 中文
+        type: text
+      - name: note_en
+        label: หมายเหตุใต้ผลลัพธ์ · English
+        type: text
+  - name: page-choose
+    label: ช่วยเลือกรุ่นรถ
+    type: group
+    items:
+    - name: choose-page
+      label: ตั้งค่าหน้า (เปิด/ปิด ชื่อหน้า แถบปิดท้าย)
+      type: file
+      path: content/pages/choose/page.json
+      format: json
+      fields:
+      - name: enabled
+        label: เปิดใช้งานหน้านี้
+        type: boolean
+      - name: seo_title_th
+        label: ชื่อหน้า (แท็บเบราว์เซอร์และ Google) · ไทย
+        type: string
+        required: true
+      - name: seo_title_zh
+        label: ชื่อหน้า (แท็บเบราว์เซอร์และ Google) · 中文
+        type: string
+      - name: seo_title_en
+        label: ชื่อหน้า (แท็บเบราว์เซอร์และ Google) · English
+        type: string
+      - name: seo_desc_th
+        label: คำอธิบายหน้าสำหรับ Google · ไทย
+        type: text
+      - name: seo_desc_zh
+        label: คำอธิบายหน้าสำหรับ Google · 中文
+        type: text
+      - name: seo_desc_en
+        label: คำอธิบายหน้าสำหรับ Google · English
+        type: text
+      - name: cta_title_th
+        label: 'แถบปิดท้ายหน้า: หัวข้อ (เว้นว่าง = ใช้ข้อความมาตรฐาน) · ไทย'
+        type: text
+      - name: cta_title_zh
+        label: 'แถบปิดท้ายหน้า: หัวข้อ (เว้นว่าง = ใช้ข้อความมาตรฐาน) · 中文'
+        type: text
+      - name: cta_title_en
+        label: 'แถบปิดท้ายหน้า: หัวข้อ (เว้นว่าง = ใช้ข้อความมาตรฐาน) · English'
+        type: text
+      - name: cta_lead_th
+        label: 'แถบปิดท้ายหน้า: คำอธิบาย (เว้นว่าง = ใช้ข้อความมาตรฐาน) · ไทย'
+        type: text
+      - name: cta_lead_zh
+        label: 'แถบปิดท้ายหน้า: คำอธิบาย (เว้นว่าง = ใช้ข้อความมาตรฐาน) · 中文'
+        type: text
+      - name: cta_lead_en
+        label: 'แถบปิดท้ายหน้า: คำอธิบาย (เว้นว่าง = ใช้ข้อความมาตรฐาน) · English'
+        type: text
+      - name: cta_topic
+        label: 'แถบปิดท้ายหน้า: ปุ่มนัดสาธิตเลือกเรื่องในแบบฟอร์มเป็น'
+        type: select
+        options:
+          values:
+          - name: demo
+            label: นัดหมายสาธิต
+          - name: quote
+            label: ขอใบเสนอราคา
+          - name: education
+            label: การศึกษา
+          - name: security
+            label: หุ่นยนต์ความปลอดภัย
+          - name: qubby
+            label: Qubby AI
+          - name: partner
+            label: พันธมิตร
+          - name: other
+            label: อื่นๆ
+    - name: choose-hero
+      label: 1. ภาพหลักและหัวข้อ
+      type: file
+      path: content/pages/choose/hero.json
+      format: json
+      fields:
+      - name: image
+        label: รูปภาพ
+        type: image
+        options:
+          media: images
+      - name: alt
+        label: คำอธิบายรูป (alt)
+        type: string
+        description: ภาษาอังกฤษสั้นๆ บอกว่าในรูปมีอะไร ช่วยเรื่อง Google และผู้พิการทางสายตา
+      - name: crumb_th
+        label: ชื่อหน้าในแถบเส้นทาง · ไทย
+        type: string
+      - name: crumb_zh
+        label: ชื่อหน้าในแถบเส้นทาง · 中文
+        type: string
+      - name: crumb_en
+        label: ชื่อหน้าในแถบเส้นทาง · English
+        type: string
+      - name: eyebrow_th
+        label: หัวข้อเล็ก · ไทย
+        type: string
+      - name: eyebrow_zh
+        label: หัวข้อเล็ก · 中文
+        type: string
+      - name: eyebrow_en
+        label: หัวข้อเล็ก · English
+        type: string
+      - name: title_th
+        label: หัวข้อใหญ่ · ไทย
+        type: text
+      - name: title_zh
+        label: หัวข้อใหญ่ · 中文
+        type: text
+      - name: title_en
+        label: หัวข้อใหญ่ · English
+        type: text
+      - name: lead_th
+        label: คำอธิบาย · ไทย
+        type: text
+      - name: lead_zh
+        label: คำอธิบาย · 中文
+        type: text
+      - name: lead_en
+        label: คำอธิบาย · English
+        type: text
+    - name: choose-quiz
+      label: 2. คำถามและคำตอบ
+      type: file
+      path: content/pages/choose/quiz.json
+      format: json
+      fields:
+      - name: eyebrow_th
+        label: หัวข้อเล็ก · ไทย
+        type: string
+      - name: eyebrow_zh
+        label: หัวข้อเล็ก · 中文
+        type: string
+      - name: eyebrow_en
+        label: หัวข้อเล็ก · English
+        type: string
+      - name: title_th
+        label: หัวข้อ · ไทย
+        type: text
+      - name: title_zh
+        label: หัวข้อ · 中文
+        type: text
+      - name: title_en
+        label: หัวข้อ · English
+        type: text
+      - name: lead_th
+        label: คำอธิบาย · ไทย
+        type: text
+      - name: lead_zh
+        label: คำอธิบาย · 中文
+        type: text
+      - name: lead_en
+        label: คำอธิบาย · English
+        type: text
+      - name: questions
+        label: คำถาม (แนะนำ 3–4 ข้อ)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{q_th}'
+        fields:
+        - name: q_th
+          label: คำถาม · ไทย
+          type: string
+        - name: q_zh
+          label: คำถาม · 中文
+          type: string
+        - name: q_en
+          label: คำถาม · English
+          type: string
+        - name: options
+          label: คำตอบให้เลือก
+          type: object
+          list:
+            collapsible:
+              collapsed: true
+              summary: '{label_th}'
+          fields:
+          - name: label_th
+            label: คำตอบ · ไทย
+            type: string
+          - name: label_zh
+            label: คำตอบ · 中文
+            type: string
+          - name: label_en
+            label: คำตอบ · English
+            type: string
+          - name: models
+            label: รุ่นที่เหมาะกับคำตอบนี้ (เลือกได้หลายรุ่น)
+            type: reference
+            options:
+              collection: models
+              value: '{path}'
+              label: '{fields.model_name}'
+              search: model_name
+              multiple: true
+    - name: choose-result
+      label: 3. ผลลัพธ์
+      type: file
+      path: content/pages/choose/result.json
+      format: json
+      fields:
+      - name: title_th
+        label: หัวข้อเหนือรุ่นที่แนะนำ · ไทย
+        type: string
+      - name: title_zh
+        label: หัวข้อเหนือรุ่นที่แนะนำ · 中文
+        type: string
+      - name: title_en
+        label: หัวข้อเหนือรุ่นที่แนะนำ · English
+        type: string
+      - name: pending_th
+        label: ข้อความก่อนตอบครบทุกข้อ · ไทย
+        type: string
+      - name: pending_zh
+        label: ข้อความก่อนตอบครบทุกข้อ · 中文
+        type: string
+      - name: pending_en
+        label: ข้อความก่อนตอบครบทุกข้อ · English
+        type: string
+      - name: also_th
+        label: ข้อความนำรุ่นใกล้เคียง · ไทย
+        type: string
+      - name: also_zh
+        label: ข้อความนำรุ่นใกล้เคียง · 中文
+        type: string
+      - name: also_en
+        label: ข้อความนำรุ่นใกล้เคียง · English
+        type: string
+      - name: restart_th
+        label: ปุ่มเริ่มใหม่ · ไทย
+        type: string
+      - name: restart_zh
+        label: ปุ่มเริ่มใหม่ · 中文
+        type: string
+      - name: restart_en
+        label: ปุ่มเริ่มใหม่ · English
+        type: string
   - name: page-about
     label: เกี่ยวกับ SuperX
     type: group
@@ -8925,6 +9633,22 @@ content:
   - name: cmp_dims
     label: 'ตารางเปรียบเทียบ: ขนาด'
     type: string
+  - name: spin
+    label: ภาพหมุนรอบคัน 360° (เลือก 24–36 รูป เรียงตามมุมรอบคัน)
+    type: image
+    options:
+      media: images
+      multiple: true
+    description: ถ่ายรถทุกๆ 10–15 องศาให้ครบรอบ ภาพขนาดเท่ากันทุกรูป ถ้ามีตั้งแต่ 8 รูปขึ้นไป หน้ารุ่นรถจะลากหมุนดูได้
+  - name: model3d
+    label: ไฟล์ 3D ของรถ (.glb) เว้นว่างได้
+    type: file
+    options:
+      media: models3d
+      extensions:
+      - glb
+      - gltf
+    description: ถ้ามีไฟล์นี้ จะใช้แทนภาพหมุน ลูกค้าลากหมุน/ซูมได้อิสระ (ไฟล์ไม่เกิน 25 MB)
   view:
     fields:
     - model_name
@@ -9503,6 +10227,68 @@ content:
       type: string
     - name: copy_en
       label: ปุ่มคัดลอก · English
+      type: string
+  - name: site-settings
+    label: ลูกเล่นและการแสดงผล (โหมดมืด / ปุ่มลอยบนมือถือ / ภาพ 360°)
+    type: file
+    path: content/site/settings.json
+    format: json
+    fields:
+    - name: dark_mode
+      label: เปลี่ยนเว็บเป็นพื้นเข้มอัตโนมัติ เมื่อเครื่องลูกค้าตั้งโหมดมืดไว้
+      type: boolean
+    - name: quick_bar
+      label: แสดงปุ่มติดต่อด่วนลอยด้านล่างจอมือถือ
+      type: boolean
+    - name: quick_line_th
+      label: 'ปุ่มลอย: ข้อความปุ่ม LINE · ไทย'
+      type: string
+      description: ลิงก์ LINE ใช้จาก ข้อมูลบริษัท → โซเชียลมีเดีย (ช่องทาง LINE) ถ้าไม่มี ปุ่มนี้จะไม่แสดง
+    - name: quick_line_zh
+      label: 'ปุ่มลอย: ข้อความปุ่ม LINE · 中文'
+      type: string
+    - name: quick_line_en
+      label: 'ปุ่มลอย: ข้อความปุ่ม LINE · English'
+      type: string
+    - name: quick_call_th
+      label: 'ปุ่มลอย: ข้อความปุ่มโทร · ไทย'
+      type: string
+    - name: quick_call_zh
+      label: 'ปุ่มลอย: ข้อความปุ่มโทร · 中文'
+      type: string
+    - name: quick_call_en
+      label: 'ปุ่มลอย: ข้อความปุ่มโทร · English'
+      type: string
+    - name: quick_demo_th
+      label: 'ปุ่มลอย: ข้อความปุ่มนัดสาธิต · ไทย'
+      type: string
+    - name: quick_demo_zh
+      label: 'ปุ่มลอย: ข้อความปุ่มนัดสาธิต · 中文'
+      type: string
+    - name: quick_demo_en
+      label: 'ปุ่มลอย: ข้อความปุ่มนัดสาธิต · English'
+      type: string
+    - name: quick_demo_link
+      label: 'ปุ่มลอย: ลิงก์ปุ่มนัดสาธิต'
+      type: string
+      description: เช่น contact.html?topic=demo หรือ https://...
+    - name: quick_aria_th
+      label: คำอ่านแถบปุ่มลอย (สำหรับโปรแกรมอ่านหน้าจอ) · ไทย
+      type: string
+    - name: quick_aria_zh
+      label: คำอ่านแถบปุ่มลอย (สำหรับโปรแกรมอ่านหน้าจอ) · 中文
+      type: string
+    - name: quick_aria_en
+      label: คำอ่านแถบปุ่มลอย (สำหรับโปรแกรมอ่านหน้าจอ) · English
+      type: string
+    - name: spin_hint_th
+      label: ข้อความบนภาพ 360° (เช่น ลากเพื่อหมุนดูรอบคัน) · ไทย
+      type: string
+    - name: spin_hint_zh
+      label: ข้อความบนภาพ 360° (เช่น ลากเพื่อหมุนดูรอบคัน) · 中文
+      type: string
+    - name: spin_hint_en
+      label: ข้อความบนภาพ 360° (เช่น ลากเพื่อหมุนดูรอบคัน) · English
       type: string
   - name: site-specs
     label: ตารางสเปกรถ (หัวข้อแถวและหมายเหตุ)

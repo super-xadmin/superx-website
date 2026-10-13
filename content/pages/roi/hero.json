@@ -1,0 +1,16 @@
+{
+  "image": "/assets/img/scene-warehouse.webp",
+  "alt": "RoboVan working at a warehouse",
+  "crumb_th": "คำนวณความคุ้มค่า",
+  "crumb_zh": "投资回报计算",
+  "crumb_en": "ROI calculator",
+  "eyebrow_th": "เครื่องคำนวณความคุ้มค่า",
+  "eyebrow_zh": "投资回报计算器",
+  "eyebrow_en": "ROI calculator",
+  "title_th": "ใช้ RoboVan แล้ว**ประหยัดได้เท่าไร**",
+  "title_zh": "使用 RoboVan **能省多少**",
+  "title_en": "What could RoboVans **save you?**",
+  "lead_th": "กรอกข้อมูลการขนส่งปัจจุบัน แล้วดูตัวเลขประมาณการทันที",
+  "lead_zh": "填写目前的运输情况，立即查看估算结果。",
+  "lead_en": "Enter how you move goods today and see an estimate right away."
+}
