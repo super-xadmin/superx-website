@@ -1,0 +1,255 @@
+/* SUPERX AI website — language switch, navigation, video, copy buttons and the contact form */
+(function () {
+  'use strict';
+  var LANGS = ['th', 'zh', 'en'];
+  var root = document.documentElement;
+
+  /* Where the contact form can send by itself:
+     - Cloudflare Pages (pages.dev, super-x.tech): POST /api/lead, which posts a card to the sales team's Lark group (_worker.js)
+     - Netlify: Netlify Forms
+     Anywhere else (opened from a folder, a preview link) it shows the message to send by email. */
+  var LEAD_API_HOSTS = [/\.pages\.dev$/i, /(^|\.)super-x\.tech$/i, /^(localhost|127\.0\.0\.1)$/];
+  var NETLIFY_HOSTS = [/\.netlify\.app$/i];
+
+  function store(key, val) {
+    try { if (val === undefined) return localStorage.getItem(key); localStorage.setItem(key, val); } catch (e) { return null; }
+    return null;
+  }
+
+  /* ---------- Language ---------- */
+  function currentLang() {
+    var l = root.getAttribute('data-lang');
+    return LANGS.indexOf(l) > -1 ? l : 'th';
+  }
+  function applyLang(l) {
+    root.setAttribute('data-lang', l);
+    root.setAttribute('lang', l === 'zh' ? 'zh-CN' : l);
+    var t = document.querySelector('meta[name="sx-title-' + l + '"]');
+    if (t) document.title = t.getAttribute('content');
+    document.querySelectorAll('[data-ph-' + l + ']').forEach(function (el) {
+      el.setAttribute('placeholder', el.getAttribute('data-ph-' + l));
+    });
+    document.querySelectorAll('option[data-' + l + ']').forEach(function (el) {
+      el.textContent = el.getAttribute('data-' + l);
+    });
+    document.querySelectorAll('[data-aria-' + l + ']').forEach(function (el) {
+      el.setAttribute('aria-label', el.getAttribute('data-aria-' + l));
+    });
+    document.querySelectorAll('.lang button').forEach(function (b) {
+      b.setAttribute('aria-pressed', b.getAttribute('data-set-lang') === l ? 'true' : 'false');
+    });
+  }
+  document.querySelectorAll('.lang button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var l = b.getAttribute('data-set-lang');
+      store('sx-lang', l);
+      applyLang(l);
+    });
+  });
+  applyLang(currentLang());
+
+  /* ---------- Header ---------- */
+  var header = document.querySelector('.site-header');
+  function onScroll() { if (header) header.classList.toggle('is-scrolled', window.scrollY > 4); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  var menuBtn = document.querySelector('.menu-btn');
+  var nav = document.getElementById('site-nav');
+  if (menuBtn && nav) {
+    menuBtn.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+  document.querySelectorAll('.nav-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.closest('.nav-item');
+      var open = !item.classList.contains('is-open');
+      document.querySelectorAll('.nav-item.is-open').forEach(function (i) { i.classList.remove('is-open'); i.querySelector('.nav-toggle').setAttribute('aria-expanded', 'false'); });
+      if (open) { item.classList.add('is-open'); btn.setAttribute('aria-expanded', 'true'); }
+    });
+  });
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.nav-item')) {
+      document.querySelectorAll('.nav-item.is-open').forEach(function (i) { i.classList.remove('is-open'); i.querySelector('.nav-toggle').setAttribute('aria-expanded', 'false'); });
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.nav-item.is-open').forEach(function (i) { i.classList.remove('is-open'); });
+      if (nav && nav.classList.contains('is-open')) { nav.classList.remove('is-open'); if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false'); }
+    }
+  });
+
+  /* ---------- Hero video ---------- */
+  var video = document.querySelector('.hero-media video');
+  var playBtn = document.querySelector('.play-btn');
+  if (video) {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var setBtn = function () {
+      if (!playBtn) return;
+      var paused = video.paused;
+      playBtn.querySelector('.i-pause').style.display = paused ? 'none' : '';
+      playBtn.querySelector('.i-play').style.display = paused ? '' : 'none';
+    };
+    if (reduce) { video.removeAttribute('autoplay'); video.pause(); }
+    else { var p = video.play(); if (p && p.catch) p.catch(function () { setBtn(); }); }
+    video.addEventListener('play', setBtn);
+    video.addEventListener('pause', setBtn);
+    if (playBtn) playBtn.addEventListener('click', function () { if (video.paused) video.play(); else video.pause(); });
+    setBtn();
+  }
+
+  /* ---------- Section nav highlight (model pages) ---------- */
+  var subLinks = Array.prototype.slice.call(document.querySelectorAll('.subnav a[href^="#"]'));
+  if (subLinks.length && 'IntersectionObserver' in window) {
+    var map = {};
+    subLinks.forEach(function (a) { var s = document.getElementById(a.getAttribute('href').slice(1)); if (s) map[s.id] = a; });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting && map[en.target.id]) {
+          subLinks.forEach(function (a) { a.classList.remove('is-active'); });
+          map[en.target.id].classList.add('is-active');
+        }
+      });
+    }, { rootMargin: '-35% 0px -55% 0px' });
+    Object.keys(map).forEach(function (id) { io.observe(document.getElementById(id)); });
+  }
+
+  /* ---------- Copy buttons ---------- */
+  function copyText(text, btn) {
+    var done = function () {
+      var label = btn.querySelector('.copy-label');
+      if (!label) return;
+      var old = label.innerHTML;
+      label.innerHTML = { th: 'คัดลอกแล้ว', zh: '已复制', en: 'Copied' }[currentLang()];
+      setTimeout(function () { label.innerHTML = old; }, 1600);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () { fallbackSelect(btn); });
+    } else { fallbackSelect(btn); }
+  }
+  function fallbackSelect(btn) {
+    var target = btn.getAttribute('data-copy-target');
+    var el = target ? document.querySelector(target) : btn.parentElement.querySelector('.value');
+    if (!el) return;
+    if (el.select) { el.focus(); el.select(); return; }
+    var r = document.createRange(); r.selectNodeContents(el);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+  }
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-copy], [data-copy-target]');
+    if (!btn) return;
+    var text = btn.getAttribute('data-copy');
+    if (!text) { var t = document.querySelector(btn.getAttribute('data-copy-target')); text = t ? (t.value || t.textContent) : ''; }
+    copyText(text, btn);
+  });
+
+  /* ---------- Contact form ---------- */
+  var form = document.getElementById('contact-form');
+  if (form) {
+    var params;
+    try { params = new URLSearchParams(window.location.search); } catch (e) { params = null; }
+    if (params) {
+      var setSel = function (id, val) {
+        var s = document.getElementById(id); if (!s || !val) return;
+        for (var i = 0; i < s.options.length; i++) { if (s.options[i].value === val) { s.value = val; break; } }
+      };
+      setSel('f-interest', params.get('topic'));
+      setSel('f-model', params.get('model'));
+    }
+    var result = document.getElementById('form-result');
+    var statusLine = document.getElementById('form-status');
+    var msgs = {
+      sending: { th: 'กำลังส่งข้อมูล…', zh: '正在提交…', en: 'Sending…' },
+      okTitle: { th: 'ได้รับข้อมูลแล้ว ขอบคุณครับ', zh: '已收到您的信息，谢谢！', en: 'Thank you. We have your message.' },
+      okBody: { th: 'ทีมงาน SuperX AI จะติดต่อกลับโดยเร็วที่สุด', zh: 'SuperX AI 团队会尽快与您联系。', en: 'The SuperX AI team will be in touch soon.' },
+      offTitle: { th: 'ส่งข้อความนี้ถึงเราทางอีเมลหรือ LINE', zh: '请通过邮件发送以下信息', en: 'Send this message to us by email' },
+      offBody: { th: 'แบบฟอร์มจะส่งอัตโนมัติเมื่อเว็บไซต์ออนไลน์แล้ว ระหว่างนี้กดคัดลอกข้อความด้านล่าง แล้วส่งไปที่ info@super-x.tech หรือโทร 02-323-2800', zh: '网站正式上线后表单将自动提交。目前请复制以下内容发送至 info@super-x.tech，或致电 02-323-2800。', en: 'The form submits automatically once the site is online. For now, copy the message below and send it to info@super-x.tech, or call 02-323-2800.' },
+      failTitle: { th: 'ส่งอัตโนมัติไม่สำเร็จ', zh: '自动提交未成功', en: 'We couldn’t send this automatically' },
+      failBody: { th: 'ขออภัย ระบบส่งข้อมูลขัดข้อง กรุณากดคัดลอกข้อความด้านล่าง แล้วส่งไปที่ info@super-x.tech หรือโทร 02-323-2800', zh: '抱歉，系统暂时无法提交。请复制以下内容发送至 info@super-x.tech，或致电 02-323-2800。', en: 'Sorry, something went wrong. Please copy the message below and send it to info@super-x.tech, or call 02-323-2800.' },
+      copy: { th: 'คัดลอกข้อความ', zh: '复制内容', en: 'Copy message' },
+      mail: { th: 'เปิดอีเมล', zh: '打开邮件', en: 'Open email' }
+    };
+    var tr = function (k) { return msgs[k][currentLang()]; };
+    var labelOf = function (el) {
+      var lab = form.querySelector('label[for="' + el.id + '"] [data-l="' + currentLang() + '"]');
+      return lab ? lab.textContent.replace(/\s*\*$/, '') : el.name;
+    };
+    var compose = function () {
+      var lines = [];
+      form.querySelectorAll('input, select, textarea').forEach(function (el) {
+        if (!el.id || el.type === 'hidden' || el.type === 'checkbox' || el.closest('.hp')) return;
+        var v = el.tagName === 'SELECT' ? (el.options[el.selectedIndex] ? el.options[el.selectedIndex].text : '') : el.value;
+        if (v) lines.push(labelOf(el) + ': ' + v);
+      });
+      return lines.join('\n');
+    };
+    var showOffline = function (failed) {
+      var text = compose();
+      var subject = 'SuperX AI website enquiry';
+      result.className = 'form-result';
+      result.innerHTML = '<h3></h3><p></p><textarea id="form-copy" readonly></textarea>' +
+        '<div class="btn-row"><button type="button" class="btn btn-primary btn-sm" data-copy-target="#form-copy"><span class="copy-label"></span></button>' +
+        '<a class="btn btn-outline btn-sm" id="form-mail"></a></div>';
+      result.querySelector('h3').textContent = tr(failed ? 'failTitle' : 'offTitle');
+      result.querySelector('p').textContent = tr(failed ? 'failBody' : 'offBody');
+      result.querySelector('textarea').value = text;
+      result.querySelector('.copy-label').textContent = tr('copy');
+      var mail = result.querySelector('#form-mail');
+      mail.textContent = tr('mail');
+      mail.href = 'mailto:info@super-x.tech?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(text);
+      result.hidden = false;
+      statusLine.textContent = '';
+    };
+    var showOk = function () {
+      result.className = 'form-result ok';
+      result.innerHTML = '<h3></h3><p></p>';
+      result.querySelector('h3').textContent = tr('okTitle');
+      result.querySelector('p').textContent = tr('okBody');
+      result.hidden = false;
+      statusLine.textContent = '';
+      form.reset();
+    };
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var busy = false;
+    var onHost = function (list) {
+      return window.location.protocol.indexOf('http') === 0 && list.some(function (re) { return re.test(window.location.hostname); });
+    };
+    var cameFrom = function () {
+      try { var r = new URL(document.referrer); return r.host === window.location.host ? r.pathname : ''; } catch (e) { return ''; }
+    };
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (busy) return;
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      var viaApi = onHost(LEAD_API_HOSTS), viaNetlifyHost = onHost(NETLIFY_HOSTS);
+      if (!viaApi && !viaNetlifyHost) { showOffline(false); return; }
+      busy = true;
+      if (submitBtn) submitBtn.disabled = true;
+      statusLine.textContent = tr('sending');
+      var finish = function (ok) {
+        busy = false;
+        if (submitBtn) submitBtn.disabled = false;
+        if (ok) showOk(); else showOffline(true);
+      };
+      var fd = new FormData(form);
+      var netlify = function () {
+        return fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(fd).toString() })
+          .then(function (r) { return r.ok; });
+      };
+      if (!viaApi) { netlify().then(finish, function () { finish(false); }); return; }
+      var data = {};
+      fd.forEach(function (v, k) { if (typeof v === 'string') data[k] = v; });
+      data.lang = currentLang();
+      data.from = cameFrom();
+      fetch('/api/lead', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) })
+        .then(function (r) {
+          if (r.status === 404 || r.status === 405) return netlify(); // site is hosted without _worker.js
+          return r.json().then(function (j) { return !!(j && j.ok); }, function () { return false; });
+        })
+        .then(finish, function () { finish(false); });
+    });
+  }
+})();
