@@ -1,0 +1,13 @@
+media:
+  - name: images
+    label: รูปภาพ
+    input: assets/img
+    output: /assets/img
+  - name: videos
+    label: วิดีโอ
+    input: assets/video
+    output: /assets/video
+  - name: docs
+    label: โบรชัวร์ PDF
+    input: assets/docs
+    output: /assets/docs
