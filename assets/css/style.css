@@ -818,15 +818,15 @@ a.case:hover h3 { color: var(--midnight); }
 .section--deep::before, .section--night::before, .cta-band::before, .phero--chat::before {
   content: ""; position: absolute; inset: -30%; z-index: -1; pointer-events: none; opacity: .75;
   background:
-    radial-gradient(28% 22% at 20% 30%, rgba(79, 200, 233, .35), transparent 70%),
-    radial-gradient(30% 24% at 75% 60%, rgba(142, 201, 109, .22), transparent 70%),
+    radial-gradient(28% 22% at 20% 30%, rgba(79, 200, 233, .6), transparent 70%),
+    radial-gradient(30% 24% at 75% 60%, rgba(142, 201, 109, .4), transparent 70%),
     radial-gradient(34% 26% at 55% 20%, rgba(37, 50, 108, .55), transparent 70%);
-  filter: blur(30px); animation: aurora-drift 26s ease-in-out infinite alternate;
+  filter: blur(24px); animation: aurora-drift 11s ease-in-out infinite alternate;
 }
 @keyframes aurora-drift {
-  0% { transform: translate3d(-4%, -2%, 0) rotate(0deg) scale(1); }
-  50% { transform: translate3d(5%, 3%, 0) rotate(6deg) scale(1.08); }
-  100% { transform: translate3d(-2%, 5%, 0) rotate(-4deg) scale(1.02); }
+  0% { transform: translate3d(-14%, -8%, 0) rotate(0deg) scale(1); }
+  50% { transform: translate3d(12%, 6%, 0) rotate(14deg) scale(1.2); }
+  100% { transform: translate3d(-6%, 12%, 0) rotate(-10deg) scale(1.05); }
 }
 /* 2) Route grid with lights travelling along it (app control band) */
 #control::after {
@@ -844,22 +844,24 @@ a.case:hover h3 { color: var(--midnight); }
 .stats { position: relative; isolation: isolate; }
 .stats::before, .stats::after {
   content: ""; position: absolute; left: 50%; top: 50%; width: 520px; height: 520px; margin: -260px 0 0 -260px; z-index: -1;
-  border-radius: 50%; pointer-events: none; border: 1.5px solid rgba(28, 140, 201, .5);
+  border-radius: 50%; pointer-events: none; border: 2px solid rgba(28, 140, 201, .7);
   background: radial-gradient(circle, rgba(79, 200, 233, .22) 0 2px, transparent 3px) 0 0 / 22px 22px;
   -webkit-mask-image: radial-gradient(circle, #000 40%, transparent 70%); mask-image: radial-gradient(circle, #000 40%, transparent 70%);
-  animation: lidar 5s cubic-bezier(.2, .6, .3, 1) infinite; opacity: 0;
+  animation: lidar 3.2s cubic-bezier(.2, .6, .3, 1) infinite; opacity: 0;
 }
-.stats::after { animation-delay: 2.5s; }
+.stats::after { animation-delay: 1.6s; }
 @keyframes lidar { 0% { transform: scale(.2); opacity: .9; } 100% { transform: scale(1.6); opacity: 0; } }
 /* 4) Curved lines on light sections that move a little slower than the page */
 .section--mist { position: relative; isolation: isolate; }
 .section--mist::before {
   content: ""; position: absolute; inset: -20% 0; z-index: -1; pointer-events: none; opacity: .7;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600' viewBox='0 0 1200 600' fill='none' stroke='%231C3564' stroke-opacity='.13' stroke-width='1.4'%3E%3Cpath d='M-50 420 C 250 300 450 520 700 380 S 1100 260 1250 330'/%3E%3Cpath d='M-50 470 C 250 350 450 570 700 430 S 1100 310 1250 380'/%3E%3Cpath d='M-50 520 C 250 400 450 620 700 480 S 1100 360 1250 430'/%3E%3Cpath d='M-50 120 C 300 220 500 40 760 140 S 1100 240 1250 160' stroke='%234FC8E9' stroke-opacity='.3'/%3E%3C/svg%3E") center / 1200px auto repeat-y;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600' viewBox='0 0 1200 600' fill='none' stroke='%231C3564' stroke-opacity='.13' stroke-width='1.4'%3E%3Cpath d='M-50 420 C 250 300 450 520 700 380 S 1100 260 1250 330'/%3E%3Cpath d='M-50 470 C 250 350 450 570 700 430 S 1100 310 1250 380'/%3E%3Cpath d='M-50 520 C 250 400 450 620 700 480 S 1100 360 1250 430'/%3E%3Cpath d='M-50 120 C 300 220 500 40 760 140 S 1100 240 1250 160' stroke='%234FC8E9' stroke-opacity='.3'/%3E%3C/svg%3E") 0 0 / 1200px 600px repeat;
   transform: translate3d(0, var(--drift, 0px), 0);
+  animation: lines-flow 14s linear infinite;
 }
+@keyframes lines-flow { from { background-position: 0 0; } to { background-position: 1200px 0; } }
 @media (prefers-reduced-motion: reduce) {
   .section--deep::before, .section--night::before, .cta-band::before, .phero--chat::before, #control::after, .stats::before, .stats::after { animation: none !important; }
   .stats::before, .stats::after { display: none; }
-  .section--mist::before { transform: none; }
+  .section--mist::before { transform: none; animation: none !important; }
 }
