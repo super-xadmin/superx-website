@@ -213,6 +213,21 @@
     counters.forEach(function (el) { seen.observe(el); });
   }
 
+  /* ---------- Light sections: background lines drift slower than the page ---------- */
+  if (motionOK) {
+    var mists = Array.prototype.slice.call(document.querySelectorAll('.section--mist'));
+    var drift = function () {
+      var vh = window.innerHeight;
+      mists.forEach(function (s) {
+        var r = s.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > vh) return;
+        s.style.setProperty('--drift', Math.round((r.top - vh / 2) * -0.15) + 'px');
+      });
+    };
+    window.addEventListener('scroll', function () { window.requestAnimationFrame(drift); }, { passive: true });
+    drift();
+  }
+
   /* ---------- Section nav highlight (model pages) ---------- */
   var subLinks = Array.prototype.slice.call(document.querySelectorAll('.subnav a[href^="#"]'));
   if (subLinks.length && 'IntersectionObserver' in window) {
