@@ -136,7 +136,7 @@ class Security:
 
 # ================================================================ AI AGENT
 class AiAgent:
-    FILE, DIR, LABEL = 'ai-agent.html', 'pages/ai-agent', 'AI Agent · Qubby AI'
+    FILE, DIR, LABEL = 'ai-agent.html', 'pages/ai-agent', 'AI Agent'
     SECTIONS = [
         ('page', 'ตั้งค่าหน้า (ชื่อหน้า / แถบปิดท้าย)', PAGE_FIELDS_CTA),
         ('hero', '1. ภาพแชตและหัวข้อ', [CHAT('chat', 'ข้อความแชตตัวอย่าง (แทนรูปภาพ)'), TX('crumb', 'ชื่อหน้าในแถบเส้นทาง'),

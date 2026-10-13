@@ -31,7 +31,7 @@ const DEFAULT_INTERESTS = {
   brochure: ['📄', 'ขอเอกสาร / สเปกชีท', '索取资料 / 参数表', 'wathet'],
   education: ['🎓', 'รถไร้คนขับเพื่อการศึกษา', '教育无人车', 'wathet'],
   security: ['🛡️', 'หุ่นยนต์ความปลอดภัยและงานพิเศษ', '安防与特种机器人', 'wathet'],
-  qubby: ['🤖', 'Qubby AI · AI Agent', 'Qubby AI · AI Agent', 'wathet'],
+  'ai-agent': ['🤖', 'AI Agent', 'AI Agent', 'wathet'],
   partner: ['🤝', 'ร่วมเป็นพันธมิตร / ตัวแทนจำหน่าย', '成为合作伙伴 / 经销商', 'turquoise'],
   other: ['💬', 'อื่น ๆ', '其他', 'wathet'],
 };

@@ -51,6 +51,6 @@
   "lead_en": "AI Agent is an omnichannel AI core that serves customers by text and voice, around the clock, and connects to your CRM and ERP.",
   "button_label_th": "นัดสาธิต AI Agent",
   "button_label_zh": "预约 AI Agent 演示",
-  "button_label_en": "Book a AI Agent demo",
-  "button_link": "contact.html?topic=qubby"
+  "button_label_en": "Book an AI Agent demo",
+  "button_link": "contact.html?topic=ai-agent"
 }

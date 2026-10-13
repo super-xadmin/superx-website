@@ -102,10 +102,10 @@
       "lark_color": "wathet"
     },
     {
-      "value": "qubby",
-      "label_th": "Qubby AI · AI Agent",
-      "label_zh": "Qubby AI · AI Agent",
-      "label_en": "Qubby AI · AI Agent",
+      "value": "ai-agent",
+      "label_th": "AI Agent",
+      "label_zh": "AI Agent",
+      "label_en": "AI Agent",
       "lark_icon": "🤖",
       "lark_color": "wathet"
     },

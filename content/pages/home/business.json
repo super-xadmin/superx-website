@@ -77,9 +77,9 @@
         },
         {
           "side": "ai",
-          "who_th": "Qubby AI",
-          "who_zh": "Qubby AI",
-          "who_en": "Qubby AI",
+          "who_th": "AI Agent",
+          "who_zh": "AI Agent",
+          "who_en": "AI Agent",
           "text_th": "สูงสุด 2,500 กก. ตู้ 12.5 ลบ.ม. ครับ สนใจนัดสาธิตไหมครับ",
           "text_zh": "最大载重 2,500 kg，货箱 12.5 m³。需要为您预约演示吗？",
           "text_en": "Up to 2,500 kg in a 12.5 m³ box. Shall I book you a demo?"
@@ -88,9 +88,9 @@
       "label_th": "04 · Smart Communications",
       "label_zh": "04 · 智慧沟通",
       "label_en": "04 · Smart Communications",
-      "title_th": "AI Agent · Qubby AI",
-      "title_zh": "AI Agent · Qubby AI",
-      "title_en": "AI Agent · Qubby AI",
+      "title_th": "AI Agent",
+      "title_zh": "AI Agent",
+      "title_en": "AI Agent",
       "text_th": "AI สื่อสารแบบ Omnichannel ตอบลูกค้าทั้งข้อความและเสียง และเชื่อมกับระบบ CRM/ERP ขององค์กร",
       "text_zh": "全渠道 AI 沟通核心，以文字和语音服务客户，并对接企业 CRM/ERP。",
       "text_en": "An omnichannel AI core that answers customers by text and voice and connects to your CRM and ERP."

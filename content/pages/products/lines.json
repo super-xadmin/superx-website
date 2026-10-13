@@ -91,9 +91,9 @@
         },
         {
           "side": "ai",
-          "who_th": "Qubby AI",
-          "who_zh": "Qubby AI",
-          "who_en": "Qubby AI",
+          "who_th": "AI Agent",
+          "who_zh": "AI Agent",
+          "who_en": "AI Agent",
           "text_th": "ออกจากคลังแล้วค่ะ คาดว่าถึง 14:30 น.",
           "text_zh": "已从仓库发出，预计 14:30 送达。",
           "text_en": "It has left the warehouse and should arrive at 14:30."
@@ -102,9 +102,9 @@
       "eyebrow_th": "AI Agent",
       "eyebrow_zh": "AI Agent",
       "eyebrow_en": "AI Agent",
-      "title_th": "Qubby AI ผู้ช่วย AI ด่านหน้าของธุรกิจ",
-      "title_zh": "Qubby AI：企业前台 AI 助手",
-      "title_en": "Qubby AI for your business front door",
+      "title_th": "AI Agent ผู้ช่วยด่านหน้าของธุรกิจ",
+      "title_zh": "AI Agent：企业前台 AI 助手",
+      "title_en": "AI Agent for your business front door",
       "lead_th": "แกน AI แบบ Omnichannel ที่ตอบลูกค้าได้ทั้งข้อความและเสียง ทุกช่องทาง ตลอด 24 ชั่วโมง และเชื่อมต่อกับระบบ CRM/ERP ขององค์กร",
       "lead_zh": "全渠道 AI 核心，全天候以文字与语音服务客户，并与企业 CRM/ERP 打通。",
       "lead_en": "An omnichannel AI core that answers customers by text and voice, around the clock, connected to your CRM and ERP.",
@@ -125,9 +125,9 @@
           "text_en": "Hands over to staff with full context"
         }
       ],
-      "button_label_th": "ดู Qubby AI",
-      "button_label_zh": "了解 Qubby AI",
-      "button_label_en": "See Qubby AI",
+      "button_label_th": "ดู AI Agent",
+      "button_label_zh": "了解 AI Agent",
+      "button_label_en": "See the AI Agent",
       "button_link": "ai-agent.html"
     }
   ]

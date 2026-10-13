@@ -139,7 +139,7 @@ PAGE_FIELDS = [
     TX('seo_desc', 'คำอธิบายหน้าสำหรับ Google', long=True),
 ]
 CTA_TOPICS = [('demo', 'นัดหมายสาธิต'), ('quote', 'ขอใบเสนอราคา'), ('education', 'การศึกษา'),
-              ('security', 'หุ่นยนต์ความปลอดภัย'), ('qubby', 'Qubby AI'), ('partner', 'พันธมิตร'), ('other', 'อื่นๆ')]
+              ('security', 'หุ่นยนต์ความปลอดภัย'), ('ai-agent', 'AI Agent'), ('partner', 'พันธมิตร'), ('other', 'อื่นๆ')]
 PAGE_FIELDS_CTA = PAGE_FIELDS + [
     TX('cta_title', 'แถบปิดท้ายหน้า: หัวข้อ (เว้นว่าง = ใช้ข้อความมาตรฐาน)', long=True),
     TX('cta_lead', 'แถบปิดท้ายหน้า: คำอธิบาย (เว้นว่าง = ใช้ข้อความมาตรฐาน)', long=True),

@@ -268,8 +268,8 @@ content:
             label: การศึกษา
           - name: security
             label: หุ่นยนต์ความปลอดภัย
-          - name: qubby
-            label: Qubby AI
+          - name: ai-agent
+            label: AI Agent
           - name: partner
             label: พันธมิตร
           - name: other
@@ -1183,8 +1183,8 @@ content:
             label: การศึกษา
           - name: security
             label: หุ่นยนต์ความปลอดภัย
-          - name: qubby
-            label: Qubby AI
+          - name: ai-agent
+            label: AI Agent
           - name: partner
             label: พันธมิตร
           - name: other
@@ -2234,8 +2234,8 @@ content:
             label: การศึกษา
           - name: security
             label: หุ่นยนต์ความปลอดภัย
-          - name: qubby
-            label: Qubby AI
+          - name: ai-agent
+            label: AI Agent
           - name: partner
             label: พันธมิตร
           - name: other
@@ -3027,8 +3027,8 @@ content:
             label: การศึกษา
           - name: security
             label: หุ่นยนต์ความปลอดภัย
-          - name: qubby
-            label: Qubby AI
+          - name: ai-agent
+            label: AI Agent
           - name: partner
             label: พันธมิตร
           - name: other
@@ -3820,8 +3820,8 @@ content:
             label: การศึกษา
           - name: security
             label: หุ่นยนต์ความปลอดภัย
-          - name: qubby
-            label: Qubby AI
+          - name: ai-agent
+            label: AI Agent
           - name: partner
             label: พันธมิตร
           - name: other
@@ -4613,8 +4613,8 @@ content:
             label: การศึกษา
           - name: security
             label: หุ่นยนต์ความปลอดภัย
-          - name: qubby
-            label: Qubby AI
+          - name: ai-agent
+            label: AI Agent
           - name: partner
             label: พันธมิตร
           - name: other
@@ -5237,8 +5237,8 @@ content:
             label: การศึกษา
           - name: security
             label: หุ่นยนต์ความปลอดภัย
-          - name: qubby
-            label: Qubby AI
+          - name: ai-agent
+            label: AI Agent
           - name: partner
             label: พันธมิตร
           - name: other
@@ -5777,7 +5777,7 @@ content:
           label: รายละเอียด · English
           type: text
   - name: page-ai-agent
-    label: AI Agent · Qubby AI
+    label: AI Agent
     type: group
     items:
     - name: ai-agent-page
@@ -5836,8 +5836,8 @@ content:
             label: การศึกษา
           - name: security
             label: หุ่นยนต์ความปลอดภัย
-          - name: qubby
-            label: Qubby AI
+          - name: ai-agent
+            label: AI Agent
           - name: partner
             label: พันธมิตร
           - name: other
@@ -6552,8 +6552,8 @@ content:
             label: การศึกษา
           - name: security
             label: หุ่นยนต์ความปลอดภัย
-          - name: qubby
-            label: Qubby AI
+          - name: ai-agent
+            label: AI Agent
           - name: partner
             label: พันธมิตร
           - name: other
@@ -7015,8 +7015,8 @@ content:
             label: การศึกษา
           - name: security
             label: หุ่นยนต์ความปลอดภัย
-          - name: qubby
-            label: Qubby AI
+          - name: ai-agent
+            label: AI Agent
           - name: partner
             label: พันธมิตร
           - name: other
@@ -7250,8 +7250,8 @@ content:
             label: การศึกษา
           - name: security
             label: หุ่นยนต์ความปลอดภัย
-          - name: qubby
-            label: Qubby AI
+          - name: ai-agent
+            label: AI Agent
           - name: partner
             label: พันธมิตร
           - name: other
@@ -7882,8 +7882,8 @@ content:
             label: การศึกษา
           - name: security
             label: หุ่นยนต์ความปลอดภัย
-          - name: qubby
-            label: Qubby AI
+          - name: ai-agent
+            label: AI Agent
           - name: partner
             label: พันธมิตร
           - name: other
@@ -8101,8 +8101,8 @@ content:
             label: การศึกษา
           - name: security
             label: หุ่นยนต์ความปลอดภัย
-          - name: qubby
-            label: Qubby AI
+          - name: ai-agent
+            label: AI Agent
           - name: partner
             label: พันธมิตร
           - name: other
@@ -9308,8 +9308,8 @@ content:
         label: การศึกษา
       - name: security
         label: หุ่นยนต์ความปลอดภัย
-      - name: qubby
-        label: Qubby AI
+      - name: ai-agent
+        label: AI Agent
       - name: partner
         label: พันธมิตร
       - name: other
