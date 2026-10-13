@@ -11,9 +11,9 @@
     },
     {
       "side": "ai",
-      "who_th": "Qubby AI",
-      "who_zh": "Qubby AI",
-      "who_en": "Qubby AI",
+      "who_th": "AI Agent",
+      "who_zh": "AI Agent",
+      "who_en": "AI Agent",
       "text_th": "ตั้งได้ตั้งแต่ −20 ถึง 12 °C แบบสองโซน และปรับผ่านแอปได้ค่ะ ต้องการให้ทีมขายติดต่อกลับไหมคะ",
       "text_zh": "支持 −20 至 12 °C 双温区，可通过 App 调节。需要销售顾问联系您吗？",
       "text_en": "It runs two zones from −20 to 12 °C, set from the app. Would you like a sales consultant to call you?"
@@ -29,9 +29,9 @@
     },
     {
       "side": "ai",
-      "who_th": "Qubby AI",
-      "who_zh": "Qubby AI",
-      "who_en": "Qubby AI",
+      "who_th": "AI Agent",
+      "who_zh": "AI Agent",
+      "who_en": "AI Agent",
       "text_th": "บันทึกนัดหมายในระบบ CRM แล้วค่ะ ทีมขายจะโทรหาพรุ่งนี้ 14:00 น.",
       "text_zh": "已在 CRM 中登记，销售顾问将于明天 14:00 致电。",
       "text_en": "Booked in the CRM. Our sales team will call tomorrow at 14:00."
