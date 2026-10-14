@@ -42,5 +42,8 @@
       "label_zh": "AI Agent",
       "label_en": "AI Agent"
     }
-  ]
+  ],
+  "bg": {
+    "video": "/assets/video/3D and Animation/Lark20261014-221159.mp4"
+  }
 }
