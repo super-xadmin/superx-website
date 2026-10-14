@@ -64,6 +64,7 @@
   ],
   "strip": [
     {
+      "logo": "/assets/img/b5a59bf9cc47408c970c048482fbcaa4.avif",
       "label_th": "พันธมิตรเทคโนโลยี",
       "label_zh": "技术合作伙伴",
       "label_en": "Technology partner",
@@ -75,6 +76,7 @@
       "small_en": "L4 autonomous driving"
     },
     {
+      "logo": "/assets/img/Logo_Dimet_Original-02-01.png",
       "label_th": "ในเครือ",
       "label_zh": "隶属",
       "label_en": "Part of",
