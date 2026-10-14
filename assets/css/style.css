@@ -857,13 +857,16 @@ main { overflow-x: clip; }
 }
 .stats::after { animation-delay: 1.6s; }
 @keyframes lidar { 0% { transform: scale(.2); opacity: .9; } 100% { transform: scale(1.6); opacity: 0; } }
-/* 4) Curved lines on light sections that move a little slower than the page */
+/* 4) Curved lines on light sections that move a little slower than the page (the pattern joins up seamlessly every 1200 px) */
 .section--mist { position: relative; isolation: isolate; }
 .section--mist::before {
   content: ""; position: absolute; inset: -20% 0; z-index: -1; pointer-events: none; opacity: .7;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600' viewBox='0 0 1200 600' fill='none' stroke='%231C3564' stroke-opacity='.13' stroke-width='1.4'%3E%3Cpath d='M-50 420 C 250 300 450 520 700 380 S 1100 260 1250 330'/%3E%3Cpath d='M-50 470 C 250 350 450 570 700 430 S 1100 310 1250 380'/%3E%3Cpath d='M-50 520 C 250 400 450 620 700 480 S 1100 360 1250 430'/%3E%3Cpath d='M-50 120 C 300 220 500 40 760 140 S 1100 240 1250 160' stroke='%234FC8E9' stroke-opacity='.3'/%3E%3C/svg%3E") 0 0 / 1200px 600px repeat;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600' viewBox='0 0 1200 600' fill='none' stroke='%231C3564' stroke-opacity='.13' stroke-width='1.4'%3E%3Cpath d='M0 413.4 C50 410.2 100 391.7 150 364.6 C200 337.6 250 304.4 300 286.8 C350 269.2 400 269.1 450 285.1 C500 301 550 330.8 600 353.6 C650 376.4 700 390.2 750 392.6 C800 395.1 850 388.1 900 386.2 C950 384.3 1000 389 1050 397.6 C1100 406.3 1150 416.6 1200 413.4'/%3E%3Cpath d='M0 463.4 C50 460.2 100 441.7 150 414.6 C200 387.6 250 354.4 300 336.8 C350 319.2 400 319.1 450 335.1 C500 351 550 380.8 600 403.6 C650 426.4 700 440.2 750 442.6 C800 445.1 850 438.1 900 436.2 C950 434.3 1000 439 1050 447.6 C1100 456.3 1150 466.6 1200 463.4'/%3E%3Cpath d='M0 513.4 C50 510.2 100 491.7 150 464.6 C200 437.6 250 404.4 300 386.8 C350 369.2 400 369.1 450 385.1 C500 401 550 430.8 600 453.6 C650 476.4 700 490.2 750 492.6 C800 495.1 850 488.1 900 486.2 C950 484.3 1000 489 1050 497.6 C1100 506.3 1150 516.6 1200 513.4'/%3E%3Cpath d='M0 170.9 C50 175.5 100 171.8 150 168.3 C200 164.8 250 162.9 300 164.1 C350 165.4 400 169 450 166.4 C500 163.8 550 153.9 600 138.2 C650 122.5 700 102.2 750 90.5 C800 78.7 850 76.9 900 86.8 C950 96.6 1000 117 1050 134.8 C1100 152.6 1150 166.3 1200 170.9' stroke='%234FC8E9' stroke-opacity='.3'/%3E%3C/svg%3E") 0 0 / 1200px 600px repeat;
   transform: translate3d(0, var(--drift, 0px), 0);
   animation: lines-flow 14s linear infinite;
+  /* fade out softly where the lines reach past the section, so they never stop at a hard edge */
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
 }
 @keyframes lines-flow { from { background-position: 0 0; } to { background-position: 1200px 0; } }
 @media (prefers-reduced-motion: reduce) {
