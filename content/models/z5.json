@@ -8,9 +8,6 @@
   "pdf": "/assets/docs/SuperX-Z5-RoboVan.pdf",
   "page": "z5.html",
   "card_button": "details",
-  "card_tag_th": "",
-  "card_tag_zh": "",
-  "card_tag_en": "",
   "card_tag_style": "normal",
   "card_facts": [
     {
@@ -38,63 +35,43 @@
   "specs": [
     {
       "key": "dims",
-      "value_th": "3,705 × 1,493 × 2,000",
-      "value_zh": "",
-      "value_en": ""
+      "value_th": "3,705 × 1,493 × 2,000"
     },
     {
       "key": "cargo_dims",
-      "value_th": "3,341 × 1,356 × 1,384",
-      "value_zh": "",
-      "value_en": ""
+      "value_th": "3,341 × 1,356 × 1,384"
     },
     {
       "key": "volume",
-      "value_th": "6.2",
-      "value_zh": "",
-      "value_en": ""
+      "value_th": "6.2"
     },
     {
       "key": "payload",
-      "value_th": "1,800",
-      "value_zh": "",
-      "value_en": ""
+      "value_th": "1,800"
     },
     {
       "key": "range",
-      "value_th": "230",
-      "value_zh": "",
-      "value_en": ""
+      "value_th": "230"
     },
     {
       "key": "speed",
-      "value_th": "40",
-      "value_zh": "",
-      "value_en": ""
+      "value_th": "40"
     },
     {
       "key": "climb",
-      "value_th": "20% (11.3°)",
-      "value_zh": "",
-      "value_en": ""
+      "value_th": "20% (11.3°)"
     },
     {
       "key": "turning",
-      "value_th": "4.8",
-      "value_zh": "",
-      "value_en": ""
+      "value_th": "4.8"
     },
     {
       "key": "clearance",
-      "value_th": "150",
-      "value_zh": "",
-      "value_en": ""
+      "value_th": "150"
     },
     {
       "key": "wading",
-      "value_th": "255",
-      "value_zh": "",
-      "value_en": ""
+      "value_th": "255"
     },
     {
       "key": "optemp",
@@ -104,9 +81,7 @@
     },
     {
       "key": "ip",
-      "value_th": "IP55",
-      "value_zh": "",
-      "value_en": ""
+      "value_th": "IP55"
     },
     {
       "key": "battery_type",
@@ -116,9 +91,7 @@
     },
     {
       "key": "battery",
-      "value_th": "40.8",
-      "value_zh": "",
-      "value_en": ""
+      "value_th": "40.8"
     },
     {
       "key": "fast",
@@ -153,5 +126,6 @@
   "cmp_battery": "40.8",
   "cmp_cold": "—",
   "cmp_speed": "40",
-  "cmp_dims": "3,705 × 1,493 × 2,000"
+  "cmp_dims": "3,705 × 1,493 × 2,000",
+  "model3d": "/assets/3d/z5-robovan.glb"
 }
