@@ -435,10 +435,8 @@ def bgv(html, d, key='bg', nth=0, sid=None):
     else:
         tag = tag[:-1] + f' class="has-bgv bgv-{shade}">'
     if video:
-        lb = C('site/labels')
         pa = f' poster="{esc(poster)}"' if poster else ''
-        layer = (f'\n  <div class="bgv" aria-hidden="true"><video muted loop playsinline preload="none"{pa} data-src="{esc(video)}"></video></div>'
-                 f'\n  <button class="bgv-btn" type="button" hidden{aria(tri(lb, "video_toggle"))}>{ic("pause", "ic i-pause")}{ic("play", "ic i-play")}</button>')
+        layer = f'\n  <div class="bgv" aria-hidden="true"><video muted loop playsinline preload="none"{pa} data-src="{esc(video)}"></video></div>'
     else:
         layer = f'\n  <div class="bgv" aria-hidden="true" style="background-image:url(&quot;{esc(poster)}&quot;)"></div>'
     return html[:m.start()] + tag + layer + html[m.end():]
