@@ -37,9 +37,9 @@
       "size": "g-half",
       "image": "/assets/img/case-singpost.webp",
       "alt": "Autonomous vans at Singapore Post",
-      "caption_th": "การใช้งานในสิงคโปร์ (ภาพจากพันธมิตรเทคโนโลยี)",
-      "caption_zh": "新加坡应用（技术伙伴提供）",
-      "caption_en": "Deployment in Singapore (technology partner photo)",
+      "caption_th": "การใช้งานในสิงคโปร์",
+      "caption_zh": "新加坡应用",
+      "caption_en": "Deployment in Singapore",
       "studio": false
     }
   ],
