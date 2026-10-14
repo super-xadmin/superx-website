@@ -72,5 +72,8 @@
       "text_zh": "仓间物流",
       "text_en": "Inter-warehouse logistics"
     }
-  ]
+  ],
+  "bg": {
+    "video": "/assets/video/wha-esie1.mp4"
+  }
 }
