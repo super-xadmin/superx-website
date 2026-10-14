@@ -7,7 +7,8 @@ from layout import PAGE_FIELDS_CTA, page, cta_band, chat_art, model, mkey, form_
 FILE = 'index.html'
 DIR = 'pages/home'
 LABEL = 'หน้าแรก'
-STRIP = LIST('strip', 'แถบพันธมิตรด้านล่าง', [TX('label', 'ข้อความนำ (เว้นว่างได้)'), TX('name', 'ชื่อ (ตัวหนา)'), TX('small', 'คำอธิบายเล็ก (เว้นว่างได้)')],
+STRIP = LIST('strip', 'แถบพันธมิตรด้านล่าง', [IMG('logo', 'โลโก้ (PNG พื้นใส หรือ SVG) ใส่แล้วจะแสดงเป็นแถบโลโก้เลื่อนไปทางซ้าย'),
+                                               TX('label', 'ข้อความนำ (เว้นว่างได้)'), TX('name', 'ชื่อ (ตัวหนา)'), TX('small', 'คำอธิบายเล็ก (เว้นว่างได้)')],
              summary='{label_th} {name_th}')
 
 SECTIONS = [
@@ -60,9 +61,24 @@ SECTIONS = [
 ]
 
 
+def logo_marquee(logos):
+    """Partner logos sliding slowly to the left, repeated so the row never runs out."""
+    one = ''.join(f'<li><img src="{esc(media(s(e, "logo"), "img"))}" alt="{esc(tri(e, "name")[2] or tri(e, "name")[0])}" loading="lazy"></li>'
+                  for e in logos)
+    reps = max(1, -(-8 // len(logos)))          # at least 8 logos per half
+    half = one * reps
+    copy = half.replace('<li>', '<li aria-hidden="true">')
+    return f'<div class="logo-marquee"><ul class="logo-track">{half}{copy}</ul></div>'
+
+
 def strip(d, key='strip', link_label='strip_link_label', link='strip_link'):
+    logos = [e for e in items(d, key) if s(e, 'logo')]
     lines = []
+    if logos:
+        lines.append(logo_marquee(logos))
     for e in items(d, key):
+        if s(e, 'logo'):
+            continue
         part = ''
         if has(e, 'label'):
             part += f'<span>{Tk(e, "label")}</span>'

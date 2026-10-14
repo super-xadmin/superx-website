@@ -1263,6 +1263,11 @@ content:
             collapsed: true
             summary: '{label_th} {name_th}'
         fields:
+        - name: logo
+          label: โลโก้ (PNG พื้นใส หรือ SVG) ใส่แล้วจะแสดงเป็นแถบโลโก้เลื่อนไปทางซ้าย
+          type: image
+          options:
+            media: images
         - name: label_th
           label: ข้อความนำ (เว้นว่างได้) · ไทย
           type: string
@@ -9912,6 +9917,11 @@ content:
             collapsed: true
             summary: '{label_th} {name_th}'
         fields:
+        - name: logo
+          label: โลโก้ (PNG พื้นใส หรือ SVG) ใส่แล้วจะแสดงเป็นแถบโลโก้เลื่อนไปทางซ้าย
+          type: image
+          options:
+            media: images
         - name: label_th
           label: ข้อความนำ (เว้นว่างได้) · ไทย
           type: string

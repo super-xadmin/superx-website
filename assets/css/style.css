@@ -480,6 +480,14 @@ a.case:hover h3 { color: var(--midnight); }
 .partner-strip > span { font-size: 0.85rem; color: var(--mute); }
 .partner-name { font-weight: 600; color: var(--ink); font-size: 1.05rem; display: inline-flex; align-items: center; gap: 10px; }
 .partner-name small { font-weight: 400; color: var(--mute); font-size: 0.85rem; }
+/* Partner logos sliding to the left (logos added in the back office) */
+.logo-marquee { flex: 1 1 100%; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.logo-track { display: flex; width: max-content; gap: clamp(32px, 5vw, 64px); align-items: center; padding: 8px 0; margin: 0; list-style: none; animation: logo-run 40s linear infinite; }
+.logo-marquee:hover .logo-track { animation-play-state: paused; }
+.logo-track li { flex: none; display: grid; place-items: center; height: 64px; }
+.logo-track img { max-height: 52px; max-width: 170px; width: auto; height: auto; object-fit: contain; }
+@keyframes logo-run { to { transform: translateX(calc(-50% - clamp(32px, 5vw, 64px) / 2)); } }
+@media (prefers-reduced-motion: reduce) { .logo-track { animation: none; flex-wrap: wrap; width: auto; } .logo-track li[aria-hidden] { display: none; } }
 
 /* Case detail blocks (projects page) */
 .case-detail { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: clamp(24px, 4vw, 64px); align-items: start; padding-block: clamp(40px, 6vw, 80px); border-top: 1px solid var(--line); }
