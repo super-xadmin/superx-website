@@ -62,6 +62,7 @@
     }
   ],
   "bg": {
-    "shade": "medium"
+    "video": "/assets/video/==.mp4",
+    "shade": "strong"
   }
 }
