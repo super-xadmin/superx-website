@@ -844,6 +844,9 @@ a.case:hover h3 { color: var(--midnight); }
 }
 @keyframes route-run { from { background-position: -360px 0, 0 -360px, 0 0, 0 0; } to { background-position: 1800px 0, 0 1800px, 0 0, 0 0; } }
 /* 3) LiDAR pulse behind the numbers */
+/* Keep page-wide effects (like this pulse) from making phones zoom out */
+main { overflow-x: clip; }
+@supports not (overflow: clip) { main { overflow-x: hidden; } }
 .stats { position: relative; isolation: isolate; }
 .stats::before, .stats::after {
   content: ""; position: absolute; left: 50%; top: 50%; width: 520px; height: 520px; margin: -260px 0 0 -260px; z-index: -1;
@@ -999,6 +1002,11 @@ a.case:hover h3 { color: var(--midnight); }
   html.auto-dark .brand .logo-light, html.auto-dark .footer-brand .logo-light { display: block; }
   html.auto-dark .btn-primary, html.auto-dark .lang button[aria-pressed="true"], html.auto-dark .qb-demo { background: #2D5DB8; color: #fff; }
   html.auto-dark .btn-primary:hover { background: #3A6CCB; }
+  /* White buttons on dark photos keep dark text so they stay readable */
+  html.auto-dark .btn-light,
+  html.auto-dark :is(.phero--photo, .phero--chat, .section--night, .section--deep) .btn-primary,
+  html.auto-dark body.hero-dark .site-header:not(.is-solid) .header-actions .btn-primary,
+  html.auto-dark body.hero-dark .site-header:not(.is-solid) .lang button[aria-pressed="true"] { background: #fff; color: #1C3564; }
   html.auto-dark .btn-outline { border-color: rgba(238, 242, 250, 0.25); }
   html.auto-dark .bubble.me { background: #2D5DB8; }
   html.auto-dark .status { background: rgba(79, 200, 233, 0.14); color: var(--ink); }

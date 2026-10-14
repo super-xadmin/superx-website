@@ -319,6 +319,7 @@ def page(fname, page_data, body, extra_head='', current=None, share=None):
 <link rel="stylesheet" href="assets/css/style.css">{extra_head}'''
     st = C('site/settings')
     html_cls = ' class="auto-dark"' if st.get('dark_mode') else ''
+    scheme = 'light dark' if st.get('dark_mode') else 'light only'
     qbar = quick_bar(st, co)
     dark = re.match(r'\s*<section class="(hero|phero phero--(photo|chat))\b', body)
     classes = (['hero-dark'] if dark else []) + (['has-quickbar'] if qbar else [])
@@ -336,6 +337,7 @@ def page(fname, page_data, body, extra_head='', current=None, share=None):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="{scheme}">
 {head}
 </head>
 <body{body_cls}>
