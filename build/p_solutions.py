@@ -154,7 +154,13 @@ class AiAgent:
     def render(self):
         D = self.DIR
         h = C(f'{D}/hero')
-        art = chat_art(items(h, 'chat'), style='padding:clamp(20px,4vw,48px);gap:14px', bubble_style='font-size:.95rem')
+        rows = items(h, 'chat')
+        ai_name = next((tri(r, 'who') for r in rows if s(r, 'side') != 'me' and any(tri(r, 'who'))), ('AI Agent',) * 3)
+        art = f'''<div class="chat-phone"><div class="chat-phone-screen">
+      <div class="chat-phone-top"><span class="chat-avatar">AI</span><span class="chat-title"><b>{TC(ai_name)}</b><small>{TC(('ออนไลน์', '在线', 'Online'))}</small></span></div>
+      {chat_art(rows)}
+      <div class="chat-phone-input"><span>{TC(('พิมพ์ข้อความ…', '输入消息…', 'Type a message…'))}</span>{ic('arrow')}</div>
+    </div></div>'''
         hero = phero(art, 'chat', trail('products', h), h, btn(h))
         ch, ca, gs, ind = (C(f'{D}/{k}') for k in ('channels', 'capabilities', 'getting_started', 'industries'))
         channels = f'''<section class="section-tight">

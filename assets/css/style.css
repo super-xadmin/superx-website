@@ -366,6 +366,22 @@ html[data-lang="th"] .statement { line-height: 1.75; }
 .bubble .who { display: block; font-size: 0.7rem; font-weight: 600; color: var(--mute); margin-bottom: 2px; }
 .bubble.me .who { color: rgba(255, 255, 255, 0.7); }
 .phero--chat .bubble.me { background: #2A4C8F; }
+/* AI Agent page: the chat sits inside a phone */
+.phero--chat .phero-media:has(.chat-phone) { justify-content: center; align-items: center; }
+.chat-phone { position: relative; width: min(310px, 80vw); aspect-ratio: 9 / 18; margin: clamp(16px, 3vw, 32px) auto; padding: 10px; border-radius: 48px;
+  background: linear-gradient(145deg, #2C3856 0%, #0B1120 60%); box-shadow: 0 50px 90px -40px rgba(0, 0, 0, 0.9), inset 0 0 0 1.5px rgba(255, 255, 255, 0.14); }
+.chat-phone::before { content: ""; position: absolute; top: 20px; left: 50%; z-index: 2; width: 92px; height: 24px; transform: translateX(-50%); border-radius: 14px; background: #05080F; }
+.chat-phone-screen { height: 100%; display: flex; flex-direction: column; overflow: hidden; border-radius: 39px; background: var(--mist); }
+.chat-phone-top { display: flex; align-items: center; gap: 10px; padding: 52px 16px 12px; background: var(--card); border-bottom: 1px solid var(--line); }
+.chat-avatar { flex: none; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; font-size: 0.75rem; font-weight: 700; color: #fff; background: linear-gradient(135deg, #1C8CC9, #8EC96D); }
+.chat-title { display: grid; line-height: 1.25; }
+.chat-title b { color: var(--ink); font-size: 0.92rem; font-weight: 600; }
+.chat-title small { color: #2FA84F; font-size: 0.72rem; }
+.chat-title small::before { content: "● "; }
+.chat-phone .chat-art { position: relative; inset: auto; flex: 1; align-content: end; gap: 10px; padding: 16px 12px; background: transparent; overflow: hidden; }
+.chat-phone .bubble { font-size: 0.8rem; }
+.chat-phone-input { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 6px 10px 16px; padding: 10px 14px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); color: var(--mute); font-size: 0.8rem; }
+.chat-phone-input .ic { width: 16px; height: 16px; color: var(--frost); }
 /* Chat plays like a real conversation: customer writes, AI Agent types, then answers (main.js) */
 .chat-art.is-anim .bubble { opacity: 0; transform: translateY(12px) scale(.96); transition: opacity .35s ease, transform .35s cubic-bezier(.2, .8, .3, 1.2); }
 .chat-art.is-anim .bubble.is-on { opacity: 1; transform: none; }
