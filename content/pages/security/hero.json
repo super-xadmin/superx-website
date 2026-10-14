@@ -30,6 +30,6 @@
   ],
   "bg": {
     "video": "/assets/video/security-firetruck.mp4",
-    "shade": "strong"
+    "shade": "medium"
   }
 }
