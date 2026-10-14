@@ -198,7 +198,7 @@
     var blocks = Array.prototype.slice.call(document.querySelectorAll(
       'main .section-head, main .flow, main .stats, main .modules, main .lineup-nav, main .phones, main .rail, main .cases, ' +
       'main .features, main .split > *, main .case-detail, main .steps, main .vm, main .news-feature, main .news-list, main .contact-grid > *, ' +
-      'main .spec-layout, main .gallery-grid, main .line, main .options, main .downloads, main .pcards, main .cta-inner, main .models2, main .uses, main .target, main .control-grid > *'
+      'main .thmap, main .spec-layout, main .gallery-grid, main .line, main .options, main .downloads, main .pcards, main .cta-inner, main .models2, main .uses, main .target, main .control-grid > *'
     )).filter(function (el) { return !el.closest('.hero, .phero') && el.getBoundingClientRect().top > window.innerHeight; });
     blocks.forEach(function (el) { el.classList.add('reveal'); });
     var seen = new IntersectionObserver(function (entries) {
@@ -633,4 +633,15 @@
       } else start();
     });
   }
+  /* ---------- Thailand map: pointing at a zone lights up its pin and its row ---------- */
+  Array.prototype.forEach.call(document.querySelectorAll('[data-thmap]'), function (map) {
+    var hot = function (n, on) {
+      Array.prototype.forEach.call(map.querySelectorAll('[data-pin="' + n + '"]'), function (el) { el.classList.toggle('is-hot', on); });
+    };
+    Array.prototype.forEach.call(map.querySelectorAll('[data-pin]'), function (el) {
+      var n = el.getAttribute('data-pin');
+      el.addEventListener('mouseenter', function () { hot(n, true); });
+      el.addEventListener('mouseleave', function () { hot(n, false); });
+    });
+  });
 })();

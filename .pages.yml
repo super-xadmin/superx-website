@@ -9701,6 +9701,73 @@ content:
       - name: target_text_en
         label: คำอธิบายเป้าหมาย · English
         type: text
+      - name: map_title_th
+        label: 'แผนที่: หัวข้อเหนือรายชื่อโซน · ไทย'
+        type: string
+      - name: map_title_zh
+        label: 'แผนที่: หัวข้อเหนือรายชื่อโซน · 中文'
+        type: string
+      - name: map_title_en
+        label: 'แผนที่: หัวข้อเหนือรายชื่อโซน · English'
+        type: string
+      - name: map_origin_th
+        label: 'แผนที่: ชื่อที่ตั้งบริษัท (จุด HQ) · ไทย'
+        type: string
+      - name: map_origin_zh
+        label: 'แผนที่: ชื่อที่ตั้งบริษัท (จุด HQ) · 中文'
+        type: string
+      - name: map_origin_en
+        label: 'แผนที่: ชื่อที่ตั้งบริษัท (จุด HQ) · English'
+        type: string
+      - name: map_origin_text_th
+        label: 'แผนที่: คำอธิบายที่ตั้งบริษัท · ไทย'
+        type: string
+      - name: map_origin_text_zh
+        label: 'แผนที่: คำอธิบายที่ตั้งบริษัท · 中文'
+        type: string
+      - name: map_origin_text_en
+        label: 'แผนที่: คำอธิบายที่ตั้งบริษัท · English'
+        type: string
+      - name: map_origin_lat
+        label: 'แผนที่: ละติจูดของที่ตั้งบริษัท'
+        type: number
+        description: 'หาได้จาก Google Maps: คลิกขวาที่จุด แล้วกดตัวเลขบรรทัดแรก ตัวแรกคือละติจูด ตัวหลังคือลองจิจูด'
+      - name: map_origin_lng
+        label: 'แผนที่: ลองจิจูดของที่ตั้งบริษัท'
+        type: number
+      - name: map_points
+        label: 'แผนที่: โซนปลายทาง (มีเส้นทางวิ่งจากที่ตั้งบริษัท) ลบหมด = ไม่แสดงแผนที่'
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{name_th}'
+        fields:
+        - name: name_th
+          label: ชื่อโซน · ไทย
+          type: string
+        - name: name_zh
+          label: ชื่อโซน · 中文
+          type: string
+        - name: name_en
+          label: ชื่อโซน · English
+          type: string
+        - name: text_th
+          label: คำอธิบายสั้น · ไทย
+          type: string
+        - name: text_zh
+          label: คำอธิบายสั้น · 中文
+          type: string
+        - name: text_en
+          label: คำอธิบายสั้น · English
+          type: string
+        - name: lat
+          label: ละติจูด
+          type: number
+          description: 'หาได้จาก Google Maps: คลิกขวาที่จุด แล้วกดตัวเลขบรรทัดแรก'
+        - name: lng
+          label: ลองจิจูด
+          type: number
       - name: bg
         label: 🎬 วิดีโอพื้นหลังของส่วนนี้ (ไม่ใส่ก็ได้)
         type: object

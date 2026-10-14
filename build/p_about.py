@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """About page (about.html)."""
 from core import C, s, items, fmt, Tk, Bk, img, ic
-from schema import TX, S, LINK, BOOL, IMG, ALT, ICON, LIST, STEP
+from schema import TX, S, LINK, BOOL, NUM, IMG, ALT, ICON, LIST, STEP
 from layout import PAGE_FIELDS_CTA, PHERO, page, phero, trail, cta_band, head, steps, bgv
 from p_home import STRIP, strip
+from thailand_map import thai_map
 
 FILE = 'about.html'
 DIR = 'pages/about'
@@ -32,6 +33,14 @@ SECTIONS = [
     ('roadmap', '6. แผนงานในประเทศไทย', [
         TX('eyebrow', 'หัวข้อเล็ก'), TX('title', 'หัวข้อ', long=True), LIST('steps', 'ขั้นตอน', STEP),
         S('target_number', 'ตัวเลขเป้าหมาย (ตัวใหญ่)'), TX('target_text', 'คำอธิบายเป้าหมาย', long=True),
+        TX('map_title', 'แผนที่: หัวข้อเหนือรายชื่อโซน'),
+        TX('map_origin', 'แผนที่: ชื่อที่ตั้งบริษัท (จุด HQ)'), TX('map_origin_text', 'แผนที่: คำอธิบายที่ตั้งบริษัท'),
+        NUM('map_origin_lat', 'แผนที่: ละติจูดของที่ตั้งบริษัท', desc='หาได้จาก Google Maps: คลิกขวาที่จุด แล้วกดตัวเลขบรรทัดแรก ตัวแรกคือละติจูด ตัวหลังคือลองจิจูด'),
+        NUM('map_origin_lng', 'แผนที่: ลองจิจูดของที่ตั้งบริษัท'),
+        LIST('map_points', 'แผนที่: โซนปลายทาง (มีเส้นทางวิ่งจากที่ตั้งบริษัท) ลบหมด = ไม่แสดงแผนที่', [
+            TX('name', 'ชื่อโซน'), TX('text', 'คำอธิบายสั้น'),
+            NUM('lat', 'ละติจูด', desc='หาได้จาก Google Maps: คลิกขวาที่จุด แล้วกดตัวเลขบรรทัดแรก'), NUM('lng', 'ลองจิจูด'),
+        ], summary='{name_th}'),
     ]),
     ('partners', '7. พันธมิตร', [
         TX('eyebrow', 'หัวข้อเล็ก'), TX('title', 'หัวข้อ', long=True),
@@ -108,6 +117,7 @@ def render():
     roadmap = f'''<section class="section">
   <div class="wrap">
     {head(rm)}
+    {thai_map(rm)}
     {steps(items(rm, 'steps'), 's4 goal')}{target}
   </div>
 </section>'''

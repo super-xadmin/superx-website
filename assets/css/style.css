@@ -1045,6 +1045,40 @@ main { overflow-x: clip; }
   .roi-result { position: static; }
 }
 
+/* ---------- Thailand map (about → แผนงานในประเทศไทย) ---------- */
+.thmap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 72px); align-items: center; margin: clamp(28px, 4vw, 48px) 0 clamp(40px, 6vw, 72px); }
+.thmap-art { position: relative; max-width: 440px; width: 100%; justify-self: center; }
+.thmap-art svg { width: 100%; height: auto; display: block; overflow: visible; }
+.thmap-land { fill: rgba(28, 140, 201, 0.08); stroke: rgba(28, 140, 201, 0.55); stroke-width: 1.2; stroke-linejoin: round; }
+.thmap-route { fill: none; stroke: var(--frost); stroke-width: 1.6; stroke-linecap: round; opacity: .85; }
+.thmap-car { fill: #4FC8E9; filter: drop-shadow(0 0 4px rgba(79, 200, 233, 0.95)); }
+.thmap-pin circle { fill: var(--midnight); stroke: var(--paper); stroke-width: 2; transition: r .25s, fill .25s; }
+.thmap-pin text { fill: var(--paper); font-size: 9px; font-weight: 700; pointer-events: none; }
+.thmap-pin.is-hot circle { fill: #1C8CC9; r: 10; }
+.thmap-origin { fill: #8EC96D; stroke: var(--paper); stroke-width: 2.5; }
+.thmap-ring { fill: none; stroke: #8EC96D; stroke-width: 2; transform-box: fill-box; transform-origin: center; animation: thmap-pulse 2.4s ease-out infinite; }
+.thmap-ring.r2 { animation-delay: 1.2s; }
+@keyframes thmap-pulse { from { transform: scale(1); opacity: .9; } to { transform: scale(3.4); opacity: 0; } }
+.thmap-hq text { fill: var(--ink); font-size: 11px; font-weight: 700; }
+.thmap-title { margin-bottom: 14px; }
+.thmap-legend { list-style: none; margin: 0; padding: 0; display: grid; border-top: 1px solid var(--line); }
+.thmap-legend li { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; align-items: start; padding: 12px 6px; border-bottom: 1px solid var(--line); border-radius: 8px; transition: background .2s; cursor: default; }
+.thmap-legend li.is-hot { background: var(--mist); }
+.thmap-legend b { display: block; color: var(--ink); font-weight: 600; }
+.thmap-legend small { display: block; color: var(--mute); font-size: .86rem; }
+.thmap-num { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font-size: .78rem; font-weight: 700; color: var(--paper); background: var(--midnight); }
+.is-hq .thmap-num { background: #8EC96D; font-size: .62rem; }
+/* drawn in when scrolled to */
+.thmap.reveal { opacity: 1; transform: none; }
+.thmap.reveal .thmap-route { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.thmap.reveal.is-in .thmap-route { animation: thmap-draw 1.4s cubic-bezier(.4, .1, .2, 1) forwards; animation-delay: calc(var(--i) * .18s + .3s); }
+.thmap.reveal .thmap-pin, .thmap.reveal .thmap-car { opacity: 0; transition: opacity .5s; }
+.thmap.reveal.is-in .thmap-pin { opacity: 1; transition-delay: calc(var(--i) * .18s + 1.2s); }
+.thmap.reveal.is-in .thmap-car { opacity: 1; transition-delay: 1.8s; }
+@keyframes thmap-draw { to { stroke-dashoffset: 0; } }
+@media (max-width: 860px) { .thmap { grid-template-columns: minmax(0, 1fr); } .thmap-art { max-width: 360px; } }
+@media (prefers-reduced-motion: reduce) { .thmap-car, .thmap-ring { display: none; } }
+
 /* ---------- Background video on any section (🎬 in the back office) ---------- */
 /* The section turns dark: same colour set as dark mode, so cards, chips and tables inside stay readable. */
 .has-bgv {
