@@ -1,5 +1,4 @@
 {
-  "image": "/assets/img/use-security-patrol.webp",
   "alt": "Autonomous security patrol vehicle on a city street at dusk",
   "crumb_th": "หุ่นยนต์ความปลอดภัย",
   "crumb_zh": "安防与特种机器人",
@@ -28,5 +27,8 @@
       "label_zh": "特种机器人",
       "label_en": "Special-purpose units"
     }
-  ]
+  ],
+  "bg": {
+    "video": "/assets/video/3D and Animation/รถดับเพลิง.mp4"
+  }
 }
