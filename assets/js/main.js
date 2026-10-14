@@ -636,7 +636,7 @@
   /* ---------- Thailand map: pointing at a zone lights up its pin and its row ---------- */
   Array.prototype.forEach.call(document.querySelectorAll('[data-thmap]'), function (map) {
     var hot = function (n, on) {
-      Array.prototype.forEach.call(map.querySelectorAll('[data-pin="' + n + '"]'), function (el) { el.classList.toggle('is-hot', on); });
+      Array.prototype.forEach.call(map.querySelectorAll('[data-pin~="' + n + '"]'), function (el) { el.classList.toggle('is-hot', on); });
     };
     Array.prototype.forEach.call(map.querySelectorAll('[data-pin]'), function (el) {
       var n = el.getAttribute('data-pin');

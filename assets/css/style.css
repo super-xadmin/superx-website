@@ -1045,39 +1045,64 @@ main { overflow-x: clip; }
   .roi-result { position: static; }
 }
 
-/* ---------- Thailand map (about → แผนงานในประเทศไทย) ---------- */
-.thmap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 72px); align-items: center; margin: clamp(28px, 4vw, 48px) 0 clamp(40px, 6vw, 72px); }
-.thmap-art { position: relative; max-width: 440px; width: 100%; justify-self: center; }
-.thmap-art svg { width: 100%; height: auto; display: block; overflow: visible; }
-.thmap-land { fill: rgba(28, 140, 201, 0.08); stroke: rgba(28, 140, 201, 0.55); stroke-width: 1.2; stroke-linejoin: round; }
-.thmap-route { fill: none; stroke: var(--frost); stroke-width: 1.6; stroke-linecap: round; opacity: .85; }
+/* ---------- Thailand map (about → แผนงานในประเทศไทย): a 3D board with all provinces ---------- */
+.thmap {
+  --thm-top: #EAF4FB; --thm-line: rgba(28, 140, 201, 0.3); --thm-edge: #6FA9CF; --thm-side: #A3C6DE; --thm-zone: #A6DAF1;
+  --thm-zone-hot: #5DB8E3; --thm-home: #B5DFA0; --thm-pin: #1C3564; --thm-pin-text: #fff; --thm-sheen: .55; --thm-floor: rgba(16, 28, 56, 0.3);
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 64px); align-items: center;
+  margin: clamp(28px, 4vw, 48px) 0 clamp(40px, 6vw, 72px);
+}
+.thmap-art { position: relative; width: 100%; max-width: 580px; justify-self: center; }
+.thmap-art svg { position: relative; display: block; width: 100%; height: auto; overflow: visible; }
+.thmap-base { filter: drop-shadow(0 22px 22px var(--thm-floor)); }
+.thmap-art .thmap-fx { position: absolute; inset: 0; will-change: transform; pointer-events: none; }
+.thmap-fx .thmap-pin { pointer-events: auto; }
+.thmap-side { fill: var(--thm-side); stroke: var(--thm-side); stroke-width: 2.6; stroke-linejoin: round; }
+.thmap-edge { fill: var(--thm-top); stroke: var(--thm-edge); stroke-width: 2.6; stroke-linejoin: round; }
+.thmap-top { fill: var(--thm-top); stroke: var(--thm-line); stroke-width: .6; stroke-linejoin: round; }
+.thmap-zone { fill: var(--thm-zone); stroke: var(--thm-line); stroke-width: .6; stroke-linejoin: round; transition: fill .3s; }
+.thmap-zone.is-hot { fill: var(--thm-zone-hot); }
+.thmap-home { fill: var(--thm-home); stroke: var(--thm-line); stroke-width: .6; stroke-linejoin: round; }
+.thmap-sheen { opacity: var(--thm-sheen); }
+.thmap-route { fill: none; stroke: #1C8CC9; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .thmap-car { fill: #4FC8E9; filter: drop-shadow(0 0 4px rgba(79, 200, 233, 0.95)); }
-.thmap-pin circle { fill: var(--midnight); stroke: var(--paper); stroke-width: 2; transition: r .25s, fill .25s; }
-.thmap-pin text { fill: var(--paper); font-size: 9px; font-weight: 700; pointer-events: none; }
-.thmap-pin.is-hot circle { fill: #1C8CC9; r: 10; }
-.thmap-origin { fill: #8EC96D; stroke: var(--paper); stroke-width: 2.5; }
-.thmap-ring { fill: none; stroke: #8EC96D; stroke-width: 2; transform-box: fill-box; transform-origin: center; animation: thmap-pulse 2.4s ease-out infinite; }
+.thmap-pin line, .thmap-hq line { stroke: var(--thm-pin); stroke-width: 1.6; }
+.thmap-pin circle { fill: var(--thm-pin); stroke: #fff; stroke-width: 1.6; transition: r .25s, fill .25s; }
+.thmap-pin text { fill: var(--thm-pin-text); font-size: 9px; font-weight: 700; pointer-events: none; }
+.thmap-pin .thmap-pin-shadow { fill: var(--thm-floor); }
+.thmap-pin.is-hot circle { fill: #1C8CC9; r: 10.5; }
+.thmap-hq circle { fill: #4E9F3D; stroke: #fff; stroke-width: 2; }
+.thmap-hq-in { fill: #fff; font-size: 7.5px; font-weight: 700; }
+.thmap-hq-name { fill: var(--ink); font-size: 11px; font-weight: 700; paint-order: stroke; stroke: var(--paper); stroke-width: 3px; stroke-linejoin: round; }
+.thmap-ring { fill: none; stroke: #4E9F3D; stroke-width: 1.6; transform-box: fill-box; transform-origin: center; animation: thmap-pulse 2.4s ease-out infinite; }
 .thmap-ring.r2 { animation-delay: 1.2s; }
-@keyframes thmap-pulse { from { transform: scale(1); opacity: .9; } to { transform: scale(3.4); opacity: 0; } }
-.thmap-hq text { fill: var(--ink); font-size: 11px; font-weight: 700; }
+@keyframes thmap-pulse { from { transform: scale(1); opacity: .9; } to { transform: scale(3.6); opacity: 0; } }
 .thmap-title { margin-bottom: 14px; }
 .thmap-legend { list-style: none; margin: 0; padding: 0; display: grid; border-top: 1px solid var(--line); }
-.thmap-legend li { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; align-items: start; padding: 12px 6px; border-bottom: 1px solid var(--line); border-radius: 8px; transition: background .2s; cursor: default; }
+.thmap-legend li { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; align-items: start; padding: 12px 6px; border-bottom: 1px solid var(--line); border-radius: 8px; transition: background .2s; }
 .thmap-legend li.is-hot { background: var(--mist); }
 .thmap-legend b { display: block; color: var(--ink); font-weight: 600; }
 .thmap-legend small { display: block; color: var(--mute); font-size: .86rem; }
-.thmap-num { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font-size: .78rem; font-weight: 700; color: var(--paper); background: var(--midnight); }
-.is-hq .thmap-num { background: #8EC96D; font-size: .62rem; }
-/* drawn in when scrolled to */
+.thmap-num { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font-size: .78rem; font-weight: 700; color: var(--thm-pin-text); background: var(--thm-pin); }
+.is-hq .thmap-num { background: #4E9F3D; color: #fff; font-size: .62rem; }
+/* comes in when scrolled to: the board rises, routes draw out, pins drop in, then the cars start */
 .thmap.reveal { opacity: 1; transform: none; }
+.thmap.reveal .thmap-art { opacity: 0; transform: translateY(40px) scale(.96); }
+.thmap.reveal.is-in .thmap-art { opacity: 1; transform: none; transition: opacity 1s ease, transform 1.2s cubic-bezier(.2, .7, .25, 1); }
 .thmap.reveal .thmap-route { stroke-dasharray: 1; stroke-dashoffset: 1; }
-.thmap.reveal.is-in .thmap-route { animation: thmap-draw 1.4s cubic-bezier(.4, .1, .2, 1) forwards; animation-delay: calc(var(--i) * .18s + .3s); }
-.thmap.reveal .thmap-pin, .thmap.reveal .thmap-car { opacity: 0; transition: opacity .5s; }
-.thmap.reveal.is-in .thmap-pin { opacity: 1; transition-delay: calc(var(--i) * .18s + 1.2s); }
-.thmap.reveal.is-in .thmap-car { opacity: 1; transition-delay: 1.8s; }
+.thmap.reveal.is-in .thmap-route { animation: thmap-draw 1.4s cubic-bezier(.4, .1, .2, 1) forwards; animation-delay: calc(var(--i) * .18s + .8s); }
+.thmap.reveal .thmap-pin { opacity: 0; transform: translateY(-26px); }
+.thmap.reveal.is-in .thmap-pin { opacity: 1; transform: none; transition: opacity .4s, transform .6s cubic-bezier(.3, 1.6, .5, 1), r .25s; transition-delay: calc(var(--i) * .18s + 1.5s); }
+.thmap.reveal .thmap-car { opacity: 0; transition: opacity .5s; }
+.thmap.reveal.is-in .thmap-car { opacity: 1; transition-delay: 2.6s; }
 @keyframes thmap-draw { to { stroke-dashoffset: 0; } }
-@media (max-width: 860px) { .thmap { grid-template-columns: minmax(0, 1fr); } .thmap-art { max-width: 360px; } }
+@media (max-width: 860px) { .thmap { grid-template-columns: minmax(0, 1fr); } }
 @media (prefers-reduced-motion: reduce) { .thmap-car, .thmap-ring { display: none; } }
+@media (prefers-color-scheme: dark) {
+  html.auto-dark .thmap { --thm-top: #14243F; --thm-line: rgba(120, 190, 240, 0.22); --thm-edge: #3A6E9C; --thm-side: #08162C;
+    --thm-zone: #1D4B73; --thm-zone-hot: #2A78B4; --thm-home: #335F2B; --thm-pin: #8DB8FF; --thm-pin-text: #0A1120; --thm-sheen: .1; --thm-floor: rgba(0, 0, 0, 0.6); }
+  html.auto-dark .thmap-pin circle { stroke: #0A1120; }
+}
 
 /* ---------- Background video on any section (🎬 in the back office) ---------- */
 /* The section turns dark: same colour set as dark mode, so cards, chips and tables inside stay readable. */

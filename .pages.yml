@@ -9761,6 +9761,10 @@ content:
         - name: text_en
           label: คำอธิบายสั้น · English
           type: string
+        - name: provinces
+          label: จังหวัดที่ระบายสีบนแผนที่ (คั่นด้วยจุลภาค เช่น ชลบุรี, ระยอง)
+          type: string
+          description: เว้นว่าง = ระบายเฉพาะจังหวัดที่หมุดอยู่ · พิมพ์ชื่อไทยหรืออังกฤษก็ได้
         - name: lat
           label: ละติจูด
           type: number
