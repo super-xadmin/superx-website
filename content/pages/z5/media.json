@@ -47,9 +47,9 @@
     {
       "video": "/assets/video/tcav-l4-test.mp4",
       "poster": "/assets/img/tcav-poster.webp",
-      "caption_th": "วิดีโอ: การทดสอบระดับ L4 ที่ศูนย์ T-CAV ประเทศไทย (ภาพจาก Zelostech)",
-      "caption_zh": "视频：泰国 T-CAV 中心 L4 测试（Zelostech 提供）",
-      "caption_en": "Video: L4 testing at Thailand’s T-CAV centre (footage: Zelostech)"
+      "caption_th": "วิดีโอ: การทดสอบระดับ L4 ที่ศูนย์ T-CAV ประเทศไทย",
+      "caption_zh": "视频：泰国 T-CAV 中心 L4 测试",
+      "caption_en": "Video: L4 testing at Thailand’s T-CAV centre"
     }
   ],
   "videos_first": false
