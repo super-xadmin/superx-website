@@ -29,6 +29,7 @@
     }
   ],
   "bg": {
-    "video": "/assets/video/3D and Animation/รถดับเพลิง.mp4"
+    "video": "/assets/video/3D and Animation/รถดับเพลิง.mp4",
+    "shade": "strong"
   }
 }
