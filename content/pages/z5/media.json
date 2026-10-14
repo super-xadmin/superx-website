@@ -41,15 +41,6 @@
       "caption_zh": "城市物流园区",
       "caption_en": "Urban logistics park",
       "studio": false
-    },
-    {
-      "size": "g-third",
-      "image": "/assets/img/tcav-photo-campus.webp",
-      "alt": "RoboVan during testing in Thailand",
-      "caption_th": "ระหว่างการทดสอบในประเทศไทย",
-      "caption_zh": "在泰国测试中",
-      "caption_en": "During testing in Thailand",
-      "studio": false
     }
   ],
   "videos": [
