@@ -44,6 +44,7 @@
     }
   ],
   "bg": {
-    "video": "/assets/video/3D and Animation/Lark20261014-221159.mp4"
+    "video": "/assets/video/3D and Animation/Lark20261014-221159.mp4",
+    "shade": "strong"
   }
 }
