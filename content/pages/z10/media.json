@@ -52,7 +52,7 @@
       "caption_en": "Video: L4 testing with Z5 and Z10 at Thailand’s T-CAV centre (footage: Zelostech)"
     }
   ],
-  "videos_first": false,
+  "videos_first": true,
   "bg": {
     "video": "/assets/video/z10-robovan-16x9.mp4"
   }
