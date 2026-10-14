@@ -366,6 +366,16 @@ html[data-lang="th"] .statement { line-height: 1.75; }
 .bubble .who { display: block; font-size: 0.7rem; font-weight: 600; color: var(--mute); margin-bottom: 2px; }
 .bubble.me .who { color: rgba(255, 255, 255, 0.7); }
 .phero--chat .bubble.me { background: #2A4C8F; }
+/* Chat plays like a real conversation: customer writes, AI Agent types, then answers (main.js) */
+.chat-art.is-anim .bubble { opacity: 0; transform: translateY(12px) scale(.96); transition: opacity .35s ease, transform .35s cubic-bezier(.2, .8, .3, 1.2); }
+.chat-art.is-anim .bubble.is-on { opacity: 1; transform: none; }
+.chat-art.is-anim.is-fading .bubble { opacity: 0; transform: none; transition-duration: .6s; }
+.chat-typing { position: absolute; display: flex; gap: 5px; padding: 12px 14px; border-radius: 14px 14px 14px 4px; background: var(--card); box-shadow: 0 6px 18px -12px rgba(16, 28, 56, 0.35); opacity: 0; transition: opacity .2s; pointer-events: none; }
+.chat-typing.is-on { opacity: 1; }
+.chat-typing i { width: 7px; height: 7px; border-radius: 50%; background: var(--mute); animation: chat-dot 1s ease-in-out infinite; }
+.chat-typing i:nth-child(2) { animation-delay: .15s; }
+.chat-typing i:nth-child(3) { animation-delay: .3s; }
+@keyframes chat-dot { 0%, 60%, 100% { transform: translateY(0); opacity: .45; } 30% { transform: translateY(-4px); opacity: 1; } }
 
 /* ---------- Model line-up (home): one van at a time, chosen with tabs ---------- */
 .lineup-nav { display: flex; justify-content: center; }

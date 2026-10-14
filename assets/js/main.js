@@ -551,4 +551,61 @@
       } else if (!stopped) start();
     });
   }
+  /* ---------- Chat pictures play like a real conversation ---------- */
+  // The customer writes first, the AI Agent shows "typing…" and then answers; the chat repeats while on screen.
+  if (motionOK) {
+    Array.prototype.forEach.call(document.querySelectorAll('.chat-art'), function (art) {
+      var bubbles = Array.prototype.slice.call(art.querySelectorAll('.bubble'));
+      if (bubbles.length < 2) return;
+      var typing = document.createElement('div');
+      typing.className = 'chat-typing';
+      typing.setAttribute('aria-hidden', 'true');
+      typing.innerHTML = '<i></i><i></i><i></i>';
+      art.appendChild(typing);
+      art.classList.add('is-anim');
+      var timer = null, step = 0, visible = false;
+      var later = function (fn, ms) { timer = setTimeout(fn, ms); };
+      var next = function () {
+        if (!visible) return;
+        if (step >= bubbles.length) {
+          later(function () {
+            art.classList.add('is-fading');
+            later(function () {
+              bubbles.forEach(function (b) { b.classList.remove('is-on'); });
+              art.classList.remove('is-fading');
+              step = 0;
+              later(next, 500);
+            }, 700);
+          }, 4000);
+          return;
+        }
+        var b = bubbles[step];
+        if (b.classList.contains('ai')) {
+          typing.style.left = b.offsetLeft + 'px';
+          typing.style.top = b.offsetTop + 'px';
+          typing.classList.add('is-on');
+          later(function () {
+            typing.classList.remove('is-on');
+            b.classList.add('is-on');
+            step++;
+            later(next, 1100);
+          }, 1300);
+        } else {
+          b.classList.add('is-on');
+          step++;
+          later(next, 900);
+        }
+      };
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting && !visible) { visible = true; later(next, 400); }
+            else if (!e.isIntersecting && visible) { visible = false; clearTimeout(timer); typing.classList.remove('is-on'); }
+          });
+        }, { threshold: 0.3 }).observe(art);
+      } else {
+        bubbles.forEach(function (b) { b.classList.add('is-on'); });
+      }
+    });
+  }
 })();
