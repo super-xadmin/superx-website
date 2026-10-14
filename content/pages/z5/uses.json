@@ -63,6 +63,6 @@
   ],
   "bg": {
     "video": "/assets/video/==.mp4",
-    "shade": "strong"
+    "shade": "medium"
   }
 }
