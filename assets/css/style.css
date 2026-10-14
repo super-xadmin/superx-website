@@ -847,6 +847,7 @@ a.case:hover h3 { color: var(--midnight); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }
+  .phones.reveal .phone-card { opacity: 1; transform: none; }
 }
 
 /* ---------- Living backgrounds (sections without film) ---------- */
@@ -910,6 +911,24 @@ main { overflow-x: clip; }
 }
 
 /* ---------- Delivery flow (home): boxes slide in one after another, arrows keep moving ---------- */
+/* ---------- App screens (home): slide in one by one, float, and take turns in the spotlight ---------- */
+.phones.reveal { opacity: 1; transform: none; }
+.phones.reveal .phone-card { opacity: 0; transform: translateY(60px); }
+.phones.reveal.is-in .phone-card { animation: phone-in .9s cubic-bezier(.2, .7, .25, 1) forwards; }
+.phones.reveal.is-in .phone-card:nth-child(2) { animation-delay: .15s; }
+.phones.reveal.is-in .phone-card:nth-child(3) { animation-delay: .3s; }
+.phones.reveal.is-in .phone-card:nth-child(4) { animation-delay: .45s; }
+@keyframes phone-in { to { opacity: 1; transform: none; } }
+.phones.is-alive .phone { animation: phone-float 6s ease-in-out infinite; transition: scale .6s cubic-bezier(.2, .7, .25, 1), box-shadow .6s, border-color .6s; }
+.phones.is-alive .phone-card:nth-child(2) .phone { animation-delay: -1.5s; }
+.phones.is-alive .phone-card:nth-child(3) .phone { animation-delay: -3s; }
+.phones.is-alive .phone-card:nth-child(4) .phone { animation-delay: -4.5s; }
+@keyframes phone-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -14px; } }
+.phones.has-focus .phone-card > span { transition: color .5s, opacity .5s; opacity: .55; }
+.phones.has-focus .phone-card .phone { opacity: .7; transition: scale .6s cubic-bezier(.2, .7, .25, 1), box-shadow .6s, border-color .6s, opacity .6s; }
+.phones.has-focus .phone-card.is-focus .phone { opacity: 1; scale: 1.07; border-color: #0E2A44;
+  box-shadow: 0 40px 70px -34px rgba(0, 0, 0, 0.85), 0 0 0 2px rgba(79, 200, 233, 0.75), 0 0 40px 4px rgba(79, 200, 233, 0.35); }
+.phones.has-focus .phone-card.is-focus > span { opacity: 1; color: #fff; }
 .flow.reveal { opacity: 1; transform: none; }
 .flow.reveal .flow-step { opacity: 0; transform: translateX(-60px); }
 .flow.reveal .flow-step::after { opacity: 0; }

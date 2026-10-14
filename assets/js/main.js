@@ -608,4 +608,29 @@
       }
     });
   }
+  /* ---------- App screens: float, and light up one phone at a time ---------- */
+  if (motionOK) {
+    Array.prototype.forEach.call(document.querySelectorAll('.phones'), function (box) {
+      var cards = Array.prototype.slice.call(box.querySelectorAll('.phone-card'));
+      if (cards.length < 2) return;
+      box.classList.add('is-alive');
+      var i = -1, timer = null, hold = false;
+      var show = function (n) {
+        cards.forEach(function (c, k) { c.classList.toggle('is-focus', k === n); });
+        box.classList.add('has-focus');
+      };
+      var stepOn = function () { if (!hold) { i = (i + 1) % cards.length; show(i); } };
+      var start = function () { if (!timer) { stepOn(); timer = setInterval(stepOn, 3000); } };
+      var stop = function () { clearInterval(timer); timer = null; };
+      cards.forEach(function (c, k) {
+        c.addEventListener('mouseenter', function () { hold = true; i = k; show(k); });
+        c.addEventListener('mouseleave', function () { hold = false; });
+      });
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) setTimeout(start, 1400); else stop(); });
+        }, { threshold: 0.35 }).observe(box);
+      } else start();
+    });
+  }
 })();
