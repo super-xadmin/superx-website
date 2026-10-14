@@ -102,10 +102,6 @@ def render():
       <div class="hero-facts">
         {facts}
       </div>
-      <div class="hero-caption">
-        <button class="play-btn" type="button"{aria(tri(lb, 'video_toggle'))}>{ic('pause', 'ic i-pause')}{ic('play', 'ic i-play')}</button>
-        <span>{Tk(h, 'caption')}</span>
-      </div>
     </div>
   </div>
 </section>'''
