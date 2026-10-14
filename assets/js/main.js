@@ -514,4 +514,41 @@
         .then(finish, function () { finish(false); });
     });
   }
+  /* ---------- Background videos on sections (🎬 in the back office) ---------- */
+  // A film is downloaded only when its section comes near the screen, plays only while it is on screen,
+  // and stays still for people who ask for less motion or for data saving (they can press play).
+  var bgSecs = document.querySelectorAll('.has-bgv');
+  if (bgSecs.length) {
+    var bgCalm = (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) ||
+      !!(navigator.connection && navigator.connection.saveData);
+    Array.prototype.forEach.call(bgSecs, function (sec) {
+      var v = sec.querySelector('.bgv video');
+      if (!v) return;
+      var btn = sec.querySelector('.bgv-btn');
+      var stopped = bgCalm;
+      var showBtn = function () { if (btn) btn.classList.toggle('is-paused', stopped || v.paused); };
+      var start = function () {
+        if (!v.getAttribute('src')) v.setAttribute('src', v.getAttribute('data-src') || '');
+        var p = v.play();
+        if (p && p.catch) p.catch(function () { showBtn(); });
+      };
+      v.addEventListener('playing', function () { sec.classList.add('bgv-on'); showBtn(); });
+      if (btn) {
+        btn.hidden = false;
+        btn.classList.toggle('is-paused', stopped);
+        btn.addEventListener('click', function () {
+          stopped = !v.paused;
+          if (stopped) v.pause(); else start();
+          btn.classList.toggle('is-paused', stopped);
+        });
+      }
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { if (!stopped) start(); } else if (!v.paused) v.pause();
+          });
+        }, { rootMargin: '200px 0px' }).observe(sec);
+      } else if (!stopped) start();
+    });
+  }
 })();

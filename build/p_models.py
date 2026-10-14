@@ -5,7 +5,7 @@ import json
 from core import C, s, items, tri, has, esc, fmt, T, Tk, Bk, media, img, href, ic, strs
 from schema import TX, S, LINK, BOOL, IMG, ALT, VID, DOC, ICON, MODEL, LIST, SEL, FEATURE
 from layout import (PAGE_FIELDS_CTA, page, phero, trail, cta_band, figures, uses, features, gallery, video_card, options, downloads,
-                    spec_table, dims_card, model, form_model)
+                    spec_table, dims_card, model, form_model, bgv)
 
 SIZES = [('g-wide', 'กว้าง 2 ช่อง'), ('g-tall', 'สูง 2 แถว'), ('g-third', '1 ใน 3'), ('g-half', 'ครึ่งแถว')]
 
@@ -78,6 +78,7 @@ def viewer(m, pic):
 
 class ModelPage:
     SECTIONS = SECTIONS
+    BG_KEYS = ('hero', 'media', 'overview', 'uses', 'features', 'specs', 'options', 'downloads')
 
     def __init__(self, fname, folder, label):
         self.FILE, self.DIR, self.LABEL = fname, f'pages/{folder}', label
@@ -173,8 +174,10 @@ class ModelPage:
     {downloads(items(dl, 'items'))}
   </div>
 </section>'''
+        for key, d in (('media', md), ('overview', ov), ('uses', us), ('features', ft), ('specs', sp), ('options', op), ('downloads', dl)):
+            sections = bgv(sections, d, sid=key)
         pg = C(f'{D}/page')
-        return page(self.FILE, pg, hero + sections + cta_band(pg), extra_head=head_extra)
+        return page(self.FILE, pg, bgv(hero, h) + sections + cta_band(pg), extra_head=head_extra)
 
 
 MODULES = [ModelPage('z5.html', 'z5', 'RoboVan Z5'), ModelPage('z10.html', 'z10', 'RoboVan Z10'),

@@ -115,6 +115,20 @@ def CHAT(name='chat', label='ข้อความแชตตัวอย่า
     ], summary='{who_th}: {text_th}')
 
 
+# Video (or still picture) behind a whole section. Stored as {"video": ..., "poster": ..., "shade": ...}.
+SHADES = [('medium', 'ปานกลาง (แนะนำ)'), ('light', 'อ่อน (เห็นวิดีโอชัด)'), ('strong', 'เข้ม (อ่านตัวหนังสือง่ายสุด)')]
+
+
+def BG(name='bg', label='🎬 วิดีโอพื้นหลังของส่วนนี้ (ไม่ใส่ก็ได้)'):
+    return OBJ(name, label, [
+        VID('video', 'วิดีโอ (MP4 สั้นๆ ไม่มีเสียง)',
+            desc='แนะนำยาว 10–20 วินาที ขนาด 1280×720 ไฟล์ไม่เกิน 10 MB (เกิน 25 MB เว็บจะไม่แสดง) · '
+                 'ไฟล์ใหญ่กว่า 4 MB อัปตรงนี้ไม่ได้ ให้วางไฟล์ในโฟลเดอร์ assets/video ผ่าน GitHub Desktop แล้วกลับมากดเลือก'),
+        IMG('poster', 'ภาพนิ่ง (แสดงระหว่างรอวิดีโอ หรือใส่แค่ภาพนี้เพื่อใช้เป็นภาพพื้นหลังก็ได้)'),
+        SEL('shade', 'ความเข้มของสีเข้มที่ทับวิดีโอ (ช่วยให้อ่านตัวหนังสือออก)', SHADES),
+    ], desc='ใส่วิดีโอหรือภาพแล้ว ส่วนนี้จะเปลี่ยนเป็นพื้นเข้ม ตัวหนังสือสีขาวให้อัตโนมัติ · ลบไฟล์ออก = กลับเป็นพื้นแบบเดิม')
+
+
 FEATURE = [ICON(), TX('title', 'หัวข้อ'), TX('text', 'รายละเอียด', long=True)]
 STEP = [TX('title', 'หัวข้อขั้นตอน'), TX('text', 'รายละเอียด', long=True)]
 BULLET = [TX('text', 'ข้อความ')]
@@ -231,6 +245,8 @@ def validate(fields, data, where):
             for i, item in enumerate(v):
                 probs += validate(f['fields'], item, f'{where}.{k}[{i}]')
         elif kind == 'obj':
+            if v in (None, ''):
+                continue
             probs += validate(f['fields'], v, f'{where}.{k}')
         elif kind in ('slist', 'imgs', 'refs'):
             if v in (None, ''):

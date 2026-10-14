@@ -5,7 +5,7 @@ import json
 
 from core import C, s, items, tri, has, esc, fmt, T, Tk, Bk, media, img, href, ic, strs, LANGS
 from schema import TX, NUM, BOOL, LIST, OBJ, MODELS
-from layout import (PAGE_FIELDS_CTA, PHERO, page, phero, trail, cta_band, head, model, mkey, models, form_model)
+from layout import (PAGE_FIELDS_CTA, PHERO, page, phero, trail, cta_band, head, model, mkey, models, form_model, bgv)
 
 INPUTS = [('trips', 'จำนวนเที่ยวต่อวัน'), ('km', 'ระยะทางต่อเที่ยว'), ('drivers', 'จำนวนคนขับตอนนี้'),
           ('wage', 'ค่าแรงคนขับต่อคนต่อเดือน'), ('days', 'วันทำงานต่อเดือน'), ('fuel', 'ค่าน้ำมันรถเดิมต่อกิโลเมตร')]
@@ -31,6 +31,7 @@ def _numtxt(v):
 # ================================================================ ROI calculator
 class Roi:
     FILE, DIR, LABEL = 'roi.html', 'pages/roi', 'คำนวณความคุ้มค่า (ROI)'
+    BG_KEYS = ('hero', 'inputs')
     SECTIONS = [
         ('page', 'ตั้งค่าหน้า (เปิด/ปิด ชื่อหน้า แถบปิดท้าย)',
          [BOOL('enabled', 'เปิดใช้งานหน้านี้ (ใส่ตัวเลขจริงในหัวข้อ 3 ให้ครบก่อนเปิด)')] + PAGE_FIELDS_CTA),
@@ -102,7 +103,7 @@ class Roi:
 </section>
 <script type="application/json" id="roi-data">{_json(data)}</script>'''
         pg = C(f'{D}/page')
-        return page(self.FILE, pg, hero + body + cta_band(pg))
+        return page(self.FILE, pg, bgv(hero, h) + bgv(body, i) + cta_band(pg))
 
 
 # ================================================================ model finder
@@ -123,6 +124,7 @@ def showcase(mo):
 
 class Chooser:
     FILE, DIR, LABEL = 'choose.html', 'pages/choose', 'ช่วยเลือกรุ่นรถ'
+    BG_KEYS = ('hero', 'quiz')
     SECTIONS = [
         ('page', 'ตั้งค่าหน้า (เปิด/ปิด ชื่อหน้า แถบปิดท้าย)', [BOOL('enabled', 'เปิดใช้งานหน้านี้')] + PAGE_FIELDS_CTA),
         ('hero', '1. ภาพหลักและหัวข้อ', PHERO()),
@@ -179,7 +181,7 @@ class Chooser:
   </div>
 </section>'''
         pg = C(f'{D}/page')
-        return page(self.FILE, pg, hero + body + cta_band(pg))
+        return page(self.FILE, pg, bgv(hero, h) + bgv(body, q) + cta_band(pg))
 
 
 MODULES = [Roi(), Chooser()]

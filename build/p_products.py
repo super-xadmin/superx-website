@@ -3,7 +3,7 @@
 from core import C, s, items, tri, has, esc, fmt, T, TC, B, Tk, Bk, media, img, href, ic
 from schema import TX, S, LINK, IMG, ALT, DOC, ICON, MODEL, LIST, CHAT, SEL, BULLET
 from layout import (PAGE_FIELDS_CTA, PHERO, page, phero, trail, cta_band, product_card, chat_art, chips, checks, downloads,
-                    spec_table, model, form_model, mkey)
+                    spec_table, model, form_model, mkey, bgv)
 
 FILE = 'products.html'
 DIR = 'pages/products'
@@ -101,6 +101,8 @@ def line_block(ln):
 </div>'''
 
 
+BG_KEYS = ('hero', 'robovan', 'others', 'technology', 'lines', 'services')
+
 def render():
     h = C(f'{DIR}/hero')
     hero = phero(img(h, lazy=False), 'photo', trail(None, h), h, '<div class="chips">' + ''.join(chips(items(h, 'chips'))) + '</div>')
@@ -167,5 +169,6 @@ def render():
 </section>'''
 
     pg = C(f'{DIR}/page')
-    body = hero + robovan + suite + lines + services + cta_band(pg)
+    body = (bgv(hero, h) + bgv(bgv(robovan, rv), ot, nth=1) + bgv(suite, tc) + bgv(lines, ln) + bgv(services, sv)
+            + cta_band(pg))
     return page(FILE, pg, body)

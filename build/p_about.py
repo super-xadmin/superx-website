@@ -2,7 +2,7 @@
 """About page (about.html)."""
 from core import C, s, items, fmt, Tk, Bk, img, ic
 from schema import TX, S, LINK, BOOL, IMG, ALT, ICON, LIST, STEP
-from layout import PAGE_FIELDS_CTA, PHERO, page, phero, trail, cta_band, head, steps
+from layout import PAGE_FIELDS_CTA, PHERO, page, phero, trail, cta_band, head, steps, bgv
 from p_home import STRIP, strip
 
 FILE = 'about.html'
@@ -41,6 +41,8 @@ SECTIONS = [
     ]),
 ]
 
+
+BG_KEYS = ('hero', 'story', 'vision', 'group', 'approach', 'roadmap', 'partners')
 
 def render():
     h = C(f'{DIR}/hero')
@@ -125,4 +127,5 @@ def render():
 </section>'''
 
     pg = C(f'{DIR}/page')
-    return page(FILE, pg, hero + story + vision + group + approach + roadmap + partners + cta_band(pg))
+    return page(FILE, pg, bgv(hero, h) + bgv(story, st) + bgv(vision, vm) + bgv(group, gr) + bgv(approach, ap) + bgv(roadmap, rm)
+                + bgv(partners, pt) + cta_band(pg))

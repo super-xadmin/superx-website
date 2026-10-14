@@ -4,7 +4,7 @@ import re
 
 from core import C, collection, s, items, tri, has, esc, T, TC, Tk, Bk, img, ic
 from schema import TX, S, NUM, BOOL, IMG, ALT, VID, SEL, LIST
-from layout import PAGE_FIELDS_CTA, PHERO, page, phero, trail, cta_band, head, video_card
+from layout import PAGE_FIELDS_CTA, PHERO, page, phero, trail, cta_band, head, video_card, bgv
 
 FILE = 'cases.html'
 DIR = 'pages/cases'
@@ -100,6 +100,8 @@ def card(c):
   <h3>{TC(tri(c, 'title'))}</h3>{paras}</article>'''
 
 
+BG_KEYS = ('hero', 'thailand', 'asia')
+
 def render():
     h = C(f'{DIR}/hero')
     hero = phero(img(h, lazy=False), 'photo', trail('about', h), h)
@@ -121,4 +123,4 @@ def render():
   </div>
 </section>''' if cards else ''
     pg = C(f'{DIR}/page')
-    return page(FILE, pg, hero + thailand + regional + cta_band(pg))
+    return page(FILE, pg, bgv(hero, h) + bgv(thailand, th) + bgv(regional, asia) + cta_band(pg))

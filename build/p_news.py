@@ -8,7 +8,7 @@ import re
 
 from core import C, collection, s, items, tri, has, esc, T, TC, B, Tk, Bk, img, href, is_external, ic, date3, LANGS
 from schema import TX, S, LINK, BOOL, DATE, IMG, ALT, VID, SEL, LIST
-from layout import PAGE_FIELDS_CTA, PHERO, page, phero, crumbs, cta_band, head, gallery, video_card, trail
+from layout import PAGE_FIELDS_CTA, PHERO, page, phero, crumbs, cta_band, head, gallery, video_card, trail, bgv
 
 FILE = 'news.html'
 DIR = 'pages/news'
@@ -128,6 +128,8 @@ def list_item(n, lst):
             f'<h3>{Tk(n, "title")}</h3>{Bk("p", n, "summary")}</div>{link}</article>')
 
 
+BG_KEYS = ('hero', 'list')
+
 def render():
     h = C(f'{DIR}/hero')
     lst = C(f'{DIR}/list')
@@ -145,7 +147,7 @@ def render():
   </div>
 </section>'''
     pg = C(f'{DIR}/page')
-    return page(FILE, pg, hero + featured + listing + cta_band(pg))
+    return page(FILE, pg, bgv(hero, h) + featured + bgv(listing, lst) + cta_band(pg))
 
 
 # ---------------------------------------------------------------- one page per news item

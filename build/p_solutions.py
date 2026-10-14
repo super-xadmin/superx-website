@@ -2,7 +2,7 @@
 """Solution pages: education.html, security.html, ai-agent.html."""
 from core import C, s, items, tri, has, esc, fmt, T, TC, Tk, Bk, img, href, ic
 from schema import TX, S, LINK, IMG, ALT, ICON, LIST, CHAT, FEATURE, STEP, BULLET
-from layout import (PAGE_FIELDS_CTA, PHERO, page, phero, trail, cta_band, head, features, checks, steps, chips, chat_art)
+from layout import (PAGE_FIELDS_CTA, PHERO, page, phero, trail, cta_band, head, features, checks, steps, chips, chat_art, bgv)
 
 BUTTON = [TX('button_label', 'ปุ่ม'), LINK('button_link', 'ลิงก์ปุ่ม')]
 CHIP_LINK = [S('anchor', 'ไปที่หัวข้อ (#)'), ICON(), TX('label', 'ข้อความ')]
@@ -25,6 +25,7 @@ def btn(d, cls='btn btn-primary'):
 # ================================================================ EDUCATION
 class Education:
     FILE, DIR, LABEL = 'education.html', 'pages/education', 'รถไร้คนขับเพื่อการศึกษา'
+    BG_KEYS = ('hero', 'audience', 'topics', 'offer', 'process')
     SECTIONS = [
         ('page', 'ตั้งค่าหน้า (ชื่อหน้า / แถบปิดท้าย)', PAGE_FIELDS_CTA),
         ('hero', '1. ภาพหลักและหัวข้อ', PHERO(BUTTON)),
@@ -59,7 +60,7 @@ class Education:
 </section>'''
         process = section('section section--mist', f'{head(pr)}\n    {steps(items(pr, "steps"))}')
         pg = C(f'{D}/page')
-        return page(self.FILE, pg, hero + who + topics + offer + process + cta_band(pg))
+        return page(self.FILE, pg, bgv(hero, h) + bgv(who, au) + bgv(topics, tp) + bgv(offer, of) + bgv(process, pr) + cta_band(pg))
 
 
 # ================================================================ SECURITY
@@ -83,6 +84,7 @@ ROBOT_SVG = '''<svg viewBox="0 0 520 300" role="img" aria-label="Tracked unmanne
 
 class Security:
     FILE, DIR, LABEL = 'security.html', 'pages/security', 'หุ่นยนต์ความปลอดภัยและงานพิเศษ'
+    BG_KEYS = ('hero', 'tracked', 'special', 'why')
     SECTIONS = [
         ('page', 'ตั้งค่าหน้า (ชื่อหน้า / แถบปิดท้าย)', PAGE_FIELDS_CTA),
         ('hero', '1. ภาพหลักและหัวข้อ', PHERO([LIST('chips', 'ปุ่มลัดไปยังหัวข้อ', CHIP_LINK)])),
@@ -131,12 +133,13 @@ class Security:
 </section>'''
         why = section('section section--night', f'{head(wy)}\n    {features(items(wy, "items"), "f4")}')
         pg = C(f'{D}/page')
-        return page(self.FILE, pg, hero + tracked + special + why + cta_band(pg))
+        return page(self.FILE, pg, bgv(hero, h) + bgv(tracked, tr) + bgv(special, sp) + bgv(why, wy) + cta_band(pg))
 
 
 # ================================================================ AI AGENT
 class AiAgent:
     FILE, DIR, LABEL = 'ai-agent.html', 'pages/ai-agent', 'AI Agent'
+    BG_KEYS = ('hero', 'channels', 'capabilities', 'getting_started', 'industries')
     SECTIONS = [
         ('page', 'ตั้งค่าหน้า (ชื่อหน้า / แถบปิดท้าย)', PAGE_FIELDS_CTA),
         ('hero', '1. ภาพแชตและหัวข้อ', [CHAT('chat', 'ข้อความแชตตัวอย่าง (แทนรูปภาพ)'), TX('crumb', 'ชื่อหน้าในแถบเส้นทาง'),
@@ -174,7 +177,7 @@ class AiAgent:
   </div>
 </section>'''
         pg = C(f'{D}/page')
-        return page(self.FILE, pg, hero + channels + what + how + fit + cta_band(pg))
+        return page(self.FILE, pg, bgv(hero, h) + bgv(channels, ch) + bgv(what, ca) + bgv(how, gs) + bgv(fit, ind) + cta_band(pg))
 
 
 MODULES = [Education(), Security(), AiAgent()]

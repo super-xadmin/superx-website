@@ -4,7 +4,7 @@ import os
 
 import core
 from core import C, collection, s, items, tri
-from schema import cms_fields, validate
+from schema import cms_fields, validate, BG
 import layout
 import p_home
 
@@ -29,6 +29,13 @@ import p_business  # noqa: E402
 COLLECTIONS += p_business.COLLECTIONS
 COLLECTIONS.insert(0, ('models', '🚐 ข้อมูลรถแต่ละรุ่น (สเปก / การ์ด / ตาราง)', 'models', layout.MODEL_FIELDS,
                        {'fields': ['model_name', 'full_name'], 'primary': 'model_name'}))
+
+
+def section_fields(m, key, fields):
+    """Fields of one page section; sections listed in the page's BG_KEYS also get the 🎬 background video group."""
+    if key in getattr(m, 'BG_KEYS', ()):
+        return list(fields) + [BG()]
+    return fields
 
 
 def render_all():
@@ -61,7 +68,7 @@ def check():
             rel = f'{m.DIR}/{key}'
             if not os.path.exists(os.path.join(core.CONTENT, rel + '.json')):
                 probs.append(f'{rel}: file missing')
-            probs += validate(fields, C(rel), rel)
+            probs += validate(section_fields(m, key, fields), C(rel), rel)
     for name, _label, folder, fields, _view in COLLECTIONS:
         for slug, d in collection(folder):
             probs += validate(fields, d, f'{folder}/{slug}')
@@ -95,7 +102,8 @@ def cms_config():
     for m in PAGE_MODULES:
         base = m.DIR.split('/')[-1]
         page_groups.append({'name': f'page-{base}', 'label': m.LABEL, 'type': 'group',
-                            'items': [_file_entry(f'{base}-{key}', label, f'{m.DIR}/{key}', fields) for key, label, fields in m.SECTIONS]})
+                            'items': [_file_entry(f'{base}-{key}', label, f'{m.DIR}/{key}', section_fields(m, key, fields))
+                                      for key, label, fields in m.SECTIONS]})
     pages_group = {'name': 'pages', 'label': '📄 หน้าเว็บ (แก้ทีละหัวข้อ)', 'type': 'group', 'items': page_groups}
     return {
         'media': [

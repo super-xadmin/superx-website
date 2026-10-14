@@ -2,7 +2,7 @@
 """Home page (index.html)."""
 from core import C, s, items, tri, has, esc, fmt, T, TC, B, Tk, Bk, aria, media, img, href, ic
 from schema import TX, S, LINK, BOOL, IMG, ALT, VID, ICON, MODEL, LIST, CHAT, SEL
-from layout import PAGE_FIELDS_CTA, page, cta_band, chat_art, model, mkey, form_model, kv
+from layout import PAGE_FIELDS_CTA, page, cta_band, chat_art, model, mkey, form_model, kv, bgv
 
 FILE = 'index.html'
 DIR = 'pages/home'
@@ -74,6 +74,9 @@ def strip(d, key='strip', link_label='strip_link_label', link='strip_link'):
         lines.append(f'<a class="link-arrow" href="{href(s(d, link))}">{Tk(d, link_label)}{ic("arrow")}</a>')
     return '<div class="partner-strip">\n      ' + '\n      '.join(lines) + '\n    </div>'
 
+
+# Sections that can have a 🎬 background video (the top film has its own video field)
+BG_KEYS = ('about', 'business', 'models', 'control', 'scenarios', 'cases')
 
 def render():
     lb = C('site/labels')
@@ -275,5 +278,6 @@ def render():
 </section>'''
 
     pg = C(f'{DIR}/page')
-    body = hero + positioning + modules + models + control + scenarios + cases + cta_band(pg)
+    body = (hero + bgv(positioning, a) + bgv(modules, b) + bgv(models, m) + bgv(control, c) + bgv(scenarios, sc) + bgv(cases, cs)
+            + cta_band(pg))
     return page(FILE, pg, body)

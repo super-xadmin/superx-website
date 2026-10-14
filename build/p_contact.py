@@ -4,7 +4,7 @@ import json
 
 from core import C, s, items, tri, has, esc, fmt, T, Tk, Bk, ph, opt, img, href, ic, LANGS
 from schema import TX, S, SEL, LIST, STEP
-from layout import PAGE_FIELDS, PHERO, page, phero, trail, steps, SOCIAL_ICON, social_name
+from layout import PAGE_FIELDS, PHERO, page, phero, trail, steps, SOCIAL_ICON, social_name, bgv
 
 FILE = 'contact.html'
 DIR = 'pages/contact'
@@ -164,9 +164,11 @@ def messages_json():
     return text.replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
 
 
+BG_KEYS = ('hero',)
+
 def render():
     h = C(f'{DIR}/hero')
-    hero = phero(img(h, lazy=False), 'photo', trail(None, h), h)
+    hero = bgv(phero(img(h, lazy=False), 'photo', trail(None, h), h), h)
     body = hero + f'<section class="section"><div class="wrap contact-grid">{details_block()}{form_card()}</div></section>'
     body += f'\n<script type="application/json" id="form-msgs">{messages_json()}</script>'
     return page(FILE, C(f'{DIR}/page'), body)

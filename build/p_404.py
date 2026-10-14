@@ -2,7 +2,7 @@
 """404 page: shown for any address that does not exist. build.py makes its links absolute."""
 from core import C, s, items, fmt, Tk, Bk, href
 from schema import TX, S, LINK, LIST
-from layout import PAGE_FIELDS, page
+from layout import PAGE_FIELDS, page, bgv
 
 FILE = '404.html'
 DIR = 'pages/404'
@@ -16,6 +16,8 @@ SECTIONS = [
     ]),
 ]
 
+
+BG_KEYS = ('content',)
 
 def render():
     d = C(f'{DIR}/content')
@@ -34,5 +36,5 @@ def render():
     </div>
   </div>
 </section>'''
-    html = page(FILE, C(f'{DIR}/page'), body)
+    html = page(FILE, C(f'{DIR}/page'), bgv(body, d))
     return html.replace('<meta name="theme-color"', '<meta name="robots" content="noindex"><meta name="theme-color"', 1)

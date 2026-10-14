@@ -4,7 +4,7 @@ import re
 
 from core import (C, collection, s, items, tri, has, esc, fmt, T, TC, B, Tk, Bk, aria, media, img, href, is_external,
                   file_size, ic, sprite)
-from schema import (TX, S, LINK, NUM, BOOL, IMG, ALT, DOC, SEL, ICON, LIST, SLIST, OBJ, IMGS, FILE3D)
+from schema import (TX, S, LINK, NUM, BOOL, IMG, ALT, DOC, SEL, ICON, LIST, SLIST, OBJ, IMGS, FILE3D, BG)
 from core import strs
 
 # ================================================================ back-office definitions (site-wide files)
@@ -144,6 +144,7 @@ PAGE_FIELDS_CTA = PAGE_FIELDS + [
     TX('cta_title', 'แถบปิดท้ายหน้า: หัวข้อ (เว้นว่าง = ใช้ข้อความมาตรฐาน)', long=True),
     TX('cta_lead', 'แถบปิดท้ายหน้า: คำอธิบาย (เว้นว่าง = ใช้ข้อความมาตรฐาน)', long=True),
     SEL('cta_topic', 'แถบปิดท้ายหน้า: ปุ่มนัดสาธิตเลือกเรื่องในแบบฟอร์มเป็น', CTA_TOPICS),
+    BG('cta_bg', 'แถบปิดท้ายหน้า: 🎬 วิดีโอพื้นหลัง (ไม่ใส่ก็ได้)'),
 ]
 
 
@@ -403,12 +404,52 @@ def phero(media_html, media_kind, trail_, hero, extra=''):
 </section>'''
 
 
+_SEC_OPEN = re.compile(r'<section\b[^>]*>')
+
+
+def bgv(html, d, key='bg', nth=0, sid=None):
+    """Put the background video (or picture) chosen in the back office behind one <section> of html.
+
+    d[key] is {"video", "poster", "shade"}. The section gets has-bgv (dark text colours, see style.css) and a
+    film layer; main.js loads the film only when the section comes into view. nth: which <section> in html
+    (0 = the first); sid: the section with this id instead. Nothing chosen = html unchanged."""
+    bg = (d or {}).get(key) or {}
+    if not html or not isinstance(bg, dict):
+        return html
+    video, poster = media(s(bg, 'video'), 'video'), media(s(bg, 'poster'), 'img')
+    if not (video or poster):
+        return html
+    shade = s(bg, 'shade')
+    if shade not in ('light', 'medium', 'strong'):
+        shade = 'medium'
+    if sid:
+        m = re.search(r'<section\b[^>]*\bid="' + re.escape(sid) + r'"[^>]*>', html)
+    else:
+        found = list(_SEC_OPEN.finditer(html))
+        m = found[nth] if len(found) > nth else None
+    if not m:
+        return html
+    tag = m.group(0)
+    if ' class="' in tag:
+        tag = re.sub(r' class="([^"]*)"', lambda c: f' class="{c.group(1)} has-bgv bgv-{shade}"', tag, count=1)
+    else:
+        tag = tag[:-1] + f' class="has-bgv bgv-{shade}">'
+    if video:
+        lb = C('site/labels')
+        pa = f' poster="{esc(poster)}"' if poster else ''
+        layer = (f'\n  <div class="bgv" aria-hidden="true"><video muted loop playsinline preload="none"{pa} data-src="{esc(video)}"></video></div>'
+                 f'\n  <button class="bgv-btn" type="button" hidden{aria(tri(lb, "video_toggle"))}>{ic("pause", "ic i-pause")}{ic("play", "ic i-play")}</button>')
+    else:
+        layer = f'\n  <div class="bgv" aria-hidden="true" style="background-image:url(&quot;{esc(poster)}&quot;)"></div>'
+    return html[:m.start()] + tag + layer + html[m.end():]
+
+
 def cta_band(page_data):
     lb = C('site/labels')
     h3 = tri(page_data, 'cta_title') if has(page_data, 'cta_title') else tri(lb, 'cta_title')
     lead3 = tri(page_data, 'cta_lead') if has(page_data, 'cta_lead') else tri(lb, 'cta_lead')
     topic = s(page_data, 'cta_topic') or 'demo'
-    return f'''<section class="cta-band">
+    html = f'''<section class="cta-band">
   <div class="wrap cta-inner">
     <div>
       <h2 class="h2">{T(h3)}</h2>
@@ -420,6 +461,7 @@ def cta_band(page_data):
     </div>
   </div>
 </section>'''
+    return bgv(html, page_data, 'cta_bg')
 
 
 def head(d, lead=True, link=True):
