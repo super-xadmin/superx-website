@@ -298,7 +298,8 @@ html[data-lang="zh"] .hero .h1 { font-size: clamp(2.2rem, 4.9vw, 4.1rem); line-h
 /* ---------- Sections ---------- */
 .section { padding-block: var(--section); }
 .section-tight { padding-block: clamp(40px, 6vw, 72px); }
-.section--mist { background: var(--mist); }
+/* Light sections share the page colour, so the page reads as one continuous sheet (no grey bands) */
+.section--mist { background: transparent; }
 .section--night { background: #070E20; }
 .section--deep { background: linear-gradient(180deg, #12275A 0%, #0A1530 100%); }
 .section-head { display: grid; gap: 16px; justify-items: center; text-align: center; max-width: 56rem; margin: 0 auto clamp(36px, 5vw, 64px); }
@@ -347,7 +348,7 @@ html[data-lang="th"] .statement { line-height: 1.75; }
 
 /* ---------- Business modules ---------- */
 .modules { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
-.module { display: grid; grid-template-rows: auto 1fr; border-radius: var(--r); overflow: hidden; background: var(--card); border: 1px solid transparent; transition: border-color .2s, box-shadow .2s; }
+.module { display: grid; grid-template-rows: auto 1fr; border-radius: var(--r); overflow: hidden; background: var(--card); border: 1px solid var(--line); transition: border-color .2s, box-shadow .2s; }
 .module:hover { border-color: var(--midnight); box-shadow: 0 30px 60px -44px rgba(16, 28, 56, 0.45); }
 .module-media { aspect-ratio: 4 / 3; background: var(--mist-2); overflow: hidden; position: relative; }
 .module-media img { width: 100%; height: 100%; object-fit: cover; }
@@ -628,14 +629,14 @@ a.case:hover h3 { color: var(--midnight); }
 .step.is-goal .pin { border: 0; background: var(--aurora); color: #fff; }
 .step h3 { font-size: 1.08rem; margin-top: 6px; }
 .step p { font-size: 0.94rem; }
-.section--mist .pin { background: var(--mist); }
+.section--mist .pin { background: var(--card); }
 .section--mist .step.is-goal .pin { background: var(--aurora); }
 .target { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px 32px; align-items: center; margin-top: clamp(36px, 5vw, 56px); padding: clamp(22px, 3vw, 36px); border-radius: var(--r); background: var(--mist); }
 .target b { font-size: clamp(2.6rem, 6vw, 4.2rem); font-weight: 600; color: var(--midnight); line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -0.03em; }
 
 /* ---------- Vision / mission ---------- */
 .vm { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
-.vm > div { padding: 30px 32px; border-radius: var(--r); background: var(--card); display: grid; gap: 12px; align-content: start; }
+.vm > div { padding: 30px 32px; border-radius: var(--r); background: var(--card); border: 1px solid var(--line); display: grid; gap: 12px; align-content: start; }
 .vm dt { font-size: 0.95rem; font-weight: 600; color: var(--frost); }
 .vm dd { margin: 0; color: var(--ink); font-size: 1.15rem; line-height: 1.7; }
 .eco { display: grid; gap: 0; justify-items: center; text-align: center; }
@@ -717,7 +718,7 @@ a.case:hover h3 { color: var(--midnight); }
 .robot-art .r-beam { fill: rgba(79, 200, 233, 0.16); }
 
 /* ---------- Footer ---------- */
-.site-footer { background: var(--mist); color: var(--text); padding-block: clamp(56px, 7vw, 88px) 28px; }
+.site-footer { background: var(--paper); border-top: 1px solid var(--line); color: var(--text); padding-block: clamp(56px, 7vw, 88px) 28px; }
 .footer-grid { display: grid; grid-template-columns: minmax(0, 4fr) repeat(3, minmax(0, 2fr)); gap: 32px; }
 .footer-brand { display: grid; gap: 16px; align-content: start; }
 .footer-brand img { height: 32px; width: auto; }
