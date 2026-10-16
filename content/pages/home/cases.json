@@ -86,6 +86,9 @@
       "small_th": "บริษัทจดทะเบียนในตลาดหลักทรัพย์ฯ",
       "small_zh": "泰国上市公司",
       "small_en": "SET-listed group"
+    },
+    {
+      "logo": "/assets/img/claude-ai-logo.webp"
     }
   ],
   "strip_link_label_th": "พันธมิตรทั้งหมด",
