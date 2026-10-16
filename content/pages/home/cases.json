@@ -93,6 +93,10 @@
     {
       "logo": "/assets/img/l_ldss-1.png",
       "name_zh": "DSS"
+    },
+    {
+      "logo": "/assets/img/new-ChatGPT-logo-black-png-large-size-1.png",
+      "label_en": "Chat Got"
     }
   ],
   "strip_link_label_th": "พันธมิตรทั้งหมด",
