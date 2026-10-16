@@ -1,25 +1,35 @@
 {
-  "image": "",
-  "alt": "",
-  "eyebrow_th": "รถตีนตะขาบไร้คนขับ · หุ่นยนต์รักษาความปลอดภัย",
-  "eyebrow_zh": "履带式无人车 · 机器人安防",
-  "eyebrow_en": "Tracked UGV · robot security",
-  "title_th": "ลาดตระเวนได้ในพื้นที่ที่รถทั่วไปเข้าไม่ถึง",
-  "title_zh": "去到普通车辆到不了的地方巡逻",
-  "title_en": "Patrols where ordinary vehicles cannot go",
-  "lead_th": "ช่วงล่างแบบตีนตะขาบเคลื่อนที่ได้บนพื้นขรุขระ ทางลาด และพื้นที่นอกถนน เหมาะกับการลาดตระเวนรอบรั้วโรงงาน นิคมอุตสาหกรรม โซลาร์ฟาร์ม และคลังสินค้า",
-  "lead_zh": "履带底盘可通行崎岖路面、坡道及非铺装区域，适用于工厂围界、工业园区、光伏电站及仓库的巡逻。",
-  "lead_en": "A tracked chassis handles rough ground, slopes and off-road areas — ideal for perimeter patrols at plants, industrial estates, solar farms and warehouses.",
-  "checks": [
+  "image": "/assets/img/robot-fire-spray.webp",
+  "alt": "Autonomous firefighting vehicle spraying water at a factory",
+  "gallery": [
     {
-      "text_th": "ลาดตระเวนตามเส้นทางและตารางเวลาที่กำหนด",
-      "text_zh": "按设定路线与时间表自动巡逻",
-      "text_en": "Patrols set routes on a schedule"
+      "image": "/assets/img/robot-fire-drive.webp",
+      "alt": "Autonomous firefighting vehicle driving through a factory site"
     },
     {
-      "text_th": "ติดตั้งกล้องและเซนเซอร์ตามภารกิจ",
-      "text_zh": "按任务搭载摄像头与传感器",
-      "text_en": "Cameras and sensors fitted to the mission"
+      "image": "/assets/img/robot-fire-ptz.webp",
+      "alt": "Water cannon and pan-tilt-zoom cameras on the vehicle"
+    }
+  ],
+  "eyebrow_th": "รถดับเพลิงไร้คนขับ · หุ่นยนต์ความปลอดภัย",
+  "eyebrow_zh": "无人驾驶消防车 · 安防机器人",
+  "eyebrow_en": "Autonomous firefighting vehicle · robot security",
+  "title_th": "ส่งหุ่นยนต์เข้าพื้นที่เสี่ยง\nแทนการส่งคน",
+  "title_zh": "让机器人代替人员进入危险区域",
+  "title_en": "Send the robot in, not your people",
+  "lead_th": "รถดับเพลิงไร้คนขับพร้อมปืนฉีดน้ำและกล้องแบบหมุนได้ (PTZ) เข้าพื้นที่เสี่ยงแทนเจ้าหน้าที่ ช่วยลดความเสี่ยงของทีมดับเพลิงและทีมรักษาความปลอดภัยในโรงงานและนิคมอุตสาหกรรม",
+  "lead_zh": "配备水炮与云台摄像头的无人驾驶消防车，代替人员进入高危区域，降低工厂与工业园区消防及安保人员的风险。",
+  "lead_en": "An autonomous firefighting vehicle with a water cannon and pan-tilt-zoom cameras that goes into hazardous areas instead of your staff, cutting the risk for fire and security teams at plants and industrial estates.",
+  "checks": [
+    {
+      "text_th": "ฉีดน้ำดับเพลิงในพื้นที่เสี่ยงแทนเจ้าหน้าที่",
+      "text_zh": "代替人员在危险区域喷水灭火",
+      "text_en": "Fights fires in hazardous areas instead of staff"
+    },
+    {
+      "text_th": "ตรวจการณ์ด้วยกล้องแบบหมุนได้ (PTZ)",
+      "text_zh": "云台摄像头巡查监控",
+      "text_en": "Surveillance with pan-tilt-zoom cameras"
     },
     {
       "text_th": "ส่งภาพสดและการแจ้งเตือนเข้าศูนย์ควบคุม",
@@ -27,9 +37,9 @@
       "text_en": "Live video and alerts to the control room"
     },
     {
-      "text_th": "ควบคุมจากระยะไกลได้เมื่อต้องการ",
-      "text_zh": "必要时可远程接管",
-      "text_en": "Remote control whenever needed"
+      "text_th": "ดูรถทุกคันจากศูนย์เดียวผ่าน SuperX AI Control",
+      "text_zh": "通过 SuperX AI Control 集中查看所有车辆",
+      "text_en": "Every vehicle in one view with SuperX AI Control"
     }
   ],
   "note_th": "รุ่นและสเปกขึ้นอยู่กับภารกิจ ติดต่อทีมขายเพื่อรับข้อเสนอที่เหมาะกับพื้นที่ของคุณ",

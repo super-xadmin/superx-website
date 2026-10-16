@@ -719,16 +719,11 @@ a.case:hover h3 { color: var(--midnight); }
 .form-result textarea { width: 100%; min-height: 150px; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; background: var(--card); font-size: 0.88rem; resize: vertical; }
 .status-line { font-size: 0.86rem; color: var(--midnight); min-height: 1.3em; }
 
-/* ---------- Tracked robot illustration ---------- */
-.robot-art { background: linear-gradient(160deg, #EEF3FA 0%, #F7FAFD 100%); border-radius: var(--r); padding: clamp(16px, 3vw, 32px); }
-.robot-art svg { width: 100%; height: auto; display: block; }
-.robot-art .r-body { fill: var(--card); stroke: var(--ink); stroke-width: 2; stroke-linejoin: round; }
-.robot-art .r-dark { fill: var(--ink); }
-.robot-art .r-track { fill: #2A2F3A; }
-.robot-art .r-wheel { fill: var(--card); stroke: var(--ink); stroke-width: 2; }
-.robot-art .r-accent { fill: url(#aurfill); }
-.robot-art .r-line { stroke: var(--midnight); stroke-width: 1.4; fill: none; stroke-dasharray: 4 5; }
-.robot-art .r-beam { fill: rgba(79, 200, 233, 0.16); }
+/* ---------- Featured unit (security page): one large photo with smaller ones below ---------- */
+.feature-media { display: grid; gap: 12px; align-content: start; }
+.feature-media img { width: 100%; height: auto; border-radius: var(--r); background: var(--mist-2); }
+.feature-thumbs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.feature-thumbs img { border-radius: var(--r-sm); }
 
 /* ---------- Footer ---------- */
 .site-footer { background: var(--paper); border-top: 1px solid var(--line); color: var(--text); padding-block: clamp(56px, 7vw, 88px) 28px; }
@@ -1158,7 +1153,6 @@ main { overflow-x: clip; }
 .has-bgv .bubble.me { background: #2D5DB8; }
 .has-bgv .status { background: rgba(79, 200, 233, 0.16); color: var(--ink); }
 .has-bgv .status.partner { background: rgba(142, 201, 109, 0.16); color: var(--ink); }
-.has-bgv .robot-art { background: var(--mist-2); }
 .has-bgv .chat-art { background: rgba(255, 255, 255, 0.05); }
 .has-bgv :is(.phero-media.is-vehicle img, .lineup-stage img, .spin img) { filter: drop-shadow(0 30px 34px rgba(0, 0, 0, 0.6)); }
 .has-bgv .lineup-stage { background: radial-gradient(46% 16% at 50% 94%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 100%); }
@@ -1187,7 +1181,6 @@ main { overflow-x: clip; }
   html.auto-dark .status.partner { background: rgba(142, 201, 109, 0.14); color: var(--ink); }
   html.auto-dark .form-result.ok { background: rgba(142, 201, 109, 0.12); }
   html.auto-dark .section--mist::before { filter: invert(1) hue-rotate(180deg); }
-  html.auto-dark .robot-art { background: var(--mist-2); }
   html.auto-dark .chat-art { background: linear-gradient(160deg, #13284A 0%, #15302A 100%); }
   html.auto-dark .phero-media.is-vehicle img, html.auto-dark .lineup-stage img, html.auto-dark .spin img { filter: drop-shadow(0 30px 34px rgba(0, 0, 0, 0.6)); }
   html.auto-dark .lineup-stage { background: radial-gradient(46% 16% at 50% 94%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 100%); }

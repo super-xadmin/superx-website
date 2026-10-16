@@ -31,16 +31,16 @@
       "link": "security.html",
       "media_type": "image",
       "image": "/assets/img/robot-fire-drive.webp",
-      "alt": "Autonomous security patrol vehicle at dusk",
+      "alt": "Autonomous firefighting vehicle at a factory",
       "label_th": "02 · Security",
       "label_zh": "02 · 安防",
       "label_en": "02 · Security",
       "title_th": "หุ่นยนต์ความปลอดภัยและงานพิเศษ",
       "title_zh": "安防与特种机器人",
       "title_en": "Security and special robots",
-      "text_th": "รถตีนตะขาบไร้คนขับ รถลาดตระเวน และยานยนต์งานพิเศษ เช่น ตรวจสายไฟฟ้า ดับเพลิง และทำความสะอาดถนน",
-      "text_zh": "履带式无人车、安防巡逻车，以及电力巡检、消防、道路清扫等特种车辆。",
-      "text_en": "Tracked unmanned vehicles, patrol vehicles and special-purpose units for power-line inspection, firefighting and street cleaning."
+      "text_th": "รถดับเพลิงไร้คนขับ รถลาดตระเวน และยานยนต์งานพิเศษ เช่น ตรวจสายไฟฟ้า และทำความสะอาดถนน",
+      "text_zh": "无人驾驶消防车、安防巡逻车，以及电力巡检、道路清扫等特种车辆。",
+      "text_en": "Autonomous firefighting and patrol vehicles, plus special-purpose units for power-line inspection and street cleaning."
     },
     {
       "link": "ai-agent.html",

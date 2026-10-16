@@ -14,11 +14,11 @@
   "lead_en": "Let robots take on patrols, inspections and hazardous jobs day and night, sending live video and alerts to your control room.",
   "chips": [
     {
-      "anchor": "tracked",
-      "icon": "tracks",
-      "label_th": "รถตีนตะขาบไร้คนขับ",
-      "label_zh": "履带式无人车",
-      "label_en": "Tracked UGV"
+      "anchor": "featured",
+      "icon": "fire",
+      "label_th": "รถดับเพลิงไร้คนขับ",
+      "label_zh": "无人驾驶消防车",
+      "label_en": "Firefighting vehicle"
     },
     {
       "anchor": "special",

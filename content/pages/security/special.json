@@ -20,16 +20,6 @@
       "text_en": "Night-time area patrols with warning lights and a display screen, extending your security team."
     },
     {
-      "image": "/assets/img/robot-fire-spray.webp",
-      "alt": "Autonomous firefighting robot spraying water",
-      "title_th": "หุ่นยนต์ดับเพลิง",
-      "title_zh": "消防机器人",
-      "title_en": "Firefighting robot",
-      "text_th": "ฉีดน้ำและตรวจการณ์ด้วยกล้องแบบหมุนได้ (PTZ) เข้าพื้นที่เสี่ยงแทนเจ้าหน้าที่",
-      "text_zh": "配备水炮与云台摄像头，代替人员进入高危区域。",
-      "text_en": "Water cannon and pan-tilt-zoom cameras that go into dangerous areas instead of people."
-    },
-    {
       "image": "/assets/img/use-power-inspection.webp",
       "alt": "Autonomous power patrol vehicle near transmission towers",
       "title_th": "รถตรวจสายส่งไฟฟ้า",

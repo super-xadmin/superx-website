@@ -7042,13 +7042,13 @@ content:
               label: เข้ม (อ่านตัวหนังสือง่ายสุด)
         description: ใส่วิดีโอหรือภาพแล้ว ส่วนนี้จะเปลี่ยนเป็นพื้นเข้ม ตัวหนังสือสีขาวให้อัตโนมัติ · ลบไฟล์ออก = กลับเป็นพื้นแบบเดิม
     - name: security-tracked
-      label: 2. รถตีนตะขาบไร้คนขับ
+      label: 2. รุ่นเด่น (รูปซ้าย ข้อความขวา)
       type: file
       path: content/pages/security/tracked.json
       format: json
       fields:
       - name: image
-        label: รูปประกอบ (เว้นว่าง = ใช้ภาพวาดรถตีนตะขาบ)
+        label: รูปหลัก (เว้นว่าง = แสดงเฉพาะข้อความ)
         type: image
         options:
           media: images
@@ -7056,6 +7056,23 @@ content:
         label: คำอธิบายรูป (alt)
         type: string
         description: ภาษาอังกฤษสั้นๆ บอกว่าในรูปมีอะไร ช่วยเรื่อง Google และผู้พิการทางสายตา
+      - name: gallery
+        label: รูปเล็กใต้รูปหลัก (เว้นว่างได้)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{alt}'
+        fields:
+        - name: image
+          label: รูปภาพ
+          type: image
+          options:
+            media: images
+        - name: alt
+          label: คำอธิบายรูป (alt)
+          type: string
+          description: ภาษาอังกฤษสั้นๆ บอกว่าในรูปมีอะไร ช่วยเรื่อง Google และผู้พิการทางสายตา
       - name: eyebrow_th
         label: หัวข้อเล็ก · ไทย
         type: string

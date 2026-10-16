@@ -64,32 +64,16 @@ class Education:
 
 
 # ================================================================ SECURITY
-ROBOT_SVG = '''<svg viewBox="0 0 520 300" role="img" aria-label="Tracked unmanned ground vehicle with camera mast">
-  <defs><linearGradient id="aurfill" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#25326C"/><stop offset=".55" stop-color="#4FC8E9"/><stop offset="1" stop-color="#8EC96D"/></linearGradient></defs>
-  <path class="r-beam" d="M318 70 L500 18 L500 128 Z"/>
-  <path class="r-line" d="M20 262 H500"/>
-  <rect class="r-track" x="70" y="196" width="330" height="62" rx="31"/>
-  <circle class="r-wheel" cx="102" cy="227" r="22"/><circle class="r-wheel" cx="170" cy="232" r="15"/><circle class="r-wheel" cx="235" cy="232" r="15"/><circle class="r-wheel" cx="300" cy="232" r="15"/><circle class="r-wheel" cx="368" cy="227" r="22"/>
-  <path class="r-body" d="M92 196 V150 Q92 132 110 132 H352 Q378 132 386 150 L396 196 Z"/>
-  <rect class="r-accent" x="110" y="176" width="150" height="6" rx="3"/>
-  <rect class="r-dark" x="300" y="148" width="66" height="22" rx="6"/>
-  <rect class="r-body" x="270" y="104" width="16" height="30" rx="4"/>
-  <rect class="r-body" x="244" y="74" width="80" height="34" rx="10"/>
-  <circle class="r-dark" cx="306" cy="91" r="9"/><circle cx="306" cy="91" r="3.5" fill="#4FC8E9"/>
-  <rect class="r-dark" x="252" y="84" width="30" height="14" rx="4"/>
-  <path class="r-body" d="M130 132 V112 M130 112 h18" />
-  <circle class="r-dark" cx="150" cy="112" r="5"/>
-</svg>'''
-
-
 class Security:
     FILE, DIR, LABEL = 'security.html', 'pages/security', 'หุ่นยนต์ความปลอดภัยและงานพิเศษ'
     BG_KEYS = ('hero', 'tracked', 'special', 'why')
     SECTIONS = [
         ('page', 'ตั้งค่าหน้า (ชื่อหน้า / แถบปิดท้าย)', PAGE_FIELDS_CTA),
         ('hero', '1. ภาพหลักและหัวข้อ', PHERO([LIST('chips', 'ปุ่มลัดไปยังหัวข้อ', CHIP_LINK)])),
-        ('tracked', '2. รถตีนตะขาบไร้คนขับ', [
-            IMG('image', 'รูปประกอบ (เว้นว่าง = ใช้ภาพวาดรถตีนตะขาบ)'), ALT(),
+        # file name stays "tracked" so the back office keeps its history; the section is now the featured unit
+        ('tracked', '2. รุ่นเด่น (รูปซ้าย ข้อความขวา)', [
+            IMG('image', 'รูปหลัก (เว้นว่าง = แสดงเฉพาะข้อความ)'), ALT(),
+            LIST('gallery', 'รูปเล็กใต้รูปหลัก (เว้นว่างได้)', [IMG(), ALT()], summary='{alt}'),
             TX('eyebrow', 'หัวข้อเล็ก'), TX('title', 'หัวข้อ', long=True), TX('lead', 'คำอธิบาย', long=True),
             LIST('checks', 'รายการเครื่องหมายถูก', BULLET), TX('note', 'หมายเหตุ', long=True)] + BUTTON),
         ('special', '3. ยานยนต์งานพิเศษ', [
@@ -104,36 +88,41 @@ class Security:
         h = C(f'{D}/hero')
         hero = phero(img(h, lazy=False), 'photo', trail('solutions', h), h, '<div class="chips">' + ''.join(chips(items(h, 'chips'))) + '</div>')
         tr, sp, wy = (C(f'{D}/{k}') for k in ('tracked', 'special', 'why'))
-        art = img(tr) if s(tr, 'image') else ROBOT_SVG
-        tracked = f'''<section class="section" id="tracked">
-  <div class="wrap split">
-    <div class="robot-art">{art}</div>
-    <div class="stack">
+        art = ''
+        if s(tr, 'image'):
+            thumbs = ''.join(img(g) for g in items(tr, 'gallery') if s(g, 'image'))
+            thumbs = f'<div class="feature-thumbs">{thumbs}</div>' if thumbs else ''
+            art = f'<div class="feature-media">{img(tr)}{thumbs}</div>'
+        copy = f'''<div class="stack">
       <span class="eyebrow">{Tk(tr, 'eyebrow')}</span>
       <h2 class="h2">{Tk(tr, 'title')}</h2>
       {Bk('p', tr, 'lead', cls='lead')}
       {checks(items(tr, 'checks'))}
       {Bk('p', tr, 'note', cls='note')}
       {btn(tr)}
-    </div>
-  </div>
+    </div>'''
+        inner = f'<div class="wrap split">\n    {art}\n    {copy}\n  </div>' if art else f'<div class="wrap" style="max-width:56rem">\n    {copy}\n  </div>'
+        featured = f'''<section class="section" id="featured">
+  {inner}
 </section>'''
 
         def unit(u):
             return f'''<article class="case">{img(u)}<h3>{Tk(u, 'title')}</h3>{Bk('p', u, 'text')}
   <a class="link-arrow" href="{href(s(sp, 'unit_link'))}">{Tk(sp, 'unit_link_label')}{ic('arrow')}</a></article>'''
-        units = '\n      '.join(unit(u) for u in items(sp, 'units'))
+        unit_list = items(sp, 'units')
+        units = '\n      '.join(unit(u) for u in unit_list)
+        grid = 'grid-3' if len(unit_list) == 3 else 'grid-2'
         special = f'''<section class="section section--mist" id="special">
   <div class="wrap">
     {head(sp)}
-    <div class="grid-2">
+    <div class="{grid}">
       {units}
     </div>
   </div>
 </section>'''
         why = section('section section--night', f'{head(wy)}\n    {features(items(wy, "items"), "f4")}')
         pg = C(f'{D}/page')
-        return page(self.FILE, pg, bgv(hero, h) + bgv(tracked, tr) + bgv(special, sp) + bgv(why, wy) + cta_band(pg))
+        return page(self.FILE, pg, bgv(hero, h) + bgv(featured, tr) + bgv(special, sp) + bgv(why, wy) + cta_band(pg))
 
 
 # ================================================================ AI AGENT

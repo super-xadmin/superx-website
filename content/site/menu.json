@@ -116,9 +116,9 @@
       "title_th": "หุ่นยนต์ความปลอดภัยและงานพิเศษ",
       "title_zh": "安防与特种机器人",
       "title_en": "Security and special robots",
-      "hint_th": "ตีนตะขาบ · ลาดตระเวน · ตรวจสอบ",
-      "hint_zh": "履带车 · 巡逻 · 巡检",
-      "hint_en": "Tracked · patrol · inspection",
+      "hint_th": "ดับเพลิง · ลาดตระเวน · ตรวจสอบ",
+      "hint_zh": "消防 · 巡逻 · 巡检",
+      "hint_en": "Firefighting · patrol · inspection",
       "divider_before": false
     },
     {

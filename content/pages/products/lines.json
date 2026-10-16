@@ -58,14 +58,14 @@
       "title_th": "หุ่นยนต์ความปลอดภัยและยานยนต์งานพิเศษ",
       "title_zh": "安防与特种机器人",
       "title_en": "Security and special-purpose robots",
-      "lead_th": "รถตีนตะขาบไร้คนขับสำหรับงานลาดตระเวน และยานยนต์งานพิเศษสำหรับดับเพลิง ตรวจสายไฟฟ้า และทำความสะอาดถนน",
-      "lead_zh": "用于安防巡逻的履带式无人车，以及消防、电力巡检、道路清扫等特种车辆。",
-      "lead_en": "Tracked unmanned vehicles for patrols, plus special-purpose units for firefighting, power-line inspection and street cleaning.",
+      "lead_th": "รถดับเพลิงไร้คนขับพร้อมปืนฉีดน้ำและกล้อง PTZ รวมถึงรถลาดตระเวนและยานยนต์งานพิเศษสำหรับตรวจสายไฟฟ้าและทำความสะอาดถนน",
+      "lead_zh": "配备水炮与云台摄像头的无人驾驶消防车，以及安防巡逻车和电力巡检、道路清扫等特种车辆。",
+      "lead_en": "Autonomous firefighting vehicles with water cannons and PTZ cameras, plus patrol vehicles and special-purpose units for power-line inspection and street cleaning.",
       "bullets": [
         {
-          "text_th": "ลาดตระเวนรอบโรงงาน นิคม และโซลาร์ฟาร์ม",
-          "text_zh": "工厂、园区及光伏电站巡逻",
-          "text_en": "Patrols for plants, estates and solar farms"
+          "text_th": "ดับเพลิงและตรวจการณ์ในโรงงานและนิคมอุตสาหกรรม",
+          "text_zh": "工厂与工业园区的消防与巡查",
+          "text_en": "Firefighting and surveillance at plants and estates"
         },
         {
           "text_th": "ลดความเสี่ยงของพนักงานในพื้นที่อันตราย",
