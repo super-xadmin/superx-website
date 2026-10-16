@@ -17,7 +17,6 @@
       "media_type": "image",
       "image": "/assets/img/tcav-photo-campus.webp",
       "alt": "RoboVan at a Thai government science campus",
-      "chat": [],
       "label_th": "01 · Education",
       "label_zh": "01 · 教育",
       "label_en": "01 · Education",
@@ -31,9 +30,8 @@
     {
       "link": "security.html",
       "media_type": "image",
-      "image": "/assets/img/use-security-patrol.webp",
+      "image": "/assets/img/robot-fire-drive.webp",
       "alt": "Autonomous security patrol vehicle at dusk",
-      "chat": [],
       "label_th": "02 · Security",
       "label_zh": "02 · 安防",
       "label_en": "02 · Security",
@@ -47,8 +45,6 @@
     {
       "link": "ai-agent.html",
       "media_type": "chat",
-      "image": "",
-      "alt": "",
       "chat": [
         {
           "side": "me",
