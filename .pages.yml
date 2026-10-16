@@ -323,12 +323,19 @@ content:
         type: image
         options:
           media: images
-      - name: eyebrow
-        label: ข้อความเล็กด้านบน
+      - name: eyebrow_th
+        label: ข้อความเล็กด้านบน · ไทย
+        type: string
+      - name: eyebrow_zh
+        label: ข้อความเล็กด้านบน · 中文
+        type: string
+      - name: eyebrow_en
+        label: ข้อความเล็กด้านบน · English
         type: string
       - name: title_th
         label: หัวข้อใหญ่ (ขึ้นบรรทัดใหม่ได้) · ไทย
         type: text
+        description: บอกให้ชัดว่าเราขายอะไร ให้ใคร · ใช้ **คำ** เพื่อทำเป็นสีฟ้า
       - name: title_zh
         label: หัวข้อใหญ่ (ขึ้นบรรทัดใหม่ได้) · 中文
         type: text
@@ -399,8 +406,101 @@ content:
       - name: caption_en
         label: คำบรรยายวิดีโอ (มุมขวาล่าง) · English
         type: string
+    - name: home-proof
+      label: 2. แถบโครงการนำร่องและพันธมิตร (ใต้ภาพวิดีโอ)
+      type: file
+      path: content/pages/home/proof.json
+      format: json
+      fields:
+      - name: label_th
+        label: ข้อความนำ (เช่น โครงการนำร่องและพันธมิตร) · ไทย
+        type: string
+      - name: label_zh
+        label: ข้อความนำ (เช่น โครงการนำร่องและพันธมิตร) · 中文
+        type: string
+      - name: label_en
+        label: ข้อความนำ (เช่น โครงการนำร่องและพันธมิตร) · English
+        type: string
+      - name: items
+        label: รายชื่อโครงการ / พันธมิตร
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{name_th}'
+        fields:
+        - name: name_th
+          label: ชื่อ (ตัวหนา) · ไทย
+          type: string
+        - name: name_zh
+          label: ชื่อ (ตัวหนา) · 中文
+          type: string
+        - name: name_en
+          label: ชื่อ (ตัวหนา) · English
+          type: string
+        - name: small_th
+          label: คำอธิบายเล็ก (เว้นว่างได้) · ไทย
+          type: string
+        - name: small_zh
+          label: คำอธิบายเล็ก (เว้นว่างได้) · 中文
+          type: string
+        - name: small_en
+          label: คำอธิบายเล็ก (เว้นว่างได้) · English
+          type: string
+        - name: logo
+          label: โลโก้ (เว้นว่างได้ ถ้าใส่จะแสดงโลโก้แทนชื่อ)
+          type: image
+          options:
+            media: images
+        - name: link
+          label: ลิงก์
+          type: string
+          description: เช่น contact.html?topic=demo หรือ https://...
+      - name: link_label_th
+        label: ข้อความลิงก์ท้ายแถบ · ไทย
+        type: string
+      - name: link_label_zh
+        label: ข้อความลิงก์ท้ายแถบ · 中文
+        type: string
+      - name: link_label_en
+        label: ข้อความลิงก์ท้ายแถบ · English
+        type: string
+      - name: link
+        label: ลิงก์ท้ายแถบ
+        type: string
+        description: เช่น contact.html?topic=demo หรือ https://...
+      - name: bg
+        label: 🎬 วิดีโอพื้นหลังของส่วนนี้ (ไม่ใส่ก็ได้)
+        type: object
+        fields:
+        - name: video
+          label: วิดีโอ (MP4 สั้นๆ ไม่มีเสียง)
+          type: file
+          options:
+            media: videos
+            extensions:
+            - mp4
+            - webm
+          description: แนะนำยาว 10–20 วินาที ขนาด 1280×720 ไฟล์ไม่เกิน 10 MB (เกิน 25 MB เว็บจะไม่แสดง) · ไฟล์ใหญ่กว่า 4 MB อัปตรงนี้ไม่ได้ ให้วางไฟล์ในโฟลเดอร์ assets/video ผ่าน GitHub Desktop แล้วกลับมากดเลือก
+        - name: poster
+          label: ภาพนิ่ง (แสดงระหว่างรอวิดีโอ หรือใส่แค่ภาพนี้เพื่อใช้เป็นภาพพื้นหลังก็ได้)
+          type: image
+          options:
+            media: images
+        - name: shade
+          label: ความเข้มของสีเข้มที่ทับวิดีโอ (ช่วยให้อ่านตัวหนังสือออก)
+          type: select
+          options:
+            values:
+            - name: medium
+              label: ปานกลาง (แนะนำ)
+            - name: light
+              label: อ่อน (เห็นวิดีโอชัด)
+            - name: strong
+              label: เข้ม (อ่านตัวหนังสือง่ายสุด)
+        description: ใส่วิดีโอหรือภาพแล้ว ส่วนนี้จะเปลี่ยนเป็นพื้นเข้ม ตัวหนังสือสีขาวให้อัตโนมัติ · ลบไฟล์ออก = กลับเป็นพื้นแบบเดิม
     - name: home-about
-      label: 2. SuperX คือใคร
+      label: 3. เราทำอะไร
       type: file
       path: content/pages/home/about.json
       format: json
@@ -433,7 +533,7 @@ content:
         label: คำอธิบาย · English
         type: text
       - name: flow
-        label: กล่อง 3 ขั้น (เทคโนโลยี → SuperX → ลูกค้า)
+        label: กล่อง 3 ขั้น (รถ → ติดตั้ง → ดูแล)
         type: object
         list:
           collapsible:
@@ -555,172 +655,8 @@ content:
             - name: strong
               label: เข้ม (อ่านตัวหนังสือง่ายสุด)
         description: ใส่วิดีโอหรือภาพแล้ว ส่วนนี้จะเปลี่ยนเป็นพื้นเข้ม ตัวหนังสือสีขาวให้อัตโนมัติ · ลบไฟล์ออก = กลับเป็นพื้นแบบเดิม
-    - name: home-business
-      label: 3. กลุ่มธุรกิจ
-      type: file
-      path: content/pages/home/business.json
-      format: json
-      fields:
-      - name: eyebrow_th
-        label: หัวข้อเล็ก · ไทย
-        type: string
-      - name: eyebrow_zh
-        label: หัวข้อเล็ก · 中文
-        type: string
-      - name: eyebrow_en
-        label: หัวข้อเล็ก · English
-        type: string
-      - name: title_th
-        label: หัวข้อ · ไทย
-        type: text
-      - name: title_zh
-        label: หัวข้อ · 中文
-        type: text
-      - name: title_en
-        label: หัวข้อ · English
-        type: text
-      - name: lead_th
-        label: คำอธิบาย · ไทย
-        type: text
-      - name: lead_zh
-        label: คำอธิบาย · 中文
-        type: text
-      - name: lead_en
-        label: คำอธิบาย · English
-        type: text
-      - name: more_th
-        label: ข้อความลิงก์ในการ์ด · ไทย
-        type: string
-      - name: more_zh
-        label: ข้อความลิงก์ในการ์ด · 中文
-        type: string
-      - name: more_en
-        label: ข้อความลิงก์ในการ์ด · English
-        type: string
-      - name: modules
-        label: การ์ดกลุ่มธุรกิจ
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: '{label_th}'
-        fields:
-        - name: link
-          label: ลิงก์
-          type: string
-          description: เช่น contact.html?topic=demo หรือ https://...
-        - name: media_type
-          label: ภาพประกอบ
-          type: select
-          options:
-            values:
-            - name: image
-              label: รูปภาพ
-            - name: chat
-              label: ข้อความแชตตัวอย่าง
-        - name: image
-          label: รูปภาพ
-          type: image
-          options:
-            media: images
-        - name: alt
-          label: คำอธิบายรูป (alt)
-          type: string
-          description: ภาษาอังกฤษสั้นๆ บอกว่าในรูปมีอะไร ช่วยเรื่อง Google และผู้พิการทางสายตา
-        - name: chat
-          label: ข้อความแชตตัวอย่าง
-          type: object
-          list:
-            collapsible:
-              collapsed: true
-              summary: '{who_th}: {text_th}'
-          fields:
-          - name: side
-            label: ฝั่ง
-            type: select
-            options:
-              values:
-              - name: me
-                label: ลูกค้า (ขวา)
-              - name: ai
-                label: AI (ซ้าย)
-          - name: who_th
-            label: ชื่อผู้พูด · ไทย
-            type: string
-          - name: who_zh
-            label: ชื่อผู้พูด · 中文
-            type: string
-          - name: who_en
-            label: ชื่อผู้พูด · English
-            type: string
-          - name: text_th
-            label: ข้อความ · ไทย
-            type: text
-          - name: text_zh
-            label: ข้อความ · 中文
-            type: text
-          - name: text_en
-            label: ข้อความ · English
-            type: text
-        - name: label_th
-          label: ป้ายเล็ก (เช่น 01 · Smart Mobility) · ไทย
-          type: string
-        - name: label_zh
-          label: ป้ายเล็ก (เช่น 01 · Smart Mobility) · 中文
-          type: string
-        - name: label_en
-          label: ป้ายเล็ก (เช่น 01 · Smart Mobility) · English
-          type: string
-        - name: title_th
-          label: หัวข้อ · ไทย
-          type: string
-        - name: title_zh
-          label: หัวข้อ · 中文
-          type: string
-        - name: title_en
-          label: หัวข้อ · English
-          type: string
-        - name: text_th
-          label: คำอธิบาย · ไทย
-          type: text
-        - name: text_zh
-          label: คำอธิบาย · 中文
-          type: text
-        - name: text_en
-          label: คำอธิบาย · English
-          type: text
-      - name: bg
-        label: 🎬 วิดีโอพื้นหลังของส่วนนี้ (ไม่ใส่ก็ได้)
-        type: object
-        fields:
-        - name: video
-          label: วิดีโอ (MP4 สั้นๆ ไม่มีเสียง)
-          type: file
-          options:
-            media: videos
-            extensions:
-            - mp4
-            - webm
-          description: แนะนำยาว 10–20 วินาที ขนาด 1280×720 ไฟล์ไม่เกิน 10 MB (เกิน 25 MB เว็บจะไม่แสดง) · ไฟล์ใหญ่กว่า 4 MB อัปตรงนี้ไม่ได้ ให้วางไฟล์ในโฟลเดอร์ assets/video ผ่าน GitHub Desktop แล้วกลับมากดเลือก
-        - name: poster
-          label: ภาพนิ่ง (แสดงระหว่างรอวิดีโอ หรือใส่แค่ภาพนี้เพื่อใช้เป็นภาพพื้นหลังก็ได้)
-          type: image
-          options:
-            media: images
-        - name: shade
-          label: ความเข้มของสีเข้มที่ทับวิดีโอ (ช่วยให้อ่านตัวหนังสือออก)
-          type: select
-          options:
-            values:
-            - name: medium
-              label: ปานกลาง (แนะนำ)
-            - name: light
-              label: อ่อน (เห็นวิดีโอชัด)
-            - name: strong
-              label: เข้ม (อ่านตัวหนังสือง่ายสุด)
-        description: ใส่วิดีโอหรือภาพแล้ว ส่วนนี้จะเปลี่ยนเป็นพื้นเข้ม ตัวหนังสือสีขาวให้อัตโนมัติ · ลบไฟล์ออก = กลับเป็นพื้นแบบเดิม
     - name: home-models
-      label: 4. รุ่นหลัก
+      label: 4. รุ่นรถ RoboVan
       type: file
       path: content/pages/home/models.json
       format: json
@@ -832,8 +768,283 @@ content:
             - name: strong
               label: เข้ม (อ่านตัวหนังสือง่ายสุด)
         description: ใส่วิดีโอหรือภาพแล้ว ส่วนนี้จะเปลี่ยนเป็นพื้นเข้ม ตัวหนังสือสีขาวให้อัตโนมัติ · ลบไฟล์ออก = กลับเป็นพื้นแบบเดิม
+    - name: home-scenarios
+      label: 5. งานที่ใช้ RoboVan ได้ (การ์ดเลื่อน)
+      type: file
+      path: content/pages/home/scenarios.json
+      format: json
+      fields:
+      - name: eyebrow_th
+        label: หัวข้อเล็ก · ไทย
+        type: string
+      - name: eyebrow_zh
+        label: หัวข้อเล็ก · 中文
+        type: string
+      - name: eyebrow_en
+        label: หัวข้อเล็ก · English
+        type: string
+      - name: title_th
+        label: หัวข้อ · ไทย
+        type: text
+      - name: title_zh
+        label: หัวข้อ · 中文
+        type: text
+      - name: title_en
+        label: หัวข้อ · English
+        type: text
+      - name: lead_th
+        label: คำอธิบาย · ไทย
+        type: text
+      - name: lead_zh
+        label: คำอธิบาย · 中文
+        type: text
+      - name: lead_en
+        label: คำอธิบาย · English
+        type: text
+      - name: tiles
+        label: ภาพการใช้งาน
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{title_th}'
+        fields:
+        - name: image
+          label: รูปภาพ
+          type: image
+          options:
+            media: images
+        - name: alt
+          label: คำอธิบายรูป (alt)
+          type: string
+          description: ภาษาอังกฤษสั้นๆ บอกว่าในรูปมีอะไร ช่วยเรื่อง Google และผู้พิการทางสายตา
+        - name: title_th
+          label: หัวข้อ · ไทย
+          type: string
+        - name: title_zh
+          label: หัวข้อ · 中文
+          type: string
+        - name: title_en
+          label: หัวข้อ · English
+          type: string
+        - name: text_th
+          label: คำอธิบาย · ไทย
+          type: string
+        - name: text_zh
+          label: คำอธิบาย · 中文
+          type: string
+        - name: text_en
+          label: คำอธิบาย · English
+          type: string
+      - name: bg
+        label: 🎬 วิดีโอพื้นหลังของส่วนนี้ (ไม่ใส่ก็ได้)
+        type: object
+        fields:
+        - name: video
+          label: วิดีโอ (MP4 สั้นๆ ไม่มีเสียง)
+          type: file
+          options:
+            media: videos
+            extensions:
+            - mp4
+            - webm
+          description: แนะนำยาว 10–20 วินาที ขนาด 1280×720 ไฟล์ไม่เกิน 10 MB (เกิน 25 MB เว็บจะไม่แสดง) · ไฟล์ใหญ่กว่า 4 MB อัปตรงนี้ไม่ได้ ให้วางไฟล์ในโฟลเดอร์ assets/video ผ่าน GitHub Desktop แล้วกลับมากดเลือก
+        - name: poster
+          label: ภาพนิ่ง (แสดงระหว่างรอวิดีโอ หรือใส่แค่ภาพนี้เพื่อใช้เป็นภาพพื้นหลังก็ได้)
+          type: image
+          options:
+            media: images
+        - name: shade
+          label: ความเข้มของสีเข้มที่ทับวิดีโอ (ช่วยให้อ่านตัวหนังสือออก)
+          type: select
+          options:
+            values:
+            - name: medium
+              label: ปานกลาง (แนะนำ)
+            - name: light
+              label: อ่อน (เห็นวิดีโอชัด)
+            - name: strong
+              label: เข้ม (อ่านตัวหนังสือง่ายสุด)
+        description: ใส่วิดีโอหรือภาพแล้ว ส่วนนี้จะเปลี่ยนเป็นพื้นเข้ม ตัวหนังสือสีขาวให้อัตโนมัติ · ลบไฟล์ออก = กลับเป็นพื้นแบบเดิม
+    - name: home-cases
+      label: 6. ผลงานและพันธมิตร
+      type: file
+      path: content/pages/home/cases.json
+      format: json
+      fields:
+      - name: eyebrow_th
+        label: หัวข้อเล็ก · ไทย
+        type: string
+      - name: eyebrow_zh
+        label: หัวข้อเล็ก · 中文
+        type: string
+      - name: eyebrow_en
+        label: หัวข้อเล็ก · English
+        type: string
+      - name: title_th
+        label: หัวข้อ · ไทย
+        type: text
+      - name: title_zh
+        label: หัวข้อ · 中文
+        type: text
+      - name: title_en
+        label: หัวข้อ · English
+        type: text
+      - name: link_label_th
+        label: ข้อความลิงก์มุมขวา · ไทย
+        type: string
+      - name: link_label_zh
+        label: ข้อความลิงก์มุมขวา · 中文
+        type: string
+      - name: link_label_en
+        label: ข้อความลิงก์มุมขวา · English
+        type: string
+      - name: link
+        label: ลิงก์มุมขวา
+        type: string
+        description: เช่น contact.html?topic=demo หรือ https://...
+      - name: cards
+        label: การ์ดผลงาน
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{status_th}'
+        fields:
+        - name: link
+          label: ลิงก์
+          type: string
+          description: เช่น contact.html?topic=demo หรือ https://...
+        - name: image
+          label: รูปภาพ
+          type: image
+          options:
+            media: images
+        - name: alt
+          label: คำอธิบายรูป (alt)
+          type: string
+          description: ภาษาอังกฤษสั้นๆ บอกว่าในรูปมีอะไร ช่วยเรื่อง Google และผู้พิการทางสายตา
+        - name: status_th
+          label: ป้ายสถานะ · ไทย
+          type: string
+        - name: status_zh
+          label: ป้ายสถานะ · 中文
+          type: string
+        - name: status_en
+          label: ป้ายสถานะ · English
+          type: string
+        - name: location_th
+          label: สถานที่ · ไทย
+          type: string
+        - name: location_zh
+          label: สถานที่ · 中文
+          type: string
+        - name: location_en
+          label: สถานที่ · English
+          type: string
+        - name: title_th
+          label: หัวข้อ · ไทย
+          type: string
+        - name: title_zh
+          label: หัวข้อ · 中文
+          type: string
+        - name: title_en
+          label: หัวข้อ · English
+          type: string
+        - name: text_th
+          label: คำอธิบาย · ไทย
+          type: text
+        - name: text_zh
+          label: คำอธิบาย · 中文
+          type: text
+        - name: text_en
+          label: คำอธิบาย · English
+          type: text
+      - name: strip
+        label: แถบพันธมิตรด้านล่าง
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{label_th} {name_th}'
+        fields:
+        - name: logo
+          label: โลโก้ (PNG พื้นใส หรือ SVG) ใส่แล้วจะแสดงเป็นแถบโลโก้เลื่อนไปทางซ้าย
+          type: image
+          options:
+            media: images
+        - name: label_th
+          label: ข้อความนำ (เว้นว่างได้) · ไทย
+          type: string
+        - name: label_zh
+          label: ข้อความนำ (เว้นว่างได้) · 中文
+          type: string
+        - name: label_en
+          label: ข้อความนำ (เว้นว่างได้) · English
+          type: string
+        - name: name_th
+          label: ชื่อ (ตัวหนา) · ไทย
+          type: string
+        - name: name_zh
+          label: ชื่อ (ตัวหนา) · 中文
+          type: string
+        - name: name_en
+          label: ชื่อ (ตัวหนา) · English
+          type: string
+        - name: small_th
+          label: คำอธิบายเล็ก (เว้นว่างได้) · ไทย
+          type: string
+        - name: small_zh
+          label: คำอธิบายเล็ก (เว้นว่างได้) · 中文
+          type: string
+        - name: small_en
+          label: คำอธิบายเล็ก (เว้นว่างได้) · English
+          type: string
+      - name: strip_link_label_th
+        label: ข้อความลิงก์ท้ายแถบ · ไทย
+        type: string
+      - name: strip_link_label_zh
+        label: ข้อความลิงก์ท้ายแถบ · 中文
+        type: string
+      - name: strip_link_label_en
+        label: ข้อความลิงก์ท้ายแถบ · English
+        type: string
+      - name: strip_link
+        label: ลิงก์ท้ายแถบ
+        type: string
+        description: เช่น contact.html?topic=demo หรือ https://...
+      - name: bg
+        label: 🎬 วิดีโอพื้นหลังของส่วนนี้ (ไม่ใส่ก็ได้)
+        type: object
+        fields:
+        - name: video
+          label: วิดีโอ (MP4 สั้นๆ ไม่มีเสียง)
+          type: file
+          options:
+            media: videos
+            extensions:
+            - mp4
+            - webm
+          description: แนะนำยาว 10–20 วินาที ขนาด 1280×720 ไฟล์ไม่เกิน 10 MB (เกิน 25 MB เว็บจะไม่แสดง) · ไฟล์ใหญ่กว่า 4 MB อัปตรงนี้ไม่ได้ ให้วางไฟล์ในโฟลเดอร์ assets/video ผ่าน GitHub Desktop แล้วกลับมากดเลือก
+        - name: poster
+          label: ภาพนิ่ง (แสดงระหว่างรอวิดีโอ หรือใส่แค่ภาพนี้เพื่อใช้เป็นภาพพื้นหลังก็ได้)
+          type: image
+          options:
+            media: images
+        - name: shade
+          label: ความเข้มของสีเข้มที่ทับวิดีโอ (ช่วยให้อ่านตัวหนังสือออก)
+          type: select
+          options:
+            values:
+            - name: medium
+              label: ปานกลาง (แนะนำ)
+            - name: light
+              label: อ่อน (เห็นวิดีโอชัด)
+            - name: strong
+              label: เข้ม (อ่านตัวหนังสือง่ายสุด)
+        description: ใส่วิดีโอหรือภาพแล้ว ส่วนนี้จะเปลี่ยนเป็นพื้นเข้ม ตัวหนังสือสีขาวให้อัตโนมัติ · ลบไฟล์ออก = กลับเป็นพื้นแบบเดิม
     - name: home-control
-      label: 5. แอปควบคุมฝูงรถ
+      label: 7. แอปควบคุมฝูงรถ
       type: file
       path: content/pages/home/control.json
       format: json
@@ -1063,10 +1274,10 @@ content:
             - name: strong
               label: เข้ม (อ่านตัวหนังสือง่ายสุด)
         description: ใส่วิดีโอหรือภาพแล้ว ส่วนนี้จะเปลี่ยนเป็นพื้นเข้ม ตัวหนังสือสีขาวให้อัตโนมัติ · ลบไฟล์ออก = กลับเป็นพื้นแบบเดิม
-    - name: home-scenarios
-      label: 6. การใช้งาน (ภาพ 9 ช่อง)
+    - name: home-business
+      label: 8. โซลูชันอื่น (การศึกษา / ความปลอดภัย / AI Agent)
       type: file
-      path: content/pages/home/scenarios.json
+      path: content/pages/home/business.json
       format: json
       fields:
       - name: eyebrow_th
@@ -1096,120 +1307,36 @@ content:
       - name: lead_en
         label: คำอธิบาย · English
         type: text
-      - name: tiles
-        label: ภาพการใช้งาน
+      - name: more_th
+        label: ข้อความลิงก์ในการ์ด · ไทย
+        type: string
+      - name: more_zh
+        label: ข้อความลิงก์ในการ์ด · 中文
+        type: string
+      - name: more_en
+        label: ข้อความลิงก์ในการ์ด · English
+        type: string
+      - name: modules
+        label: การ์ดโซลูชัน
         type: object
         list:
           collapsible:
             collapsed: true
-            summary: '{title_th}'
-        fields:
-        - name: image
-          label: รูปภาพ
-          type: image
-          options:
-            media: images
-        - name: alt
-          label: คำอธิบายรูป (alt)
-          type: string
-          description: ภาษาอังกฤษสั้นๆ บอกว่าในรูปมีอะไร ช่วยเรื่อง Google และผู้พิการทางสายตา
-        - name: title_th
-          label: หัวข้อ · ไทย
-          type: string
-        - name: title_zh
-          label: หัวข้อ · 中文
-          type: string
-        - name: title_en
-          label: หัวข้อ · English
-          type: string
-        - name: text_th
-          label: คำอธิบาย · ไทย
-          type: string
-        - name: text_zh
-          label: คำอธิบาย · 中文
-          type: string
-        - name: text_en
-          label: คำอธิบาย · English
-          type: string
-      - name: bg
-        label: 🎬 วิดีโอพื้นหลังของส่วนนี้ (ไม่ใส่ก็ได้)
-        type: object
-        fields:
-        - name: video
-          label: วิดีโอ (MP4 สั้นๆ ไม่มีเสียง)
-          type: file
-          options:
-            media: videos
-            extensions:
-            - mp4
-            - webm
-          description: แนะนำยาว 10–20 วินาที ขนาด 1280×720 ไฟล์ไม่เกิน 10 MB (เกิน 25 MB เว็บจะไม่แสดง) · ไฟล์ใหญ่กว่า 4 MB อัปตรงนี้ไม่ได้ ให้วางไฟล์ในโฟลเดอร์ assets/video ผ่าน GitHub Desktop แล้วกลับมากดเลือก
-        - name: poster
-          label: ภาพนิ่ง (แสดงระหว่างรอวิดีโอ หรือใส่แค่ภาพนี้เพื่อใช้เป็นภาพพื้นหลังก็ได้)
-          type: image
-          options:
-            media: images
-        - name: shade
-          label: ความเข้มของสีเข้มที่ทับวิดีโอ (ช่วยให้อ่านตัวหนังสือออก)
-          type: select
-          options:
-            values:
-            - name: medium
-              label: ปานกลาง (แนะนำ)
-            - name: light
-              label: อ่อน (เห็นวิดีโอชัด)
-            - name: strong
-              label: เข้ม (อ่านตัวหนังสือง่ายสุด)
-        description: ใส่วิดีโอหรือภาพแล้ว ส่วนนี้จะเปลี่ยนเป็นพื้นเข้ม ตัวหนังสือสีขาวให้อัตโนมัติ · ลบไฟล์ออก = กลับเป็นพื้นแบบเดิม
-    - name: home-cases
-      label: 7. ผลงานและพันธมิตร
-      type: file
-      path: content/pages/home/cases.json
-      format: json
-      fields:
-      - name: eyebrow_th
-        label: หัวข้อเล็ก · ไทย
-        type: string
-      - name: eyebrow_zh
-        label: หัวข้อเล็ก · 中文
-        type: string
-      - name: eyebrow_en
-        label: หัวข้อเล็ก · English
-        type: string
-      - name: title_th
-        label: หัวข้อ · ไทย
-        type: text
-      - name: title_zh
-        label: หัวข้อ · 中文
-        type: text
-      - name: title_en
-        label: หัวข้อ · English
-        type: text
-      - name: link_label_th
-        label: ข้อความลิงก์มุมขวา · ไทย
-        type: string
-      - name: link_label_zh
-        label: ข้อความลิงก์มุมขวา · 中文
-        type: string
-      - name: link_label_en
-        label: ข้อความลิงก์มุมขวา · English
-        type: string
-      - name: link
-        label: ลิงก์มุมขวา
-        type: string
-        description: เช่น contact.html?topic=demo หรือ https://...
-      - name: cards
-        label: การ์ดผลงาน
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: '{status_th}'
+            summary: '{label_th}'
         fields:
         - name: link
           label: ลิงก์
           type: string
           description: เช่น contact.html?topic=demo หรือ https://...
+        - name: media_type
+          label: ภาพประกอบ
+          type: select
+          options:
+            values:
+            - name: image
+              label: รูปภาพ
+            - name: chat
+              label: ข้อความแชตตัวอย่าง
         - name: image
           label: รูปภาพ
           type: image
@@ -1219,23 +1346,49 @@ content:
           label: คำอธิบายรูป (alt)
           type: string
           description: ภาษาอังกฤษสั้นๆ บอกว่าในรูปมีอะไร ช่วยเรื่อง Google และผู้พิการทางสายตา
-        - name: status_th
-          label: ป้ายสถานะ · ไทย
+        - name: chat
+          label: ข้อความแชตตัวอย่าง
+          type: object
+          list:
+            collapsible:
+              collapsed: true
+              summary: '{who_th}: {text_th}'
+          fields:
+          - name: side
+            label: ฝั่ง
+            type: select
+            options:
+              values:
+              - name: me
+                label: ลูกค้า (ขวา)
+              - name: ai
+                label: AI (ซ้าย)
+          - name: who_th
+            label: ชื่อผู้พูด · ไทย
+            type: string
+          - name: who_zh
+            label: ชื่อผู้พูด · 中文
+            type: string
+          - name: who_en
+            label: ชื่อผู้พูด · English
+            type: string
+          - name: text_th
+            label: ข้อความ · ไทย
+            type: text
+          - name: text_zh
+            label: ข้อความ · 中文
+            type: text
+          - name: text_en
+            label: ข้อความ · English
+            type: text
+        - name: label_th
+          label: ป้ายเล็ก (เช่น 01 · Education) · ไทย
           type: string
-        - name: status_zh
-          label: ป้ายสถานะ · 中文
+        - name: label_zh
+          label: ป้ายเล็ก (เช่น 01 · Education) · 中文
           type: string
-        - name: status_en
-          label: ป้ายสถานะ · English
-          type: string
-        - name: location_th
-          label: สถานที่ · ไทย
-          type: string
-        - name: location_zh
-          label: สถานที่ · 中文
-          type: string
-        - name: location_en
-          label: สถานที่ · English
+        - name: label_en
+          label: ป้ายเล็ก (เช่น 01 · Education) · English
           type: string
         - name: title_th
           label: หัวข้อ · ไทย
@@ -1255,59 +1408,6 @@ content:
         - name: text_en
           label: คำอธิบาย · English
           type: text
-      - name: strip
-        label: แถบพันธมิตรด้านล่าง
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: '{label_th} {name_th}'
-        fields:
-        - name: logo
-          label: โลโก้ (PNG พื้นใส หรือ SVG) ใส่แล้วจะแสดงเป็นแถบโลโก้เลื่อนไปทางซ้าย
-          type: image
-          options:
-            media: images
-        - name: label_th
-          label: ข้อความนำ (เว้นว่างได้) · ไทย
-          type: string
-        - name: label_zh
-          label: ข้อความนำ (เว้นว่างได้) · 中文
-          type: string
-        - name: label_en
-          label: ข้อความนำ (เว้นว่างได้) · English
-          type: string
-        - name: name_th
-          label: ชื่อ (ตัวหนา) · ไทย
-          type: string
-        - name: name_zh
-          label: ชื่อ (ตัวหนา) · 中文
-          type: string
-        - name: name_en
-          label: ชื่อ (ตัวหนา) · English
-          type: string
-        - name: small_th
-          label: คำอธิบายเล็ก (เว้นว่างได้) · ไทย
-          type: string
-        - name: small_zh
-          label: คำอธิบายเล็ก (เว้นว่างได้) · 中文
-          type: string
-        - name: small_en
-          label: คำอธิบายเล็ก (เว้นว่างได้) · English
-          type: string
-      - name: strip_link_label_th
-        label: ข้อความลิงก์ท้ายแถบ · ไทย
-        type: string
-      - name: strip_link_label_zh
-        label: ข้อความลิงก์ท้ายแถบ · 中文
-        type: string
-      - name: strip_link_label_en
-        label: ข้อความลิงก์ท้ายแถบ · English
-        type: string
-      - name: strip_link
-        label: ลิงก์ท้ายแถบ
-        type: string
-        description: เช่น contact.html?topic=demo หรือ https://...
       - name: bg
         label: 🎬 วิดีโอพื้นหลังของส่วนนี้ (ไม่ใส่ก็ได้)
         type: object
@@ -1339,7 +1439,7 @@ content:
               label: เข้ม (อ่านตัวหนังสือง่ายสุด)
         description: ใส่วิดีโอหรือภาพแล้ว ส่วนนี้จะเปลี่ยนเป็นพื้นเข้ม ตัวหนังสือสีขาวให้อัตโนมัติ · ลบไฟล์ออก = กลับเป็นพื้นแบบเดิม
   - name: page-products
-    label: ผลิตภัณฑ์ทั้งหมด
+    label: RoboVan ทุกรุ่น (ผลิตภัณฑ์ทั้งหมด)
     type: group
     items:
     - name: products-page
@@ -1496,7 +1596,7 @@ content:
         - name: anchor
           label: ไปที่หัวข้อ (#)
           type: string
-          description: เช่น robovan, education, security, ai
+          description: เช่น robovan, z20, services, technology, solutions
         - name: icon
           label: ไอคอน
           type: select
@@ -1985,275 +2085,8 @@ content:
             - name: strong
               label: เข้ม (อ่านตัวหนังสือง่ายสุด)
         description: ใส่วิดีโอหรือภาพแล้ว ส่วนนี้จะเปลี่ยนเป็นพื้นเข้ม ตัวหนังสือสีขาวให้อัตโนมัติ · ลบไฟล์ออก = กลับเป็นพื้นแบบเดิม
-    - name: products-technology
-      label: 5. ชุดระบบขับขี่อัตโนมัติ L4
-      type: file
-      path: content/pages/products/technology.json
-      format: json
-      fields:
-      - name: image
-        label: รูปภาพ
-        type: image
-        options:
-          media: images
-      - name: alt
-        label: คำอธิบายรูป (alt)
-        type: string
-        description: ภาษาอังกฤษสั้นๆ บอกว่าในรูปมีอะไร ช่วยเรื่อง Google และผู้พิการทางสายตา
-      - name: eyebrow_th
-        label: หัวข้อเล็ก · ไทย
-        type: string
-      - name: eyebrow_zh
-        label: หัวข้อเล็ก · 中文
-        type: string
-      - name: eyebrow_en
-        label: หัวข้อเล็ก · English
-        type: string
-      - name: title_th
-        label: หัวข้อ · ไทย
-        type: text
-      - name: title_zh
-        label: หัวข้อ · 中文
-        type: text
-      - name: title_en
-        label: หัวข้อ · English
-        type: text
-      - name: text_th
-        label: คำอธิบาย · ไทย
-        type: text
-      - name: text_zh
-        label: คำอธิบาย · 中文
-        type: text
-      - name: text_en
-        label: คำอธิบาย · English
-        type: text
-      - name: specs
-        label: รายการอุปกรณ์
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: '{label_th} {value}'
-        fields:
-        - name: label_th
-          label: ชื่อ · ไทย
-          type: string
-        - name: label_zh
-          label: ชื่อ · 中文
-          type: string
-        - name: label_en
-          label: ชื่อ · English
-          type: string
-        - name: value
-          label: จำนวน / ค่า
-          type: string
-      - name: downloads
-        label: เอกสารดาวน์โหลด
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: '{title}'
-        fields:
-        - name: file
-          label: ไฟล์ PDF
-          type: file
-          options:
-            media: docs
-            extensions:
-            - pdf
-        - name: title
-          label: ชื่อเอกสาร
-          type: string
-      - name: bg
-        label: 🎬 วิดีโอพื้นหลังของส่วนนี้ (ไม่ใส่ก็ได้)
-        type: object
-        fields:
-        - name: video
-          label: วิดีโอ (MP4 สั้นๆ ไม่มีเสียง)
-          type: file
-          options:
-            media: videos
-            extensions:
-            - mp4
-            - webm
-          description: แนะนำยาว 10–20 วินาที ขนาด 1280×720 ไฟล์ไม่เกิน 10 MB (เกิน 25 MB เว็บจะไม่แสดง) · ไฟล์ใหญ่กว่า 4 MB อัปตรงนี้ไม่ได้ ให้วางไฟล์ในโฟลเดอร์ assets/video ผ่าน GitHub Desktop แล้วกลับมากดเลือก
-        - name: poster
-          label: ภาพนิ่ง (แสดงระหว่างรอวิดีโอ หรือใส่แค่ภาพนี้เพื่อใช้เป็นภาพพื้นหลังก็ได้)
-          type: image
-          options:
-            media: images
-        - name: shade
-          label: ความเข้มของสีเข้มที่ทับวิดีโอ (ช่วยให้อ่านตัวหนังสือออก)
-          type: select
-          options:
-            values:
-            - name: medium
-              label: ปานกลาง (แนะนำ)
-            - name: light
-              label: อ่อน (เห็นวิดีโอชัด)
-            - name: strong
-              label: เข้ม (อ่านตัวหนังสือง่ายสุด)
-        description: ใส่วิดีโอหรือภาพแล้ว ส่วนนี้จะเปลี่ยนเป็นพื้นเข้ม ตัวหนังสือสีขาวให้อัตโนมัติ · ลบไฟล์ออก = กลับเป็นพื้นแบบเดิม
-    - name: products-lines
-      label: 6. การศึกษา / ความปลอดภัย / AI Agent
-      type: file
-      path: content/pages/products/lines.json
-      format: json
-      fields:
-      - name: items
-        label: กลุ่มผลิตภัณฑ์
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: '{eyebrow_th}'
-        fields:
-        - name: anchor
-          label: รหัสหัวข้อ (#)
-          type: string
-        - name: media_type
-          label: ภาพประกอบ
-          type: select
-          options:
-            values:
-            - name: image
-              label: รูปภาพ
-            - name: chat
-              label: ข้อความแชตตัวอย่าง
-        - name: image
-          label: รูปภาพ
-          type: image
-          options:
-            media: images
-        - name: alt
-          label: คำอธิบายรูป (alt)
-          type: string
-          description: ภาษาอังกฤษสั้นๆ บอกว่าในรูปมีอะไร ช่วยเรื่อง Google และผู้พิการทางสายตา
-        - name: chat
-          label: ข้อความแชตตัวอย่าง
-          type: object
-          list:
-            collapsible:
-              collapsed: true
-              summary: '{who_th}: {text_th}'
-          fields:
-          - name: side
-            label: ฝั่ง
-            type: select
-            options:
-              values:
-              - name: me
-                label: ลูกค้า (ขวา)
-              - name: ai
-                label: AI (ซ้าย)
-          - name: who_th
-            label: ชื่อผู้พูด · ไทย
-            type: string
-          - name: who_zh
-            label: ชื่อผู้พูด · 中文
-            type: string
-          - name: who_en
-            label: ชื่อผู้พูด · English
-            type: string
-          - name: text_th
-            label: ข้อความ · ไทย
-            type: text
-          - name: text_zh
-            label: ข้อความ · 中文
-            type: text
-          - name: text_en
-            label: ข้อความ · English
-            type: text
-        - name: eyebrow_th
-          label: หัวข้อเล็ก · ไทย
-          type: string
-        - name: eyebrow_zh
-          label: หัวข้อเล็ก · 中文
-          type: string
-        - name: eyebrow_en
-          label: หัวข้อเล็ก · English
-          type: string
-        - name: title_th
-          label: หัวข้อ · ไทย
-          type: string
-        - name: title_zh
-          label: หัวข้อ · 中文
-          type: string
-        - name: title_en
-          label: หัวข้อ · English
-          type: string
-        - name: lead_th
-          label: คำอธิบาย · ไทย
-          type: text
-        - name: lead_zh
-          label: คำอธิบาย · 中文
-          type: text
-        - name: lead_en
-          label: คำอธิบาย · English
-          type: text
-        - name: bullets
-          label: รายการเครื่องหมายถูก
-          type: object
-          list:
-            collapsible:
-              collapsed: true
-              summary: '{text_th}'
-          fields:
-          - name: text_th
-            label: ข้อความ · ไทย
-            type: string
-          - name: text_zh
-            label: ข้อความ · 中文
-            type: string
-          - name: text_en
-            label: ข้อความ · English
-            type: string
-        - name: button_label_th
-          label: ปุ่ม · ไทย
-          type: string
-        - name: button_label_zh
-          label: ปุ่ม · 中文
-          type: string
-        - name: button_label_en
-          label: ปุ่ม · English
-          type: string
-        - name: button_link
-          label: ลิงก์ปุ่ม
-          type: string
-          description: เช่น contact.html?topic=demo หรือ https://...
-      - name: bg
-        label: 🎬 วิดีโอพื้นหลังของส่วนนี้ (ไม่ใส่ก็ได้)
-        type: object
-        fields:
-        - name: video
-          label: วิดีโอ (MP4 สั้นๆ ไม่มีเสียง)
-          type: file
-          options:
-            media: videos
-            extensions:
-            - mp4
-            - webm
-          description: แนะนำยาว 10–20 วินาที ขนาด 1280×720 ไฟล์ไม่เกิน 10 MB (เกิน 25 MB เว็บจะไม่แสดง) · ไฟล์ใหญ่กว่า 4 MB อัปตรงนี้ไม่ได้ ให้วางไฟล์ในโฟลเดอร์ assets/video ผ่าน GitHub Desktop แล้วกลับมากดเลือก
-        - name: poster
-          label: ภาพนิ่ง (แสดงระหว่างรอวิดีโอ หรือใส่แค่ภาพนี้เพื่อใช้เป็นภาพพื้นหลังก็ได้)
-          type: image
-          options:
-            media: images
-        - name: shade
-          label: ความเข้มของสีเข้มที่ทับวิดีโอ (ช่วยให้อ่านตัวหนังสือออก)
-          type: select
-          options:
-            values:
-            - name: medium
-              label: ปานกลาง (แนะนำ)
-            - name: light
-              label: อ่อน (เห็นวิดีโอชัด)
-            - name: strong
-              label: เข้ม (อ่านตัวหนังสือง่ายสุด)
-        description: ใส่วิดีโอหรือภาพแล้ว ส่วนนี้จะเปลี่ยนเป็นพื้นเข้ม ตัวหนังสือสีขาวให้อัตโนมัติ · ลบไฟล์ออก = กลับเป็นพื้นแบบเดิม
     - name: products-services
-      label: 7. รูปแบบธุรกิจและบริการ
+      label: 5. ซื้อหรือเช่า และบริการ
       type: file
       path: content/pages/products/services.json
       format: json
@@ -2569,6 +2402,300 @@ content:
         - name: label_en
           label: ข้อความ · English
           type: string
+      - name: bg
+        label: 🎬 วิดีโอพื้นหลังของส่วนนี้ (ไม่ใส่ก็ได้)
+        type: object
+        fields:
+        - name: video
+          label: วิดีโอ (MP4 สั้นๆ ไม่มีเสียง)
+          type: file
+          options:
+            media: videos
+            extensions:
+            - mp4
+            - webm
+          description: แนะนำยาว 10–20 วินาที ขนาด 1280×720 ไฟล์ไม่เกิน 10 MB (เกิน 25 MB เว็บจะไม่แสดง) · ไฟล์ใหญ่กว่า 4 MB อัปตรงนี้ไม่ได้ ให้วางไฟล์ในโฟลเดอร์ assets/video ผ่าน GitHub Desktop แล้วกลับมากดเลือก
+        - name: poster
+          label: ภาพนิ่ง (แสดงระหว่างรอวิดีโอ หรือใส่แค่ภาพนี้เพื่อใช้เป็นภาพพื้นหลังก็ได้)
+          type: image
+          options:
+            media: images
+        - name: shade
+          label: ความเข้มของสีเข้มที่ทับวิดีโอ (ช่วยให้อ่านตัวหนังสือออก)
+          type: select
+          options:
+            values:
+            - name: medium
+              label: ปานกลาง (แนะนำ)
+            - name: light
+              label: อ่อน (เห็นวิดีโอชัด)
+            - name: strong
+              label: เข้ม (อ่านตัวหนังสือง่ายสุด)
+        description: ใส่วิดีโอหรือภาพแล้ว ส่วนนี้จะเปลี่ยนเป็นพื้นเข้ม ตัวหนังสือสีขาวให้อัตโนมัติ · ลบไฟล์ออก = กลับเป็นพื้นแบบเดิม
+    - name: products-technology
+      label: 6. ชุดระบบขับขี่อัตโนมัติ L4
+      type: file
+      path: content/pages/products/technology.json
+      format: json
+      fields:
+      - name: image
+        label: รูปภาพ
+        type: image
+        options:
+          media: images
+      - name: alt
+        label: คำอธิบายรูป (alt)
+        type: string
+        description: ภาษาอังกฤษสั้นๆ บอกว่าในรูปมีอะไร ช่วยเรื่อง Google และผู้พิการทางสายตา
+      - name: eyebrow_th
+        label: หัวข้อเล็ก · ไทย
+        type: string
+      - name: eyebrow_zh
+        label: หัวข้อเล็ก · 中文
+        type: string
+      - name: eyebrow_en
+        label: หัวข้อเล็ก · English
+        type: string
+      - name: title_th
+        label: หัวข้อ · ไทย
+        type: text
+      - name: title_zh
+        label: หัวข้อ · 中文
+        type: text
+      - name: title_en
+        label: หัวข้อ · English
+        type: text
+      - name: text_th
+        label: คำอธิบาย · ไทย
+        type: text
+      - name: text_zh
+        label: คำอธิบาย · 中文
+        type: text
+      - name: text_en
+        label: คำอธิบาย · English
+        type: text
+      - name: specs
+        label: รายการอุปกรณ์
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{label_th} {value}'
+        fields:
+        - name: label_th
+          label: ชื่อ · ไทย
+          type: string
+        - name: label_zh
+          label: ชื่อ · 中文
+          type: string
+        - name: label_en
+          label: ชื่อ · English
+          type: string
+        - name: value
+          label: จำนวน / ค่า
+          type: string
+      - name: downloads
+        label: เอกสารดาวน์โหลด
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{title}'
+        fields:
+        - name: file
+          label: ไฟล์ PDF
+          type: file
+          options:
+            media: docs
+            extensions:
+            - pdf
+        - name: title
+          label: ชื่อเอกสาร
+          type: string
+      - name: bg
+        label: 🎬 วิดีโอพื้นหลังของส่วนนี้ (ไม่ใส่ก็ได้)
+        type: object
+        fields:
+        - name: video
+          label: วิดีโอ (MP4 สั้นๆ ไม่มีเสียง)
+          type: file
+          options:
+            media: videos
+            extensions:
+            - mp4
+            - webm
+          description: แนะนำยาว 10–20 วินาที ขนาด 1280×720 ไฟล์ไม่เกิน 10 MB (เกิน 25 MB เว็บจะไม่แสดง) · ไฟล์ใหญ่กว่า 4 MB อัปตรงนี้ไม่ได้ ให้วางไฟล์ในโฟลเดอร์ assets/video ผ่าน GitHub Desktop แล้วกลับมากดเลือก
+        - name: poster
+          label: ภาพนิ่ง (แสดงระหว่างรอวิดีโอ หรือใส่แค่ภาพนี้เพื่อใช้เป็นภาพพื้นหลังก็ได้)
+          type: image
+          options:
+            media: images
+        - name: shade
+          label: ความเข้มของสีเข้มที่ทับวิดีโอ (ช่วยให้อ่านตัวหนังสือออก)
+          type: select
+          options:
+            values:
+            - name: medium
+              label: ปานกลาง (แนะนำ)
+            - name: light
+              label: อ่อน (เห็นวิดีโอชัด)
+            - name: strong
+              label: เข้ม (อ่านตัวหนังสือง่ายสุด)
+        description: ใส่วิดีโอหรือภาพแล้ว ส่วนนี้จะเปลี่ยนเป็นพื้นเข้ม ตัวหนังสือสีขาวให้อัตโนมัติ · ลบไฟล์ออก = กลับเป็นพื้นแบบเดิม
+    - name: products-lines
+      label: 7. โซลูชันอื่น (การศึกษา / ความปลอดภัย / AI Agent)
+      type: file
+      path: content/pages/products/lines.json
+      format: json
+      fields:
+      - name: eyebrow_th
+        label: หัวข้อเล็ก · ไทย
+        type: string
+      - name: eyebrow_zh
+        label: หัวข้อเล็ก · 中文
+        type: string
+      - name: eyebrow_en
+        label: หัวข้อเล็ก · English
+        type: string
+      - name: title_th
+        label: หัวข้อ · ไทย
+        type: text
+      - name: title_zh
+        label: หัวข้อ · 中文
+        type: text
+      - name: title_en
+        label: หัวข้อ · English
+        type: text
+      - name: lead_th
+        label: คำอธิบาย · ไทย
+        type: text
+      - name: lead_zh
+        label: คำอธิบาย · 中文
+        type: text
+      - name: lead_en
+        label: คำอธิบาย · English
+        type: text
+      - name: items
+        label: กลุ่มโซลูชัน
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{eyebrow_th}'
+        fields:
+        - name: anchor
+          label: รหัสหัวข้อ (#)
+          type: string
+        - name: media_type
+          label: ภาพประกอบ
+          type: select
+          options:
+            values:
+            - name: image
+              label: รูปภาพ
+            - name: chat
+              label: ข้อความแชตตัวอย่าง
+        - name: image
+          label: รูปภาพ
+          type: image
+          options:
+            media: images
+        - name: alt
+          label: คำอธิบายรูป (alt)
+          type: string
+          description: ภาษาอังกฤษสั้นๆ บอกว่าในรูปมีอะไร ช่วยเรื่อง Google และผู้พิการทางสายตา
+        - name: chat
+          label: ข้อความแชตตัวอย่าง
+          type: object
+          list:
+            collapsible:
+              collapsed: true
+              summary: '{who_th}: {text_th}'
+          fields:
+          - name: side
+            label: ฝั่ง
+            type: select
+            options:
+              values:
+              - name: me
+                label: ลูกค้า (ขวา)
+              - name: ai
+                label: AI (ซ้าย)
+          - name: who_th
+            label: ชื่อผู้พูด · ไทย
+            type: string
+          - name: who_zh
+            label: ชื่อผู้พูด · 中文
+            type: string
+          - name: who_en
+            label: ชื่อผู้พูด · English
+            type: string
+          - name: text_th
+            label: ข้อความ · ไทย
+            type: text
+          - name: text_zh
+            label: ข้อความ · 中文
+            type: text
+          - name: text_en
+            label: ข้อความ · English
+            type: text
+        - name: eyebrow_th
+          label: หัวข้อเล็ก · ไทย
+          type: string
+        - name: eyebrow_zh
+          label: หัวข้อเล็ก · 中文
+          type: string
+        - name: eyebrow_en
+          label: หัวข้อเล็ก · English
+          type: string
+        - name: title_th
+          label: หัวข้อ · ไทย
+          type: string
+        - name: title_zh
+          label: หัวข้อ · 中文
+          type: string
+        - name: title_en
+          label: หัวข้อ · English
+          type: string
+        - name: lead_th
+          label: คำอธิบาย · ไทย
+          type: text
+        - name: lead_zh
+          label: คำอธิบาย · 中文
+          type: text
+        - name: lead_en
+          label: คำอธิบาย · English
+          type: text
+        - name: bullets
+          label: รายการเครื่องหมายถูก
+          type: object
+          list:
+            collapsible:
+              collapsed: true
+              summary: '{text_th}'
+          fields:
+          - name: text_th
+            label: ข้อความ · ไทย
+            type: string
+          - name: text_zh
+            label: ข้อความ · 中文
+            type: string
+          - name: text_en
+            label: ข้อความ · English
+            type: string
+        - name: button_label_th
+          label: ปุ่ม · ไทย
+          type: string
+        - name: button_label_zh
+          label: ปุ่ม · 中文
+          type: string
+        - name: button_label_en
+          label: ปุ่ม · English
+          type: string
+        - name: button_link
+          label: ลิงก์ปุ่ม
+          type: string
+          description: เช่น contact.html?topic=demo หรือ https://...
       - name: bg
         label: 🎬 วิดีโอพื้นหลังของส่วนนี้ (ไม่ใส่ก็ได้)
         type: object
@@ -11369,12 +11496,14 @@ content:
     label: ลำดับในเมนู (เลขน้อยแสดงก่อน)
     type: number
   - name: menu
-    label: แสดงในเมนูด้านบนใต้หัวข้อ
+    label: แสดงในเมนูด้านบนใต้หัวข้อ (เว้นว่าง = โซลูชันอื่น)
     type: select
     options:
       values:
+      - name: solutions
+        label: โซลูชันอื่น
       - name: products
-        label: ผลิตภัณฑ์
+        label: RoboVan (ธุรกิจหลัก)
       - name: about
         label: เกี่ยวกับ SuperX
       - name: none
@@ -12531,22 +12660,31 @@ content:
       label: 'เมนู: หน้าแรก · English'
       type: string
     - name: nav_products_th
-      label: 'เมนู: ผลิตภัณฑ์ · ไทย'
+      label: 'เมนูกลุ่มที่ 1: ธุรกิจหลัก (RoboVan) · ไทย'
       type: string
     - name: nav_products_zh
-      label: 'เมนู: ผลิตภัณฑ์ · 中文'
+      label: 'เมนูกลุ่มที่ 1: ธุรกิจหลัก (RoboVan) · 中文'
       type: string
     - name: nav_products_en
-      label: 'เมนู: ผลิตภัณฑ์ · English'
+      label: 'เมนูกลุ่มที่ 1: ธุรกิจหลัก (RoboVan) · English'
+      type: string
+    - name: nav_solutions_th
+      label: 'เมนูกลุ่มที่ 2: โซลูชันอื่น · ไทย'
+      type: string
+    - name: nav_solutions_zh
+      label: 'เมนูกลุ่มที่ 2: โซลูชันอื่น · 中文'
+      type: string
+    - name: nav_solutions_en
+      label: 'เมนูกลุ่มที่ 2: โซลูชันอื่น · English'
       type: string
     - name: nav_about_th
-      label: 'เมนู: เกี่ยวกับ · ไทย'
+      label: 'เมนูกลุ่มที่ 3: เกี่ยวกับ · ไทย'
       type: string
     - name: nav_about_zh
-      label: 'เมนู: เกี่ยวกับ · 中文'
+      label: 'เมนูกลุ่มที่ 3: เกี่ยวกับ · 中文'
       type: string
     - name: nav_about_en
-      label: 'เมนู: เกี่ยวกับ · English'
+      label: 'เมนูกลุ่มที่ 3: เกี่ยวกับ · English'
       type: string
     - name: nav_contact_th
       label: 'เมนู: ติดต่อเรา · ไทย'
@@ -12571,7 +12709,7 @@ content:
       type: string
       description: เช่น contact.html?topic=demo หรือ https://...
     - name: products_menu
-      label: รายการในเมนูผลิตภัณฑ์
+      label: รายการในเมนูกลุ่มที่ 1 (RoboVan)
       type: object
       list:
         collapsible:
@@ -12603,8 +12741,42 @@ content:
       - name: divider_before
         label: มีเส้นคั่นก่อนรายการนี้
         type: boolean
+    - name: solutions_menu
+      label: รายการในเมนูกลุ่มที่ 2 (โซลูชันอื่น)
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{title_th}'
+      fields:
+      - name: link
+        label: ลิงก์
+        type: string
+        description: เช่น contact.html?topic=demo หรือ https://...
+      - name: title_th
+        label: ชื่อ · ไทย
+        type: string
+      - name: title_zh
+        label: ชื่อ · 中文
+        type: string
+      - name: title_en
+        label: ชื่อ · English
+        type: string
+      - name: hint_th
+        label: คำอธิบายสั้น · ไทย
+        type: string
+      - name: hint_zh
+        label: คำอธิบายสั้น · 中文
+        type: string
+      - name: hint_en
+        label: คำอธิบายสั้น · English
+        type: string
+      - name: divider_before
+        label: มีเส้นคั่นก่อนรายการนี้
+        type: boolean
+      description: ลบทุกรายการ = ไม่แสดงเมนูนี้
     - name: about_menu
-      label: รายการในเมนูเกี่ยวกับ
+      label: รายการในเมนูกลุ่มที่ 3 (เกี่ยวกับ)
       type: object
       list:
         collapsible:
@@ -12637,16 +12809,46 @@ content:
         label: มีเส้นคั่นก่อนรายการนี้
         type: boolean
     - name: footer_products_title_th
-      label: หัวคอลัมน์ผลิตภัณฑ์ (ด้านล่างเว็บ) · ไทย
+      label: หัวคอลัมน์ที่ 1 ด้านล่างเว็บ (RoboVan) · ไทย
       type: string
     - name: footer_products_title_zh
-      label: หัวคอลัมน์ผลิตภัณฑ์ (ด้านล่างเว็บ) · 中文
+      label: หัวคอลัมน์ที่ 1 ด้านล่างเว็บ (RoboVan) · 中文
       type: string
     - name: footer_products_title_en
-      label: หัวคอลัมน์ผลิตภัณฑ์ (ด้านล่างเว็บ) · English
+      label: หัวคอลัมน์ที่ 1 ด้านล่างเว็บ (RoboVan) · English
       type: string
     - name: footer_products
-      label: ลิงก์คอลัมน์ผลิตภัณฑ์
+      label: ลิงก์คอลัมน์ที่ 1
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{label_th}'
+      fields:
+      - name: link
+        label: ลิงก์
+        type: string
+        description: เช่น contact.html?topic=demo หรือ https://...
+      - name: label_th
+        label: ข้อความ · ไทย
+        type: string
+      - name: label_zh
+        label: ข้อความ · 中文
+        type: string
+      - name: label_en
+        label: ข้อความ · English
+        type: string
+    - name: footer_solutions_title_th
+      label: หัวคอลัมน์ที่ 2 ด้านล่างเว็บ (โซลูชันอื่น) · ไทย
+      type: string
+    - name: footer_solutions_title_zh
+      label: หัวคอลัมน์ที่ 2 ด้านล่างเว็บ (โซลูชันอื่น) · 中文
+      type: string
+    - name: footer_solutions_title_en
+      label: หัวคอลัมน์ที่ 2 ด้านล่างเว็บ (โซลูชันอื่น) · English
+      type: string
+    - name: footer_solutions
+      label: ลิงก์คอลัมน์ที่ 2 (ลบทุกรายการ = ไม่แสดงคอลัมน์นี้)
       type: object
       list:
         collapsible:
@@ -12766,13 +12968,22 @@ content:
       label: 'แถบเส้นทาง: หน้าแรก · English'
       type: string
     - name: crumb_products_th
-      label: 'แถบเส้นทาง: ผลิตภัณฑ์ · ไทย'
+      label: 'แถบเส้นทาง: หน้ารวม RoboVan ทุกรุ่น · ไทย'
       type: string
     - name: crumb_products_zh
-      label: 'แถบเส้นทาง: ผลิตภัณฑ์ · 中文'
+      label: 'แถบเส้นทาง: หน้ารวม RoboVan ทุกรุ่น · 中文'
       type: string
     - name: crumb_products_en
-      label: 'แถบเส้นทาง: ผลิตภัณฑ์ · English'
+      label: 'แถบเส้นทาง: หน้ารวม RoboVan ทุกรุ่น · English'
+      type: string
+    - name: crumb_solutions_th
+      label: 'แถบเส้นทาง: โซลูชันอื่น · ไทย'
+      type: string
+    - name: crumb_solutions_zh
+      label: 'แถบเส้นทาง: โซลูชันอื่น · 中文'
+      type: string
+    - name: crumb_solutions_en
+      label: 'แถบเส้นทาง: โซลูชันอื่น · English'
       type: string
     - name: crumb_about_th
       label: 'แถบเส้นทาง: เกี่ยวกับ · ไทย'

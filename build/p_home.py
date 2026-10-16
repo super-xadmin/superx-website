@@ -11,52 +11,66 @@ STRIP = LIST('strip', 'แถบพันธมิตรด้านล่าง
                                                TX('label', 'ข้อความนำ (เว้นว่างได้)'), TX('name', 'ชื่อ (ตัวหนา)'), TX('small', 'คำอธิบายเล็ก (เว้นว่างได้)')],
              summary='{label_th} {name_th}')
 
+# Short band right under the film: pilot sites and partners, so visitors see real proof straight away
+PROOF = [
+    TX('label', 'ข้อความนำ (เช่น โครงการนำร่องและพันธมิตร)'),
+    LIST('items', 'รายชื่อโครงการ / พันธมิตร', [
+        TX('name', 'ชื่อ (ตัวหนา)'), TX('small', 'คำอธิบายเล็ก (เว้นว่างได้)'),
+        IMG('logo', 'โลโก้ (เว้นว่างได้ ถ้าใส่จะแสดงโลโก้แทนชื่อ)'), LINK(),
+    ], summary='{name_th}'),
+    TX('link_label', 'ข้อความลิงก์ท้ายแถบ'), LINK('link', 'ลิงก์ท้ายแถบ'),
+]
+
+# Listed in the order they appear on the page (top to bottom), the main business (RoboVan) first
 SECTIONS = [
     ('page', 'ตั้งค่าหน้า (ชื่อหน้า / แถบปิดท้าย)', PAGE_FIELDS_CTA),
     ('hero', '1. ภาพวิดีโอด้านบนสุด', [
         VID('video', 'วิดีโอพื้นหลัง (MP4 สั้นๆ ไม่มีเสียง)'), IMG('poster', 'ภาพก่อนวิดีโอเล่น'),
-        S('eyebrow', 'ข้อความเล็กด้านบน'), TX('title', 'หัวข้อใหญ่ (ขึ้นบรรทัดใหม่ได้)', long=True), TX('lead', 'คำอธิบาย', long=True),
+        TX('eyebrow', 'ข้อความเล็กด้านบน'), TX('title', 'หัวข้อใหญ่ (ขึ้นบรรทัดใหม่ได้)', long=True,
+                                                  desc='บอกให้ชัดว่าเราขายอะไร ให้ใคร · ใช้ **คำ** เพื่อทำเป็นสีฟ้า'),
+        TX('lead', 'คำอธิบาย', long=True),
         TX('btn1_label', 'ปุ่มที่ 1'), LINK('btn1_link', 'ลิงก์ปุ่มที่ 1'), TX('btn2_label', 'ปุ่มที่ 2'), LINK('btn2_link', 'ลิงก์ปุ่มที่ 2'),
         LIST('facts', 'ตัวเลขเด่นด้านล่าง', [S('value', 'ตัวเลข'), TX('label', 'คำอธิบาย')], summary='{value} {label_th}'),
         TX('caption', 'คำบรรยายวิดีโอ (มุมขวาล่าง)'),
     ]),
-    ('about', '2. SuperX คือใคร', [
+    ('proof', '2. แถบโครงการนำร่องและพันธมิตร (ใต้ภาพวิดีโอ)', PROOF),
+    ('about', '3. เราทำอะไร', [
         TX('eyebrow', 'หัวข้อเล็ก'), TX('title', 'หัวข้อ', long=True), TX('lead', 'คำอธิบาย', long=True),
-        LIST('flow', 'กล่อง 3 ขั้น (เทคโนโลยี → SuperX → ลูกค้า)', [
+        LIST('flow', 'กล่อง 3 ขั้น (รถ → ติดตั้ง → ดูแล)', [
             TX('who', 'บรรทัดบน'), TX('name', 'ชื่อ (ตัวใหญ่)'), TX('text', 'คำอธิบาย'), BOOL('highlight', 'เน้นสีกล่องนี้'),
             LIST('bullets', 'รายการเครื่องหมายถูก', [TX('text', 'ข้อความ')]),
         ], summary='{name_th}'),
         LIST('stats', 'ตัวเลขสถิติ', [S('value', 'ตัวเลข'), TX('unit', 'หน่วย (ตัวเล็ก)'), TX('text', 'คำอธิบาย')], summary='{value} {text_th}'),
         TX('note', 'หมายเหตุใต้ตัวเลข', long=True),
     ]),
-    ('business', '3. กลุ่มธุรกิจ', [
-        TX('eyebrow', 'หัวข้อเล็ก'), TX('title', 'หัวข้อ', long=True), TX('lead', 'คำอธิบาย', long=True), TX('more', 'ข้อความลิงก์ในการ์ด'),
-        LIST('modules', 'การ์ดกลุ่มธุรกิจ', [
-            LINK(), SEL('media_type', 'ภาพประกอบ', [('image', 'รูปภาพ'), ('chat', 'ข้อความแชตตัวอย่าง')]), IMG(), ALT(), CHAT(),
-            TX('label', 'ป้ายเล็ก (เช่น 01 · Smart Mobility)'), TX('title', 'หัวข้อ'), TX('text', 'คำอธิบาย', long=True),
-        ]),
-    ]),
-    ('models', '4. รุ่นหลัก', [
+    ('models', '4. รุ่นรถ RoboVan', [
         TX('eyebrow', 'หัวข้อเล็ก'), TX('title', 'หัวข้อ', long=True), TX('link_label', 'ข้อความลิงก์มุมขวา'), LINK('link', 'ลิงก์มุมขวา'),
         LIST('cards', 'การ์ดรถที่แสดง (ข้อมูลมาจากเมนู ข้อมูลรถแต่ละรุ่น)', [MODEL()], summary='{model}'),
         TX('others_label', 'ข้อความหน้าปุ่มรุ่นอื่น'),
         LIST('others', 'ปุ่มรุ่นอื่น', [TX('label', 'ข้อความ'), LINK()]),
     ]),
-    ('control', '5. แอปควบคุมฝูงรถ', [
-        TX('eyebrow', 'หัวข้อเล็ก'), TX('title', 'หัวข้อ', long=True), TX('lead', 'คำอธิบาย', long=True),
-        LIST('items', 'รายการความสามารถ', [ICON(), TX('text', 'ข้อความ')]),
-        LIST('phones', 'ภาพหน้าจอแอป', [IMG('image', 'ภาพหน้าจอ (แนวตั้ง)'), ALT(), TX('label', 'คำบรรยาย')]),
-    ]),
-    ('scenarios', '6. การใช้งาน (ภาพ 9 ช่อง)', [
+    ('scenarios', '5. งานที่ใช้ RoboVan ได้ (การ์ดเลื่อน)', [
         TX('eyebrow', 'หัวข้อเล็ก'), TX('title', 'หัวข้อ', long=True), TX('lead', 'คำอธิบาย', long=True),
         LIST('tiles', 'ภาพการใช้งาน', [IMG(), ALT(), TX('title', 'หัวข้อ'), TX('text', 'คำอธิบาย')]),
     ]),
-    ('cases', '7. ผลงานและพันธมิตร', [
+    ('cases', '6. ผลงานและพันธมิตร', [
         TX('eyebrow', 'หัวข้อเล็ก'), TX('title', 'หัวข้อ', long=True), TX('link_label', 'ข้อความลิงก์มุมขวา'), LINK('link', 'ลิงก์มุมขวา'),
         LIST('cards', 'การ์ดผลงาน', [
             LINK(), IMG(), ALT(), TX('status', 'ป้ายสถานะ'), TX('location', 'สถานที่'), TX('title', 'หัวข้อ'), TX('text', 'คำอธิบาย', long=True),
         ]),
         STRIP, TX('strip_link_label', 'ข้อความลิงก์ท้ายแถบ'), LINK('strip_link', 'ลิงก์ท้ายแถบ'),
+    ]),
+    ('control', '7. แอปควบคุมฝูงรถ', [
+        TX('eyebrow', 'หัวข้อเล็ก'), TX('title', 'หัวข้อ', long=True), TX('lead', 'คำอธิบาย', long=True),
+        LIST('items', 'รายการความสามารถ', [ICON(), TX('text', 'ข้อความ')]),
+        LIST('phones', 'ภาพหน้าจอแอป', [IMG('image', 'ภาพหน้าจอ (แนวตั้ง)'), ALT(), TX('label', 'คำบรรยาย')]),
+    ]),
+    ('business', '8. โซลูชันอื่น (การศึกษา / ความปลอดภัย / AI Agent)', [
+        TX('eyebrow', 'หัวข้อเล็ก'), TX('title', 'หัวข้อ', long=True), TX('lead', 'คำอธิบาย', long=True), TX('more', 'ข้อความลิงก์ในการ์ด'),
+        LIST('modules', 'การ์ดโซลูชัน', [
+            LINK(), SEL('media_type', 'ภาพประกอบ', [('image', 'รูปภาพ'), ('chat', 'ข้อความแชตตัวอย่าง')]), IMG(), ALT(), CHAT(),
+            TX('label', 'ป้ายเล็ก (เช่น 01 · Education)'), TX('title', 'หัวข้อ'), TX('text', 'คำอธิบาย', long=True),
+        ]),
     ]),
 ]
 
@@ -66,8 +80,9 @@ def logo_marquee(logos):
     one = ''.join(f'<li><img src="{esc(media(s(e, "logo"), "img"))}" alt="{esc(tri(e, "name")[2] or tri(e, "name")[0])}" loading="lazy"></li>'
                   for e in logos)
     reps = max(1, -(-8 // len(logos)))          # at least 8 logos per half
-    half = one * reps
-    copy = half.replace('<li>', '<li aria-hidden="true">')
+    hidden = one.replace('<li>', '<li aria-hidden="true">')
+    half = one + hidden * (reps - 1)            # repeats are hidden from screen readers and when motion is reduced
+    copy = hidden * reps
     return f'<div class="logo-marquee"><ul class="logo-track">{half}{copy}</ul></div>'
 
 
@@ -91,8 +106,33 @@ def strip(d, key='strip', link_label='strip_link_label', link='strip_link'):
     return '<div class="partner-strip">\n      ' + '\n      '.join(lines) + '\n    </div>'
 
 
+def proof_band(d):
+    """Pilot sites and partners in one row under the film. Nothing listed = no band."""
+    rows = [e for e in items(d, 'items') if has(e, 'name') or s(e, 'logo')]
+    if not rows:
+        return ''
+
+    def one(e):
+        logo, name = media(s(e, 'logo'), 'img'), tri(e, 'name')
+        inner = f'<img src="{esc(logo)}" alt="{esc(name[2] or name[0])}" loading="lazy">' if logo else f'<b>{TC(name)}</b>'
+        small = f'<small>{Tk(e, "small")}</small>' if has(e, 'small') else ''
+        if s(e, 'link'):
+            return f'<a class="proof-item" href="{href(s(e, "link"))}">{inner}{small}</a>'
+        return f'<span class="proof-item">{inner}{small}</span>'
+    label = f'<span class="proof-label">{Tk(d, "label")}</span>' if has(d, 'label') else ''
+    more = (f'<a class="link-arrow" href="{href(s(d, "link"))}">{Tk(d, "link_label")}{ic("arrow")}</a>'
+            if s(d, 'link') and has(d, 'link_label') else '')
+    return f'''<section class="proof" id="proof">
+  <div class="wrap proof-row">
+    {label}
+    <div class="proof-list">{''.join(one(e) for e in rows)}</div>
+    {more}
+  </div>
+</section>'''
+
+
 # Sections that can have a 🎬 background video (the top film has its own video field)
-BG_KEYS = ('about', 'business', 'models', 'control', 'scenarios', 'cases')
+BG_KEYS = ('proof', 'about', 'business', 'models', 'control', 'scenarios', 'cases')
 
 def render():
     lb = C('site/labels')
@@ -106,7 +146,7 @@ def render():
   </div>
   <div class="wrap hero-inner">
     <div class="hero-copy">
-      <span class="eyebrow">{fmt(s(h, 'eyebrow'))}</span>
+      <span class="eyebrow">{Tk(h, 'eyebrow')}</span>
       <h1 class="h1">{Tk(h, 'title')}</h1>
       {Bk('p', h, 'lead', cls='lead')}
       <div class="btn-row">
@@ -165,14 +205,16 @@ def render():
   <div class="module-media">{med}</div>
   <div class="module-body"><span class="module-label">{Tk(mo, 'label')}</span><h3>{Tk(mo, 'title')}</h3>{Bk('p', mo, 'text')}<span class="link-arrow">{Tk(b, 'more')}{ic('arrow')}</span></div>
 </a>'''
-    mods = '\n      '.join(module(mo) for mo in items(b, 'modules'))
+    mod_list = items(b, 'modules')
+    mods = '\n      '.join(module(mo) for mo in mod_list)
+    mod_cls = 'modules c3' if len(mod_list) == 3 else 'modules'
     modules = f'''<section class="section section--mist" id="business">
   <div class="wrap">
     <div class="section-head"><span class="eyebrow">{Tk(b, 'eyebrow')}</span>
       <h2 class="h2">{Tk(b, 'title')}</h2>
       {Bk('p', b, 'lead', cls='lead')}
     </div>
-    <div class="modules">
+    <div class="{mod_cls}">
       {mods}
     </div>
   </div>
@@ -289,7 +331,9 @@ def render():
   </div>
 </section>'''
 
+    pr = C(f'{DIR}/proof')
     pg = C(f'{DIR}/page')
-    body = (hero + bgv(positioning, a) + bgv(modules, b) + bgv(models, m) + bgv(control, c) + bgv(scenarios, sc) + bgv(cases, cs)
-            + cta_band(pg))
+    # Main business first: what we sell and proof, then the range, uses, projects and the app; other solutions last
+    body = (hero + bgv(proof_band(pr), pr) + bgv(positioning, a) + bgv(models, m) + bgv(scenarios, sc) + bgv(cases, cs)
+            + bgv(control, c) + bgv(modules, b) + cta_band(pg))
     return page(FILE, pg, body)

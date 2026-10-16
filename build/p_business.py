@@ -10,14 +10,15 @@ from core import C, collection, s, items, tri, has, esc, fmt, T, Tk, Bk, img, hr
 from schema import TX, S, LINK, BOOL, NUM, IMG, ALT, VID, LIST, SEL, ICON, FEATURE, STEP, BG
 from layout import page, phero, cta_band, head, features, steps, gallery, video_card, CTA_TOPICS, bgv
 
-PARENTS = [('products', 'ผลิตภัณฑ์'), ('about', 'เกี่ยวกับ SuperX'), ('none', 'ไม่ต้องแสดง')]
+PARENTS = [('solutions', 'โซลูชันอื่น'), ('products', 'RoboVan (ธุรกิจหลัก)'), ('about', 'เกี่ยวกับ SuperX'), ('none', 'ไม่ต้องแสดง')]
+DEFAULT_PARENT = 'solutions'   # menu group used when none is chosen
 
 BUSINESS_FIELDS = [
     S('page', 'ชื่อหน้า (ภาษาอังกฤษตัวเล็ก ไม่เว้นวรรค เช่น ai-agent-pro)', req=True,
       desc='ใช้เป็นที่อยู่หน้าเว็บ เช่น ai-agent-pro.html ตั้งครั้งเดียว ไม่ควรเปลี่ยนภายหลัง'),
     BOOL('hide', 'ซ่อนหน้านี้ (ยังไม่แสดงบนเว็บ)'),
     NUM('order', 'ลำดับในเมนู (เลขน้อยแสดงก่อน)'),
-    SEL('menu', 'แสดงในเมนูด้านบนใต้หัวข้อ', PARENTS),
+    SEL('menu', 'แสดงในเมนูด้านบนใต้หัวข้อ (เว้นว่าง = โซลูชันอื่น)', PARENTS),
     TX('menu_title', 'ชื่อในเมนู'), TX('menu_hint', 'คำอธิบายสั้นใต้ชื่อในเมนู'),
     TX('seo_title', 'ชื่อหน้า (แท็บเบราว์เซอร์และ Google)', req=True),
     TX('seo_desc', 'คำอธิบายหน้าสำหรับ Google', long=True),
@@ -88,7 +89,7 @@ def menu_items(parent):
     """Extra entries for the header menu (products or about)."""
     out = []
     for d in all_business():
-        if (s(d, 'menu') or 'products') != parent:
+        if (s(d, 'menu') or DEFAULT_PARENT) != parent:
             continue
         e = {'link': d['_page']}
         for i, (k, _lg) in enumerate(LANGS):
@@ -119,10 +120,13 @@ def render_one(d):
         hero_d[f'lead_{k}'] = tri(d, 'lead')[i]
     crumb_title = tuple(x.replace('**', '').replace('\n', ' ') for x in (tri(d, 'menu_title') if has(d, 'menu_title') else tri(d, 'title')))
     trail_ = [('index.html', tri(lb, 'crumb_home'))]
-    if s(d, 'menu') == 'about':
+    parent = s(d, 'menu') or DEFAULT_PARENT
+    if parent == 'about':
         trail_.append(('about.html', tri(lb, 'crumb_about')))
-    else:
+    elif parent == 'products':
         trail_.append(('products.html', tri(lb, 'crumb_products')))
+    else:
+        trail_.append(('products.html#solutions', tri(lb, 'crumb_solutions') if has(lb, 'crumb_solutions') else tri(lb, 'crumb_products')))
     trail_.append((None, crumb_title))
     if s(d, 'image'):
         hero = phero(img(d, lazy=False), 'photo', trail_, hero_d, btn)

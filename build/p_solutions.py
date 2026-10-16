@@ -41,7 +41,7 @@ class Education:
     def render(self):
         D = self.DIR
         h = C(f'{D}/hero')
-        hero = phero(img(h, lazy=False), 'photo', trail('products', h), h, btn(h))
+        hero = phero(img(h, lazy=False), 'photo', trail('solutions', h), h, btn(h))
         au, tp, of, pr = (C(f'{D}/{k}') for k in ('audience', 'topics', 'offer', 'process'))
         who = section('section', f'{head(au)}\n    {features(items(au, "items"), "f4")}')
         topics = section('section section--mist', f'{head(tp)}\n    {features(items(tp, "items"))}')
@@ -102,7 +102,7 @@ class Security:
     def render(self):
         D = self.DIR
         h = C(f'{D}/hero')
-        hero = phero(img(h, lazy=False), 'photo', trail('products', h), h, '<div class="chips">' + ''.join(chips(items(h, 'chips'))) + '</div>')
+        hero = phero(img(h, lazy=False), 'photo', trail('solutions', h), h, '<div class="chips">' + ''.join(chips(items(h, 'chips'))) + '</div>')
         tr, sp, wy = (C(f'{D}/{k}') for k in ('tracked', 'special', 'why'))
         art = img(tr) if s(tr, 'image') else ROBOT_SVG
         tracked = f'''<section class="section" id="tracked">
@@ -161,7 +161,7 @@ class AiAgent:
       {chat_art(rows)}
       <div class="chat-phone-input"><span>{TC(('พิมพ์ข้อความ…', '输入消息…', 'Type a message…'))}</span>{ic('arrow')}</div>
     </div></div>'''
-        hero = phero(art, 'chat', trail('products', h), h, btn(h))
+        hero = phero(art, 'chat', trail('solutions', h), h, btn(h))
         ch, ca, gs, ind = (C(f'{D}/{k}') for k in ('channels', 'capabilities', 'getting_started', 'industries'))
         channels = f'''<section class="section-tight">
   <div class="wrap">

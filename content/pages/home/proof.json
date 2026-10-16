@@ -1,0 +1,61 @@
+{
+  "label_th": "โครงการนำร่องและพันธมิตร",
+  "label_zh": "试点项目与合作伙伴",
+  "label_en": "Pilots and partners",
+  "items": [
+    {
+      "name_th": "T-CAV",
+      "name_zh": "T-CAV",
+      "name_en": "T-CAV",
+      "small_th": "โครงการนำร่อง · กรมวิทยาศาสตร์บริการ",
+      "small_zh": "试点 · 泰国科学服务厅",
+      "small_en": "Pilot · Dept. of Science Service",
+      "logo": "",
+      "link": "cases.html#tcav"
+    },
+    {
+      "name_th": "WHA ESIE 1",
+      "name_zh": "WHA ESIE 1",
+      "name_en": "WHA ESIE 1",
+      "small_th": "โครงการนำร่อง · นิคมอุตสาหกรรม ระยอง",
+      "small_zh": "试点 · 工业园区，罗勇府",
+      "small_en": "Pilot · industrial estate, Rayong",
+      "logo": "",
+      "link": "cases.html#wha"
+    },
+    {
+      "name_th": "ไปรษณีย์ไทย",
+      "name_zh": "泰国邮政",
+      "name_en": "Thailand Post",
+      "small_th": "โครงการนำร่อง · สำนักงานใหญ่ กรุงเทพฯ",
+      "small_zh": "试点 · 总部，曼谷",
+      "small_en": "Pilot · head office, Bangkok",
+      "logo": "",
+      "link": "cases.html#thaipost"
+    },
+    {
+      "name_th": "Zelostech",
+      "name_zh": "Zelostech",
+      "name_en": "Zelostech",
+      "small_th": "ผู้พัฒนาเทคโนโลยีขับขี่อัตโนมัติ L4",
+      "small_zh": "L4 自动驾驶技术开发商",
+      "small_en": "L4 autonomous driving developer",
+      "logo": "",
+      "link": "about.html#partners"
+    },
+    {
+      "name_th": "DIMET (Siam) PCL",
+      "name_zh": "DIMET (Siam) PCL",
+      "name_en": "DIMET (Siam) PCL",
+      "small_th": "บริษัทแม่ · จดทะเบียนในตลาดหลักทรัพย์ฯ",
+      "small_zh": "母公司 · 泰国证券交易所上市",
+      "small_en": "Parent company · SET-listed",
+      "logo": "",
+      "link": "about.html#partners"
+    }
+  ],
+  "link_label_th": "ดูผลงานทั้งหมด",
+  "link_label_zh": "查看全部项目",
+  "link_label_en": "See all projects",
+  "link": "cases.html"
+}

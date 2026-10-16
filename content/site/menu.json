@@ -2,9 +2,12 @@
   "nav_home_th": "หน้าแรก",
   "nav_home_zh": "首页",
   "nav_home_en": "Home",
-  "nav_products_th": "ผลิตภัณฑ์",
-  "nav_products_zh": "产品中心",
-  "nav_products_en": "Products",
+  "nav_products_th": "RoboVan",
+  "nav_products_zh": "RoboVan",
+  "nav_products_en": "RoboVan",
+  "nav_solutions_th": "โซลูชันอื่น",
+  "nav_solutions_zh": "其他方案",
+  "nav_solutions_en": "More solutions",
   "nav_about_th": "เกี่ยวกับ SuperX",
   "nav_about_zh": "关于 SuperX",
   "nav_about_en": "About SuperX",
@@ -16,6 +19,16 @@
   "nav_demo_en": "Book a demo",
   "nav_demo_link": "contact.html?topic=demo",
   "products_menu": [
+    {
+      "link": "products.html",
+      "title_th": "RoboVan ทุกรุ่น",
+      "title_zh": "RoboVan 全系列",
+      "title_en": "All RoboVans",
+      "hint_th": "เปรียบเทียบรุ่น · ซื้อหรือเช่า",
+      "hint_zh": "车型对比 · 购买或租赁",
+      "hint_en": "Compare models · buy or lease",
+      "divider_before": false
+    },
     {
       "link": "z5.html",
       "title_th": "RoboVan Z5",
@@ -47,44 +60,24 @@
       "divider_before": false
     },
     {
-      "link": "education.html",
-      "title_th": "รถไร้คนขับเพื่อการศึกษา",
-      "title_zh": "教育无人车",
-      "title_en": "Autonomous driving education",
-      "hint_th": "สำหรับสถาบันการศึกษาและงานวิจัย",
-      "hint_zh": "面向院校与科研机构",
-      "hint_en": "For schools and research",
-      "divider_before": true
-    },
-    {
-      "link": "security.html",
-      "title_th": "หุ่นยนต์ความปลอดภัยและงานพิเศษ",
-      "title_zh": "安防与特种机器人",
-      "title_en": "Security and special robots",
-      "hint_th": "ตีนตะขาบ · ลาดตระเวน · ตรวจสอบ",
-      "hint_zh": "履带车 · 巡逻 · 巡检",
-      "hint_en": "Tracked · patrol · inspection",
+      "link": "products.html#z20",
+      "title_th": "RoboVan Z20",
+      "title_zh": "RoboVan Z20",
+      "title_en": "RoboVan Z20",
+      "hint_th": "20 ลบ.ม. · บรรทุก 4 ตัน",
+      "hint_zh": "20 立方米 · 载重 4 吨",
+      "hint_en": "20 m³ · 4 t payload",
       "divider_before": false
     },
     {
-      "link": "ai-agent.html",
-      "title_th": "AI Agent",
-      "title_zh": "AI Agent",
-      "title_en": "AI Agent",
-      "hint_th": "AI ตอบลูกค้าทุกช่องทาง",
-      "hint_zh": "全渠道客户沟通 AI",
-      "hint_en": "Omnichannel customer AI",
+      "link": "products.html#locker",
+      "title_th": "Z5 Multi-Locker",
+      "title_zh": "Z5 Multi-Locker",
+      "title_en": "Z5 Multi-Locker",
+      "hint_th": "ล็อกเกอร์ส่งพัสดุ 274 ช่อง",
+      "hint_zh": "274 格口",
+      "hint_en": "274 parcel lockers",
       "divider_before": false
-    },
-    {
-      "link": "products.html",
-      "title_th": "ผลิตภัณฑ์ทั้งหมด",
-      "title_zh": "全部产品",
-      "title_en": "All products",
-      "hint_th": "เปรียบเทียบทุกรุ่น",
-      "hint_zh": "全部车型对比",
-      "hint_en": "Compare every model",
-      "divider_before": true
     },
     {
       "link": "choose.html",
@@ -104,6 +97,38 @@
       "hint_th": "ดูว่าประหยัดได้เท่าไรต่อปี",
       "hint_zh": "看看每年能省多少",
       "hint_en": "See your yearly savings",
+      "divider_before": false
+    }
+  ],
+  "solutions_menu": [
+    {
+      "link": "education.html",
+      "title_th": "รถไร้คนขับเพื่อการศึกษา",
+      "title_zh": "教育无人车",
+      "title_en": "Autonomous driving education",
+      "hint_th": "สำหรับสถาบันการศึกษาและงานวิจัย",
+      "hint_zh": "面向院校与科研机构",
+      "hint_en": "For schools and research",
+      "divider_before": false
+    },
+    {
+      "link": "security.html",
+      "title_th": "หุ่นยนต์ความปลอดภัยและงานพิเศษ",
+      "title_zh": "安防与特种机器人",
+      "title_en": "Security and special robots",
+      "hint_th": "ตีนตะขาบ · ลาดตระเวน · ตรวจสอบ",
+      "hint_zh": "履带车 · 巡逻 · 巡检",
+      "hint_en": "Tracked · patrol · inspection",
+      "divider_before": false
+    },
+    {
+      "link": "ai-agent.html",
+      "title_th": "AI Agent",
+      "title_zh": "AI Agent",
+      "title_en": "AI Agent",
+      "hint_th": "AI ตอบลูกค้าทุกช่องทาง",
+      "hint_zh": "全渠道客户沟通 AI",
+      "hint_en": "Omnichannel customer AI",
       "divider_before": false
     }
   ],
@@ -159,10 +184,16 @@
       "divider_before": false
     }
   ],
-  "footer_products_title_th": "ผลิตภัณฑ์",
-  "footer_products_title_zh": "产品",
-  "footer_products_title_en": "Products",
+  "footer_products_title_th": "RoboVan",
+  "footer_products_title_zh": "RoboVan",
+  "footer_products_title_en": "RoboVan",
   "footer_products": [
+    {
+      "link": "products.html",
+      "label_th": "RoboVan ทุกรุ่น",
+      "label_zh": "RoboVan 全系列",
+      "label_en": "All RoboVans"
+    },
     {
       "link": "z5.html",
       "label_th": "RoboVan Z5",
@@ -182,6 +213,23 @@
       "label_en": "Cold-chain models"
     },
     {
+      "link": "products.html#z20",
+      "label_th": "RoboVan Z20",
+      "label_zh": "RoboVan Z20",
+      "label_en": "RoboVan Z20"
+    },
+    {
+      "link": "choose.html",
+      "label_th": "ช่วยเลือกรุ่น",
+      "label_zh": "车型推荐",
+      "label_en": "Find your model"
+    }
+  ],
+  "footer_solutions_title_th": "โซลูชันอื่น",
+  "footer_solutions_title_zh": "其他方案",
+  "footer_solutions_title_en": "More solutions",
+  "footer_solutions": [
+    {
       "link": "education.html",
       "label_th": "รถเพื่อการศึกษา",
       "label_zh": "教育无人车",
@@ -198,12 +246,6 @@
       "label_th": "AI Agent",
       "label_zh": "AI Agent",
       "label_en": "AI Agent"
-    },
-    {
-      "link": "products.html",
-      "label_th": "ผลิตภัณฑ์ทั้งหมด",
-      "label_zh": "全部产品",
-      "label_en": "All products"
     }
   ],
   "footer_company_title_th": "บริษัท",

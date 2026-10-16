@@ -37,19 +37,25 @@ SITE_FILES = [
     ]),
     ('site/menu', 'เมนูด้านบนและด้านล่างเว็บ', [
         TX('nav_home', 'เมนู: หน้าแรก'),
-        TX('nav_products', 'เมนู: ผลิตภัณฑ์'),
-        TX('nav_about', 'เมนู: เกี่ยวกับ'),
+        TX('nav_products', 'เมนูกลุ่มที่ 1: ธุรกิจหลัก (RoboVan)'),
+        TX('nav_solutions', 'เมนูกลุ่มที่ 2: โซลูชันอื่น'),
+        TX('nav_about', 'เมนูกลุ่มที่ 3: เกี่ยวกับ'),
         TX('nav_contact', 'เมนู: ติดต่อเรา'),
         TX('nav_demo', 'ปุ่มมุมขวาบน'),
         LINK('nav_demo_link', 'ลิงก์ปุ่มมุมขวาบน'),
-        LIST('products_menu', 'รายการในเมนูผลิตภัณฑ์', [
+        LIST('products_menu', 'รายการในเมนูกลุ่มที่ 1 (RoboVan)', [
             LINK(), TX('title', 'ชื่อ'), TX('hint', 'คำอธิบายสั้น'), BOOL('divider_before', 'มีเส้นคั่นก่อนรายการนี้'),
         ]),
-        LIST('about_menu', 'รายการในเมนูเกี่ยวกับ', [
+        LIST('solutions_menu', 'รายการในเมนูกลุ่มที่ 2 (โซลูชันอื่น)', [
+            LINK(), TX('title', 'ชื่อ'), TX('hint', 'คำอธิบายสั้น'), BOOL('divider_before', 'มีเส้นคั่นก่อนรายการนี้'),
+        ], desc='ลบทุกรายการ = ไม่แสดงเมนูนี้'),
+        LIST('about_menu', 'รายการในเมนูกลุ่มที่ 3 (เกี่ยวกับ)', [
             LINK(), TX('title', 'ชื่อ'), TX('hint', 'คำอธิบายสั้น'), BOOL('divider_before', 'มีเส้นคั่นก่อนรายการนี้'),
         ]),
-        TX('footer_products_title', 'หัวคอลัมน์ผลิตภัณฑ์ (ด้านล่างเว็บ)'),
-        LIST('footer_products', 'ลิงก์คอลัมน์ผลิตภัณฑ์', [LINK(), TX('label', 'ข้อความ')]),
+        TX('footer_products_title', 'หัวคอลัมน์ที่ 1 ด้านล่างเว็บ (RoboVan)'),
+        LIST('footer_products', 'ลิงก์คอลัมน์ที่ 1', [LINK(), TX('label', 'ข้อความ')]),
+        TX('footer_solutions_title', 'หัวคอลัมน์ที่ 2 ด้านล่างเว็บ (โซลูชันอื่น)'),
+        LIST('footer_solutions', 'ลิงก์คอลัมน์ที่ 2 (ลบทุกรายการ = ไม่แสดงคอลัมน์นี้)', [LINK(), TX('label', 'ข้อความ')]),
         TX('footer_company_title', 'หัวคอลัมน์บริษัท (ด้านล่างเว็บ)'),
         LIST('footer_company', 'ลิงก์คอลัมน์บริษัท', [LINK(), TX('label', 'ข้อความ')]),
         TX('footer_contact_title', 'หัวคอลัมน์ติดต่อ (ด้านล่างเว็บ)'),
@@ -61,7 +67,8 @@ SITE_FILES = [
     ]),
     ('site/labels', 'ข้อความปุ่มและป้ายที่ใช้หลายหน้า', [
         TX('crumb_home', 'แถบเส้นทาง: หน้าแรก'),
-        TX('crumb_products', 'แถบเส้นทาง: ผลิตภัณฑ์'),
+        TX('crumb_products', 'แถบเส้นทาง: หน้ารวม RoboVan ทุกรุ่น'),
+        TX('crumb_solutions', 'แถบเส้นทาง: โซลูชันอื่น'),
         TX('crumb_about', 'แถบเส้นทาง: เกี่ยวกับ'),
         TX('crumb_aria', 'คำอ่านแถบเส้นทาง'),
         TX('cta_title', 'แถบปิดท้ายหน้า: หัวข้อมาตรฐาน', long=True),
@@ -217,14 +224,26 @@ def _pages_in(menu_items):
 def header(current):
     m, co = C('site/menu'), C('site/company')
     import p_business
-    pm, am = items(m, 'products_menu') + p_business.menu_items('products'), items(m, 'about_menu') + p_business.menu_items('about')
+    # three menu groups: 1 = the main business (RoboVan), 2 = other solutions, 3 = about the company
+    pm = items(m, 'products_menu') + p_business.menu_items('products')
+    sm = items(m, 'solutions_menu') + p_business.menu_items('solutions')
+    am = items(m, 'about_menu') + p_business.menu_items('about')
     own = {'index.html', 'contact.html'}
     prod_cur = ' is-current' if current in _pages_in(pm) - own else ''
-    about_cur = ' is-current' if current in _pages_in(am) - own - _pages_in(pm) else ''
+    sol_cur = ' is-current' if current in _pages_in(sm) - own - _pages_in(pm) else ''
+    about_cur = ' is-current' if current in _pages_in(am) - own - _pages_in(pm) - _pages_in(sm) else ''
 
     def link(target, key):
         cur = ' aria-current="page"' if target == current else ''
         return f'<a class="nav-link" href="{target}"{cur}>{Tk(m, key)}</a>'
+
+    def group(key, menu, cur):
+        if not any(_shown(it) for it in menu):
+            return ''
+        return f'''<div class="nav-item{cur}">
+        <button class="nav-toggle" type="button" aria-expanded="false">{Tk(m, key)}{ic('chev')}</button>
+        <div class="sub">{_sub(menu, current)}</div>
+      </div>'''
     logo = media(s(co, 'logo'), 'img')
     logo_light = media(s(co, 'logo_white'), 'img') or logo
     return f'''<header class="site-header">
@@ -232,14 +251,9 @@ def header(current):
     <a class="brand" href="index.html"{aria(tri(m, 'home_aria'))}><img class="logo-dark" src="{esc(logo)}" alt="{esc(s(co, 'site_name'))}" width="103" height="30"><img class="logo-light" src="{esc(logo_light)}" alt="" width="103" height="30" aria-hidden="true"></a>
     <nav class="nav" id="site-nav"{aria(tri(m, 'menu_aria'))}>
       {link('index.html', 'nav_home')}
-      <div class="nav-item{prod_cur}">
-        <button class="nav-toggle" type="button" aria-expanded="false">{Tk(m, 'nav_products')}{ic('chev')}</button>
-        <div class="sub">{_sub(pm, current)}</div>
-      </div>
-      <div class="nav-item{about_cur}">
-        <button class="nav-toggle" type="button" aria-expanded="false">{Tk(m, 'nav_about')}{ic('chev')}</button>
-        <div class="sub">{_sub(am, current)}</div>
-      </div>
+      {group('nav_products', pm, prod_cur)}
+      {group('nav_solutions', sm, sol_cur)}
+      {group('nav_about', am, about_cur)}
       {link('contact.html', 'nav_contact')}
     </nav>
     <div class="header-actions">
@@ -275,15 +289,18 @@ def footer():
     addr = f'\n          <li>{ic("pin")}<span>{Tk(co, "address")}</span></li>' if has(co, 'address') else ''
     soc = f'\n          {socials}' if socials else ''
     logo = media(s(co, 'logo'), 'img')
+    solutions = any(_shown(i) for i in items(m, 'footer_solutions'))
+    sol_col = f"\n      {col('footer_solutions_title', 'footer_solutions')}" if solutions else ''
+    grid_cls = 'footer-grid f5' if solutions else 'footer-grid'
     return f'''<footer class="site-footer">
   <div class="wrap">
-    <div class="footer-grid">
+    <div class="{grid_cls}">
       <div class="footer-brand">
         <img class="logo-dark" src="{esc(logo)}" alt="{esc(s(co, 'site_name'))}" width="110" height="32" loading="lazy"><img class="logo-light" src="{esc(media(s(co, 'logo_white'), 'img') or logo)}" alt="" width="110" height="32" loading="lazy" aria-hidden="true">
         <p class="footer-tag">{fmt(s(co, 'tagline'))}</p>
         {Bk('p', co, 'footer_about')}
       </div>
-      {col('footer_products_title', 'footer_products')}
+      {col('footer_products_title', 'footer_products')}{sol_col}
       {col('footer_company_title', 'footer_company')}
       <div class="footer-col">
         <h4>{Tk(m, 'footer_contact_title')}</h4>
@@ -378,11 +395,13 @@ def crumbs(trail):
 
 
 def trail(section, hero):
-    """Breadcrumb for a page: section is None, 'products' or 'about'."""
+    """Breadcrumb for a page: section is None, 'products' (RoboVan), 'solutions' or 'about'."""
     lb = C('site/labels')
     out = [('index.html', tri(lb, 'crumb_home'))]
     if section == 'products':
         out.append(('products.html', tri(lb, 'crumb_products')))
+    elif section == 'solutions':
+        out.append(('products.html#solutions', tri(lb, 'crumb_solutions') if has(lb, 'crumb_solutions') else tri(lb, 'crumb_products')))
     elif section == 'about':
         out.append(('about.html', tri(lb, 'crumb_about')))
     out.append((None, tri(hero, 'crumb')))

@@ -1,45 +1,45 @@
 {
   "alt": "SuperX RoboVan fleet line-up at sunrise",
-  "crumb_th": "ผลิตภัณฑ์",
-  "crumb_zh": "产品中心",
-  "crumb_en": "Products",
-  "eyebrow_th": "ศูนย์ผลิตภัณฑ์",
-  "eyebrow_zh": "产品中心",
-  "eyebrow_en": "Product centre",
-  "title_th": "ผลิตภัณฑ์และโซลูชัน",
-  "title_zh": "产品与解决方案",
-  "title_en": "Products and solutions",
-  "lead_th": "รถขนส่งไร้คนขับ RoboVan ครบทุกขนาด รถเพื่อการศึกษา หุ่นยนต์งานความปลอดภัย และ AI Agent สำหรับองค์กร",
-  "lead_zh": "全系列 RoboVan 无人配送车、教育无人车、安防与特种机器人，以及企业级 AI Agent。",
-  "lead_en": "The full RoboVan range, education vehicles, security robots and enterprise AI agents.",
+  "crumb_th": "RoboVan ทุกรุ่น",
+  "crumb_zh": "RoboVan 全系列",
+  "crumb_en": "All RoboVans",
+  "eyebrow_th": "รถขนส่งไร้คนขับ RoboVan",
+  "eyebrow_zh": "RoboVan 无人驾驶物流车",
+  "eyebrow_en": "RoboVan driverless delivery vans",
+  "title_th": "เลือก RoboVan ให้เหมาะกับงานขนส่งของคุณ",
+  "title_zh": "选择适合您运输业务的 RoboVan",
+  "title_en": "Find the RoboVan for your operation",
+  "lead_th": "ตู้สินค้า 4.6–20 ลบ.ม. บรรทุก 1–4 ตัน มีรุ่นห้องเย็นและรุ่นล็อกเกอร์ ซื้อหรือเช่าก็ได้ พร้อมทีมติดตั้งและดูแลในประเทศไทย",
+  "lead_zh": "货箱 4.6–20 立方米，载重 1–4 吨，另有冷链版与多格口版。可购买或租赁，由泰国本地团队负责部署与服务。",
+  "lead_en": "Cargo boxes from 4.6 to 20 m³ and payloads from 1 to 4 t, with cold-chain and locker versions. Buy or lease, with installation and support from our Thailand team.",
   "chips": [
     {
       "anchor": "robovan",
       "icon": "van",
-      "label_th": "RoboVan",
-      "label_zh": "RoboVan",
-      "label_en": "RoboVan"
+      "label_th": "ทุกรุ่น",
+      "label_zh": "全部车型",
+      "label_en": "All models"
     },
     {
-      "anchor": "education",
-      "icon": "grad",
-      "label_th": "การศึกษา",
-      "label_zh": "教育",
-      "label_en": "Education"
+      "anchor": "services",
+      "icon": "leasing",
+      "label_th": "ซื้อหรือเช่า",
+      "label_zh": "购买或租赁",
+      "label_en": "Buy or lease"
     },
     {
-      "anchor": "security",
-      "icon": "shield",
-      "label_th": "ความปลอดภัย",
-      "label_zh": "安防",
-      "label_en": "Security"
+      "anchor": "technology",
+      "icon": "chip",
+      "label_th": "ระบบขับขี่ L4",
+      "label_zh": "L4 自动驾驶系统",
+      "label_en": "L4 driving suite"
     },
     {
-      "anchor": "ai",
-      "icon": "chat",
-      "label_th": "AI Agent",
-      "label_zh": "AI Agent",
-      "label_en": "AI Agent"
+      "anchor": "solutions",
+      "icon": "layers",
+      "label_th": "โซลูชันอื่น",
+      "label_zh": "其他方案",
+      "label_en": "More solutions"
     }
   ],
   "bg": {

@@ -2,12 +2,12 @@
   "eyebrow_th": "การใช้งาน",
   "eyebrow_zh": "应用场景",
   "eyebrow_en": "Applications",
-  "title_th": "ใช้งานได้ในหลายสถานการณ์จริง",
-  "title_zh": "覆盖多种真实应用场景",
-  "title_en": "Built for many real-world jobs",
-  "lead_th": "แพลตฟอร์มเดียวกันปรับใช้ได้ตั้งแต่ขนส่งในคลัง ห้องเย็น ไปจนถึงงานเทศบาลและความปลอดภัย",
-  "lead_zh": "同一平台可适配仓储、冷链，乃至市政与安防等多种场景。",
-  "lead_en": "One platform adapts from warehouse and cold-chain logistics to municipal and security work.",
+  "title_th": "ใช้ RoboVan กับงานขนส่งแบบไหนได้บ้าง",
+  "title_zh": "RoboVan 适用于哪些运输场景",
+  "title_en": "Where RoboVans go to work",
+  "lead_th": "ตั้งแต่ขนของในโรงงาน ขนย้ายระหว่างคลัง ขนส่งห้องเย็น ไปจนถึงส่งสินค้าถึงสาขาในเมือง",
+  "lead_zh": "从厂内搬运、仓间转运、冷链运输，到城市门店配送。",
+  "lead_en": "From in-plant moves and inter-warehouse runs to cold chain and deliveries to city stores.",
   "tiles": [
     {
       "image": "/assets/img/use-warehouse-b.webp",
@@ -68,36 +68,6 @@
       "text_th": "รับผลผลิตจากแหล่งปลูกถึงศูนย์รวบรวม",
       "text_zh": "从产地到集散中心",
       "text_en": "Produce from farm to collection point"
-    },
-    {
-      "image": "/assets/img/use-sweeper.webp",
-      "alt": "Street cleaning",
-      "title_th": "ทำความสะอาดถนน",
-      "title_zh": "道路清扫",
-      "title_en": "Street cleaning",
-      "text_th": "รถกวาดถนนไร้คนขับสำหรับเทศบาล",
-      "text_zh": "面向市政的无人清扫车",
-      "text_en": "Driverless sweepers for municipalities"
-    },
-    {
-      "image": "/assets/img/use-power-inspection.webp",
-      "alt": "Power-line inspection",
-      "title_th": "ตรวจสายส่งไฟฟ้า",
-      "title_zh": "电力巡检",
-      "title_en": "Power-line inspection",
-      "text_th": "ลาดตระเวนตรวจโครงข่ายไฟฟ้า",
-      "text_zh": "电网线路自动巡检",
-      "text_en": "Automated grid patrols"
-    },
-    {
-      "image": "/assets/img/use-security-patrol.webp",
-      "alt": "Security patrol",
-      "title_th": "ลาดตระเวนรักษาความปลอดภัย",
-      "title_zh": "安防巡逻",
-      "title_en": "Security patrol",
-      "text_th": "เฝ้าระวังพื้นที่ตลอดคืน",
-      "text_zh": "全天候区域巡逻",
-      "text_en": "Area patrols through the night"
     }
   ]
 }

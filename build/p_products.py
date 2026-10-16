@@ -3,13 +3,14 @@
 from core import C, s, items, tri, has, esc, fmt, T, TC, B, Tk, Bk, media, img, href, ic
 from schema import TX, S, LINK, IMG, ALT, DOC, ICON, MODEL, LIST, CHAT, SEL, BULLET
 from layout import (PAGE_FIELDS_CTA, PHERO, page, phero, trail, cta_band, product_card, chat_art, chips, checks, downloads,
-                    spec_table, model, form_model, mkey, bgv)
+                    spec_table, model, form_model, mkey, bgv, head)
 
 FILE = 'products.html'
 DIR = 'pages/products'
-LABEL = 'ผลิตภัณฑ์ทั้งหมด'
-CHIP = [S('anchor', 'ไปที่หัวข้อ (#)', desc='เช่น robovan, education, security, ai'), ICON(), TX('label', 'ข้อความ')]
+LABEL = 'RoboVan ทุกรุ่น (ผลิตภัณฑ์ทั้งหมด)'
+CHIP = [S('anchor', 'ไปที่หัวข้อ (#)', desc='เช่น robovan, z20, services, technology, solutions'), ICON(), TX('label', 'ข้อความ')]
 
+# Listed in the order they appear on the page: the RoboVan range first, other solutions last
 SECTIONS = [
     ('page', 'ตั้งค่าหน้า (ชื่อหน้า / แถบปิดท้าย)', PAGE_FIELDS_CTA),
     ('hero', '1. ภาพหลักและหัวข้อ', PHERO([LIST('chips', 'ปุ่มลัดไปยังหัวข้อ', CHIP)])),
@@ -30,22 +31,23 @@ SECTIONS = [
         TX('eyebrow', 'หัวข้อเล็ก'), TX('used_label', 'คำว่า การใช้งาน'), TX('ask_label', 'ปุ่มสอบถาม'), TX('download_label', 'ปุ่มดาวน์โหลดสเปก'),
         LIST('items', 'รุ่น', [MODEL(), S('anchor', 'รหัสหัวข้อ (#)'), TX('lead', 'คำอธิบาย', long=True), TX('uses', 'การใช้งาน', long=True)], summary='{anchor}'),
     ]),
-    ('technology', '5. ชุดระบบขับขี่อัตโนมัติ L4', [
+    ('services', '5. ซื้อหรือเช่า และบริการ', [
+        TX('eyebrow', 'หัวข้อเล็ก'), TX('title', 'หัวข้อ', long=True),
+        LIST('plans', 'รูปแบบการซื้อ / เช่า', [ICON(), TX('title', 'หัวข้อ'), TX('text', 'คำอธิบาย', long=True)]),
+        LIST('services', 'บริการ', [ICON(), TX('label', 'ข้อความ')]),
+    ]),
+    ('technology', '6. ชุดระบบขับขี่อัตโนมัติ L4', [
         IMG(), ALT(), TX('eyebrow', 'หัวข้อเล็ก'), TX('title', 'หัวข้อ', long=True), TX('text', 'คำอธิบาย', long=True),
         LIST('specs', 'รายการอุปกรณ์', [TX('label', 'ชื่อ'), S('value', 'จำนวน / ค่า')], summary='{label_th} {value}'),
         LIST('downloads', 'เอกสารดาวน์โหลด', [DOC(), S('title', 'ชื่อเอกสาร')], summary='{title}'),
     ]),
-    ('lines', '6. การศึกษา / ความปลอดภัย / AI Agent', [
-        LIST('items', 'กลุ่มผลิตภัณฑ์', [
+    ('lines', '7. โซลูชันอื่น (การศึกษา / ความปลอดภัย / AI Agent)', [
+        TX('eyebrow', 'หัวข้อเล็ก'), TX('title', 'หัวข้อ', long=True), TX('lead', 'คำอธิบาย', long=True),
+        LIST('items', 'กลุ่มโซลูชัน', [
             S('anchor', 'รหัสหัวข้อ (#)'), SEL('media_type', 'ภาพประกอบ', [('image', 'รูปภาพ'), ('chat', 'ข้อความแชตตัวอย่าง')]), IMG(), ALT(), CHAT(),
             TX('eyebrow', 'หัวข้อเล็ก'), TX('title', 'หัวข้อ'), TX('lead', 'คำอธิบาย', long=True),
             LIST('bullets', 'รายการเครื่องหมายถูก', BULLET), TX('button_label', 'ปุ่ม'), LINK('button_link', 'ลิงก์ปุ่ม'),
         ]),
-    ]),
-    ('services', '7. รูปแบบธุรกิจและบริการ', [
-        TX('eyebrow', 'หัวข้อเล็ก'), TX('title', 'หัวข้อ', long=True),
-        LIST('plans', 'รูปแบบการซื้อ / เช่า', [ICON(), TX('title', 'หัวข้อ'), TX('text', 'คำอธิบาย', long=True)]),
-        LIST('services', 'บริการ', [ICON(), TX('label', 'ข้อความ')]),
     ]),
 ]
 
@@ -146,8 +148,10 @@ def render():
 
     ln = C(f'{DIR}/lines')
     lines_html = '\n    '.join(line_block(x) for x in items(ln, 'items'))
-    lines = f'''<section class="section section--mist">
+    lines_head = head(ln, link=False) if has(ln, 'title') else ''
+    lines = f'''<section class="section section--mist" id="solutions">
   <div class="wrap">
+    {lines_head}
     {lines_html}
   </div>
 </section>'''
@@ -169,6 +173,7 @@ def render():
 </section>'''
 
     pg = C(f'{DIR}/page')
-    body = (bgv(hero, h) + bgv(bgv(robovan, rv), ot, nth=1) + bgv(suite, tc) + bgv(lines, ln) + bgv(services, sv)
+    # RoboVan range → other models → how to buy → technology → other solutions
+    body = (bgv(hero, h) + bgv(bgv(robovan, rv), ot, nth=1) + bgv(services, sv) + bgv(suite, tc) + bgv(lines, ln)
             + cta_band(pg))
     return page(FILE, pg, body)

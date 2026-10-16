@@ -1,98 +1,98 @@
 {
-  "eyebrow_th": "SuperX คือใคร",
-  "eyebrow_zh": "公司定位",
-  "eyebrow_en": "Who we are",
-  "title_th": "เราไม่ได้ส่งมอบแค่รถไร้คนขับ แต่ส่งมอบระบบขนส่งอัตโนมัติที่**พร้อมใช้งานจริง**",
-  "title_zh": "我们交付的不只是无人车，而是**可直接投入运营**的自动化物流系统",
-  "title_en": "Not just a driverless vehicle. A complete autonomous logistics system, **ready to run.**",
-  "lead_th": "SuperX AI คือบริษัท Enterprise AI สัญชาติไทย ภายใต้ระบบนิเวศธุรกิจของ บมจ. ไดเมท (สยาม) และเป็นพันธมิตรกับ Zelostech ผู้พัฒนาเทคโนโลยีขับขี่อัตโนมัติระดับ L4 เรานำ RoboVan ไปใช้งานในเมือง โรงงาน ศูนย์กระจายสินค้า และนิคมอุตสาหกรรม ตั้งแต่ประเมินหน้างานและวิเคราะห์ ROI ไปจนถึงเชื่อมต่อระบบ อบรม เฝ้าติดตามฝูงรถ และบริการหลังการขายในประเทศ",
-  "lead_zh": "SuperX AI 是一家泰国本土企业级 AI 公司，隶属 DIMET (Siam) 大众有限公司业务生态，并与 L4 级自动驾驶技术企业 Zelostech（九识智能）合作。我们将 RoboVan 部署到城市、工厂、配送中心和工业园区，提供从现场评估、ROI 分析，到系统集成、培训、车队监控及本地售后的完整服务。",
-  "lead_en": "SuperX AI is a Thailand-based enterprise AI company, backed by DIMET (Siam) PCL and partnered with Zelostech. We deploy Level 4 autonomous RoboVans across cities, factories, distribution centres and industrial estates — from site assessment and ROI analysis to system integration, training, fleet monitoring and local after-sales support.",
+  "eyebrow_th": "เราทำอะไร",
+  "eyebrow_zh": "我们做什么",
+  "eyebrow_en": "What we do",
+  "title_th": "นำรถขนส่งไร้คนขับมาใช้งานจริงในองค์กรของคุณ **ครบในที่เดียว**",
+  "title_zh": "让无人驾驶物流车在您的现场真正运行，**一站式交付**",
+  "title_en": "We put driverless delivery vans to work on your site, **end to end.**",
+  "lead_th": "SuperX AI เป็นบริษัทไทยในเครือ บมจ. ไดเมท (สยาม) และเป็นพันธมิตรของ Zelostech ผู้ผลิตรถ RoboVan เราดูแลครบทุกขั้นตอน ตั้งแต่เลือกรถให้เหมาะกับงาน ติดตั้งและเชื่อมต่อระบบ จนถึงดูแลการใช้งานทุกวัน",
+  "lead_zh": "SuperX AI 是隶属 DIMET (Siam) 大众有限公司的泰国企业，也是 RoboVan 制造商 Zelostech 的合作伙伴。从选车、安装与系统对接，到日常维护与支持，我们全程负责。",
+  "lead_en": "SuperX AI is a Thai company in the DIMET (Siam) PCL group and a partner of Zelostech, the maker of the RoboVan. We handle every step: choosing the right vehicle, installing it and connecting it to your systems, then supporting it day to day.",
   "flow": [
     {
-      "who_th": "เทคโนโลยี",
-      "who_zh": "技术",
-      "who_en": "Technology",
-      "name_th": "Zelostech",
-      "name_zh": "Zelostech",
-      "name_en": "Zelostech",
-      "text_th": "เทคโนโลยีขับขี่อัตโนมัติ L4 แบบ Full-stack",
-      "text_zh": "L4 全栈自动驾驶技术",
-      "text_en": "Full-stack L4 autonomous driving",
+      "who_th": "1 · รถ",
+      "who_zh": "1 · 车辆",
+      "who_en": "1 · The vehicle",
+      "name_th": "RoboVan จาก Zelostech",
+      "name_zh": "Zelostech RoboVan",
+      "name_en": "RoboVan by Zelostech",
+      "text_th": "รถไร้คนขับระดับ L4 ตู้สินค้า 4.6–20 ลบ.ม. เลือกซื้อหรือเช่า",
+      "text_zh": "L4 级无人驾驶车，货箱 4.6–20 立方米，可购买或租赁",
+      "text_en": "L4 driverless vans with 4.6–20 m³ cargo boxes, to buy or lease",
       "highlight": false,
       "bullets": [
         {
-          "text_th": "ระบบรับรู้สภาพแวดล้อม (Perception)",
-          "text_zh": "环境感知",
-          "text_en": "Perception"
+          "text_th": "ระบบขับขี่อัตโนมัติ L4 แบบ Full-stack",
+          "text_zh": "全栈式 L4 自动驾驶",
+          "text_en": "Full-stack L4 autonomous driving"
         },
         {
-          "text_th": "การวางแผนเส้นทาง (Path planning)",
-          "text_zh": "路径规划",
-          "text_en": "Path planning"
+          "text_th": "มีรุ่นห้องเย็นและรุ่นล็อกเกอร์",
+          "text_zh": "提供冷链版与多格口版",
+          "text_en": "Cold-chain and locker versions"
         },
         {
-          "text_th": "การควบคุมยานพาหนะอัตโนมัติ",
-          "text_zh": "自动驾驶控制",
-          "text_en": "Autonomous vehicle control"
+          "text_th": "ซื้อรถ หรือเช่ารายเดือน / รายปี",
+          "text_zh": "可购买，也可按月 / 按年租赁",
+          "text_en": "Buy, or lease monthly or yearly"
         }
       ]
     },
     {
-      "who_th": "ผู้ดำเนินงานในประเทศไทย",
-      "who_zh": "泰国本地执行伙伴",
-      "who_en": "Local execution partner",
+      "who_th": "2 · ติดตั้ง",
+      "who_zh": "2 · 部署",
+      "who_en": "2 · Deployment",
       "name_th": "SUPERX AI",
       "name_zh": "SUPERX AI",
       "name_en": "SUPERX AI",
-      "text_th": "ทำให้ระบบใช้งานได้จริงที่หน้างานของคุณ",
-      "text_zh": "让系统在您的现场真正跑起来",
+      "text_th": "ทำให้รถวิ่งได้จริงที่หน้างานของคุณ",
+      "text_zh": "让车辆在您的现场真正跑起来",
       "text_en": "Makes it work on your site",
       "highlight": true,
       "bullets": [
         {
-          "text_th": "สำรวจหน้างานและออกแบบ Use case",
-          "text_zh": "现场勘察与场景设计",
-          "text_en": "Site survey and use-case design"
+          "text_th": "สำรวจหน้างานและออกแบบเส้นทาง",
+          "text_zh": "现场勘察与线路设计",
+          "text_en": "Site survey and route design"
         },
         {
-          "text_th": "เชื่อมต่อระบบ ติดตั้ง ทดสอบ และอบรม",
-          "text_zh": "系统集成、安装测试与培训",
-          "text_en": "Integration, installation, testing, training"
+          "text_th": "ติดตั้ง ทดสอบ และอบรมทีมงาน",
+          "text_zh": "安装、测试与人员培训",
+          "text_en": "Installation, testing and staff training"
         },
         {
-          "text_th": "บริการหลังการขายและเฝ้าระวัง 24 ชม.",
-          "text_zh": "售后服务与 24 小时监控",
-          "text_en": "After-sales and 24-hour monitoring"
+          "text_th": "เชื่อมต่อกับระบบคลังสินค้า (WMS) ผ่าน API",
+          "text_zh": "通过 API 对接仓储管理系统（WMS）",
+          "text_en": "API link to your warehouse system (WMS)"
         }
       ]
     },
     {
-      "who_th": "คุณค่าที่ลูกค้าได้รับ",
-      "who_zh": "客户价值",
-      "who_en": "Customer value",
-      "name_th": "ระบบพร้อมใช้งานจริง",
-      "name_zh": "可投产的系统",
-      "name_en": "Production-ready",
-      "text_th": "ลดต้นทุนและเพิ่มรอบการขนส่ง",
-      "text_zh": "降低成本、增加运输班次",
-      "text_en": "Lower cost, more trips",
+      "who_th": "3 · ดูแล",
+      "who_zh": "3 · 运营",
+      "who_en": "3 · Operation",
+      "name_th": "ดูแลตลอดการใช้งาน",
+      "name_zh": "全程运营保障",
+      "name_en": "Ongoing care",
+      "text_th": "รถทำงานต่อเนื่อง ลดต้นทุน และขยายฝูงรถได้ตามธุรกิจ",
+      "text_zh": "持续运行、降低成本，车队随业务扩展",
+      "text_en": "Keeps running, cuts cost and grows with you",
       "highlight": false,
       "bullets": [
         {
-          "text_th": "ลดต้นทุนการดำเนินงาน",
-          "text_zh": "降低运营成本",
-          "text_en": "Lower operating cost"
+          "text_th": "ศูนย์เฝ้าระวังความปลอดภัย 24 ชั่วโมง",
+          "text_zh": "24 小时安全监控中心",
+          "text_en": "24-hour safety monitoring centre"
         },
         {
-          "text_th": "ทำงานต่อเนื่องได้ตลอด 24/7",
-          "text_zh": "支持 24/7 连续运行",
-          "text_en": "Runs 24/7"
+          "text_th": "บำรุงรักษาและทีมสนับสนุนในประเทศ",
+          "text_zh": "本地维护与技术支持团队",
+          "text_en": "Local maintenance and support team"
         },
         {
           "text_th": "ขยายฝูงรถได้ตามการเติบโตของธุรกิจ",
-          "text_zh": "可随业务增长扩展车队",
-          "text_en": "Scales as your business grows"
+          "text_zh": "车队可随业务增长扩展",
+          "text_en": "Fleet scales as your business grows"
         }
       ]
     }
@@ -125,5 +125,8 @@
       "text_zh": "平均每车每年减少 CO₂ 排放",
       "text_en": "CO₂ reduced per vehicle per year, on average"
     }
-  ]
+  ],
+  "note_th": "ตัวเลขการใช้งานเทคโนโลยี Zelostech ทั่วโลก",
+  "note_zh": "以上为 Zelostech 技术全球应用数据",
+  "note_en": "Figures for Zelostech technology worldwide"
 }

@@ -218,7 +218,7 @@ body.hero-dark .site-header:not(.is-solid) .menu-btn { background: rgba(255, 255
 .hero-copy { display: grid; gap: 22px; max-width: 980px; }
 .hero .h1 { font-size: clamp(2.6rem, 5.6vw, 4.8rem); line-height: 1.04; letter-spacing: -0.03em; }
 html[data-lang="th"] .hero .h1 { font-size: clamp(2.2rem, 4.9vw, 4.1rem); line-height: 1.24; letter-spacing: 0; }
-html[data-lang="zh"] .hero .h1 { font-size: clamp(2.2rem, 4.9vw, 4.1rem); line-height: 1.22; letter-spacing: 0.01em; }
+html[data-lang="zh"] .hero .h1 { font-size: clamp(2.2rem, 4.9vw, 4.1rem); line-height: 1.22; letter-spacing: 0.01em; word-break: keep-all; overflow-wrap: anywhere; }
 .hero .lead { max-width: 36em; }
 .hero-foot {
   margin-top: clamp(40px, 8vh, 88px); padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -235,6 +235,18 @@ html[data-lang="zh"] .hero .h1 { font-size: clamp(2.2rem, 4.9vw, 4.1rem); line-h
 }
 .play-btn .ic { width: 16px; height: 16px; }
 .play-btn:hover { background: rgba(255, 255, 255, 0.18); }
+
+/* ---------- Proof band under the home film: pilot sites and partners in one row ---------- */
+.proof { position: relative; padding-block: clamp(22px, 3vw, 32px); background: var(--paper); border-bottom: 1px solid var(--line); }
+.proof-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 14px 24px; }
+.proof-label { grid-column: 1; grid-row: 1; font-size: 0.85rem; font-weight: 600; color: var(--mute); }
+.proof .link-arrow { grid-column: 2; grid-row: 1; justify-self: end; font-size: 0.92rem; }
+.proof-list { grid-column: 1 / -1; grid-row: 2; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px 28px; }
+.proof-item { display: grid; gap: 2px; align-content: start; line-height: 1.35; }
+.proof-item b { font-size: 1.02rem; font-weight: 600; color: var(--ink); transition: color .2s; }
+.proof-item small { font-size: 0.8rem; color: var(--mute); }
+.proof-item img { max-height: 34px; max-width: 150px; width: auto; height: auto; object-fit: contain; }
+a.proof-item:hover b { color: var(--midnight); }
 
 /* ---------- Inner page heroes ---------- */
 /* Vehicle pages: the van large on a pale floor, copy beside it */
@@ -348,6 +360,7 @@ html[data-lang="th"] .statement { line-height: 1.75; }
 
 /* ---------- Business modules ---------- */
 .modules { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.modules.c3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .module { display: grid; grid-template-rows: auto 1fr; border-radius: var(--r); overflow: hidden; background: var(--card); border: 1px solid var(--line); transition: border-color .2s, box-shadow .2s; }
 .module:hover { border-color: var(--midnight); box-shadow: 0 30px 60px -44px rgba(16, 28, 56, 0.45); }
 .module-media { aspect-ratio: 4 / 3; background: var(--mist-2); overflow: hidden; position: relative; }
@@ -720,6 +733,7 @@ a.case:hover h3 { color: var(--midnight); }
 /* ---------- Footer ---------- */
 .site-footer { background: var(--paper); border-top: 1px solid var(--line); color: var(--text); padding-block: clamp(56px, 7vw, 88px) 28px; }
 .footer-grid { display: grid; grid-template-columns: minmax(0, 4fr) repeat(3, minmax(0, 2fr)); gap: 32px; }
+.footer-grid.f5 { grid-template-columns: minmax(0, 3.2fr) repeat(4, minmax(0, 2fr)); gap: 28px; }
 .footer-brand { display: grid; gap: 16px; align-content: start; }
 .footer-brand img { height: 32px; width: auto; }
 .footer-brand p { font-size: 0.92rem; max-width: 30rem; }
@@ -765,7 +779,9 @@ a.case:hover h3 { color: var(--midnight); }
   .nav-link, .nav-toggle { padding-inline: 9px; font-size: 0.92rem; }
   .header-actions .btn { display: none; }
   .modules, .pcards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .modules.c3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .features.f4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .footer-grid.f5 { grid-template-columns: minmax(0, 2.6fr) repeat(4, minmax(0, 2fr)); gap: 22px; }
 }
 @media (max-width: 1020px) {
   .menu-btn { display: inline-flex; }
@@ -800,7 +816,7 @@ a.case:hover h3 { color: var(--midnight); }
   .phones { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .phone-card:nth-child(even) { margin-top: 0; }
   .uses, .services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .footer-grid, .footer-grid.f5 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .footer-brand { grid-column: 1 / -1; }
   .steps, .steps.s4 { grid-template-columns: minmax(0, 1fr); gap: 22px; }
   .step { grid-template-columns: 44px minmax(0, 1fr); column-gap: 16px; }
@@ -811,7 +827,8 @@ a.case:hover h3 { color: var(--midnight); }
   .subnav-row { justify-content: flex-start; }
 }
 @media (max-width: 760px) {
-  .grid-2, .grid-3, .grid-4, .modules, .pcards, .pcards.c3, .pcards.c2, .cases, .features, .features.f4, .features.f2, .options, .vm, .models2, .uses, .services { grid-template-columns: minmax(0, 1fr); }
+  .grid-2, .grid-3, .grid-4, .modules, .modules.c3, .pcards, .pcards.c3, .pcards.c2, .cases, .features, .features.f4, .features.f2, .options, .vm, .models2, .uses, .services { grid-template-columns: minmax(0, 1fr); }
+  .proof-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 18px; }
   .figures { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .figures.f3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .fig:nth-child(3) { padding-left: 0; border-left: 0; }

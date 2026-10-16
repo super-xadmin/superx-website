@@ -1,4 +1,13 @@
 {
+  "eyebrow_th": "โซลูชันอื่น",
+  "eyebrow_zh": "其他方案",
+  "eyebrow_en": "More solutions",
+  "title_th": "โซลูชันอื่นจาก SuperX AI",
+  "title_zh": "SuperX AI 其他解决方案",
+  "title_en": "More from SuperX AI",
+  "lead_th": "เทคโนโลยีไร้คนขับและ AI สำหรับสถาบันการศึกษา งานรักษาความปลอดภัยและงานพิเศษ และการตอบลูกค้า",
+  "lead_zh": "面向教育机构、安防与特种作业以及客户服务的无人驾驶与 AI 方案。",
+  "lead_en": "Autonomous technology and AI for education, security and special-purpose work, and customer service.",
   "items": [
     {
       "anchor": "education",
