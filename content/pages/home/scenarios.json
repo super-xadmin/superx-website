@@ -20,6 +20,7 @@
       "text_en": "Pallets and cartons between buildings"
     },
     {
+      "image": "/assets/img/场景产品图/欧洲工厂2.jpg",
       "alt": "Industrial estates",
       "title_th": "นิคมอุตสาหกรรม",
       "title_zh": "工业园区物流",
@@ -29,7 +30,7 @@
       "text_en": "Materials and parts to the line"
     },
     {
-      "image": "/assets/img/use-coldchain.webp",
+      "image": "/assets/img/场景产品图/医院.png",
       "alt": "Cold chain",
       "title_th": "โลจิสติกส์ห้องเย็น",
       "title_zh": "冷链配送",
@@ -39,7 +40,7 @@
       "text_en": "Fresh, frozen and pharmaceutical"
     },
     {
-      "image": "/assets/img/use-warehouse-a.webp",
+      "image": "/assets/img/场景产品图/欧洲水果店.jpg",
       "alt": "Retail replenishment",
       "title_th": "เติมสินค้าค้าปลีก",
       "title_zh": "零售补货",
@@ -49,7 +50,7 @@
       "text_en": "From warehouse to city stores"
     },
     {
-      "image": "/assets/img/use-airport.webp",
+      "image": "/assets/img/img_v3_0216i_e651afbf-4ea1-40ca-8a2e-91471b5e62ix.jpg",
       "alt": "Airports",
       "title_th": "สนามบิน",
       "title_zh": "机场物流",
@@ -59,7 +60,7 @@
       "text_en": "Ground logistics between terminals"
     },
     {
-      "image": "/assets/img/use-last-mile.webp",
+      "image": "/assets/img/场景产品图/欧洲农场.jpg",
       "alt": "Last mile and farms",
       "title_th": "ไมล์สุดท้ายและการเกษตร",
       "title_zh": "末端与农产品配送",
