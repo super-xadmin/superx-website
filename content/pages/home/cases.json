@@ -89,6 +89,10 @@
     },
     {
       "logo": "/assets/img/claude-ai-logo.webp"
+    },
+    {
+      "logo": "/assets/img/l_ldss-1.png",
+      "name_zh": "DSS"
     }
   ],
   "strip_link_label_th": "พันธมิตรทั้งหมด",
