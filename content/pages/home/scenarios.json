@@ -10,7 +10,6 @@
   "lead_en": "From in-plant moves and inter-warehouse runs to cold chain and deliveries to city stores.",
   "tiles": [
     {
-      "image": "/assets/img/scene-warehouse.webp",
       "alt": "Warehouses and DCs",
       "title_th": "คลังและศูนย์กระจายสินค้า",
       "title_zh": "仓储与配送中心",
