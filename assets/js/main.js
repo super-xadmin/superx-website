@@ -732,4 +732,163 @@
     });
     setTimeout(whenReady, delay * 1000);
   })();
+
+  /* ---------- Live chat (💬 in the back office): the sales team answers in Lark (chat.js on Cloudflare) ---------- */
+  // The visitor's conversation id and key stay in this browser, so the chat is still there on the next page or
+  // visit. While the box is open the page asks for new answers every few seconds; while closed, now and then,
+  // so a red dot can show that the team has replied.
+  var chatBox = document.getElementById('chat');
+  if (chatBox) (function () {
+    var D = {};
+    try { D = JSON.parse(document.getElementById('chat-data').textContent) || {}; } catch (e) { D = {}; }
+    var T = function (k) { var v = (D.t || {})[k] || {}; return v[currentLang()] || v.th || ''; };
+    var fab = chatBox.querySelector('.chat-fab'), panel = chatBox.querySelector('.chat-panel');
+    var log = chatBox.querySelector('.chat-log'), startForm = chatBox.querySelector('.chat-start');
+    var form = chatBox.querySelector('.chat-form'), input = form.querySelector('textarea');
+    var err1 = startForm.querySelector('.chat-error'), err2 = chatBox.querySelector('.chat-error2');
+    var unread = chatBox.querySelector('.chat-unread'), newBtn = chatBox.querySelector('.chat-new');
+    var KEY = 'sx-chat';
+    var load = function () { try { return JSON.parse(store(KEY) || 'null'); } catch (e) { return null; } };
+    var save = function (s) { try { if (s) localStorage.setItem(KEY, JSON.stringify(s)); else localStorage.removeItem(KEY); } catch (e) { /* memory only */ } };
+    var state = load() || null, memory = state, seq = 0, seen = state ? (state.seen || 0) : 0, timer = null, busyPoll = false;
+
+    // office hours, Thailand time
+    var setStatus = function () {
+      var h = D.hours || {}, t = new Date(Date.now() + 7 * 36e5), day = t.getUTCDay(), now = t.getUTCHours() + t.getUTCMinutes() / 60;
+      var open = !(day === 6 && !h.sat) && !(day === 0 && !h.sun) && now >= (h.from || 0) && now < (h.until || 24);
+      chatBox.querySelector('.chat-online').hidden = !open;
+      chatBox.querySelector('.chat-offline').hidden = open;
+      chatBox.classList.toggle('is-offline', !open);
+    };
+    var time = function (ms) { var d = new Date(ms); return (d.getHours() < 10 ? '0' : '') + d.getHours() + ':' + (d.getMinutes() < 10 ? '0' : '') + d.getMinutes(); };
+    var bubble = function (who, text, at, cls) {
+      var el = document.createElement('div');
+      el.className = 'chat-msg ' + who + (cls ? ' ' + cls : '');
+      if (who !== 'sys') {
+        var meta = document.createElement('span');
+        meta.className = 'chat-meta';
+        meta.textContent = (who === 'staff' ? T('staff') : T('me')) + (at ? ' · ' + time(at) : '');
+        el.appendChild(meta);
+      }
+      var p = document.createElement('p');
+      p.textContent = text;
+      el.appendChild(p);
+      log.appendChild(el);
+      log.scrollTop = log.scrollHeight;
+    };
+    var add = function (list) {
+      (list || []).forEach(function (m) {
+        if (m.seq <= seq) return;
+        seq = m.seq;
+        bubble(m.who === 'staff' ? 'staff' : 'me', m.text, m.at);
+      });
+    };
+    var showError = function (el, kind) { el.textContent = T(kind === 'too_many' ? 'too_many' : 'error'); el.hidden = false; };
+    var api = function (path, body) {
+      var opt = body ? { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(body) }
+        : { headers: { 'Accept': 'application/json', 'X-Chat-Token': state ? state.token : '' } };
+      return fetch(path, opt).then(function (r) { return r.json().then(function (j) { j.status = r.status; return j; }, function () { return { ok: false, status: r.status }; }); });
+    };
+    var mode = function () {
+      var chatting = !!state;
+      startForm.hidden = chatting;
+      form.hidden = !chatting;
+      newBtn.hidden = !chatting;
+    };
+    var forget = function () {
+      state = null; memory = null; save(null); seq = 0; seen = 0;
+      Array.prototype.forEach.call(log.querySelectorAll('.chat-msg:not(.chat-intro)'), function (el) { el.remove(); });
+      mode();
+    };
+    var markSeen = function () {
+      if (!state) return;
+      seen = seq; state.seen = seq; save(state);
+      unread.hidden = true;
+    };
+    var poll = function () {
+      if (!state || busyPoll) return;
+      busyPoll = true;
+      api('/api/chat/poll?id=' + encodeURIComponent(state.id) + '&after=' + seq).then(function (j) {
+        busyPoll = false;
+        if (j.status === 403) { forget(); return; }
+        if (!j.ok) return;
+        var before = seq;
+        add(j.messages);
+        var staffNew = (j.messages || []).some(function (m) { return m.who === 'staff' && m.seq > seen; });
+        if (!panel.hidden) markSeen(); else if (staffNew && seq > before) unread.hidden = false;
+      }, function () { busyPoll = false; });
+    };
+    var schedule = function () {
+      clearTimeout(timer);
+      if (!state) return;
+      var wait = document.hidden ? 60000 : (panel.hidden ? 30000 : 4000);
+      timer = setTimeout(function () { if (!document.hidden) poll(); schedule(); }, wait);
+    };
+    var open = function () {
+      setStatus();
+      panel.hidden = false;
+      fab.setAttribute('aria-expanded', 'true');
+      chatBox.classList.add('is-open');
+      mode();
+      if (state) { poll(); markSeen(); }
+      var first = state ? input : startForm.querySelector('input[name="name"]');
+      setTimeout(function () { if (first && !(window.matchMedia && window.matchMedia('(pointer: coarse)').matches)) first.focus(); }, 30);
+      log.scrollTop = log.scrollHeight;
+      schedule();
+    };
+    var close = function () {
+      panel.hidden = true;
+      fab.setAttribute('aria-expanded', 'false');
+      chatBox.classList.remove('is-open');
+      fab.focus();
+      schedule();
+    };
+    fab.addEventListener('click', function () { if (panel.hidden) open(); else close(); });
+    chatBox.querySelector('.chat-x').addEventListener('click', close);
+    panel.addEventListener('keydown', function (e) { if (e.key === 'Escape') { e.stopPropagation(); close(); } });
+    newBtn.addEventListener('click', function () { forget(); var n = startForm.querySelector('input[name="name"]'); if (n) n.focus(); });
+
+    startForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      err1.hidden = true;
+      if (!startForm.checkValidity()) { startForm.reportValidity(); return; }
+      var f = startForm.elements, btn = startForm.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      api('/api/chat/start', { name: f.name.value, phone: f.phone.value, text: f.text.value, consent: f.consent.checked,
+        website: f.website.value, lang: currentLang(), from: window.location.pathname }).then(function (j) {
+        btn.disabled = false;
+        if (!j.ok || !j.id) { showError(err1, j.error); return; }
+        state = { id: j.id, token: j.token, seen: 0 }; memory = state; save(state);
+        seq = 0; mode();
+        add(j.messages);
+        bubble('sys', T('sent'));
+        markSeen();
+        startForm.reset();
+        input.focus();
+        schedule();
+      }, function () { btn.disabled = false; showError(err1); });
+    });
+    var sending = false;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var text = input.value.trim();
+      if (!text || sending || !state) return;
+      sending = true; err2.hidden = true;
+      api('/api/chat/send', { id: state.id, token: state.token, text: text, after: seq }).then(function (j) {
+        sending = false;
+        if (j.status === 403) { forget(); return; }
+        if (!j.ok) { showError(err2, j.error); return; }
+        input.value = ''; grow();
+        add(j.messages); markSeen();
+      }, function () { sending = false; showError(err2); });
+    });
+    // Enter sends, Shift+Enter makes a new line; the box grows with the text
+    var grow = function () { input.style.height = 'auto'; input.style.height = Math.min(input.scrollHeight, 120) + 'px'; };
+    input.addEventListener('input', grow);
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) { e.preventDefault(); form.requestSubmit ? form.requestSubmit() : form.dispatchEvent(new Event('submit', { cancelable: true })); }
+    });
+    document.addEventListener('visibilitychange', function () { if (!document.hidden && state) { poll(); } schedule(); });
+    if (state) { poll(); schedule(); }
+  })();
 })();

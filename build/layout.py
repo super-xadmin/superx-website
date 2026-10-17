@@ -348,7 +348,8 @@ def page(fname, page_data, body, extra_head='', current=None, share=None):
     classes = (['hero-dark'] if dark else []) + (['has-quickbar'] if qbar else [])
     body_cls = f' class="{" ".join(classes)}"' if classes else ''
     import promo
-    popup = promo.render(fname)
+    import chat
+    popup = promo.render(fname) + chat.render(fname)
     content = f'''{sprite()}
 <a class="skip" href="#main">{Tk(m, 'skip')}</a>
 {header(current or fname)}

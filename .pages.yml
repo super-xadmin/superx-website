@@ -415,6 +415,210 @@ content:
   - name: close_en
     label: คำอ่านปุ่มปิด (สำหรับโปรแกรมอ่านหน้าจอ) · English
     type: string
+- name: chat
+  label: 💬 แชทบนเว็บ (ตอบผ่าน Lark)
+  type: file
+  path: content/site/chat.json
+  format: json
+  fields:
+  - name: enabled
+    label: เปิดใช้แชทบนเว็บ
+    type: boolean
+    description: ติ๊กหลังจากตั้งค่าบอท Lark เสร็จแล้วเท่านั้น (ดู README ข้อ 8.1) ไม่อย่างนั้นลูกค้าจะส่งข้อความไม่ได้
+  - name: button_th
+    label: ข้อความบนปุ่มแชท · ไทย
+    type: string
+  - name: button_zh
+    label: ข้อความบนปุ่มแชท · 中文
+    type: string
+  - name: button_en
+    label: ข้อความบนปุ่มแชท · English
+    type: string
+  - name: title_th
+    label: หัวข้อกล่องแชท · ไทย
+    type: string
+  - name: title_zh
+    label: หัวข้อกล่องแชท · 中文
+    type: string
+  - name: title_en
+    label: หัวข้อกล่องแชท · English
+    type: string
+  - name: intro_th
+    label: ข้อความต้อนรับ · ไทย
+    type: text
+  - name: intro_zh
+    label: ข้อความต้อนรับ · 中文
+    type: text
+  - name: intro_en
+    label: ข้อความต้อนรับ · English
+    type: text
+  - name: online_th
+    label: สถานะในเวลาทำการ (เช่น ทีมงานพร้อมตอบ) · ไทย
+    type: string
+  - name: online_zh
+    label: สถานะในเวลาทำการ (เช่น ทีมงานพร้อมตอบ) · 中文
+    type: string
+  - name: online_en
+    label: สถานะในเวลาทำการ (เช่น ทีมงานพร้อมตอบ) · English
+    type: string
+  - name: offline_th
+    label: สถานะนอกเวลาทำการ · ไทย
+    type: string
+    description: เช่น นอกเวลาทำการ ทิ้งข้อความไว้ได้ เราจะติดต่อกลับ
+  - name: offline_zh
+    label: สถานะนอกเวลาทำการ · 中文
+    type: string
+  - name: offline_en
+    label: สถานะนอกเวลาทำการ · English
+    type: string
+  - name: hours_th
+    label: เวลาทำการ (ข้อความที่ลูกค้าเห็น เช่น จ.–ศ. 9:00–18:00 น.) · ไทย
+    type: string
+  - name: hours_zh
+    label: เวลาทำการ (ข้อความที่ลูกค้าเห็น เช่น จ.–ศ. 9:00–18:00 น.) · 中文
+    type: string
+  - name: hours_en
+    label: เวลาทำการ (ข้อความที่ลูกค้าเห็น เช่น จ.–ศ. 9:00–18:00 น.) · English
+    type: string
+  - name: open_from
+    label: เวลาเริ่มตอบ (ชั่วโมง 0–23 เช่น 9)
+    type: number
+    description: ใช้คำนวณว่าตอนนี้อยู่ในเวลาทำการหรือไม่ (เวลาประเทศไทย)
+  - name: open_until
+    label: เวลาเลิกตอบ (ชั่วโมง 1–24 เช่น 18)
+    type: number
+  - name: saturday
+    label: ตอบวันเสาร์ด้วย
+    type: boolean
+  - name: sunday
+    label: ตอบวันอาทิตย์ด้วย
+    type: boolean
+  - name: name_label_th
+    label: ช่องชื่อ · ไทย
+    type: string
+  - name: name_label_zh
+    label: ช่องชื่อ · 中文
+    type: string
+  - name: name_label_en
+    label: ช่องชื่อ · English
+    type: string
+  - name: phone_label_th
+    label: ช่องเบอร์โทร · ไทย
+    type: string
+  - name: phone_label_zh
+    label: ช่องเบอร์โทร · 中文
+    type: string
+  - name: phone_label_en
+    label: ช่องเบอร์โทร · English
+    type: string
+  - name: message_label_th
+    label: ช่องข้อความแรก · ไทย
+    type: string
+  - name: message_label_zh
+    label: ช่องข้อความแรก · 中文
+    type: string
+  - name: message_label_en
+    label: ช่องข้อความแรก · English
+    type: string
+  - name: consent_th
+    label: ข้อความยินยอม PDPA (ช่องติ๊ก) · ไทย
+    type: text
+  - name: consent_zh
+    label: ข้อความยินยอม PDPA (ช่องติ๊ก) · 中文
+    type: text
+  - name: consent_en
+    label: ข้อความยินยอม PDPA (ช่องติ๊ก) · English
+    type: text
+  - name: start_th
+    label: ปุ่มเริ่มแชท · ไทย
+    type: string
+  - name: start_zh
+    label: ปุ่มเริ่มแชท · 中文
+    type: string
+  - name: start_en
+    label: ปุ่มเริ่มแชท · English
+    type: string
+  - name: placeholder_th
+    label: ข้อความจางในช่องพิมพ์ · ไทย
+    type: string
+  - name: placeholder_zh
+    label: ข้อความจางในช่องพิมพ์ · 中文
+    type: string
+  - name: placeholder_en
+    label: ข้อความจางในช่องพิมพ์ · English
+    type: string
+  - name: send_th
+    label: ปุ่มส่ง (คำอ่านสำหรับโปรแกรมอ่านหน้าจอ) · ไทย
+    type: string
+  - name: send_zh
+    label: ปุ่มส่ง (คำอ่านสำหรับโปรแกรมอ่านหน้าจอ) · 中文
+    type: string
+  - name: send_en
+    label: ปุ่มส่ง (คำอ่านสำหรับโปรแกรมอ่านหน้าจอ) · English
+    type: string
+  - name: sent_th
+    label: ข้อความหลังเริ่มแชท · ไทย
+    type: text
+  - name: sent_zh
+    label: ข้อความหลังเริ่มแชท · 中文
+    type: text
+  - name: sent_en
+    label: ข้อความหลังเริ่มแชท · English
+    type: text
+  - name: staff_th
+    label: ชื่อที่แสดงตอนทีมงานตอบ · ไทย
+    type: string
+  - name: staff_zh
+    label: ชื่อที่แสดงตอนทีมงานตอบ · 中文
+    type: string
+  - name: staff_en
+    label: ชื่อที่แสดงตอนทีมงานตอบ · English
+    type: string
+  - name: me_th
+    label: ชื่อที่แสดงข้อความของลูกค้า (เช่น คุณ) · ไทย
+    type: string
+  - name: me_zh
+    label: ชื่อที่แสดงข้อความของลูกค้า (เช่น คุณ) · 中文
+    type: string
+  - name: me_en
+    label: ชื่อที่แสดงข้อความของลูกค้า (เช่น คุณ) · English
+    type: string
+  - name: error_th
+    label: ข้อความเมื่อส่งไม่สำเร็จ · ไทย
+    type: text
+  - name: error_zh
+    label: ข้อความเมื่อส่งไม่สำเร็จ · 中文
+    type: text
+  - name: error_en
+    label: ข้อความเมื่อส่งไม่สำเร็จ · English
+    type: text
+  - name: too_many_th
+    label: ข้อความเมื่อส่งถี่เกินไป · ไทย
+    type: string
+  - name: too_many_zh
+    label: ข้อความเมื่อส่งถี่เกินไป · 中文
+    type: string
+  - name: too_many_en
+    label: ข้อความเมื่อส่งถี่เกินไป · English
+    type: string
+  - name: new_chat_th
+    label: ปุ่มเริ่มแชทใหม่ · ไทย
+    type: string
+  - name: new_chat_zh
+    label: ปุ่มเริ่มแชทใหม่ · 中文
+    type: string
+  - name: new_chat_en
+    label: ปุ่มเริ่มแชทใหม่ · English
+    type: string
+  - name: close_th
+    label: คำอ่านปุ่มปิด (สำหรับโปรแกรมอ่านหน้าจอ) · ไทย
+    type: string
+  - name: close_zh
+    label: คำอ่านปุ่มปิด (สำหรับโปรแกรมอ่านหน้าจอ) · 中文
+    type: string
+  - name: close_en
+    label: คำอ่านปุ่มปิด (สำหรับโปรแกรมอ่านหน้าจอ) · English
+    type: string
 - name: pages
   label: 📄 หน้าเว็บ (แก้ทีละหัวข้อ)
   type: group

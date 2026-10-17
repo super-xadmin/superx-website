@@ -1,7 +1,8 @@
 {
   // SUPERX AI website on Cloudflare Workers.
   // Every deploy first runs build/build.py, which makes the web pages in public/ from content/
-  // (the files edited in the back office, Pages CMS). worker.js sends the contact form to Lark.
+  // (the files edited in the back office, Pages CMS). worker.js sends the contact form to Lark,
+  // and chat.js runs the live chat that the sales team answers in Lark.
   "name": "superx-website",
   "main": "worker.js",
   "compatibility_date": "2026-09-01",
@@ -13,5 +14,10 @@
     "binding": "ASSETS",
     "run_worker_first": ["/api/*"],
     "not_found_handling": "404-page"
-  }
+  },
+  // Live chat (chat.js): conversations are kept in one Durable Object with its own small database.
+  "durable_objects": {
+    "bindings": [{ "name": "CHAT", "class_name": "ChatHub" }]
+  },
+  "migrations": [{ "tag": "chat-v1", "new_sqlite_classes": ["ChatHub"] }]
 }

@@ -1,8 +1,8 @@
 /*
  * SUPERX AI website: sends each contact-form submission to the sales team's Lark group.
  *
- * Cloudflare runs this file (see wrangler.jsonc). It only answers POST /api/lead.
- * Every other address is passed straight to the website files in public/.
+ * Cloudflare runs this file (see wrangler.jsonc). It answers POST /api/lead, and /api/chat/* (the live chat,
+ * see chat.js). Every other address is passed straight to the website files in public/.
  *
  * The enquiry topics and models come from the contact form in the back office
  * (หน้าเว็บ → ติดต่อเรา → แบบฟอร์ม). build/build.py writes them to worker-data.json before each deploy.
@@ -19,6 +19,10 @@
  *   LARK_API_BASE         optional  default https://open.larksuite.com (Feishu: https://open.feishu.cn)
  */
 import SITE from './worker-data.json';
+import { handleChat, ChatHub } from './chat.js';
+
+// Live chat answered in Lark (chat.js). Cloudflare needs the storage class exported from this file.
+export { ChatHub };
 
 const CARD_COLOURS = ['blue', 'wathet', 'turquoise', 'green', 'yellow', 'orange', 'red', 'carmine', 'violet', 'purple', 'indigo', 'grey'];
 
@@ -57,6 +61,14 @@ export default {
       } catch (err) {
         console.error('lead: unexpected error', err && err.stack ? err.stack : err);
         return reply(request, 500, { ok: false, error: 'server_error' });
+      }
+    }
+    if (url.pathname.startsWith('/api/chat/')) {
+      try {
+        return await handleChat(request, env, url);
+      } catch (err) {
+        console.error('chat: unexpected error', err && err.stack ? err.stack : err);
+        return new Response(JSON.stringify({ ok: false, error: 'server_error' }), { status: 500, headers: { 'Content-Type': 'application/json' } });
       }
     }
     if (env.ASSETS) return env.ASSETS.fetch(request);
