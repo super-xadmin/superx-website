@@ -1,5 +1,5 @@
 {
-  "enabled": false,
+  "enabled": true,
   "button_th": "แชทกับเรา",
   "button_zh": "在线咨询",
   "button_en": "Chat with us",
@@ -18,8 +18,8 @@
   "hours_th": "ทีมงานตอบ จ.–ศ. 9:00–18:00 น.",
   "hours_zh": "回复时间：周一至周五 9:00–18:00（泰国时间）",
   "hours_en": "We reply Mon–Fri, 9:00–18:00 (Thailand time)",
-  "open_from": 9,
-  "open_until": 18,
+  "open_from": 8,
+  "open_until": 17,
   "saturday": false,
   "sunday": false,
   "name_label_th": "ชื่อ",
