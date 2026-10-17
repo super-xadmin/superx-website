@@ -31,6 +31,9 @@
     "active": false,
     "start": "2026-10-17",
     "end": "2026-10-17",
+    "title_th": " **Demo** ฟรี",
+    "title_zh": " **Demo** 免费",
+    "title_en": " **Demo** Free",
     "image_fit": "contain"
   },
   "close_th": "ปิด",
