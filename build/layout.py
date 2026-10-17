@@ -200,8 +200,13 @@ def hidden_pages():
         return set()
 
 
+def link_shown(url):
+    """False when the link goes to a page switched off in the back office."""
+    return (url or '').split('#')[0].split('?')[0] not in hidden_pages()
+
+
 def _shown(it, key='link'):
-    return s(it, key).split('#')[0].split('?')[0] not in hidden_pages()
+    return link_shown(s(it, key))
 
 
 def _sub(items_, current):
@@ -342,13 +347,15 @@ def page(fname, page_data, body, extra_head='', current=None, share=None):
     dark = re.match(r'\s*<section class="(hero|phero phero--(photo|chat))\b', body)
     classes = (['hero-dark'] if dark else []) + (['has-quickbar'] if qbar else [])
     body_cls = f' class="{" ".join(classes)}"' if classes else ''
+    import promo
+    popup = promo.render(fname)
     content = f'''{sprite()}
 <a class="skip" href="#main">{Tk(m, 'skip')}</a>
 {header(current or fname)}
 <main id="main">
 {body}
 </main>
-{footer()}{qbar}
+{footer()}{qbar}{popup}
 <script src="assets/js/main.js" defer></script>'''
     return f'''<!doctype html>
 <html lang="th" data-lang="th"{html_cls}>

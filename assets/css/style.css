@@ -644,6 +644,7 @@ a.case:hover h3 { color: var(--midnight); }
 .step p { font-size: 0.94rem; }
 .section--mist .pin { background: var(--card); }
 .section--mist .step.is-goal .pin { background: var(--aurora); }
+.start-cta { justify-content: center; margin-top: clamp(36px, 5vw, 56px); }
 .target { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px 32px; align-items: center; margin-top: clamp(36px, 5vw, 56px); padding: clamp(22px, 3vw, 36px); border-radius: var(--r); background: var(--mist); }
 .target b { font-size: clamp(2.6rem, 6vw, 4.2rem); font-weight: 600; color: var(--midnight); line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -0.03em; }
 
@@ -1156,6 +1157,146 @@ main { overflow-x: clip; }
 .has-bgv .chat-art { background: rgba(255, 255, 255, 0.05); }
 .has-bgv :is(.phero-media.is-vehicle img, .lineup-stage img, .spin img) { filter: drop-shadow(0 30px 34px rgba(0, 0, 0, 0.6)); }
 .has-bgv .lineup-stage { background: radial-gradient(46% 16% at 50% 94%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 100%); }
+
+/* ---------- Pop-up (📣 in the back office): what we sell, 3 steps to start, the current promotion ---------- */
+/* A native <dialog>: it sits above everything, keeps keyboard focus inside and closes with Esc. A centred card on
+   computers, a sheet from the bottom on phones. main.js decides when it opens. */
+dialog.promo:not([open]) { display: none; }
+.promo {
+  padding: 0; border: 0; margin: auto; background: transparent; color: var(--text); overflow: visible;
+  width: min(900px, calc(100vw - 32px)); max-width: none;
+  max-height: calc(100vh - 32px); max-height: calc(100dvh - 32px);
+}
+.promo:not(.has-steps) { width: min(600px, calc(100vw - 32px)); }
+.promo:focus, .promo:focus-visible { outline: none; }
+.promo::backdrop { background: rgba(7, 14, 32, 0.62); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); }
+.promo-card {
+  position: relative; max-height: inherit; overflow-y: auto; overscroll-behavior: contain;
+  background: var(--card); border-radius: 22px; box-shadow: 0 40px 100px -30px rgba(4, 10, 26, 0.7);
+}
+.promo:not(.has-img) .promo-card::before { content: ""; display: block; height: 4px; background: var(--aurora); }
+.promo-x {
+  position: absolute; top: 14px; right: 14px; z-index: 2; width: 42px; height: 42px; border-radius: 50%;
+  display: grid; place-items: center; padding: 0; border: 0; cursor: pointer; color: #fff;
+  background: rgba(7, 14, 32, 0.52); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); transition: background .2s;
+}
+.promo-x:hover { background: rgba(7, 14, 32, 0.78); }
+.promo-x .ic { width: 20px; height: 20px; stroke-width: 2; }
+.promo:not(.has-img) .promo-x { background: var(--mist); color: var(--ink); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.promo:not(.has-img) .promo-x:hover { background: var(--mist-2); }
+.promo-media { position: relative; height: min(34vh, 40vw, 380px); overflow: hidden; background: #0A1530; }
+.promo-media img { width: 100%; height: 100%; object-fit: cover; }
+.promo-media.fit-contain { height: auto; display: grid; place-items: center; }
+.promo-media.fit-contain img { width: auto; height: auto; max-width: 100%; max-height: 40vh; object-fit: contain; }
+.promo-body { --px: clamp(24px, 3.4vw, 40px); --py: clamp(22px, 4.4vh, 40px); display: grid; gap: 22px; padding: var(--py) var(--px); }
+.promo.has-steps .promo-body {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); grid-template-rows: auto 1fr;
+  grid-template-areas: "head side" "foot side"; column-gap: clamp(24px, 3.4vw, 40px);
+}
+.promo.has-steps .promo-head { grid-area: head; }
+.promo.has-steps .promo-side { grid-area: side; }
+.promo.has-steps .promo-foot { grid-area: foot; align-self: start; }
+.promo:not(.has-img) .promo-body { padding-top: clamp(56px, 8vh, 64px); }
+.promo-head { display: grid; gap: 12px; align-content: start; justify-items: start; }
+.promo-badge {
+  display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px; border-radius: 999px;
+  font-size: 0.8rem; font-weight: 600; line-height: 1.4; color: var(--midnight); background: rgba(79, 200, 233, 0.16);
+}
+.promo-badge::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--aurora); flex: none; }
+.promo-title { font-size: clamp(1.4rem, 2.1vw, 1.7rem); line-height: 1.28; letter-spacing: -0.015em; }
+html[data-lang="th"] .promo-title { line-height: 1.45; letter-spacing: 0; }
+html[data-lang="zh"] .promo-title { line-height: 1.4; letter-spacing: 0.01em; }
+html[data-lang="zh"] :is(.promo-title, #start .h2) { word-break: keep-all; overflow-wrap: anywhere; }
+.promo-title strong { font-weight: inherit; color: var(--frost); }
+.promo-text { font-size: 0.98rem; }
+.promo-text, .ps-text, .promo-offer-text { text-wrap: pretty; }
+/* 🎁 the promotion box, only between its dates */
+.promo-offer {
+  display: grid; gap: 6px; justify-self: stretch; margin-top: 4px; padding: 14px 18px 16px; border-radius: 14px;
+  border: 2px solid transparent; background: linear-gradient(var(--card), var(--card)) padding-box, var(--aurora) border-box;
+}
+.promo-offer-label { display: inline-flex; align-items: center; gap: 7px; font-size: 0.8rem; font-weight: 600; line-height: 1.4; color: var(--frost); }
+.promo-offer-label .ic { width: 18px; height: 18px; }
+.promo-offer-title { font-size: 1.1rem; font-weight: 600; line-height: 1.4; color: var(--ink); }
+.promo-offer-text { font-size: 0.9rem; line-height: 1.6; }
+.promo-foot { display: grid; gap: 14px; }
+.promo-note { font-size: 0.8rem; color: var(--mute); }
+.promo-side { display: grid; gap: 16px; align-content: start; padding: 22px 24px; border-radius: 16px; background: var(--mist); }
+.promo-steps-title { font-size: 1rem; line-height: 1.45; }
+.promo-steps { display: grid; gap: 16px; }
+.promo-steps li { position: relative; display: grid; grid-template-columns: 36px minmax(0, 1fr); column-gap: 14px; align-items: start; }
+.promo-steps li:not(:last-child)::after { content: ""; position: absolute; left: 17px; top: 42px; bottom: -12px; border-left: 2px dashed #B9C3D3; }
+.promo-steps .pin { width: 36px; height: 36px; font-size: 0.92rem; }
+.promo-steps li:last-child .pin { border: 0; background: var(--aurora); color: #fff; }
+.promo-steps b { display: block; margin-top: 6px; font-weight: 600; line-height: 1.45; color: var(--ink); }
+.ps-text { margin-top: 3px; font-size: 0.86rem; line-height: 1.55; }
+/* while open the page stops scrolling; its scroll bar goes away, so keep the page (and the fixed header over a film) still */
+html.promo-lock { overflow: hidden; }
+html.promo-lock body { padding-right: var(--promo-bar, 0px); }
+html.promo-lock body.hero-dark .site-header { right: var(--promo-bar, 0px); }
+@media (prefers-reduced-motion: no-preference) {
+  .promo[open] { animation: promo-in .45s cubic-bezier(.2, .7, .25, 1); }
+  .promo[open]::backdrop { animation: promo-fade .4s ease; }
+  .promo.is-closing { animation: promo-out .22s ease forwards; }
+  .promo.is-closing::backdrop { animation: promo-fade-out .22s ease forwards; }
+}
+@keyframes promo-in { from { opacity: 0; transform: translateY(26px) scale(.97); } }
+@keyframes promo-out { to { opacity: 0; transform: translateY(14px) scale(.98); } }
+@keyframes promo-fade { from { opacity: 0; } }
+@keyframes promo-fade-out { to { opacity: 0; } }
+/* short computer screens: the buttons stay in sight at the bottom of the card while the rest scrolls */
+@media (min-width: 761px) and (max-height: 760px) {
+  .promo-media { height: min(26vh, 40vw, 300px); }
+  .promo.has-steps .promo-body { grid-template-rows: auto auto; grid-template-areas: "head side" "foot foot"; }
+  .promo-foot {
+    position: sticky; bottom: 0; z-index: 1; margin: 0 calc(-1 * var(--px)) calc(-1 * var(--py)); padding: 14px var(--px) 18px;
+    background: var(--card); box-shadow: 0 -12px 18px -14px rgba(16, 28, 56, 0.35);
+  }
+}
+@media (max-width: 760px) {
+  .promo, .promo:not(.has-steps) {
+    width: 100%; max-width: 100%; margin: auto 0 0;
+    max-height: 92vh; max-height: 92svh;
+  }
+  .promo-card { border-radius: 22px 22px 0 0; }
+  .promo-x { top: 12px; right: 12px; width: 40px; height: 40px; }
+  .promo-media { height: min(25vh, 50vw); height: min(25svh, 50vw); }
+  .promo-media.fit-contain { height: auto; }
+  .promo-media.fit-contain img { max-height: 30vh; max-height: 30svh; }
+  .promo-body, .promo.has-steps .promo-body {
+    grid-template-columns: minmax(0, 1fr); grid-template-rows: none; grid-template-areas: "head" "side" "foot";
+    gap: 18px; padding: 22px 20px calc(20px + env(safe-area-inset-bottom, 0px));
+  }
+  .promo:not(.has-img) .promo-body { padding-top: 60px; }
+  /* the buttons stay in sight at the bottom of the sheet while the rest scrolls */
+  .promo-foot {
+    position: sticky; bottom: 0; z-index: 1; gap: 10px;
+    margin: 0 -20px calc(-20px - env(safe-area-inset-bottom, 0px)); padding: 12px 20px calc(16px + env(safe-area-inset-bottom, 0px));
+    background: var(--card); box-shadow: 0 -12px 18px -14px rgba(16, 28, 56, 0.35);
+  }
+  .promo-title { font-size: 1.35rem; }
+  .promo-text { font-size: 0.94rem; }
+  .promo-side { gap: 12px; padding: 16px 18px; }
+  .promo-steps { gap: 12px; }
+  .promo-steps li:not(:last-child)::after { top: 40px; bottom: -10px; }
+  .promo-steps b { margin-top: 7px; font-size: 0.95rem; }
+  .ps-text { display: none; }
+  .promo-btns { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 10px; }
+  .promo-btns .btn { white-space: normal; text-align: center; padding-inline: 12px; }
+  @media (prefers-reduced-motion: no-preference) {
+    .promo[open] { animation: promo-up .42s cubic-bezier(.2, .7, .25, 1); }
+    .promo.is-closing { animation: promo-down .24s ease forwards; }
+  }
+}
+@media (max-width: 760px) and (max-height: 760px) {
+  .promo-media { height: min(18vh, 40vw); height: min(18svh, 40vw); }
+  .promo-body, .promo.has-steps .promo-body { gap: 14px; padding-top: 18px; }
+  .promo:not(.has-img) .promo-body { padding-top: 60px; }
+  .promo-side { padding: 14px 16px; }
+}
+@keyframes promo-up { from { transform: translateY(100%); } }
+@keyframes promo-down { to { transform: translateY(100%); } }
+@media print { .promo { display: none !important; } }
 
 /* ---------- Dark mode (only when switched on in the back office: ⚙️ → ลูกเล่นและการแสดงผล) ---------- */
 @media (prefers-color-scheme: dark) {

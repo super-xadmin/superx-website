@@ -644,4 +644,92 @@
       el.addEventListener('mouseleave', function () { hot(n, false); });
     });
   });
+
+  /* ---------- Pop-up (📣 in the back office) ---------- */
+  // Opens a few seconds after the page, once per visitor, then not again for the number of days set in the back
+  // office. data-key changes when the main message changes; data-offer-key belongs to the 🎁 promotion, which is
+  // added only between its start and end dates (the date in Thailand) and is shown once to everybody when it starts.
+  // Esc, the X, a click outside the card or any of its buttons close it.
+  var promo = document.getElementById('promo');
+  if (promo && typeof promo.showModal === 'function') (function () {
+    var num = function (name, dflt) { var v = parseFloat(promo.getAttribute(name)); return isFinite(v) && v >= 0 ? v : dflt; };
+    var key = promo.getAttribute('data-key') || '';
+    var offerKey = promo.getAttribute('data-offer-key') || '';
+    var days = num('data-repeat', 7), delay = Math.min(num('data-delay', 3), 120);
+    var today = new Date(Date.now() + 7 * 36e5).toISOString().slice(0, 10);   // today in Thailand (UTC+7)
+    var from = promo.getAttribute('data-offer-start') || '', until = promo.getAttribute('data-offer-end') || '';
+    var offer = !!offerKey && !(from && today < from) && !(until && today > until);
+    if (offer) {                                    // promotion running: show its box, and its picture / button if it has them
+      Array.prototype.forEach.call(promo.querySelectorAll('[data-when]'), function (el) {
+        el.hidden = el.getAttribute('data-when') !== 'offer';
+      });
+      if (promo.querySelector('.promo-media[data-when="offer"]')) promo.classList.add('has-img');
+    }
+    // Remember who has seen it (0 days = until the browser tab is closed). If the browser keeps nothing,
+    // do not show it at all rather than on every page.
+    var memo = null;
+    try { memo = days > 0 ? window.localStorage : window.sessionStorage; memo.setItem('sx-t', '1'); memo.removeItem('sx-t'); } catch (e) { memo = null; }
+    if (!memo) return;
+    var read = function () { try { return JSON.parse(memo.getItem('sx-promo') || 'null'); } catch (e) { return null; } };
+    var due = function (seen) {
+      if (!seen || seen.k !== key) return true;                       // never seen, or the main message changed
+      if (offer && seen.o !== offerKey) return true;                  // a promotion they have not seen yet
+      return days > 0 && !(Date.now() - seen.t < days * 864e5);       // time to remind them
+    };
+    if (!due(read())) return;
+    var pic = promo.querySelector('.promo-media:not([hidden]) img[loading="lazy"]');
+    if (pic) pic.loading = 'eager';                 // fetch the picture now, so it is there when the pop-up opens
+    var closing = false, downOutside = false;
+    var tidy = function () {
+      root.classList.remove('promo-lock');
+      root.style.removeProperty('--promo-bar');
+      promo.classList.remove('is-closing');
+      closing = false;
+    };
+    var close = function (atOnce) {
+      if (!promo.open || closing) return;
+      if (atOnce || !motionOK) { promo.close(); tidy(); return; }
+      closing = true;
+      promo.classList.add('is-closing');
+      setTimeout(function () { promo.close(); tidy(); }, 230);
+    };
+    var open = function () {
+      var bar = window.innerWidth - root.clientWidth;   // width of the page's scroll bar, which goes away while open
+      try { promo.showModal(); } catch (e) { return; }
+      var seen = read();
+      try { memo.setItem('sx-promo', JSON.stringify({ k: key, o: offer ? offerKey : (seen && seen.o) || '', t: Date.now() })); } catch (e) { /* not remembered */ }
+      if (bar > 0) root.style.setProperty('--promo-bar', bar + 'px');
+      root.classList.add('promo-lock');
+      promo.focus();                                // screen readers read the title; Tab goes to the X and buttons
+    };
+    var busy = function () {                        // the visitor is using the menu or typing: wait a little
+      var a = document.activeElement;
+      return !!((nav && nav.classList.contains('is-open')) ||
+        document.querySelector('.nav-item.is-open, .nav-item:hover, .nav-item:focus-within') ||
+        (a && /^(INPUT|SELECT|TEXTAREA)$/.test(a.tagName)));
+    };
+    var whenReady = function () {
+      if (document.hidden) {                        // opened in a background tab: wait until it is looked at
+        var back = function () {
+          if (document.hidden) return;
+          document.removeEventListener('visibilitychange', back);
+          setTimeout(whenReady, 800);
+        };
+        document.addEventListener('visibilitychange', back);
+        return;
+      }
+      if (!due(read())) return;                     // already seen in another tab meanwhile
+      if (busy()) { setTimeout(whenReady, 4000); return; }
+      if (!promo.open) open();
+    };
+    promo.addEventListener('cancel', function (e) { e.preventDefault(); close(); });
+    promo.addEventListener('close', tidy);
+    promo.addEventListener('pointerdown', function (e) { downOutside = e.target === promo; });
+    promo.addEventListener('click', function (e) {
+      if (e.target === promo) { if (downOutside) close(); return; }   // the dimmed page around the card
+      if (e.target.closest('[data-promo-close]')) { close(); return; }
+      if (e.target.closest('a[href]')) close(true);                    // a button: close, then follow the link
+    });
+    setTimeout(whenReady, delay * 1000);
+  })();
 })();

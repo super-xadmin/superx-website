@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """Home page (index.html)."""
 from core import C, s, items, tri, has, esc, fmt, T, TC, B, Tk, Bk, aria, media, img, href, ic
-from schema import TX, S, LINK, BOOL, IMG, ALT, VID, ICON, MODEL, LIST, CHAT, SEL
-from layout import PAGE_FIELDS_CTA, page, cta_band, chat_art, model, mkey, form_model, kv, bgv
+from schema import TX, S, LINK, BOOL, IMG, ALT, VID, ICON, MODEL, LIST, CHAT, SEL, STEP
+from layout import PAGE_FIELDS_CTA, page, cta_band, chat_art, model, mkey, form_model, kv, bgv, head, steps, link_shown
 
 FILE = 'index.html'
 DIR = 'pages/home'
@@ -49,23 +49,29 @@ SECTIONS = [
         TX('others_label', 'ข้อความหน้าปุ่มรุ่นอื่น'),
         LIST('others', 'ปุ่มรุ่นอื่น', [TX('label', 'ข้อความ'), LINK()]),
     ]),
-    ('scenarios', '5. งานที่ใช้ RoboVan ได้ (การ์ดเลื่อน)', [
+    ('start', '5. ขั้นตอนเริ่มใช้งาน 1-2-3 (ป๊อปอัพใช้ขั้นตอนชุดนี้ด้วย)', [
+        TX('eyebrow', 'หัวข้อเล็ก'), TX('title', 'หัวข้อ', long=True, desc='ใช้ **คำ** เพื่อทำเป็นสีฟ้า'), TX('lead', 'คำอธิบาย', long=True),
+        LIST('steps', 'ขั้นตอน (แนะนำ 3 ขั้น ไม่เกิน 4 ขั้น)', STEP, desc='ลบทุกขั้น = ไม่แสดงส่วนนี้ และไม่แสดงขั้นตอนในป๊อปอัพ'),
+        TX('btn1_label', 'ปุ่มที่ 1'), LINK('btn1_link', 'ลิงก์ปุ่มที่ 1'),
+        TX('btn2_label', 'ปุ่มที่ 2 (เว้นว่าง = ไม่มีปุ่มนี้)'), LINK('btn2_link', 'ลิงก์ปุ่มที่ 2'),
+    ]),
+    ('scenarios', '6. งานที่ใช้ RoboVan ได้ (การ์ดเลื่อน)', [
         TX('eyebrow', 'หัวข้อเล็ก'), TX('title', 'หัวข้อ', long=True), TX('lead', 'คำอธิบาย', long=True),
         LIST('tiles', 'ภาพการใช้งาน', [IMG(), ALT(), TX('title', 'หัวข้อ'), TX('text', 'คำอธิบาย')]),
     ]),
-    ('cases', '6. ผลงานและพันธมิตร', [
+    ('cases', '7. ผลงานและพันธมิตร', [
         TX('eyebrow', 'หัวข้อเล็ก'), TX('title', 'หัวข้อ', long=True), TX('link_label', 'ข้อความลิงก์มุมขวา'), LINK('link', 'ลิงก์มุมขวา'),
         LIST('cards', 'การ์ดผลงาน', [
             LINK(), IMG(), ALT(), TX('status', 'ป้ายสถานะ'), TX('location', 'สถานที่'), TX('title', 'หัวข้อ'), TX('text', 'คำอธิบาย', long=True),
         ]),
         STRIP, TX('strip_link_label', 'ข้อความลิงก์ท้ายแถบ'), LINK('strip_link', 'ลิงก์ท้ายแถบ'),
     ]),
-    ('control', '7. แอปควบคุมฝูงรถ', [
+    ('control', '8. แอปควบคุมฝูงรถ', [
         TX('eyebrow', 'หัวข้อเล็ก'), TX('title', 'หัวข้อ', long=True), TX('lead', 'คำอธิบาย', long=True),
         LIST('items', 'รายการความสามารถ', [ICON(), TX('text', 'ข้อความ')]),
         LIST('phones', 'ภาพหน้าจอแอป', [IMG('image', 'ภาพหน้าจอ (แนวตั้ง)'), ALT(), TX('label', 'คำบรรยาย')]),
     ]),
-    ('business', '8. โซลูชันอื่น (การศึกษา / ความปลอดภัย / AI Agent)', [
+    ('business', '9. โซลูชันอื่น (การศึกษา / ความปลอดภัย / AI Agent)', [
         TX('eyebrow', 'หัวข้อเล็ก'), TX('title', 'หัวข้อ', long=True), TX('lead', 'คำอธิบาย', long=True), TX('more', 'ข้อความลิงก์ในการ์ด'),
         LIST('modules', 'การ์ดโซลูชัน', [
             LINK(), SEL('media_type', 'ภาพประกอบ', [('image', 'รูปภาพ'), ('chat', 'ข้อความแชตตัวอย่าง')]), IMG(), ALT(), CHAT(),
@@ -131,8 +137,28 @@ def proof_band(d):
 </section>'''
 
 
+def start_section(d):
+    """How to start using RoboVan, 1-2-3, with buttons. The pop-up (promo.py) shows the same steps.
+    No steps listed = no section."""
+    rows = [r for r in items(d, 'steps') if has(r, 'title')]
+    if not rows:
+        return ''
+    btns = []
+    for lab, lnk, cls, before, after in (('btn1_label', 'btn1_link', 'btn-primary', ic('calendar'), ''),
+                                         ('btn2_label', 'btn2_link', 'btn-outline', '', ic('arrow'))):
+        if has(d, lab) and s(d, lnk) and link_shown(s(d, lnk)):
+            btns.append(f'<a class="btn {cls}" href="{href(s(d, lnk))}">{before}{Tk(d, lab)}{after}</a>')
+    cta = f'\n    <div class="btn-row start-cta">{"".join(btns)}</div>' if btns else ''
+    return f'''<section class="section section--mist" id="start">
+  <div class="wrap">
+    {head(d, link=False)}
+    {steps(rows, 'goal s4' if len(rows) == 4 else 'goal')}{cta}
+  </div>
+</section>'''
+
+
 # Sections that can have a 🎬 background video (the top film has its own video field)
-BG_KEYS = ('proof', 'about', 'business', 'models', 'control', 'scenarios', 'cases')
+BG_KEYS = ('proof', 'about', 'business', 'models', 'start', 'control', 'scenarios', 'cases')
 
 def render():
     lb = C('site/labels')
@@ -332,8 +358,10 @@ def render():
 </section>'''
 
     pr = C(f'{DIR}/proof')
+    st = C(f'{DIR}/start')
     pg = C(f'{DIR}/page')
-    # Main business first: what we sell and proof, then the range, uses, projects and the app; other solutions last
-    body = (hero + bgv(proof_band(pr), pr) + bgv(positioning, a) + bgv(models, m) + bgv(scenarios, sc) + bgv(cases, cs)
-            + bgv(control, c) + bgv(modules, b) + cta_band(pg))
+    # Main business first: what we sell and proof, the range and how to start, then uses, projects and the app;
+    # other solutions last
+    body = (hero + bgv(proof_band(pr), pr) + bgv(positioning, a) + bgv(models, m) + bgv(start_section(st), st)
+            + bgv(scenarios, sc) + bgv(cases, cs) + bgv(control, c) + bgv(modules, b) + cta_band(pg))
     return page(FILE, pg, body)

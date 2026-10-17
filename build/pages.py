@@ -7,6 +7,7 @@ from core import C, collection, s, items, tri
 from schema import cms_fields, validate, BG
 import layout
 import p_home
+import promo
 
 PAGE_MODULES = [p_home]
 COLLECTIONS = []   # filled below: (name, label, folder, fields, view)
@@ -63,6 +64,7 @@ def check():
     probs = []
     for rel, _label, fields in layout.SITE_FILES:
         probs += validate(fields, C(rel), rel)
+    probs += validate(promo.FIELDS, C(promo.REL), promo.REL)
     for m in PAGE_MODULES:
         for key, _label, fields in m.SECTIONS:
             rel = f'{m.DIR}/{key}'
@@ -105,6 +107,7 @@ def cms_config():
                             'items': [_file_entry(f'{base}-{key}', label, f'{m.DIR}/{key}', section_fields(m, key, fields))
                                       for key, label, fields in m.SECTIONS]})
     pages_group = {'name': 'pages', 'label': '📄 หน้าเว็บ (แก้ทีละหัวข้อ)', 'type': 'group', 'items': page_groups}
+    popup = _file_entry('popup', promo.LABEL, promo.REL, promo.FIELDS)
     return {
         'media': [
             {'name': 'images', 'label': 'รูปภาพ', 'input': 'assets/img', 'output': '/assets/img',
@@ -113,8 +116,8 @@ def cms_config():
             {'name': 'docs', 'label': 'ไฟล์ PDF / โบรชัวร์', 'input': 'assets/docs', 'output': '/assets/docs', 'extensions': ['pdf']},
             {'name': 'models3d', 'label': 'ไฟล์ 3D (.glb)', 'input': 'assets/3d', 'output': '/assets/3d', 'extensions': ['glb', 'gltf']},
         ],
-        # most used first: news, then pages, projects, vehicle data, site settings
-        'content': [c for c in cols if c['name'] == 'news'] + [pages_group] + [c for c in cols if c['name'] == 'business'] + [c for c in cols if c['name'] == 'cases']
+        # most used first: news and the pop-up / promotion, then pages, projects, vehicle data, site settings
+        'content': [c for c in cols if c['name'] == 'news'] + [popup, pages_group] + [c for c in cols if c['name'] == 'business'] + [c for c in cols if c['name'] == 'cases']
                    + [c for c in cols if c['name'] not in ('news', 'cases', 'business')] + [site],
     }
 

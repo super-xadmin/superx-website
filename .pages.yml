@@ -204,6 +204,217 @@ content:
       sort: date
       order: desc
   filename: '{year}-{month}-{day}-{hour}{minute}{second}.json'
+- name: popup
+  label: 📣 ป๊อปอัพ / โปรโมชั่น
+  type: file
+  path: content/site/popup.json
+  format: json
+  fields:
+  - name: enabled
+    label: เปิดใช้ป๊อปอัพ
+    type: boolean
+    description: ไม่ติ๊ก = ไม่แสดงป๊อปอัพเลย
+  - name: pages
+    label: แสดงที่หน้า
+    type: select
+    options:
+      values:
+      - name: home
+        label: หน้าแรกเท่านั้น (แนะนำ)
+      - name: all
+        label: ทุกหน้า (ยกเว้นหน้าติดต่อเรา)
+  - name: delay
+    label: แสดงหลังเปิดหน้าเว็บกี่วินาที
+    type: number
+    description: แนะนำ 3 วินาที (ให้ลูกค้าเห็นหน้าเว็บก่อน) · 0 = แสดงทันที
+  - name: repeat_days
+    label: ลูกค้าคนเดิมจะเห็นซ้ำอีกครั้งหลังจากกี่วัน
+    type: number
+    description: แนะนำ 7 วัน · 0 = เห็นทุกครั้งที่เปิดเว็บใหม่ · เมื่อแก้ข้อความหลัก หรือเริ่มโปรโมชั่นใหม่ ลูกค้าทุกคนจะเห็นป๊อปอัพอีกครั้ง
+  - name: image
+    label: รูปด้านบน (แนวนอน ไม่ใส่ก็ได้)
+    type: image
+    options:
+      media: images
+    description: แนะนำขนาด 1600×700 px ไม่เกินประมาณ 300 KB เช่น รูปรถกำลังทำงาน
+  - name: alt
+    label: คำอธิบายรูป (alt)
+    type: string
+    description: ภาษาอังกฤษสั้นๆ บอกว่าในรูปมีอะไร ช่วยเรื่อง Google และผู้พิการทางสายตา
+  - name: image_fit
+    label: การแสดงรูป
+    type: select
+    options:
+      values:
+      - name: cover
+        label: เต็มกรอบ (เหมาะกับภาพถ่าย ขอบรูปอาจถูกตัดเล็กน้อย)
+      - name: contain
+        label: แสดงทั้งรูป (เหมาะกับแบนเนอร์ที่มีตัวหนังสือ รูปไม่ถูกตัด)
+  - name: badge_th
+    label: ป้ายเล็กเหนือหัวข้อ · ไทย
+    type: string
+  - name: badge_zh
+    label: ป้ายเล็กเหนือหัวข้อ · 中文
+    type: string
+  - name: badge_en
+    label: ป้ายเล็กเหนือหัวข้อ · English
+    type: string
+  - name: title_th
+    label: หัวข้อ (ข้อความหลัก แสดงตลอด) · ไทย
+    type: text
+    description: บอกให้ชัดว่าเราขายอะไร ให้ใคร · ใช้ **คำ** เพื่อทำเป็นสีฟ้า · ถ้าจะลงโปรโมชั่น ใช้กลุ่ม 🎁 โปรโมชั่น ด้านล่าง ไม่ต้องแก้ตรงนี้
+  - name: title_zh
+    label: หัวข้อ (ข้อความหลัก แสดงตลอด) · 中文
+    type: text
+  - name: title_en
+    label: หัวข้อ (ข้อความหลัก แสดงตลอด) · English
+    type: text
+  - name: text_th
+    label: รายละเอียด · ไทย
+    type: text
+  - name: text_zh
+    label: รายละเอียด · 中文
+    type: text
+  - name: text_en
+    label: รายละเอียด · English
+    type: text
+  - name: show_steps
+    label: แสดงขั้นตอนเริ่มใช้งาน 1-2-3
+    type: boolean
+    description: ขั้นตอนดึงมาจาก 📄 หน้าเว็บ → หน้าแรก → 5. ขั้นตอนเริ่มใช้งาน (แก้ที่นั่นที่เดียว เปลี่ยนทั้งหน้าแรกและป๊อปอัพ)
+  - name: steps_title_th
+    label: หัวข้อเหนือขั้นตอน · ไทย
+    type: string
+    description: ถ้าเพิ่มหรือลดจำนวนขั้นตอน อย่าลืมแก้ตัวเลขในหัวข้อนี้
+  - name: steps_title_zh
+    label: หัวข้อเหนือขั้นตอน · 中文
+    type: string
+  - name: steps_title_en
+    label: หัวข้อเหนือขั้นตอน · English
+    type: string
+  - name: btn1_label_th
+    label: ปุ่มหลัก · ไทย
+    type: string
+  - name: btn1_label_zh
+    label: ปุ่มหลัก · 中文
+    type: string
+  - name: btn1_label_en
+    label: ปุ่มหลัก · English
+    type: string
+  - name: btn1_link
+    label: ลิงก์ปุ่มหลัก
+    type: string
+    description: เช่น contact.html?topic=demo หรือ https://...
+  - name: btn2_label_th
+    label: ปุ่มรอง (เว้นว่าง = ไม่มีปุ่มนี้) · ไทย
+    type: string
+  - name: btn2_label_zh
+    label: ปุ่มรอง (เว้นว่าง = ไม่มีปุ่มนี้) · 中文
+    type: string
+  - name: btn2_label_en
+    label: ปุ่มรอง (เว้นว่าง = ไม่มีปุ่มนี้) · English
+    type: string
+  - name: btn2_link
+    label: ลิงก์ปุ่มรอง
+    type: string
+    description: เช่น contact.html?topic=demo หรือ https://...
+  - name: note_th
+    label: หมายเหตุตัวเล็กใต้ปุ่ม · ไทย
+    type: text
+  - name: note_zh
+    label: หมายเหตุตัวเล็กใต้ปุ่ม · 中文
+    type: text
+  - name: note_en
+    label: หมายเหตุตัวเล็กใต้ปุ่ม · English
+    type: text
+  - name: offer
+    label: 🎁 โปรโมชั่น (ไม่ใส่ก็ได้)
+    type: object
+    fields:
+    - name: active
+      label: แสดงโปรโมชั่น
+      type: boolean
+      description: ไม่ติ๊ก = ซ่อนโปรโมชั่น (ข้อความที่พิมพ์ไว้ยังเก็บไว้ ใช้ครั้งหน้าได้)
+    - name: start
+      label: เริ่มวันที่ (เว้นว่าง = เริ่มทันที)
+      type: date
+      options:
+        format: yyyy-MM-dd
+    - name: end
+      label: ถึงวันที่ (เว้นว่าง = ไม่มีวันหมด)
+      type: date
+      options:
+        format: yyyy-MM-dd
+      description: พ้นวันนี้แล้ว (ตามเวลาประเทศไทย) กล่องโปรโมชั่นจะหายไปเอง ป๊อปอัพกลับเป็นข้อความหลักตามเดิม
+    - name: label_th
+      label: ป้ายเล็ก (เช่น โปรโมชั่น · ถึง 31 ธ.ค.) · ไทย
+      type: string
+    - name: label_zh
+      label: ป้ายเล็ก (เช่น โปรโมชั่น · ถึง 31 ธ.ค.) · 中文
+      type: string
+    - name: label_en
+      label: ป้ายเล็ก (เช่น โปรโมชั่น · ถึง 31 ธ.ค.) · English
+      type: string
+    - name: title_th
+      label: หัวข้อโปรโมชั่น · ไทย
+      type: text
+    - name: title_zh
+      label: หัวข้อโปรโมชั่น · 中文
+      type: text
+    - name: title_en
+      label: หัวข้อโปรโมชั่น · English
+      type: text
+    - name: text_th
+      label: รายละเอียด / เงื่อนไข · ไทย
+      type: text
+    - name: text_zh
+      label: รายละเอียด / เงื่อนไข · 中文
+      type: text
+    - name: text_en
+      label: รายละเอียด / เงื่อนไข · English
+      type: text
+    - name: image
+      label: รูปช่วงโปรโมชั่น (เว้นว่าง = ใช้รูปของข้อความหลัก)
+      type: image
+      options:
+        media: images
+      description: แนะนำขนาด 1600×700 px ไม่เกินประมาณ 300 KB
+    - name: alt
+      label: คำอธิบายรูป (alt)
+      type: string
+      description: ภาษาอังกฤษสั้นๆ บอกว่าในรูปมีอะไร ช่วยเรื่อง Google และผู้พิการทางสายตา
+    - name: image_fit
+      label: การแสดงรูปโปรโมชั่น
+      type: select
+      options:
+        values:
+        - name: cover
+          label: เต็มกรอบ (เหมาะกับภาพถ่าย ขอบรูปอาจถูกตัดเล็กน้อย)
+        - name: contain
+          label: แสดงทั้งรูป (เหมาะกับแบนเนอร์ที่มีตัวหนังสือ รูปไม่ถูกตัด)
+    - name: btn_label_th
+      label: ปุ่มหลักช่วงโปรโมชั่น (เว้นว่าง = ใช้ปุ่มหลักเดิม) · ไทย
+      type: string
+    - name: btn_label_zh
+      label: ปุ่มหลักช่วงโปรโมชั่น (เว้นว่าง = ใช้ปุ่มหลักเดิม) · 中文
+      type: string
+    - name: btn_label_en
+      label: ปุ่มหลักช่วงโปรโมชั่น (เว้นว่าง = ใช้ปุ่มหลักเดิม) · English
+      type: string
+    - name: btn_link
+      label: ลิงก์ปุ่มหลักช่วงโปรโมชั่น
+      type: string
+      description: เช่น contact.html?topic=demo หรือ https://...
+    description: 'ใส่เมื่อมีโปรโมชั่น: จะขึ้นเป็นกล่องเด่นในป๊อปอัพ เฉพาะช่วงวันที่ที่ตั้งไว้ ข้อความหลักด้านบนยังอยู่ครบ'
+  - name: close_th
+    label: คำอ่านปุ่มปิด (สำหรับโปรแกรมอ่านหน้าจอ) · ไทย
+    type: string
+  - name: close_zh
+    label: คำอ่านปุ่มปิด (สำหรับโปรแกรมอ่านหน้าจอ) · 中文
+    type: string
+  - name: close_en
+    label: คำอ่านปุ่มปิด (สำหรับโปรแกรมอ่านหน้าจอ) · English
+    type: string
 - name: pages
   label: 📄 หน้าเว็บ (แก้ทีละหัวข้อ)
   type: group
@@ -768,8 +979,125 @@ content:
             - name: strong
               label: เข้ม (อ่านตัวหนังสือง่ายสุด)
         description: ใส่วิดีโอหรือภาพแล้ว ส่วนนี้จะเปลี่ยนเป็นพื้นเข้ม ตัวหนังสือสีขาวให้อัตโนมัติ · ลบไฟล์ออก = กลับเป็นพื้นแบบเดิม
+    - name: home-start
+      label: 5. ขั้นตอนเริ่มใช้งาน 1-2-3 (ป๊อปอัพใช้ขั้นตอนชุดนี้ด้วย)
+      type: file
+      path: content/pages/home/start.json
+      format: json
+      fields:
+      - name: eyebrow_th
+        label: หัวข้อเล็ก · ไทย
+        type: string
+      - name: eyebrow_zh
+        label: หัวข้อเล็ก · 中文
+        type: string
+      - name: eyebrow_en
+        label: หัวข้อเล็ก · English
+        type: string
+      - name: title_th
+        label: หัวข้อ · ไทย
+        type: text
+        description: ใช้ **คำ** เพื่อทำเป็นสีฟ้า
+      - name: title_zh
+        label: หัวข้อ · 中文
+        type: text
+      - name: title_en
+        label: หัวข้อ · English
+        type: text
+      - name: lead_th
+        label: คำอธิบาย · ไทย
+        type: text
+      - name: lead_zh
+        label: คำอธิบาย · 中文
+        type: text
+      - name: lead_en
+        label: คำอธิบาย · English
+        type: text
+      - name: steps
+        label: ขั้นตอน (แนะนำ 3 ขั้น ไม่เกิน 4 ขั้น)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{title_th}'
+        fields:
+        - name: title_th
+          label: หัวข้อขั้นตอน · ไทย
+          type: string
+        - name: title_zh
+          label: หัวข้อขั้นตอน · 中文
+          type: string
+        - name: title_en
+          label: หัวข้อขั้นตอน · English
+          type: string
+        - name: text_th
+          label: รายละเอียด · ไทย
+          type: text
+        - name: text_zh
+          label: รายละเอียด · 中文
+          type: text
+        - name: text_en
+          label: รายละเอียด · English
+          type: text
+        description: ลบทุกขั้น = ไม่แสดงส่วนนี้ และไม่แสดงขั้นตอนในป๊อปอัพ
+      - name: btn1_label_th
+        label: ปุ่มที่ 1 · ไทย
+        type: string
+      - name: btn1_label_zh
+        label: ปุ่มที่ 1 · 中文
+        type: string
+      - name: btn1_label_en
+        label: ปุ่มที่ 1 · English
+        type: string
+      - name: btn1_link
+        label: ลิงก์ปุ่มที่ 1
+        type: string
+        description: เช่น contact.html?topic=demo หรือ https://...
+      - name: btn2_label_th
+        label: ปุ่มที่ 2 (เว้นว่าง = ไม่มีปุ่มนี้) · ไทย
+        type: string
+      - name: btn2_label_zh
+        label: ปุ่มที่ 2 (เว้นว่าง = ไม่มีปุ่มนี้) · 中文
+        type: string
+      - name: btn2_label_en
+        label: ปุ่มที่ 2 (เว้นว่าง = ไม่มีปุ่มนี้) · English
+        type: string
+      - name: btn2_link
+        label: ลิงก์ปุ่มที่ 2
+        type: string
+        description: เช่น contact.html?topic=demo หรือ https://...
+      - name: bg
+        label: 🎬 วิดีโอพื้นหลังของส่วนนี้ (ไม่ใส่ก็ได้)
+        type: object
+        fields:
+        - name: video
+          label: วิดีโอ (MP4 สั้นๆ ไม่มีเสียง)
+          type: file
+          options:
+            media: videos
+            extensions:
+            - mp4
+            - webm
+          description: แนะนำยาว 10–20 วินาที ขนาด 1280×720 ไฟล์ไม่เกิน 10 MB (เกิน 25 MB เว็บจะไม่แสดง) · ไฟล์ใหญ่กว่า 4 MB อัปตรงนี้ไม่ได้ ให้วางไฟล์ในโฟลเดอร์ assets/video ผ่าน GitHub Desktop แล้วกลับมากดเลือก
+        - name: poster
+          label: ภาพนิ่ง (แสดงระหว่างรอวิดีโอ หรือใส่แค่ภาพนี้เพื่อใช้เป็นภาพพื้นหลังก็ได้)
+          type: image
+          options:
+            media: images
+        - name: shade
+          label: ความเข้มของสีเข้มที่ทับวิดีโอ (ช่วยให้อ่านตัวหนังสือออก)
+          type: select
+          options:
+            values:
+            - name: medium
+              label: ปานกลาง (แนะนำ)
+            - name: light
+              label: อ่อน (เห็นวิดีโอชัด)
+            - name: strong
+              label: เข้ม (อ่านตัวหนังสือง่ายสุด)
+        description: ใส่วิดีโอหรือภาพแล้ว ส่วนนี้จะเปลี่ยนเป็นพื้นเข้ม ตัวหนังสือสีขาวให้อัตโนมัติ · ลบไฟล์ออก = กลับเป็นพื้นแบบเดิม
     - name: home-scenarios
-      label: 5. งานที่ใช้ RoboVan ได้ (การ์ดเลื่อน)
+      label: 6. งานที่ใช้ RoboVan ได้ (การ์ดเลื่อน)
       type: file
       path: content/pages/home/scenarios.json
       format: json
@@ -867,7 +1195,7 @@ content:
               label: เข้ม (อ่านตัวหนังสือง่ายสุด)
         description: ใส่วิดีโอหรือภาพแล้ว ส่วนนี้จะเปลี่ยนเป็นพื้นเข้ม ตัวหนังสือสีขาวให้อัตโนมัติ · ลบไฟล์ออก = กลับเป็นพื้นแบบเดิม
     - name: home-cases
-      label: 6. ผลงานและพันธมิตร
+      label: 7. ผลงานและพันธมิตร
       type: file
       path: content/pages/home/cases.json
       format: json
@@ -1044,7 +1372,7 @@ content:
               label: เข้ม (อ่านตัวหนังสือง่ายสุด)
         description: ใส่วิดีโอหรือภาพแล้ว ส่วนนี้จะเปลี่ยนเป็นพื้นเข้ม ตัวหนังสือสีขาวให้อัตโนมัติ · ลบไฟล์ออก = กลับเป็นพื้นแบบเดิม
     - name: home-control
-      label: 7. แอปควบคุมฝูงรถ
+      label: 8. แอปควบคุมฝูงรถ
       type: file
       path: content/pages/home/control.json
       format: json
@@ -1193,6 +1521,8 @@ content:
               label: เป้าหมาย (target)
             - name: leasing
               label: สัญญาเช่า (leasing)
+            - name: gift
+              label: ของขวัญ / โปรโมชั่น (gift)
             - name: globe
               label: ลูกโลก / เว็บไซต์ (globe)
             - name: phone
@@ -1275,7 +1605,7 @@ content:
               label: เข้ม (อ่านตัวหนังสือง่ายสุด)
         description: ใส่วิดีโอหรือภาพแล้ว ส่วนนี้จะเปลี่ยนเป็นพื้นเข้ม ตัวหนังสือสีขาวให้อัตโนมัติ · ลบไฟล์ออก = กลับเป็นพื้นแบบเดิม
     - name: home-business
-      label: 8. โซลูชันอื่น (การศึกษา / ความปลอดภัย / AI Agent)
+      label: 9. โซลูชันอื่น (การศึกษา / ความปลอดภัย / AI Agent)
       type: file
       path: content/pages/home/business.json
       format: json
@@ -1706,6 +2036,8 @@ content:
               label: เป้าหมาย (target)
             - name: leasing
               label: สัญญาเช่า (leasing)
+            - name: gift
+              label: ของขวัญ / โปรโมชั่น (gift)
             - name: globe
               label: ลูกโลก / เว็บไซต์ (globe)
             - name: phone
@@ -2226,6 +2558,8 @@ content:
               label: เป้าหมาย (target)
             - name: leasing
               label: สัญญาเช่า (leasing)
+            - name: gift
+              label: ของขวัญ / โปรโมชั่น (gift)
             - name: globe
               label: ลูกโลก / เว็บไซต์ (globe)
             - name: phone
@@ -2377,6 +2711,8 @@ content:
               label: เป้าหมาย (target)
             - name: leasing
               label: สัญญาเช่า (leasing)
+            - name: gift
+              label: ของขวัญ / โปรโมชั่น (gift)
             - name: globe
               label: ลูกโลก / เว็บไซต์ (globe)
             - name: phone
@@ -3274,6 +3610,8 @@ content:
               label: เป้าหมาย (target)
             - name: leasing
               label: สัญญาเช่า (leasing)
+            - name: gift
+              label: ของขวัญ / โปรโมชั่น (gift)
             - name: globe
               label: ลูกโลก / เว็บไซต์ (globe)
             - name: phone
@@ -3470,6 +3808,8 @@ content:
               label: เป้าหมาย (target)
             - name: leasing
               label: สัญญาเช่า (leasing)
+            - name: gift
+              label: ของขวัญ / โปรโมชั่น (gift)
             - name: globe
               label: ลูกโลก / เว็บไซต์ (globe)
             - name: phone
@@ -4337,6 +4677,8 @@ content:
               label: เป้าหมาย (target)
             - name: leasing
               label: สัญญาเช่า (leasing)
+            - name: gift
+              label: ของขวัญ / โปรโมชั่น (gift)
             - name: globe
               label: ลูกโลก / เว็บไซต์ (globe)
             - name: phone
@@ -4533,6 +4875,8 @@ content:
               label: เป้าหมาย (target)
             - name: leasing
               label: สัญญาเช่า (leasing)
+            - name: gift
+              label: ของขวัญ / โปรโมชั่น (gift)
             - name: globe
               label: ลูกโลก / เว็บไซต์ (globe)
             - name: phone
@@ -5400,6 +5744,8 @@ content:
               label: เป้าหมาย (target)
             - name: leasing
               label: สัญญาเช่า (leasing)
+            - name: gift
+              label: ของขวัญ / โปรโมชั่น (gift)
             - name: globe
               label: ลูกโลก / เว็บไซต์ (globe)
             - name: phone
@@ -5596,6 +5942,8 @@ content:
               label: เป้าหมาย (target)
             - name: leasing
               label: สัญญาเช่า (leasing)
+            - name: gift
+              label: ของขวัญ / โปรโมชั่น (gift)
             - name: globe
               label: ลูกโลก / เว็บไซต์ (globe)
             - name: phone
@@ -6246,6 +6594,8 @@ content:
               label: เป้าหมาย (target)
             - name: leasing
               label: สัญญาเช่า (leasing)
+            - name: gift
+              label: ของขวัญ / โปรโมชั่น (gift)
             - name: globe
               label: ลูกโลก / เว็บไซต์ (globe)
             - name: phone
@@ -6460,6 +6810,8 @@ content:
               label: เป้าหมาย (target)
             - name: leasing
               label: สัญญาเช่า (leasing)
+            - name: gift
+              label: ของขวัญ / โปรโมชั่น (gift)
             - name: globe
               label: ลูกโลก / เว็บไซต์ (globe)
             - name: phone
@@ -6986,6 +7338,8 @@ content:
               label: เป้าหมาย (target)
             - name: leasing
               label: สัญญาเช่า (leasing)
+            - name: gift
+              label: ของขวัญ / โปรโมชั่น (gift)
             - name: globe
               label: ลูกโลก / เว็บไซต์ (globe)
             - name: phone
@@ -7421,6 +7775,8 @@ content:
               label: เป้าหมาย (target)
             - name: leasing
               label: สัญญาเช่า (leasing)
+            - name: gift
+              label: ของขวัญ / โปรโมชั่น (gift)
             - name: globe
               label: ลูกโลก / เว็บไซต์ (globe)
             - name: phone
@@ -7833,6 +8189,8 @@ content:
               label: เป้าหมาย (target)
             - name: leasing
               label: สัญญาเช่า (leasing)
+            - name: gift
+              label: ของขวัญ / โปรโมชั่น (gift)
             - name: globe
               label: ลูกโลก / เว็บไซต์ (globe)
             - name: phone
@@ -8029,6 +8387,8 @@ content:
               label: เป้าหมาย (target)
             - name: leasing
               label: สัญญาเช่า (leasing)
+            - name: gift
+              label: ของขวัญ / โปรโมชั่น (gift)
             - name: globe
               label: ลูกโลก / เว็บไซต์ (globe)
             - name: phone
@@ -8323,6 +8683,8 @@ content:
               label: เป้าหมาย (target)
             - name: leasing
               label: สัญญาเช่า (leasing)
+            - name: gift
+              label: ของขวัญ / โปรโมชั่น (gift)
             - name: globe
               label: ลูกโลก / เว็บไซต์ (globe)
             - name: phone
@@ -10087,6 +10449,8 @@ content:
               label: เป้าหมาย (target)
             - name: leasing
               label: สัญญาเช่า (leasing)
+            - name: gift
+              label: ของขวัญ / โปรโมชั่น (gift)
             - name: globe
               label: ลูกโลก / เว็บไซต์ (globe)
             - name: phone
@@ -11833,6 +12197,8 @@ content:
           label: เป้าหมาย (target)
         - name: leasing
           label: สัญญาเช่า (leasing)
+        - name: gift
+          label: ของขวัญ / โปรโมชั่น (gift)
         - name: globe
           label: ลูกโลก / เว็บไซต์ (globe)
         - name: phone

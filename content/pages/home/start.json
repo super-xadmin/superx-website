@@ -1,0 +1,45 @@
+{
+  "eyebrow_th": "เริ่มใช้งาน",
+  "eyebrow_zh": "如何开始",
+  "eyebrow_en": "Getting started",
+  "title_th": "เริ่มใช้ RoboVan ได้ใน **3 ขั้น⁠ตอน**",
+  "title_zh": "只需 **3 步**，即可开始使用 RoboVan",
+  "title_en": "Start using RoboVan in **3 steps**",
+  "lead_th": "ทีม SuperX AI ดูแลให้ตั้งแต่วันแรกที่คุยกัน จนรถวิ่งงานจริงที่หน้างานของคุณ",
+  "lead_zh": "从第一次沟通到车辆在您的现场正式运行，SuperX AI 团队全程负责。",
+  "lead_en": "From the first conversation to vans running on your site, the SuperX AI team handles every step.",
+  "steps": [
+    {
+      "title_th": "ติดต่อเราหรือนัดสาธิต",
+      "title_zh": "联系我们或预约演示",
+      "title_en": "Contact us or book a demo",
+      "text_th": "กรอกแบบฟอร์มหรือโทรหาเรา ทีมงานจะติดต่อกลับเพื่อสอบถามงาน พื้นที่ และเส้นทางเบื้องต้น",
+      "text_zh": "填写表单或致电我们，团队会与您联系，初步了解需求、场地与线路。",
+      "text_en": "Fill in the form or call us. We'll get back to you about your work, site and routes."
+    },
+    {
+      "title_th": "สำรวจหน้างานและเสนอแผน",
+      "title_zh": "现场勘察并提交方案",
+      "title_en": "Site survey and proposal",
+      "text_th": "ดูพื้นที่หรือดูรถทำงานจริง แล้วเสนอรุ่นรถ รูปแบบซื้อหรือเช่า และความคุ้มค่า (ROI)",
+      "text_zh": "实地勘察或观看实车演示，再推荐车型、购买或租赁方式及投资回报（ROI）。",
+      "text_en": "We visit your site or demo a van, then recommend a model and a buy or lease plan, with the payback (ROI)."
+    },
+    {
+      "title_th": "ติดตั้งและเริ่มใช้งานจริง",
+      "title_zh": "部署上线",
+      "title_en": "Install and go live",
+      "text_th": "ติดตั้ง ทดสอบ และอบรมทีมงาน แล้วเริ่มวิ่งงานจริง โดยมีศูนย์เฝ้าระวัง 24 ชั่วโมงและทีมในประเทศดูแล",
+      "text_zh": "完成安装、测试与人员培训后正式运行，由 24 小⁠时监控中心和本地团队持续保障。",
+      "text_en": "We install and test the vans and train your team. Then they go to work, backed by 24‑hour monitoring and local support."
+    }
+  ],
+  "btn1_label_th": "นัดหมายสาธิต",
+  "btn1_label_zh": "预约演示",
+  "btn1_label_en": "Book a demo",
+  "btn1_link": "contact.html?topic=demo",
+  "btn2_label_th": "ช่วยเลือกรุ่นรถ",
+  "btn2_label_zh": "帮我选车型",
+  "btn2_label_en": "Help me choose a model",
+  "btn2_link": "choose.html"
+}
