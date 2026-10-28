@@ -23,24 +23,6 @@
       "caption_zh": "Z5 Plus · 平地板，大开门",
       "caption_en": "Z5 Plus · flat floor, wide doors",
       "studio": true
-    },
-    {
-      "size": "g-third",
-      "image": "/assets/img/use-warehouse-b.webp",
-      "alt": "Z5 Plus loaded with cartons at a dock",
-      "caption_th": "ขนถ่ายสินค้าที่ท่าโหลด",
-      "caption_zh": "月台装卸",
-      "caption_en": "Loading at the dock",
-      "studio": false
-    },
-    {
-      "size": "g-third",
-      "image": "/assets/img/use-warehouse-a.webp",
-      "alt": "Z5 in an urban logistics park",
-      "caption_th": "งานโลจิสติกส์ในเมือง",
-      "caption_zh": "城市物流园区",
-      "caption_en": "Urban logistics park",
-      "studio": false
     }
   ],
   "videos": [
@@ -52,5 +34,5 @@
       "caption_en": "Video: L4 testing at Thailand’s T-CAV centre"
     }
   ],
-  "videos_first": false
+  "videos_first": true
 }
