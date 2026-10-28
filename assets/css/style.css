@@ -1059,63 +1059,106 @@ main { overflow-x: clip; }
   .roi-result { position: static; }
 }
 
-/* ---------- Thailand map (about → แผนงานในประเทศไทย): a 3D board with all provinces ---------- */
+/* ---------- Thailand map (about → แผนงานในประเทศไทย): a network console ---------- */
+/* Dark panel in every colour mode. The country is a dot matrix; the provinces of each service zone light up,
+   thin routes run from the head office to each zone with small packets travelling along them. */
 .thmap {
-  --thm-top: #EAF4FB; --thm-line: rgba(28, 140, 201, 0.3); --thm-edge: #6FA9CF; --thm-side: #A3C6DE; --thm-zone: #A6DAF1;
-  --thm-zone-hot: #5DB8E3; --thm-home: #B5DFA0; --thm-pin: #1C3564; --thm-pin-text: #fff; --thm-sheen: .55; --thm-floor: rgba(16, 28, 56, 0.3);
-  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 64px); align-items: center;
-  margin: clamp(28px, 4vw, 48px) 0 clamp(40px, 6vw, 72px);
+  --thm-bg: #060D1E; --thm-ink: #F2F6FC; --thm-text: #A9B6CD; --thm-mute: #6F7E99; --thm-line: rgba(160, 190, 230, 0.12);
+  --thm-dot: rgba(150, 178, 220, 0.30); --thm-zone: #4FC8E9; --thm-home: #8EC96D; --thm-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  position: relative; isolation: isolate; overflow: hidden;
+  display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); gap: clamp(20px, 4vw, 56px); align-items: center;
+  margin: clamp(28px, 4vw, 48px) 0 clamp(40px, 6vw, 72px); padding: clamp(18px, 3.2vw, 44px);
+  border-radius: 24px; border: 1px solid rgba(120, 170, 230, 0.16); color: var(--thm-text);
+  background: radial-gradient(90% 70% at 28% 42%, #0F2547 0%, rgba(15, 37, 71, 0) 70%), linear-gradient(160deg, #0A1834 0%, var(--thm-bg) 60%);
+  box-shadow: 0 40px 80px -40px rgba(4, 10, 26, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
-.thmap-art { position: relative; width: 100%; max-width: 580px; justify-self: center; }
-.thmap-art svg { position: relative; display: block; width: 100%; height: auto; overflow: visible; }
-.thmap-base { filter: drop-shadow(0 22px 22px var(--thm-floor)); }
-.thmap-art .thmap-fx { position: absolute; inset: 0; will-change: transform; pointer-events: none; }
-.thmap-fx .thmap-pin { pointer-events: auto; }
-.thmap-side { fill: var(--thm-side); stroke: var(--thm-side); stroke-width: 2.6; stroke-linejoin: round; }
-.thmap-edge { fill: var(--thm-top); stroke: var(--thm-edge); stroke-width: 2.6; stroke-linejoin: round; }
-.thmap-top { fill: var(--thm-top); stroke: var(--thm-line); stroke-width: .6; stroke-linejoin: round; }
-.thmap-zone { fill: var(--thm-zone); stroke: var(--thm-line); stroke-width: .6; stroke-linejoin: round; transition: fill .3s; }
-.thmap-zone.is-hot { fill: var(--thm-zone-hot); }
-.thmap-home { fill: var(--thm-home); stroke: var(--thm-line); stroke-width: .6; stroke-linejoin: round; }
-.thmap-sheen { opacity: var(--thm-sheen); }
-.thmap-route { fill: none; stroke: #1C8CC9; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.thmap-car { fill: #4FC8E9; filter: drop-shadow(0 0 4px rgba(79, 200, 233, 0.95)); }
-.thmap-pin line, .thmap-hq line { stroke: var(--thm-pin); stroke-width: 1.6; }
-.thmap-pin circle { fill: var(--thm-pin); stroke: #fff; stroke-width: 1.6; transition: r .25s, fill .25s; }
-.thmap-pin text { fill: var(--thm-pin-text); font-size: 9px; font-weight: 700; pointer-events: none; }
-.thmap-pin .thmap-pin-shadow { fill: var(--thm-floor); }
-.thmap-pin.is-hot circle { fill: #1C8CC9; r: 10.5; }
-.thmap-hq circle { fill: #4E9F3D; stroke: #fff; stroke-width: 2; }
-.thmap-hq-in { fill: #fff; font-size: 7.5px; font-weight: 700; }
-.thmap-hq-name { fill: var(--ink); font-size: 11px; font-weight: 700; paint-order: stroke; stroke: var(--paper); stroke-width: 3px; stroke-linejoin: round; }
-.thmap-ring { fill: none; stroke: #4E9F3D; stroke-width: 1.6; transform-box: fill-box; transform-origin: center; animation: thmap-pulse 2.4s ease-out infinite; }
-.thmap-ring.r2 { animation-delay: 1.2s; }
-@keyframes thmap-pulse { from { transform: scale(1); opacity: .9; } to { transform: scale(3.6); opacity: 0; } }
-.thmap-title { margin-bottom: 14px; }
-.thmap-legend { list-style: none; margin: 0; padding: 0; display: grid; border-top: 1px solid var(--line); }
-.thmap-legend li { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; align-items: start; padding: 12px 6px; border-bottom: 1px solid var(--line); border-radius: 8px; transition: background .2s; }
-.thmap-legend li.is-hot { background: var(--mist); }
-.thmap-legend b { display: block; color: var(--ink); font-weight: 600; }
-.thmap-legend small { display: block; color: var(--mute); font-size: .86rem; }
-.thmap-num { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font-size: .78rem; font-weight: 700; color: var(--thm-pin-text); background: var(--thm-pin); }
-.is-hq .thmap-num { background: #4E9F3D; color: #fff; font-size: .62rem; }
-/* comes in when scrolled to: the board rises, routes draw out, pins drop in, then the cars start */
+.thmap::before { /* a faint aurora hairline along the top edge */
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px; background: var(--aurora); opacity: .8;
+}
+.thmap-art { position: relative; width: 100%; max-width: 560px; justify-self: center; }
+.thmap-svg { display: block; width: 100%; height: auto; max-height: min(82vh, 760px); overflow: visible; }
+.thmap-grid { fill: none; stroke: rgba(160, 190, 230, 0.07); stroke-width: .6; }
+.thmap-grid-labels text, .thmap-scale text, .thmap-north text { font-family: var(--thm-mono); font-size: 6.2px; letter-spacing: .04em; fill: var(--thm-mute); }
+.thmap-dots { fill: none; stroke: var(--thm-dot); stroke-width: .44; stroke-linecap: round; }
+.thmap-dots.is-zone { stroke: var(--thm-zone); stroke-width: .5; opacity: .62; transition: opacity .3s; }
+.thmap-dots.is-zone.is-hot { opacity: 1; }
+.thmap-dots.is-home { stroke: var(--thm-home); stroke-width: .52; opacity: .9; }
+.thmap-borders { fill: none; stroke: rgba(160, 190, 230, 0.10); stroke-width: .5; stroke-linejoin: round; }
+.thmap-zone-edge { fill: rgba(79, 200, 233, 0.05); stroke: rgba(79, 200, 233, 0.38); stroke-width: .6; stroke-linejoin: round; transition: fill .3s, stroke .3s; }
+.thmap-zone-edge.is-hot { fill: rgba(79, 200, 233, 0.14); stroke: rgba(79, 200, 233, 0.9); }
+.thmap-home-edge { fill: rgba(142, 201, 109, 0.08); stroke: rgba(142, 201, 109, 0.55); stroke-width: .6; stroke-linejoin: round; }
+.thmap-route { fill: none; stroke-width: 1.1; stroke-linecap: round; transition: stroke-width .3s; }
+.thmap-route.is-hot { stroke-width: 1.9; }
+.thmap-packet { fill: #DDF7FF; }
+.thmap-packets > g .thmap-packet { fill: #4FC8E9; }
+.thmap-node { cursor: default; }
+.thmap-node-halo { fill: rgba(79, 200, 233, 0.12); stroke: rgba(79, 200, 233, 0.35); stroke-width: .6; transform-box: fill-box; transform-origin: center; transition: transform .3s, fill .3s; }
+.thmap-node-ring { fill: #081631; stroke: var(--thm-zone); stroke-width: 1.1; }
+.thmap-node text { font-family: var(--thm-mono); font-size: 7px; font-weight: 700; fill: #E6F8FF; pointer-events: none; }
+.thmap-node.is-hot .thmap-node-halo { transform: scale(1.35); fill: rgba(79, 200, 233, 0.24); }
+.thmap-node.is-hot .thmap-node-ring { fill: #0E3A5C; }
+.thmap-hq-ring { fill: #081631; stroke: var(--thm-home); stroke-width: 1.2; }
+.thmap-hq-core { fill: var(--thm-home); }
+.thmap-hq-ticks { stroke: var(--thm-home); stroke-width: 1; stroke-linecap: round; }
+.thmap-pulse { fill: none; stroke: var(--thm-home); stroke-width: .8; transform-box: fill-box; transform-origin: center; animation: thmap-pulse 3s ease-out infinite; }
+.thmap-pulse.p2 { animation-delay: 1.5s; }
+@keyframes thmap-pulse { from { transform: scale(1); opacity: .8; } to { transform: scale(4.2); opacity: 0; } }
+.thmap-hq-tag rect { fill: rgba(6, 13, 30, 0.82); stroke: rgba(142, 201, 109, 0.45); stroke-width: .6; }
+.thmap-hq-name { font-size: 7px; font-weight: 700; letter-spacing: .08em; fill: var(--thm-ink); }
+.thmap-hq-badge { fill: var(--thm-home); }
+.thmap-hq-coord { font-family: var(--thm-mono); font-size: 5.2px; letter-spacing: .03em; fill: var(--thm-text); }
+.thmap-scale path { fill: none; stroke: var(--thm-mute); stroke-width: .7; }
+.thmap-north path { fill: var(--thm-mute); }
+/* zone list */
+.thmap-info { min-width: 0; }
+.thmap .thmap-title { color: var(--thm-ink); margin-bottom: 16px; }
+.thmap-legend { list-style: none; margin: 0; padding: 0; display: grid; border-top: 1px solid var(--thm-line); }
+.thmap-legend li {
+  position: relative; display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 14px; align-items: start;
+  padding: 13px 10px; border-bottom: 1px solid var(--thm-line); transition: background .25s;
+}
+.thmap-legend li::before { content: ""; position: absolute; left: 0; top: 10px; bottom: 10px; width: 2px; border-radius: 2px; background: var(--thm-zone); opacity: 0; transition: opacity .25s; }
+.thmap-legend li.is-hot { background: rgba(79, 200, 233, 0.07); }
+.thmap-legend li.is-hot::before { opacity: 1; }
+.thmap-legend b { display: block; color: var(--thm-ink); font-weight: 600; line-height: 1.45; }
+.thmap-legend small { display: block; color: var(--thm-text); font-size: .86rem; line-height: 1.5; }
+.thmap-num {
+  display: inline-grid; place-items: center; height: 24px; min-width: 36px; padding: 0 6px; margin-top: 1px; border-radius: 6px;
+  font-family: var(--thm-mono); font-size: .74rem; font-weight: 700; letter-spacing: .04em; font-variant-numeric: tabular-nums;
+  color: var(--thm-zone); border: 1px solid rgba(79, 200, 233, 0.45); background: rgba(79, 200, 233, 0.06);
+}
+.is-hq .thmap-num { color: var(--thm-home); border-color: rgba(142, 201, 109, 0.55); background: rgba(142, 201, 109, 0.08); }
+/* comes in when scrolled to: a scan line passes down the map, then routes draw out, the zones appear and packets start */
+.thmap-scan { position: absolute; left: -4%; right: -4%; top: 0; height: 2px; opacity: 0; pointer-events: none;
+  background: linear-gradient(90deg, rgba(79, 200, 233, 0), #4FC8E9 30%, #DDF7FF 50%, #4FC8E9 70%, rgba(79, 200, 233, 0));
+  box-shadow: 0 0 18px 2px rgba(79, 200, 233, 0.55); }
 .thmap.reveal { opacity: 1; transform: none; }
-.thmap.reveal .thmap-art { opacity: 0; transform: translateY(40px) scale(.96); }
-.thmap.reveal.is-in .thmap-art { opacity: 1; transform: none; transition: opacity 1s ease, transform 1.2s cubic-bezier(.2, .7, .25, 1); }
+.thmap.reveal .thmap-svg { clip-path: inset(0 0 100% 0); }
+.thmap.reveal.is-in .thmap-svg { clip-path: inset(0 0 0 0); transition: clip-path 1.5s cubic-bezier(.45, .05, .35, 1); }
+.thmap.reveal.is-in .thmap-scan { animation: thmap-scan 1.5s cubic-bezier(.45, .05, .35, 1) forwards; }
+@keyframes thmap-scan { 0% { top: 0; opacity: 1; } 90% { opacity: 1; } 100% { top: 100%; opacity: 0; } }
 .thmap.reveal .thmap-route { stroke-dasharray: 1; stroke-dashoffset: 1; }
-.thmap.reveal.is-in .thmap-route { animation: thmap-draw 1.4s cubic-bezier(.4, .1, .2, 1) forwards; animation-delay: calc(var(--i) * .18s + .8s); }
-.thmap.reveal .thmap-pin { opacity: 0; transform: translateY(-26px); }
-.thmap.reveal.is-in .thmap-pin { opacity: 1; transform: none; transition: opacity .4s, transform .6s cubic-bezier(.3, 1.6, .5, 1), r .25s; transition-delay: calc(var(--i) * .18s + 1.5s); }
-.thmap.reveal .thmap-car { opacity: 0; transition: opacity .5s; }
-.thmap.reveal.is-in .thmap-car { opacity: 1; transition-delay: 2.6s; }
+.thmap.reveal.is-in .thmap-route { animation: thmap-draw 1.2s cubic-bezier(.4, .1, .2, 1) forwards; animation-delay: calc(var(--i) * .14s + 1.1s); }
 @keyframes thmap-draw { to { stroke-dashoffset: 0; } }
-@media (max-width: 860px) { .thmap { grid-template-columns: minmax(0, 1fr); } }
-@media (prefers-reduced-motion: reduce) { .thmap-car, .thmap-ring { display: none; } }
-@media (prefers-color-scheme: dark) {
-  html.auto-dark .thmap { --thm-top: #14243F; --thm-line: rgba(120, 190, 240, 0.22); --thm-edge: #3A6E9C; --thm-side: #08162C;
-    --thm-zone: #1D4B73; --thm-zone-hot: #2A78B4; --thm-home: #335F2B; --thm-pin: #8DB8FF; --thm-pin-text: #0A1120; --thm-sheen: .1; --thm-floor: rgba(0, 0, 0, 0.6); }
-  html.auto-dark .thmap-pin circle { stroke: #0A1120; }
+.thmap.reveal .thmap-node, .thmap.reveal .thmap-hq-tag { opacity: 0; }
+.thmap.reveal.is-in .thmap-node { opacity: 1; transition: opacity .5s; transition-delay: calc(var(--i) * .14s + 1.6s); }
+.thmap.reveal.is-in .thmap-hq-tag { opacity: 1; transition: opacity .6s 1.2s; }
+.thmap.reveal .thmap-packets { opacity: 0; }
+.thmap.reveal.is-in .thmap-packets { opacity: 1; transition: opacity .6s 2.6s; }
+.thmap.reveal .thmap-legend li { opacity: 0; transform: translateX(14px); }
+.thmap.reveal.is-in .thmap-legend li { opacity: 1; transform: none; transition: opacity .5s, transform .5s, background .25s; }
+.thmap.reveal.is-in .thmap-legend li:nth-child(2) { transition-delay: .08s, .08s, 0s; }
+.thmap.reveal.is-in .thmap-legend li:nth-child(3) { transition-delay: .16s, .16s, 0s; }
+.thmap.reveal.is-in .thmap-legend li:nth-child(4) { transition-delay: .24s, .24s, 0s; }
+.thmap.reveal.is-in .thmap-legend li:nth-child(5) { transition-delay: .32s, .32s, 0s; }
+.thmap.reveal.is-in .thmap-legend li:nth-child(6) { transition-delay: .4s, .4s, 0s; }
+.thmap.reveal.is-in .thmap-legend li:nth-child(n+7) { transition-delay: .48s, .48s, 0s; }
+@media (max-width: 860px) {
+  .thmap { grid-template-columns: minmax(0, 1fr); border-radius: 18px; }
+  .thmap-art { max-width: 460px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .thmap-packets, .thmap-pulse, .thmap-scan { display: none; }
 }
 
 /* ---------- Background video on any section (🎬 in the back office) ---------- */
@@ -1386,6 +1429,8 @@ html.promo-lock body.hero-dark .site-header { right: var(--promo-bar, 0px); }
   html.auto-dark .status.partner { background: rgba(142, 201, 109, 0.14); color: var(--ink); }
   html.auto-dark .form-result.ok { background: rgba(142, 201, 109, 0.12); }
   html.auto-dark .section--mist::before { filter: invert(1) hue-rotate(180deg); }
+  html.auto-dark :is(.chat-fab, .chat-head, .chat-msg.me, .chat-send) { background: #2D5DB8; }
+  html.auto-dark .chat-fab:hover { background: #3A6CCB; }
   html.auto-dark .chat-art { background: linear-gradient(160deg, #13284A 0%, #15302A 100%); }
   html.auto-dark .phero-media.is-vehicle img, html.auto-dark .lineup-stage img, html.auto-dark .spin img { filter: drop-shadow(0 30px 34px rgba(0, 0, 0, 0.6)); }
   html.auto-dark .lineup-stage { background: radial-gradient(46% 16% at 50% 94%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 100%); }
