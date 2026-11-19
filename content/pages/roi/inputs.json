@@ -12,7 +12,7 @@
     "unit_th": "เที่ยว",
     "unit_zh": "趟",
     "unit_en": "trips",
-    "value": 20,
+    "value": 0,
     "max": 500
   },
   "km": {
@@ -22,7 +22,7 @@
     "unit_th": "กม.",
     "unit_zh": "公里",
     "unit_en": "km",
-    "value": 3,
+    "value": 0,
     "max": 200
   },
   "drivers": {
@@ -32,7 +32,7 @@
     "unit_th": "คน",
     "unit_zh": "人",
     "unit_en": "people",
-    "value": 2,
+    "value": 0,
     "max": 200
   },
   "wage": {
@@ -42,7 +42,7 @@
     "unit_th": "บาท",
     "unit_zh": "泰铢",
     "unit_en": "THB",
-    "value": 18000,
+    "value": 0,
     "max": 200000
   },
   "days": {
@@ -52,7 +52,7 @@
     "unit_th": "วัน",
     "unit_zh": "天",
     "unit_en": "days",
-    "value": 26,
+    "value": 0,
     "max": 31
   },
   "fuel": {
@@ -62,7 +62,7 @@
     "unit_th": "บาท",
     "unit_zh": "泰铢",
     "unit_en": "THB",
-    "value": 4,
+    "value": 0,
     "max": 50
   }
 }
