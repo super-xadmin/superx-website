@@ -16,9 +16,24 @@
   "maps_url": "https://maps.app.goo.gl/5h9cjMituAhB64E17",
   "socials": [
     {
+      "network": "facebook",
+      "handle": "@SUPERXAi2026",
+      "url": "https://www.facebook.com/SUPERXAi2026/reels/"
+    },
+    {
       "network": "tiktok",
       "handle": "@superxai_official",
       "url": "https://www.tiktok.com/@superxai_official"
+    },
+    {
+      "network": "youtube",
+      "handle": "@SuperXAi_2026",
+      "url": "https://www.youtube.com/@SuperXAi_2026/shorts"
+    },
+    {
+      "network": "x",
+      "handle": "@SuperXai_2026",
+      "url": "https://x.com/SuperXai_2026"
     }
   ],
   "logo": "/assets/img/logo-superx.png",

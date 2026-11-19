@@ -698,6 +698,32 @@ a.case:hover h3 { color: var(--midnight); }
 .copy-btn { border: 1px solid var(--line); background: var(--card); border-radius: 8px; padding: 5px 12px; font-size: 0.8rem; cursor: pointer; color: var(--text); display: inline-flex; gap: 6px; align-items: center; white-space: nowrap; }
 .copy-btn:hover { border-color: var(--midnight); color: var(--midnight); }
 .copy-btn .ic { width: 14px; height: 14px; }
+/* "Follow us": one button per online channel (⚙️ company → socials). The channel's own colour shows only under the mouse. */
+.follow { display: grid; gap: 8px; margin-top: 10px; }
+.follow-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); gap: 10px; margin-top: 6px; }
+.follow-btn {
+  --net: var(--midnight);
+  display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; align-items: center; min-height: 64px;
+  padding: 9px 14px 9px 9px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); color: var(--ink);
+  transition: border-color .2s, box-shadow .25s, transform .25s;
+}
+.follow-btn:hover, .follow-btn:focus-visible { border-color: var(--net); transform: translateY(-2px); box-shadow: 0 18px 32px -26px var(--shadow); }
+.follow-mark { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--mist-2); color: var(--midnight); transition: background .2s, color .2s; }
+.follow-mark .ic { width: 21px; height: 21px; }
+.follow-mark img { width: 28px; height: 28px; object-fit: contain; }
+.follow-btn:hover .follow-mark, .follow-btn:focus-visible .follow-mark { background: var(--net); color: #fff; }
+.follow-btn:hover .follow-mark.has-img, .follow-btn:focus-visible .follow-mark.has-img { background: var(--mist-2); }
+.follow-name { display: grid; min-width: 0; line-height: 1.35; }
+.follow-name b { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; }
+.follow-name small { font-size: 0.82rem; color: var(--mute); overflow-wrap: anywhere; }
+.follow-go { width: 13px; height: 13px; flex: none; color: var(--mute); transition: color .2s, transform .2s; }
+.follow-btn:hover .follow-go { color: var(--net); transform: translate(2px, -2px); }
+.follow-btn[data-net="tiktok"] { --net: #FE2C55; }
+.follow-btn[data-net="facebook"] { --net: #1877F2; }
+.follow-btn[data-net="instagram"] { --net: #E1306C; }
+.follow-btn[data-net="line"] { --net: #06C755; }
+.follow-btn[data-net="linkedin"] { --net: #0A66C2; }
+.follow-btn[data-net="youtube"] { --net: #FF0000; }
 .form-card { border: 1px solid var(--line); border-radius: 20px; padding: clamp(22px, 3vw, 40px); background: var(--card); box-shadow: 0 40px 80px -60px var(--shadow); }
 .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .field { display: grid; gap: 6px; min-width: 0; }

@@ -2,7 +2,7 @@
 """Contact page (contact.html): company details and the enquiry form that sends leads to Lark."""
 import json
 
-from core import C, s, items, tri, has, esc, fmt, T, Tk, Bk, ph, opt, img, href, ic, LANGS
+from core import C, s, items, tri, has, esc, fmt, T, Tk, Bk, ph, opt, img, href, ic, media, LANGS
 from schema import TX, S, SEL, LIST, STEP
 from layout import PAGE_FIELDS, PHERO, page, phero, trail, steps, SOCIAL_ICON, social_name, bgv
 
@@ -21,6 +21,9 @@ SECTIONS = [
         TX('eyebrow', 'หัวข้อเล็ก'),
         TX('label_phone', 'ชื่อแถว: โทรศัพท์'), TX('label_email', 'ชื่อแถว: อีเมล'), TX('label_address', 'ชื่อแถว: ที่อยู่'),
         TX('label_website', 'ชื่อแถว: เว็บไซต์'), TX('maps_button', 'ปุ่มเปิดแผนที่'),
+        TX('follow_title', 'หัวข้อ "ติดตามเรา"',
+           desc='ปุ่มไปช่องทางออนไลน์ของบริษัท เพิ่ม/ลบ/แก้ลิงก์ได้ที่ ⚙️ ข้อมูลบริษัทและช่องทางติดต่อ → โซเชียลมีเดีย'),
+        TX('follow_lead', 'คำอธิบายใต้หัวข้อ "ติดตามเรา" (ไม่ใส่ก็ได้)', long=True),
         TX('next_title', 'หัวข้อ "หลังจากส่งข้อมูล"'), LIST('next_steps', 'ขั้นตอนหลังส่งข้อมูล', STEP),
     ]),
     ('form', '3. แบบฟอร์ม (ข้อความในช่อง และตัวเลือก)', [
@@ -122,10 +125,6 @@ def details_block():
         lis.append(f'<li>{ic("pin")}<span><span class="label">{Tk(d, "label_address")}</span><span class="value">{Tk(co, "address")}</span></span>{copy_btn(tri(co, "address")[0])}</li>')
     if s(co, 'website'):
         lis.append(f'<li>{ic("globe")}<span><span class="label">{Tk(d, "label_website")}</span><span class="value">{fmt(s(co, "website"))}</span></span></li>')
-    for x in items(co, 'socials'):
-        if s(x, 'url'):
-            lis.append(f'<li>{ic(SOCIAL_ICON.get(s(x, "network"), "link"))}<span><span class="label">{fmt(social_name(x))}</span>'
-                       f'<a class="value" href="{href(s(x, "url"))}" target="_blank" rel="noopener">{fmt(s(x, "handle") or s(x, "url"))}</a></span></li>')
     maps = ''
     if s(co, 'maps_url'):
         maps = f'\n  <a class="btn btn-outline" href="{href(s(co, "maps_url"))}" target="_blank" rel="noopener">{ic("map")}{Tk(d, "maps_button")}</a>'
@@ -142,8 +141,34 @@ def details_block():
   <h2 class="h2">{Tk(co, 'company_name')}</h2>
   <ul class="details">
     {lis_html}
-  </ul>{maps}{nxt}
+  </ul>{maps}{follow_block(d, co)}{nxt}
 </div>'''
+
+
+def follow_block(d, co):
+    """Buttons to the company's online channels (⚙️ company → socials). No channel with a link = no block."""
+    cards = []
+    for x in items(co, 'socials'):
+        if not s(x, 'url'):
+            continue
+        net = s(x, 'network') or 'other'
+        handle = s(x, 'handle')
+        name = handle if net == 'other' and handle else social_name(x)
+        sub = f'<small>{fmt(handle)}</small>' if handle and net != 'other' else ''
+        icon = media(s(x, 'icon'), 'img')
+        mark = (f'<span class="follow-mark has-img"><img src="{esc(icon)}" alt="" width="28" height="28" loading="lazy" decoding="async"></span>'
+                if icon else f'<span class="follow-mark">{ic(SOCIAL_ICON.get(net, "link"))}</span>')
+        cards.append(f'<li><a class="follow-btn" data-net="{esc(net)}" href="{href(s(x, "url"))}" target="_blank" rel="noopener">'
+                     f'{mark}<span class="follow-name"><b>{fmt(name)}{ic("ext", "ic follow-go")}</b>{sub}</span></a></li>')
+    if not cards:
+        return ''
+    title = Tk(d, 'follow_title') if has(d, 'follow_title') else T(('ติดตามเรา', '关注我们', 'Follow us'))
+    lead = Bk('p', d, 'follow_lead', cls='small') if has(d, 'follow_lead') else ''
+    return f'''
+  <div class="follow">
+    <h3 class="h3">{title}</h3>{lead}
+    <ul class="follow-list">{''.join(cards)}</ul>
+  </div>'''
 
 
 MSG_KEYS = [('sending', 'sending'), ('okTitle', 'ok_title'), ('okBody', 'ok_body'), ('offTitle', 'off_title'), ('offBody', 'off_body'),

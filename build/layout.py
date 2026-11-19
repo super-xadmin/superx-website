@@ -24,6 +24,9 @@ SITE_FILES = [
         S('maps_url', 'ลิงก์ Google Maps'),
         LIST('socials', 'โซเชียลมีเดีย', [
             SEL('network', 'ช่องทาง', NETWORKS), S('handle', 'ชื่อบัญชี (เช่น @superxai_official)'), S('url', 'ลิงก์'),
+            IMG('icon', 'ไอคอนช่องทาง (ไม่ใส่ก็ได้)',
+                desc='ใช้ไอคอนทางการของแต่ละแพลตฟอร์ม (ดาวน์โหลดจากหน้า Brand ของแพลตฟอร์มนั้น) ไฟล์ PNG หรือ SVG พื้นใส · '
+                     'ไม่ใส่ = ใช้ไอคอนเส้นของเว็บ · แสดงที่ปุ่ม "ติดตามเรา" ในหน้าติดต่อเรา'),
         ], summary='{network} {handle}'),
         IMG('logo', 'โลโก้ (พื้นขาว)'),
         IMG('logo_white', 'โลโก้สีขาว (ใช้บนภาพหรือวิดีโอ เช่น เมนูด้านบนของหน้าแรก)'),
@@ -272,7 +275,7 @@ def header(current):
 </header>'''
 
 
-SOCIAL_ICON = {'tiktok': 'tiktok', 'facebook': 'link', 'instagram': 'camera', 'line': 'chat', 'linkedin': 'link',
+SOCIAL_ICON = {'tiktok': 'tiktok', 'facebook': 'users', 'instagram': 'camera', 'line': 'chat', 'linkedin': 'handshake',
                'youtube': 'play', 'x': 'link', 'other': 'link'}
 
 

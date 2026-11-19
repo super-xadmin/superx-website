@@ -11606,6 +11606,25 @@ content:
       - name: maps_button_en
         label: ปุ่มเปิดแผนที่ · English
         type: string
+      - name: follow_title_th
+        label: หัวข้อ "ติดตามเรา" · ไทย
+        type: string
+        description: ปุ่มไปช่องทางออนไลน์ของบริษัท เพิ่ม/ลบ/แก้ลิงก์ได้ที่ ⚙️ ข้อมูลบริษัทและช่องทางติดต่อ → โซเชียลมีเดีย
+      - name: follow_title_zh
+        label: หัวข้อ "ติดตามเรา" · 中文
+        type: string
+      - name: follow_title_en
+        label: หัวข้อ "ติดตามเรา" · English
+        type: string
+      - name: follow_lead_th
+        label: คำอธิบายใต้หัวข้อ "ติดตามเรา" (ไม่ใส่ก็ได้) · ไทย
+        type: text
+      - name: follow_lead_zh
+        label: คำอธิบายใต้หัวข้อ "ติดตามเรา" (ไม่ใส่ก็ได้) · 中文
+        type: text
+      - name: follow_lead_en
+        label: คำอธิบายใต้หัวข้อ "ติดตามเรา" (ไม่ใส่ก็ได้) · English
+        type: text
       - name: next_title_th
         label: หัวข้อ "หลังจากส่งข้อมูล" · ไทย
         type: string
@@ -13182,6 +13201,12 @@ content:
       - name: url
         label: ลิงก์
         type: string
+      - name: icon
+        label: ไอคอนช่องทาง (ไม่ใส่ก็ได้)
+        type: image
+        options:
+          media: images
+        description: ใช้ไอคอนทางการของแต่ละแพลตฟอร์ม (ดาวน์โหลดจากหน้า Brand ของแพลตฟอร์มนั้น) ไฟล์ PNG หรือ SVG พื้นใส · ไม่ใส่ = ใช้ไอคอนเส้นของเว็บ · แสดงที่ปุ่ม "ติดตามเรา" ในหน้าติดต่อเรา
     - name: logo
       label: โลโก้ (พื้นขาว)
       type: image
